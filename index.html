@@ -490,6 +490,9 @@ function logout() {
 // QUIZ STATE
 // ================================================================
 
+// 選択肢の表示ラベル（シャッフル後に上から順に割り当てる）
+const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
 let allQuestions = [];
 let queue        = [];
 let queuePos     = 0;
@@ -691,19 +694,24 @@ function renderQuestion() {
 
   const list = document.getElementById('choice-list');
   list.innerHTML = '';
-  for (const [key, text] of shuffle(Object.entries(q.choices))) {
+  // シャッフル後、上から順に A/B/C/D... の表示ラベルを割り当てる
+  // label.dataset.origKey に元キーを保持して正誤判定に使う
+  shuffle(Object.entries(q.choices)).forEach(([origKey, text], idx) => {
+    const dispLabel = CHOICE_LABELS[idx];
+
     const label = document.createElement('label');
-    label.className    = 'choice-label';
-    label.dataset.key  = key;
+    label.className        = 'choice-label';
+    label.dataset.key      = dispLabel;  // 表示ラベル (A/B/C/D...)
+    label.dataset.origKey  = origKey;    // 元データのキー（正誤判定用）
 
     const input   = document.createElement('input');
     input.type    = q.type === 'multiple' ? 'checkbox' : 'radio';
     input.name    = 'choice';
-    input.value   = key;
+    input.value   = dispLabel;
 
     const keySpan       = document.createElement('span');
     keySpan.className   = 'choice-key';
-    keySpan.textContent = key + '.';
+    keySpan.textContent = dispLabel + '.';
 
     const textSpan       = document.createElement('span');
     textSpan.textContent = text;
@@ -712,7 +720,7 @@ function renderQuestion() {
     label.appendChild(keySpan);
     label.appendChild(textSpan);
     list.appendChild(label);
-  }
+  });
 
   document.getElementById('result-banner').style.display    = 'none';
   document.getElementById('explanation-box').style.display  = 'none';
@@ -737,17 +745,31 @@ function submitAnswer() {
 
   answered = true;
 
+  // selected は表示ラベル (A/B/C...) → 元キーへ変換して正誤判定
+  const labels       = [...document.querySelectorAll('.choice-label')];
+  const dispToOrig   = Object.fromEntries(labels.map(l => [l.dataset.key, l.dataset.origKey]));
+  const selectedOrig = selected.map(d => dispToOrig[d]);
+
   const correctSet  = new Set(q.answer);
-  const selectedSet = new Set(selected);
-  const isCorrect   = q.answer.length === selected.length &&
+  const selectedSet = new Set(selectedOrig);
+  const isCorrect   = q.answer.length === selectedOrig.length &&
                       q.answer.every(a => selectedSet.has(a));
 
-  document.querySelectorAll('.choice-label').forEach(label => {
-    const key = label.dataset.key;
-    if      (correctSet.has(key) && selectedSet.has(key))  label.classList.add('correct');
-    else if (!correctSet.has(key) && selectedSet.has(key)) label.classList.add('wrong');
-    else if (correctSet.has(key) && !selectedSet.has(key)) label.classList.add('correct');
+  // 色付け: 正誤は元キー、選択判定は表示ラベルで行う
+  labels.forEach(label => {
+    const origKey = label.dataset.origKey;
+    const isSel   = selected.includes(label.dataset.key);
+    if      (correctSet.has(origKey) && isSel)  label.classList.add('correct');
+    else if (!correctSet.has(origKey) && isSel) label.classList.add('wrong');
+    else if (correctSet.has(origKey) && !isSel) label.classList.add('correct');
   });
+
+  // 不正解バナー: 正解の「表示ラベル」を求める（シャッフル後の位置を示す）
+  const correctDispLabels = labels
+    .filter(l => correctSet.has(l.dataset.origKey))
+    .map(l => l.dataset.key)
+    .sort()
+    .join(', ');
 
   const banner = document.getElementById('result-banner');
   banner.style.display = 'block';
@@ -755,7 +777,7 @@ function submitAnswer() {
     banner.textContent = '✓ 正解！';
     banner.className   = 'correct';
   } else {
-    banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
+    banner.textContent = `✗ 不正解。正解: ${correctDispLabels}`;
     banner.className   = 'wrong';
     // 間違い回数を記録
     if (!mistakes[q.no]) mistakes[q.no] = { count: 0, lastWrongAt: null };
@@ -798,11 +820,19 @@ function navigate(dir) {
 function restoreAnsweredState(q) {
   answered = true;
   const correctSet = new Set(q.answer);
+  const labels     = [...document.querySelectorAll('.choice-label')];
 
-  document.querySelectorAll('.choice-label').forEach(label => {
-    const key = label.dataset.key;
-    if (correctSet.has(key)) label.classList.add('correct');
+  // 元キーで正解を判定して色付け
+  labels.forEach(label => {
+    if (correctSet.has(label.dataset.origKey)) label.classList.add('correct');
   });
+
+  // 正解の表示ラベル（再シャッフル後の位置に合わせる）
+  const correctDispLabels = labels
+    .filter(l => correctSet.has(l.dataset.origKey))
+    .map(l => l.dataset.key)
+    .sort()
+    .join(', ');
 
   const isCorrect = progress[q.no].correct;
   const banner    = document.getElementById('result-banner');
@@ -811,7 +841,7 @@ function restoreAnsweredState(q) {
     banner.textContent = '✓ 正解！';
     banner.className   = 'correct';
   } else {
-    banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
+    banner.textContent = `✗ 不正解。正解: ${correctDispLabels}`;
     banner.className   = 'wrong';
   }
 
