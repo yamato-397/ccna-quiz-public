@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCNA 200-301 クイズ</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --correct: #16a34a;
+    --wrong: #dc2626;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 16px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  header h1 { font-size: 1.5rem; color: var(--primary); }
+  header p { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+
+  /* Stats bar */
+  #stats-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: center;
+    min-width: 80px;
+  }
+  .stat-box .val { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+  .stat-box .lbl { font-size: 0.7rem; color: var(--muted); }
+
+  /* Controls */
+  #controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: opacity 0.15s;
+  }
+  button:disabled { opacity: 0.4; cursor: default; }
+  button:not(:disabled):hover { opacity: 0.85; }
+
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+  .btn-danger { background: var(--wrong); color: #fff; }
+
+  /* Mode selector */
+  .mode-group {
+    display: flex;
+    background: var(--border);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 3px;
+  }
+  .mode-group button {
+    border-radius: 6px;
+    background: transparent;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .mode-group button.active {
+    background: var(--card);
+    color: var(--primary);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Card */
+  #quiz-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  #question-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  .badge-multiple { background: #ede9fe; color: #6d28d9; }
+  .badge-single   { background: #e0f2fe; color: #0369a1; }
+
+  #question-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+  }
+
+  /* Choices */
+  .choice-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+  .choice-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    line-height: 1.5;
+  }
+  .choice-label:hover { border-color: var(--primary); background: #eff6ff; }
+  .choice-label input { margin-top: 3px; flex-shrink: 0; }
+
+  .choice-label.correct  { border-color: var(--correct); background: #f0fdf4; }
+  .choice-label.wrong    { border-color: var(--wrong);   background: #fef2f2; }
+  .choice-label.selected { border-color: var(--primary); background: #eff6ff; }
+
+  .choice-key {
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 1.2em;
+    flex-shrink: 0;
+  }
+
+  /* Result banner */
+  #result-banner {
+    display: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  #result-banner.correct { background: #dcfce7; color: var(--correct); }
+  #result-banner.wrong   { background: #fee2e2; color: var(--wrong); }
+
+  /* Explanation */
+  #explanation-box {
+    display: none;
+    background: #f8fafc;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  #explanation-box .exp-title {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Nav */
+  #nav-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Progress bar */
+  #progress-wrap {
+    background: var(--border);
+    border-radius: 4px;
+    height: 6px;
+    margin-bottom: 16px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #progress-bar {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  /* Screen: loading / empty */
+  #screen-loading, #screen-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+
+  /* Review mode notice */
+  #review-notice {
+    display: none;
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-radius: 8px;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #92400e;
+    margin-bottom: 12px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 480px) {
+    #quiz-card { padding: 16px; }
+    header h1 { font-size: 1.25rem; }
+    .stat-box .val { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CCNA 200-301 クイズ</h1>
+  <p id="total-count-label">問題を読み込んでいます...</p>
+</header>
+
+<div id="stats-bar">
+  <div class="stat-box"><div class="val" id="stat-answered">0</div><div class="lbl">解答済み</div></div>
+  <div class="stat-box"><div class="val" id="stat-correct">0</div><div class="lbl">正解</div></div>
+  <div class="stat-box"><div class="val" id="stat-rate">-</div><div class="lbl">正答率</div></div>
+  <div class="stat-box"><div class="val" id="stat-wrong-count">0</div><div class="lbl">不正解</div></div>
+</div>
+
+<div id="controls">
+  <div class="mode-group">
+    <button id="btn-mode-order" class="active" onclick="setMode('order')">番号順</button>
+    <button id="btn-mode-random" onclick="setMode('random')">ランダム</button>
+    <button id="btn-mode-review" onclick="setMode('review')">復習</button>
+  </div>
+  <button class="btn-outline btn-sm" onclick="resetProgress()">進捗リセット</button>
+</div>
+
+<div id="review-notice">不正解だった問題のみ表示しています（<span id="review-count">0</span>問）</div>
+
+<div id="progress-wrap"><div id="progress-bar" style="width:0%"></div></div>
+
+<div id="screen-loading">読み込み中...</div>
+<div id="screen-empty" style="display:none">
+  <p>表示できる問題がありません。</p>
+  <p style="margin-top:8px;font-size:0.85rem;">不正解の問題がない場合、復習モードは空になります。</p>
+</div>
+
+<div id="quiz-card" style="display:none">
+  <div id="question-meta">
+    <span id="question-pos">1 / 100</span>
+    <span id="question-badge" class="badge badge-single">単一選択</span>
+  </div>
+  <div id="question-text"></div>
+  <div class="choice-list" id="choice-list"></div>
+  <div id="result-banner"></div>
+  <div id="explanation-box"><div class="exp-title">解説</div><div id="explanation-text"></div></div>
+  <div id="nav-buttons">
+    <button class="btn-outline" id="btn-prev" onclick="navigate(-1)">← 前へ</button>
+    <button class="btn-primary" id="btn-submit" onclick="submitAnswer()">回答する</button>
+    <button class="btn-primary" id="btn-next" onclick="navigate(1)" style="display:none">次へ →</button>
+  </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let allQuestions = [];       // questions.json の全問題
+let queue = [];              // 現在のモードでの表示順インデックス (allQuestionsのindex)
+let queuePos = 0;            // queue 内の現在位置
+let mode = 'order';          // 'order' | 'random' | 'review'
+let answered = false;        // 現在の問題を回答済みか
+
+const STORAGE_KEY = 'ccna_quiz_progress';
+
+// progress shape: { [no]: { answered: bool, correct: bool } }
+let progress = {};
+
+// ---------------------------------------------------------------------------
+// Init
+// ---------------------------------------------------------------------------
+async function init() {
+  try {
+    const res = await fetch('./questions.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    allQuestions = await res.json();
+  } catch (e) {
+    document.getElementById('screen-loading').textContent =
+      'questions.json の読み込みに失敗しました。スクリプトを実行してから再試行してください。';
+    return;
+  }
+
+  loadProgress();
+  document.getElementById('total-count-label').textContent =
+    `全 ${allQuestions.length} 問`;
+
+  buildQueue();
+  showCard();
+}
+
+// ---------------------------------------------------------------------------
+// Progress persistence
+// ---------------------------------------------------------------------------
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    progress = raw ? JSON.parse(raw) : {};
+  } catch { progress = {}; }
+}
+
+function saveProgress() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch {}
+}
+
+function resetProgress() {
+  if (!confirm('進捗をリセットしますか？')) return;
+  progress = {};
+  saveProgress();
+  buildQueue();
+  showCard();
+  updateStats();
+}
+
+// ---------------------------------------------------------------------------
+// Queue building
+// ---------------------------------------------------------------------------
+function buildQueue() {
+  if (mode === 'order') {
+    queue = allQuestions.map((_, i) => i);
+  } else if (mode === 'random') {
+    queue = shuffle(allQuestions.map((_, i) => i));
+  } else {
+    // review: wrong answers only
+    queue = allQuestions
+      .map((q, i) => ({ i, no: q.no }))
+      .filter(({ no }) => progress[no] && !progress[no].correct)
+      .map(({ i }) => i);
+  }
+  queuePos = 0;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ---------------------------------------------------------------------------
+// Render
+// ---------------------------------------------------------------------------
+function showCard() {
+  const loading = document.getElementById('screen-loading');
+  const empty   = document.getElementById('screen-empty');
+  const card    = document.getElementById('quiz-card');
+  const notice  = document.getElementById('review-notice');
+
+  loading.style.display = 'none';
+
+  if (queue.length === 0) {
+    empty.style.display = 'block';
+    card.style.display  = 'none';
+    notice.style.display = mode === 'review' ? 'block' : 'none';
+    document.getElementById('review-count').textContent = 0;
+    updateProgressBar(0, 0);
+    updateStats();
+    return;
+  }
+
+  empty.style.display = 'none';
+  card.style.display  = 'block';
+
+  if (mode === 'review') {
+    notice.style.display = 'block';
+    document.getElementById('review-count').textContent = queue.length;
+  } else {
+    notice.style.display = 'none';
+  }
+
+  renderQuestion();
+  updateStats();
+  updateProgressBar(queuePos, queue.length);
+}
+
+function renderQuestion() {
+  const q = allQuestions[queue[queuePos]];
+  answered = false;
+
+  // meta
+  document.getElementById('question-pos').textContent =
+    `${queuePos + 1} / ${queue.length}`;
+
+  const badge = document.getElementById('question-badge');
+  if (q.type === 'multiple') {
+    badge.textContent = `複数選択 (${q.answer.length}つ選択)`;
+    badge.className = 'badge badge-multiple';
+  } else {
+    badge.textContent = '単一選択';
+    badge.className = 'badge badge-single';
+  }
+
+  document.getElementById('question-text').textContent =
+    `Q${q.no}. ${q.question}`;
+
+  // choices
+  const list = document.getElementById('choice-list');
+  list.innerHTML = '';
+  for (const [key, text] of Object.entries(q.choices)) {
+    const label = document.createElement('label');
+    label.className = 'choice-label';
+    label.dataset.key = key;
+
+    const input = document.createElement('input');
+    input.type = q.type === 'multiple' ? 'checkbox' : 'radio';
+    input.name = 'choice';
+    input.value = key;
+
+    const keySpan = document.createElement('span');
+    keySpan.className = 'choice-key';
+    keySpan.textContent = key + '.';
+
+    const textSpan = document.createElement('span');
+    textSpan.textContent = text;
+
+    label.appendChild(input);
+    label.appendChild(keySpan);
+    label.appendChild(textSpan);
+    list.appendChild(label);
+  }
+
+  // result / explanation hidden
+  document.getElementById('result-banner').style.display = 'none';
+  document.getElementById('explanation-box').style.display = 'none';
+
+  // buttons
+  document.getElementById('btn-submit').style.display = 'inline-block';
+  document.getElementById('btn-next').style.display   = 'none';
+  document.getElementById('btn-prev').disabled = (queuePos === 0);
+  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
+}
+
+// ---------------------------------------------------------------------------
+// Answer submission
+// ---------------------------------------------------------------------------
+function submitAnswer() {
+  if (answered) return;
+
+  const q = allQuestions[queue[queuePos]];
+  const inputs = document.querySelectorAll('#choice-list input');
+  const selected = [...inputs].filter(i => i.checked).map(i => i.value);
+
+  if (selected.length === 0) {
+    alert('選択肢を選んでください。');
+    return;
+  }
+
+  answered = true;
+
+  const correctSet = new Set(q.answer);
+  const selectedSet = new Set(selected);
+  const isCorrect = q.answer.length === selected.length &&
+    q.answer.every(a => selectedSet.has(a));
+
+  // color choices
+  document.querySelectorAll('.choice-label').forEach(label => {
+    const key = label.dataset.key;
+    if (correctSet.has(key) && selectedSet.has(key)) {
+      label.classList.add('correct');
+    } else if (!correctSet.has(key) && selectedSet.has(key)) {
+      label.classList.add('wrong');
+    } else if (correctSet.has(key) && !selectedSet.has(key)) {
+      label.classList.add('correct'); // show missed correct
+    }
+  });
+
+  // result banner
+  const banner = document.getElementById('result-banner');
+  banner.style.display = 'block';
+  if (isCorrect) {
+    banner.textContent = '✓ 正解！';
+    banner.className = 'correct';
+  } else {
+    banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
+    banner.className = 'wrong';
+  }
+
+  // explanation
+  if (q.explanation) {
+    document.getElementById('explanation-text').textContent = q.explanation;
+    document.getElementById('explanation-box').style.display = 'block';
+  }
+
+  // save progress
+  progress[q.no] = { answered: true, correct: isCorrect };
+  saveProgress();
+
+  // buttons
+  document.getElementById('btn-submit').style.display = 'none';
+  document.getElementById('btn-next').style.display   = 'inline-block';
+  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
+
+  updateStats();
+}
+
+// ---------------------------------------------------------------------------
+// Navigation
+// ---------------------------------------------------------------------------
+function navigate(dir) {
+  const newPos = queuePos + dir;
+  if (newPos < 0 || newPos >= queue.length) return;
+  queuePos = newPos;
+  renderQuestion();
+  updateProgressBar(queuePos, queue.length);
+
+  // If previously answered, restore state
+  const q = allQuestions[queue[queuePos]];
+  if (progress[q.no] && progress[q.no].answered) {
+    restoreAnsweredState(q);
+  }
+}
+
+function restoreAnsweredState(q) {
+  answered = true;
+  const correctSet = new Set(q.answer);
+  document.querySelectorAll('.choice-label').forEach(label => {
+    const key = label.dataset.key;
+    if (correctSet.has(key)) label.classList.add('correct');
+  });
+
+  const isCorrect = progress[q.no].correct;
+  const banner = document.getElementById('result-banner');
+  banner.style.display = 'block';
+  if (isCorrect) {
+    banner.textContent = '✓ 正解！';
+    banner.className = 'correct';
+  } else {
+    banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
+    banner.className = 'wrong';
+  }
+
+  if (q.explanation) {
+    document.getElementById('explanation-text').textContent = q.explanation;
+    document.getElementById('explanation-box').style.display = 'block';
+  }
+
+  document.getElementById('btn-submit').style.display = 'none';
+  document.getElementById('btn-next').style.display   = 'inline-block';
+  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
+  document.getElementById('btn-prev').disabled = (queuePos === 0);
+}
+
+// ---------------------------------------------------------------------------
+// Mode
+// ---------------------------------------------------------------------------
+function setMode(newMode) {
+  mode = newMode;
+  ['order','random','review'].forEach(m => {
+    document.getElementById(`btn-mode-${m}`).classList.toggle('active', m === newMode);
+  });
+  buildQueue();
+  showCard();
+}
+
+// ---------------------------------------------------------------------------
+// Stats & progress bar
+// ---------------------------------------------------------------------------
+function updateStats() {
+  const entries = Object.values(progress);
+  const answeredCount = entries.filter(e => e.answered).length;
+  const correctCount  = entries.filter(e => e.correct).length;
+  const wrongCount    = answeredCount - correctCount;
+  const rate = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+
+  document.getElementById('stat-answered').textContent = answeredCount;
+  document.getElementById('stat-correct').textContent  = correctCount;
+  document.getElementById('stat-rate').textContent     = answeredCount > 0 ? `${rate}%` : '-';
+  document.getElementById('stat-wrong-count').textContent = wrongCount;
+}
+
+function updateProgressBar(pos, total) {
+  const pct = total > 0 ? Math.round((pos / total) * 100) : 0;
+  document.getElementById('progress-bar').style.width = `${pct}%`;
+}
+
+// ---------------------------------------------------------------------------
+// Start
+// ---------------------------------------------------------------------------
+init();
+</script>
+</body>
+</html>
