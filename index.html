@@ -28,17 +28,77 @@
     padding: 16px;
   }
 
-  header {
+  /* ------------------------------------------------------------------ */
+  /* Login screen                                                         */
+  /* ------------------------------------------------------------------ */
+  #login-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 16px;
+  }
+  .login-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    padding: 36px 28px;
+    width: 100%;
+    max-width: 360px;
+  }
+  .login-card h2 {
+    color: var(--primary);
+    font-size: 1.3rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
+  }
+  .login-card .login-sub {
+    color: var(--muted);
+    font-size: 0.83rem;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .login-card form { display: flex; flex-direction: column; gap: 10px; }
+  .login-card label { font-size: 0.78rem; font-weight: 600; color: var(--muted); margin-bottom: -6px; }
+  .login-card input {
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  .login-card input:focus { border-color: var(--primary); }
+  .login-error { color: var(--wrong); font-size: 0.8rem; min-height: 1.2em; }
+  .login-card button[type="submit"] { margin-top: 8px; padding: 12px; font-size: 1rem; width: 100%; }
+
+  /* ------------------------------------------------------------------ */
+  /* Header                                                               */
+  /* ------------------------------------------------------------------ */
+  header { text-align: center; margin-bottom: 20px; }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
   }
   header h1 { font-size: 1.5rem; color: var(--primary); }
-  header p { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  header p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  .header-user-area { display: flex; align-items: center; gap: 8px; }
+  .header-user-name { font-size: 0.78rem; color: var(--muted); }
 
-  /* Stats bar */
+  /* ------------------------------------------------------------------ */
+  /* Stats bar                                                            */
+  /* ------------------------------------------------------------------ */
   #stats-bar {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 16px;
@@ -47,14 +107,16 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 8px 14px;
     text-align: center;
-    min-width: 80px;
+    min-width: 76px;
   }
-  .stat-box .val { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
-  .stat-box .lbl { font-size: 0.7rem; color: var(--muted); }
+  .stat-box .val { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+  .stat-box .lbl { font-size: 0.68rem; color: var(--muted); }
 
-  /* Controls */
+  /* ------------------------------------------------------------------ */
+  /* Controls                                                             */
+  /* ------------------------------------------------------------------ */
   #controls {
     display: flex;
     gap: 8px;
@@ -84,9 +146,10 @@
   .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
   .btn-danger { background: var(--wrong); color: #fff; }
 
-  /* Mode selector */
+  /* Mode group */
   .mode-group {
     display: flex;
+    flex-wrap: wrap;
     background: var(--border);
     border-radius: 8px;
     padding: 3px;
@@ -97,6 +160,8 @@
     background: transparent;
     color: var(--muted);
     font-weight: 500;
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
   .mode-group button.active {
     background: var(--card);
@@ -104,7 +169,9 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   }
 
-  /* Card */
+  /* ------------------------------------------------------------------ */
+  /* Quiz card                                                            */
+  /* ------------------------------------------------------------------ */
   #quiz-card {
     background: var(--card);
     border-radius: var(--radius);
@@ -118,10 +185,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-bottom: 14px;
     font-size: 0.8rem;
     color: var(--muted);
   }
+  .meta-left { display: flex; align-items: center; gap: 8px; }
+
   .badge {
     display: inline-block;
     padding: 2px 8px;
@@ -131,6 +202,7 @@
   }
   .badge-multiple { background: #ede9fe; color: #6d28d9; }
   .badge-single   { background: #e0f2fe; color: #0369a1; }
+  .badge-mistake  { background: #fee2e2; color: var(--wrong); }
 
   #question-text {
     font-size: 1rem;
@@ -158,7 +230,6 @@
 
   .choice-label.correct  { border-color: var(--correct); background: #f0fdf4; }
   .choice-label.wrong    { border-color: var(--wrong);   background: #fef2f2; }
-  .choice-label.selected { border-color: var(--primary); background: #eff6ff; }
 
   .choice-key {
     font-weight: 700;
@@ -226,14 +297,14 @@
     transition: width 0.3s;
   }
 
-  /* Screen: loading / empty */
+  /* Loading / empty screens */
   #screen-loading, #screen-empty {
     text-align: center;
     padding: 60px 20px;
     color: var(--muted);
   }
 
-  /* Review mode notice */
+  /* Mode notice */
   #review-notice {
     display: none;
     background: #fffbeb;
@@ -253,13 +324,43 @@
     #quiz-card { padding: 16px; }
     header h1 { font-size: 1.25rem; }
     .stat-box .val { font-size: 1.1rem; }
+    .mode-group button { font-size: 0.72rem; padding: 5px 8px; }
   }
 </style>
 </head>
 <body>
 
+<!-- ================================================================ -->
+<!-- LOGIN SCREEN                                                       -->
+<!-- ================================================================ -->
+<div id="login-screen" style="display:none">
+  <div class="login-card">
+    <h2>CCNA 200-301 クイズ</h2>
+    <p class="login-sub">ログインして学習を開始してください。</p>
+    <form onsubmit="handleLogin(event)">
+      <label for="login-id">ユーザーID</label>
+      <input id="login-id" type="text" autocomplete="username" placeholder="ユーザーIDを入力" required>
+      <label for="login-pass">パスワード</label>
+      <input id="login-pass" type="password" autocomplete="current-password" placeholder="パスワードを入力" required>
+      <p id="login-error" class="login-error"></p>
+      <button type="submit" class="btn-primary">ログイン</button>
+    </form>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- MAIN APP                                                           -->
+<!-- ================================================================ -->
+<div id="main-app" style="display:none">
+
 <header>
-  <h1>CCNA 200-301 クイズ</h1>
+  <div class="header-top">
+    <h1>CCNA 200-301 クイズ</h1>
+    <div class="header-user-area">
+      <span id="header-user" class="header-user-name"></span>
+      <button class="btn-outline btn-sm" onclick="logout()">ログアウト</button>
+    </div>
+  </div>
   <p id="total-count-label">問題を読み込んでいます...</p>
 </header>
 
@@ -268,30 +369,39 @@
   <div class="stat-box"><div class="val" id="stat-correct">0</div><div class="lbl">正解</div></div>
   <div class="stat-box"><div class="val" id="stat-rate">-</div><div class="lbl">正答率</div></div>
   <div class="stat-box"><div class="val" id="stat-wrong-count">0</div><div class="lbl">不正解</div></div>
+  <div class="stat-box"><div class="val" id="stat-total-mistakes">0</div><div class="lbl">総間違い回数</div></div>
 </div>
 
 <div id="controls">
   <div class="mode-group">
-    <button id="btn-mode-order" class="active" onclick="setMode('order')">番号順</button>
-    <button id="btn-mode-random" onclick="setMode('random')">ランダム</button>
-    <button id="btn-mode-review" onclick="setMode('review')">復習</button>
+    <button id="btn-mode-order"       class="active" onclick="setMode('order')">番号順</button>
+    <button id="btn-mode-random"                     onclick="setMode('random')">ランダム</button>
+    <button id="btn-mode-review"                     onclick="setMode('review')">復習</button>
+    <button id="btn-mode-most-wrong"                 onclick="setMode('most-wrong')">間違い多い順</button>
+    <button id="btn-mode-unanswered"                 onclick="setMode('unanswered')">未回答のみ</button>
   </div>
   <button class="btn-outline btn-sm" onclick="resetProgress()">進捗リセット</button>
+  <button class="btn-danger  btn-sm" onclick="resetMistakes()">間違い回数リセット</button>
 </div>
 
-<div id="review-notice">不正解だった問題のみ表示しています（<span id="review-count">0</span>問）</div>
+<div id="review-notice">
+  <span id="review-notice-text"></span>（<span id="review-count">0</span>問）
+</div>
 
 <div id="progress-wrap"><div id="progress-bar" style="width:0%"></div></div>
 
 <div id="screen-loading">読み込み中...</div>
 <div id="screen-empty" style="display:none">
   <p>表示できる問題がありません。</p>
-  <p style="margin-top:8px;font-size:0.85rem;">不正解の問題がない場合、復習モードは空になります。</p>
+  <p style="margin-top:8px;font-size:0.85rem;">このモードで対象となる問題がありません。</p>
 </div>
 
 <div id="quiz-card" style="display:none">
   <div id="question-meta">
-    <span id="question-pos">1 / 100</span>
+    <div class="meta-left">
+      <span id="question-pos">1 / 100</span>
+      <span id="question-mistake" class="badge badge-mistake" style="display:none"></span>
+    </div>
     <span id="question-badge" class="badge badge-single">単一選択</span>
   </div>
   <div id="question-text"></div>
@@ -305,59 +415,122 @@
   </div>
 </div>
 
+</div><!-- /#main-app -->
+
 <script>
-// ---------------------------------------------------------------------------
-// State
-// ---------------------------------------------------------------------------
-let allQuestions = [];       // questions.json の全問題
-let queue = [];              // 現在のモードでの表示順インデックス (allQuestionsのindex)
-let queuePos = 0;            // queue 内の現在位置
-let mode = 'order';          // 'order' | 'random' | 'review'
-let answered = false;        // 現在の問題を回答済みか
+// ================================================================
+// AUTH CONFIG
+// ================================================================
 
-const STORAGE_KEY = 'ccna_quiz_progress';
+// パスワードは SHA-256 ハッシュのみを保持。平文はソースに含まない。
+// 将来ユーザーを追加する場合は USERS にエントリを追加する。
+const USERS = {
+  OVER: {
+    passwordHash: '801f0c87466ebed7532ba1a0cd36934bc2fe053eff14bd08d33016e1b4bee1f0',
+  },
+};
 
-// progress shape: { [no]: { answered: bool, correct: bool } }
-let progress = {};
+// ================================================================
+// AUTH STATE
+// ================================================================
 
-// ---------------------------------------------------------------------------
-// Init
-// ---------------------------------------------------------------------------
-async function init() {
-  try {
-    const res = await fetch('./questions.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    allQuestions = await res.json();
-  } catch (e) {
-    document.getElementById('screen-loading').textContent =
-      'questions.json の読み込みに失敗しました。スクリプトを実行してから再試行してください。';
-    return;
-  }
+let currentUser = null;
 
-  loadProgress();
-  document.getElementById('total-count-label').textContent =
-    `全 ${allQuestions.length} 問`;
-
-  buildQueue();
-  showCard();
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// ---------------------------------------------------------------------------
-// Progress persistence
-// ---------------------------------------------------------------------------
+async function tryLogin(userId, password) {
+  const user = USERS[userId];
+  if (!user) return false;
+  const entered = await sha256(password);
+  return entered === user.passwordHash;
+}
+
+function storageKey(base) {
+  return `${base}_${currentUser}`;
+}
+
+function showLoginScreen() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('main-app').style.display     = 'none';
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const userId   = document.getElementById('login-id').value.trim().toUpperCase();
+  const password = document.getElementById('login-pass').value;
+  const errEl    = document.getElementById('login-error');
+  errEl.textContent = '';
+
+  const ok = await tryLogin(userId, password);
+  if (ok) {
+    currentUser = userId;
+    localStorage.setItem('ccnaQuizUser', currentUser);
+    await startApp();
+  } else {
+    errEl.textContent = 'IDまたはパスワードが正しくありません。';
+  }
+}
+
+function logout() {
+  if (!confirm('ログアウトしますか？')) return;
+  localStorage.removeItem('ccnaQuizUser');
+  currentUser  = null;
+  allQuestions = [];
+  queue        = [];
+  queuePos     = 0;
+  progress     = {};
+  mistakes     = {};
+  showLoginScreen();
+}
+
+// ================================================================
+// QUIZ STATE
+// ================================================================
+
+let allQuestions = [];
+let queue        = [];
+let queuePos     = 0;
+let mode         = 'order';
+let answered     = false;
+
+let progress = {};  // { [no]: { answered: bool, correct: bool } }
+let mistakes = {};  // { [no]: { count: number, lastWrongAt: string } }
+
+// ================================================================
+// STORAGE
+// ================================================================
+
 function loadProgress() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    progress = raw ? JSON.parse(raw) : {};
+    const raw = localStorage.getItem(storageKey('ccnaQuizProgress'));
+    if (raw) { progress = JSON.parse(raw); return; }
+    // 旧キー（ccna_quiz_progress）からの移行
+    const old = localStorage.getItem('ccna_quiz_progress');
+    progress = old ? JSON.parse(old) : {};
+    if (old) saveProgress();
   } catch { progress = {}; }
 }
 
 function saveProgress() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch {}
+  try { localStorage.setItem(storageKey('ccnaQuizProgress'), JSON.stringify(progress)); } catch {}
+}
+
+function loadMistakes() {
+  try {
+    const raw = localStorage.getItem(storageKey('ccnaQuizMistakes'));
+    mistakes = raw ? JSON.parse(raw) : {};
+  } catch { mistakes = {}; }
+}
+
+function saveMistakes() {
+  try { localStorage.setItem(storageKey('ccnaQuizMistakes'), JSON.stringify(mistakes)); } catch {}
 }
 
 function resetProgress() {
-  if (!confirm('進捗をリセットしますか？')) return;
+  if (!confirm('進捗をリセットしますか？\n（間違い回数は保持されます）')) return;
   progress = {};
   saveProgress();
   buildQueue();
@@ -365,20 +538,67 @@ function resetProgress() {
   updateStats();
 }
 
-// ---------------------------------------------------------------------------
-// Queue building
-// ---------------------------------------------------------------------------
+function resetMistakes() {
+  if (!confirm('すべての問題の間違い回数をリセットしますか？')) return;
+  mistakes = {};
+  saveMistakes();
+  if (allQuestions.length && queue.length) updateMistakeBadge(allQuestions[queue[queuePos]].no);
+  updateStats();
+}
+
+// ================================================================
+// QUEUE BUILDING
+// ================================================================
+
 function buildQueue() {
-  if (mode === 'order') {
-    queue = allQuestions.map((_, i) => i);
-  } else if (mode === 'random') {
-    queue = shuffle(allQuestions.map((_, i) => i));
-  } else {
-    // review: wrong answers only
-    queue = allQuestions
-      .map((q, i) => ({ i, no: q.no }))
-      .filter(({ no }) => progress[no] && !progress[no].correct)
-      .map(({ i }) => i);
+  const all = allQuestions.map((_, i) => i);
+
+  switch (mode) {
+    case 'order':
+      queue = all;
+      break;
+
+    case 'random':
+      queue = shuffle(all);
+      break;
+
+    case 'review':
+      // 間違いがある問題を間違い回数降順 → 直近降順で並べる
+      queue = all
+        .filter(i => {
+          const no = allQuestions[i].no;
+          return (mistakes[no] && mistakes[no].count > 0) ||
+                 (progress[no] && !progress[no].correct);
+        })
+        .sort((a, b) => {
+          const ca = mistakes[allQuestions[a].no]?.count ?? 0;
+          const cb = mistakes[allQuestions[b].no]?.count ?? 0;
+          if (cb !== ca) return cb - ca;
+          const la = mistakes[allQuestions[a].no]?.lastWrongAt ?? '';
+          const lb = mistakes[allQuestions[b].no]?.lastWrongAt ?? '';
+          return lb.localeCompare(la);
+        });
+      break;
+
+    case 'most-wrong':
+      queue = all
+        .filter(i => (mistakes[allQuestions[i].no]?.count ?? 0) > 0)
+        .sort((a, b) => {
+          const d = (mistakes[allQuestions[b].no]?.count ?? 0) -
+                    (mistakes[allQuestions[a].no]?.count ?? 0);
+          if (d !== 0) return d;
+          const la = mistakes[allQuestions[a].no]?.lastWrongAt ?? '';
+          const lb = mistakes[allQuestions[b].no]?.lastWrongAt ?? '';
+          return lb.localeCompare(la);
+        });
+      break;
+
+    case 'unanswered':
+      queue = all.filter(i => !progress[allQuestions[i].no]?.answered);
+      break;
+
+    default:
+      queue = all;
   }
   queuePos = 0;
 }
@@ -392,22 +612,32 @@ function shuffle(arr) {
   return a;
 }
 
-// ---------------------------------------------------------------------------
-// Render
-// ---------------------------------------------------------------------------
-function showCard() {
-  const loading = document.getElementById('screen-loading');
-  const empty   = document.getElementById('screen-empty');
-  const card    = document.getElementById('quiz-card');
-  const notice  = document.getElementById('review-notice');
+// ================================================================
+// RENDER
+// ================================================================
 
-  loading.style.display = 'none';
+const MODE_NOTICES = {
+  review:       '間違えた問題を間違い回数の多い順に表示しています',
+  'most-wrong': '間違い回数が多い順に表示しています',
+  unanswered:   '未回答の問題のみ表示しています',
+};
+
+function showCard() {
+  document.getElementById('screen-loading').style.display = 'none';
+  const empty  = document.getElementById('screen-empty');
+  const card   = document.getElementById('quiz-card');
+  const notice = document.getElementById('review-notice');
 
   if (queue.length === 0) {
     empty.style.display = 'block';
     card.style.display  = 'none';
-    notice.style.display = mode === 'review' ? 'block' : 'none';
-    document.getElementById('review-count').textContent = 0;
+    if (MODE_NOTICES[mode]) {
+      notice.style.display = 'block';
+      document.getElementById('review-notice-text').textContent = MODE_NOTICES[mode];
+      document.getElementById('review-count').textContent = 0;
+    } else {
+      notice.style.display = 'none';
+    }
     updateProgressBar(0, 0);
     updateStats();
     return;
@@ -416,8 +646,9 @@ function showCard() {
   empty.style.display = 'none';
   card.style.display  = 'block';
 
-  if (mode === 'review') {
+  if (MODE_NOTICES[mode]) {
     notice.style.display = 'block';
+    document.getElementById('review-notice-text').textContent = MODE_NOTICES[mode];
     document.getElementById('review-count').textContent = queue.length;
   } else {
     notice.style.display = 'none';
@@ -428,44 +659,53 @@ function showCard() {
   updateProgressBar(queuePos, queue.length);
 }
 
+function updateMistakeBadge(no) {
+  const count = mistakes[no]?.count ?? 0;
+  const el    = document.getElementById('question-mistake');
+  if (count > 0) {
+    el.textContent   = `不正解: ${count}回`;
+    el.style.display = 'inline-block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
 function renderQuestion() {
   const q = allQuestions[queue[queuePos]];
   answered = false;
 
-  // meta
-  document.getElementById('question-pos').textContent =
-    `${queuePos + 1} / ${queue.length}`;
+  document.getElementById('question-pos').textContent = `${queuePos + 1} / ${queue.length}`;
 
   const badge = document.getElementById('question-badge');
   if (q.type === 'multiple') {
     badge.textContent = `複数選択 (${q.answer.length}つ選択)`;
-    badge.className = 'badge badge-multiple';
+    badge.className   = 'badge badge-multiple';
   } else {
     badge.textContent = '単一選択';
-    badge.className = 'badge badge-single';
+    badge.className   = 'badge badge-single';
   }
 
-  document.getElementById('question-text').textContent =
-    `Q${q.no}. ${q.question}`;
+  updateMistakeBadge(q.no);
 
-  // choices
+  document.getElementById('question-text').textContent = `Q${q.no}. ${q.question}`;
+
   const list = document.getElementById('choice-list');
   list.innerHTML = '';
-  for (const [key, text] of Object.entries(q.choices)) {
+  for (const [key, text] of shuffle(Object.entries(q.choices))) {
     const label = document.createElement('label');
-    label.className = 'choice-label';
-    label.dataset.key = key;
+    label.className    = 'choice-label';
+    label.dataset.key  = key;
 
-    const input = document.createElement('input');
-    input.type = q.type === 'multiple' ? 'checkbox' : 'radio';
-    input.name = 'choice';
-    input.value = key;
+    const input   = document.createElement('input');
+    input.type    = q.type === 'multiple' ? 'checkbox' : 'radio';
+    input.name    = 'choice';
+    input.value   = key;
 
-    const keySpan = document.createElement('span');
-    keySpan.className = 'choice-key';
+    const keySpan       = document.createElement('span');
+    keySpan.className   = 'choice-key';
     keySpan.textContent = key + '.';
 
-    const textSpan = document.createElement('span');
+    const textSpan       = document.createElement('span');
     textSpan.textContent = text;
 
     label.appendChild(input);
@@ -474,73 +714,65 @@ function renderQuestion() {
     list.appendChild(label);
   }
 
-  // result / explanation hidden
-  document.getElementById('result-banner').style.display = 'none';
-  document.getElementById('explanation-box').style.display = 'none';
-
-  // buttons
-  document.getElementById('btn-submit').style.display = 'inline-block';
-  document.getElementById('btn-next').style.display   = 'none';
+  document.getElementById('result-banner').style.display    = 'none';
+  document.getElementById('explanation-box').style.display  = 'none';
+  document.getElementById('btn-submit').style.display       = 'inline-block';
+  document.getElementById('btn-next').style.display         = 'none';
   document.getElementById('btn-prev').disabled = (queuePos === 0);
   document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
 }
 
-// ---------------------------------------------------------------------------
-// Answer submission
-// ---------------------------------------------------------------------------
+// ================================================================
+// SUBMIT
+// ================================================================
+
 function submitAnswer() {
   if (answered) return;
 
-  const q = allQuestions[queue[queuePos]];
-  const inputs = document.querySelectorAll('#choice-list input');
+  const q        = allQuestions[queue[queuePos]];
+  const inputs   = document.querySelectorAll('#choice-list input');
   const selected = [...inputs].filter(i => i.checked).map(i => i.value);
 
-  if (selected.length === 0) {
-    alert('選択肢を選んでください。');
-    return;
-  }
+  if (selected.length === 0) { alert('選択肢を選んでください。'); return; }
 
   answered = true;
 
-  const correctSet = new Set(q.answer);
+  const correctSet  = new Set(q.answer);
   const selectedSet = new Set(selected);
-  const isCorrect = q.answer.length === selected.length &&
-    q.answer.every(a => selectedSet.has(a));
+  const isCorrect   = q.answer.length === selected.length &&
+                      q.answer.every(a => selectedSet.has(a));
 
-  // color choices
   document.querySelectorAll('.choice-label').forEach(label => {
     const key = label.dataset.key;
-    if (correctSet.has(key) && selectedSet.has(key)) {
-      label.classList.add('correct');
-    } else if (!correctSet.has(key) && selectedSet.has(key)) {
-      label.classList.add('wrong');
-    } else if (correctSet.has(key) && !selectedSet.has(key)) {
-      label.classList.add('correct'); // show missed correct
-    }
+    if      (correctSet.has(key) && selectedSet.has(key))  label.classList.add('correct');
+    else if (!correctSet.has(key) && selectedSet.has(key)) label.classList.add('wrong');
+    else if (correctSet.has(key) && !selectedSet.has(key)) label.classList.add('correct');
   });
 
-  // result banner
   const banner = document.getElementById('result-banner');
   banner.style.display = 'block';
   if (isCorrect) {
     banner.textContent = '✓ 正解！';
-    banner.className = 'correct';
+    banner.className   = 'correct';
   } else {
     banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
-    banner.className = 'wrong';
+    banner.className   = 'wrong';
+    // 間違い回数を記録
+    if (!mistakes[q.no]) mistakes[q.no] = { count: 0, lastWrongAt: null };
+    mistakes[q.no].count++;
+    mistakes[q.no].lastWrongAt = new Date().toISOString();
+    saveMistakes();
+    updateMistakeBadge(q.no);
   }
 
-  // explanation
   if (q.explanation) {
     document.getElementById('explanation-text').textContent = q.explanation;
     document.getElementById('explanation-box').style.display = 'block';
   }
 
-  // save progress
   progress[q.no] = { answered: true, correct: isCorrect };
   saveProgress();
 
-  // buttons
   document.getElementById('btn-submit').style.display = 'none';
   document.getElementById('btn-next').style.display   = 'inline-block';
   document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
@@ -548,9 +780,10 @@ function submitAnswer() {
   updateStats();
 }
 
-// ---------------------------------------------------------------------------
-// Navigation
-// ---------------------------------------------------------------------------
+// ================================================================
+// NAVIGATION
+// ================================================================
+
 function navigate(dir) {
   const newPos = queuePos + dir;
   if (newPos < 0 || newPos >= queue.length) return;
@@ -558,30 +791,28 @@ function navigate(dir) {
   renderQuestion();
   updateProgressBar(queuePos, queue.length);
 
-  // If previously answered, restore state
   const q = allQuestions[queue[queuePos]];
-  if (progress[q.no] && progress[q.no].answered) {
-    restoreAnsweredState(q);
-  }
+  if (progress[q.no]?.answered) restoreAnsweredState(q);
 }
 
 function restoreAnsweredState(q) {
   answered = true;
   const correctSet = new Set(q.answer);
+
   document.querySelectorAll('.choice-label').forEach(label => {
     const key = label.dataset.key;
     if (correctSet.has(key)) label.classList.add('correct');
   });
 
   const isCorrect = progress[q.no].correct;
-  const banner = document.getElementById('result-banner');
+  const banner    = document.getElementById('result-banner');
   banner.style.display = 'block';
   if (isCorrect) {
     banner.textContent = '✓ 正解！';
-    banner.className = 'correct';
+    banner.className   = 'correct';
   } else {
     banner.textContent = `✗ 不正解。正解: ${q.answer.join(', ')}`;
-    banner.className = 'wrong';
+    banner.className   = 'wrong';
   }
 
   if (q.explanation) {
@@ -595,32 +826,39 @@ function restoreAnsweredState(q) {
   document.getElementById('btn-prev').disabled = (queuePos === 0);
 }
 
-// ---------------------------------------------------------------------------
-// Mode
-// ---------------------------------------------------------------------------
+// ================================================================
+// MODE
+// ================================================================
+
+const ALL_MODES = ['order', 'random', 'review', 'most-wrong', 'unanswered'];
+
 function setMode(newMode) {
   mode = newMode;
-  ['order','random','review'].forEach(m => {
-    document.getElementById(`btn-mode-${m}`).classList.toggle('active', m === newMode);
+  ALL_MODES.forEach(m => {
+    const btn = document.getElementById(`btn-mode-${m}`);
+    if (btn) btn.classList.toggle('active', m === newMode);
   });
   buildQueue();
   showCard();
 }
 
-// ---------------------------------------------------------------------------
-// Stats & progress bar
-// ---------------------------------------------------------------------------
+// ================================================================
+// STATS & PROGRESS BAR
+// ================================================================
+
 function updateStats() {
-  const entries = Object.values(progress);
+  const entries       = Object.values(progress);
   const answeredCount = entries.filter(e => e.answered).length;
   const correctCount  = entries.filter(e => e.correct).length;
   const wrongCount    = answeredCount - correctCount;
-  const rate = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+  const rate          = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+  const totalMistakes = Object.values(mistakes).reduce((s, m) => s + m.count, 0);
 
-  document.getElementById('stat-answered').textContent = answeredCount;
-  document.getElementById('stat-correct').textContent  = correctCount;
-  document.getElementById('stat-rate').textContent     = answeredCount > 0 ? `${rate}%` : '-';
-  document.getElementById('stat-wrong-count').textContent = wrongCount;
+  document.getElementById('stat-answered').textContent      = answeredCount;
+  document.getElementById('stat-correct').textContent       = correctCount;
+  document.getElementById('stat-rate').textContent          = answeredCount > 0 ? `${rate}%` : '-';
+  document.getElementById('stat-wrong-count').textContent   = wrongCount;
+  document.getElementById('stat-total-mistakes').textContent = totalMistakes;
 }
 
 function updateProgressBar(pos, total) {
@@ -628,9 +866,43 @@ function updateProgressBar(pos, total) {
   document.getElementById('progress-bar').style.width = `${pct}%`;
 }
 
-// ---------------------------------------------------------------------------
-// Start
-// ---------------------------------------------------------------------------
+// ================================================================
+// APP STARTUP
+// ================================================================
+
+async function startApp() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('main-app').style.display     = 'block';
+  document.getElementById('header-user').textContent    = `ログイン中: ${currentUser}`;
+
+  loadProgress();
+  loadMistakes();
+
+  try {
+    const res = await fetch('./questions.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    allQuestions = await res.json();
+  } catch (e) {
+    document.getElementById('screen-loading').textContent =
+      'questions.json の読み込みに失敗しました。スクリプトを実行してから再試行してください。';
+    return;
+  }
+
+  document.getElementById('total-count-label').textContent = `全 ${allQuestions.length} 問`;
+  buildQueue();
+  showCard();
+}
+
+async function init() {
+  const saved = localStorage.getItem('ccnaQuizUser');
+  if (saved && USERS[saved]) {
+    currentUser = saved;
+    await startApp();
+  } else {
+    showLoginScreen();
+  }
+}
+
 init();
 </script>
 </body>
