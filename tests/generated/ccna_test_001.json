@@ -1,0 +1,1643 @@
+{
+  "testId": "ccna_test_001",
+  "title": "CCNA確認テスト 1〜500番 ランダム100問",
+  "sourceRange": {
+    "from": 1,
+    "to": 500
+  },
+  "totalQuestions": 100,
+  "seed": 20260518,
+  "questions": [
+    {
+      "testQuestionNo": 1,
+      "sourceQuestionNo": 1,
+      "type": "single",
+      "question": "エンジニアは、OSPFネイバーを代表ルーターとして構成しました。指定ルーターが適切なモードにあることを確認する状態はどれですか?",
+      "choices": {
+        "A": "交換",
+        "B": "2 ウェイ",
+        "C": "フル",
+        "D": "初期化"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Full is the state for adjacent routers that have fully synchronised databases."
+    },
+    {
+      "testQuestionNo": 2,
+      "sourceQuestionNo": 2,
+      "type": "single",
+      "question": "未使用の MAC アドレスを MAC アドレス テーブルから削除し、新しい MACアドレスを追加できるようにするスイッチング機能はどれですか。",
+      "choices": {
+        "A": "MACアドレスのエージング",
+        "B": "MAC移動",
+        "C": "MACアドレスの自動消去",
+        "D": "動的MACアドレス学習"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 3,
+      "sourceQuestionNo": 4,
+      "type": "single",
+      "question": "ソフトウェア定義アーキテクチャでは、どのプレーンが分散され、トラフィックの転送を担当しますか?",
+      "choices": {
+        "A": "管理プレーン",
+        "B": "コントロール プレーン",
+        "C": "ポリシー プレーン",
+        "D": "データプレーン"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 4,
+      "sourceQuestionNo": 9,
+      "type": "single",
+      "question": "予測 AI モデルはネットワーク負荷分散においてどのような役割を果たしますか?",
+      "choices": {
+        "A": "過去のトラフィック量のみを監視します。",
+        "B": "デバイスに IP アドレスを割り当てます。",
+        "C": "将来のトラフィックの急増を予想しています。",
+        "D": "展開に適切なケーブル タイプを選択します。"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Predictive AI models are used in network load balancing to anticipate future traffic spikes and\noptimize resource allocation proactively."
+    },
+    {
+      "testQuestionNo": 5,
+      "sourceQuestionNo": 13,
+      "type": "single",
+      "question": "どの IPsec モードが IP パケット全体をカプセル化しますか?",
+      "choices": {
+        "A": "トンネル",
+        "B": "Q-in-Q",
+        "C": "SSL VPN",
+        "D": "輸送"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "In IPsec tunnel mode, the entire original IP packet, including the IP header and payload, is\nencapsulated and protected by a new IPsec header. This new packet is then transmitted\nbetween the IPsec endpoints (typically security gateways). Tunnel mode is typically used in\nsite-to-site VPNs."
+    },
+    {
+      "testQuestionNo": 6,
+      "sourceQuestionNo": 16,
+      "type": "single",
+      "question": "この出力ではどのインターフェース状態が発生していますか?",
+      "choices": {
+        "A": "ブロードキャストストーム",
+        "B": "デュプレックス不一致",
+        "C": "高スループット",
+        "D": "キューイング"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "The values \"txload 255/255, rxload 255/255\", indicate that the interface has \"high\nthroughput\", operating close to or at the limit of its data transmission and reception capacity.\nThe output shows high rates of traffic on the interface, with an incoming rate of 200234873\nbits/sec and an outgoing rate of 233830309 bits/sec for the last 30 seconds. This indicates\nthat the interface is handling a significant amount of data, resulting in high throughput."
+    },
+    {
+      "testQuestionNo": 7,
+      "sourceQuestionNo": 17,
+      "type": "single",
+      "question": "ワイヤレスLANコントローラーの機能とは？",
+      "choices": {
+        "A": "有線エンドポイントとワイヤレスエンドポイント間のトラフィックを制御する単一のアクセス ポイントに登録します。",
+        "B": "SSID を使用してワイヤレス クライアントを区別します。",
+        "C": "LWAPP パケットをアクセス ポイントに送信します。",
+        "D": "無線および有線 LAN のアクティビティを監視します"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Lightweight APs (LAPs) is devices require no initial configuration. LAPs use the Lightweight\nAccess Point Protocol (LWAPP) to communicate with a WLAN controller (WLC), as shown in\nthe below figure. Controller-based APs are useful in situations where many APs are required\nin the network. As more APs are added, each AP is automatically configured and managed\nby the WLC."
+    },
+    {
+      "testQuestionNo": 8,
+      "sourceQuestionNo": 19,
+      "type": "multiple",
+      "question": "2 台のルータが OSPF ネイバー隣接関係を確立できない原因となる 2 つの状況はどれですか(2 つ選択してください)。",
+      "choices": {
+        "A": "不一致な自律システム番号",
+        "B": "マルチキャストアドレス224.0.0.10からのトラフィックをブロックするACL",
+        "C": "プロセスIDが一致しません",
+        "D": "helloタイマーとdeadタイマーが一致しません",
+        "E": "両方のデバイスで同じルーターIDを使用する"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "explanation": "Must be unique:\n- OSPF process ID\n- router ID\n- IP address\nMust match:\n- netmask\n- area ID\n- timers"
+    },
+    {
+      "testQuestionNo": 9,
+      "sourceQuestionNo": 28,
+      "type": "single",
+      "question": "HSRP の機能とは何ですか?",
+      "choices": {
+        "A": "ルータの冗長性と、ルータに障害が発生した場合のルートの再収束を提供します。",
+        "B": "アクティブ ルータが切り替わるときに、Gratuitous ARP を使用してクライアントの ARPキャッシュを更新します。",
+        "C": "ルータ障害が発生した場合にフェイルオーバーを提供するには、アクティブルートとスタンバイ ルートが必要です。",
+        "D": "仮想 MAC アドレスを使用して、LAN 上のゲートウェイ冗長性を提供します。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "HSRP provides first-hop gateway redundancy by creating a virtual IP and virtual MAC\naddress shared between routers. The active router responds using the virtual MAC, ensuring\nseamless failover for hosts."
+    },
+    {
+      "testQuestionNo": 10,
+      "sourceQuestionNo": 37,
+      "type": "single",
+      "question": "ワイヤレス メッシュ展開ではどの AP モードが使用されますか?",
+      "choices": {
+        "A": "ローカル",
+        "B": "モニター",
+        "C": "フレックスコネクト",
+        "D": "ブリッジ"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "In a wireless mesh deployment, Bridge mode is commonly used for Access Points (APs) that\nconnect wirelessly to form a mesh network. In this mode, APs can communicate with each\nother to extend the network without requiring a wired backhaul. This allows for flexible\nplacement of APs in areas where wiring is impractical, enabling a larger coverage area by\nallowing the APs to relay signals to each other."
+    },
+    {
+      "testQuestionNo": 11,
+      "sourceQuestionNo": 45,
+      "type": "single",
+      "question": "PortFast 対応ポートでは、どの STP 状態で MAC アドレス学習が行われますか?",
+      "choices": {
+        "A": "学習",
+        "B": "リスニング",
+        "C": "破棄",
+        "D": "転送"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 12,
+      "sourceQuestionNo": 55,
+      "type": "single",
+      "question": "switchport trunk native vlan 10 コマンドにはどのような効果がありますか?",
+      "choices": {
+        "A": "トランク上のネイティブ VLAN として VLAN 10 を設定します。",
+        "B": "インターフェイスをトランク ポートとして設定します。",
+        "C": "トランク上のネイティブ VLAN 10 からのトラフィックを許可します。",
+        "D": "VLAN 1 上のトラフィックがトランクを通過するのを防ぎます。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 13,
+      "sourceQuestionNo": 59,
+      "type": "single",
+      "question": "接続されたスイッチから電力を引き出すためにアクセスポイントが使用するプロトコルはどれですか?",
+      "choices": {
+        "A": "インターネット グループ管理プロトコル",
+        "B": "アダプティブ ワイヤレス パス プロトコル",
+        "C": "シスコ検出プロトコル",
+        "D": "近隣探索プロトコル"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "PoE switches support Cisco pre-standard PD detection mechanisms, and any Standards\nbased compliant PDs. Most Cisco made PDs, pre-standard or standard, support Cisco\nDiscovery Protocol (CDP). Once power is applied to a port that contains a pre-standard or\nstandard Cisco PD, CDP is used in order to determine the actual power requirement, and the\nsystem power budget is adjusted accordingly."
+    },
+    {
+      "testQuestionNo": 14,
+      "sourceQuestionNo": 66,
+      "type": "multiple",
+      "question": "IPv6 ルータ広告メッセージに関する次の 2 つの記述のうち正しいものはどれですか。(2つ選択してください。)",
+      "choices": {
+        "A": "ICMPv6 タイプ 134 を使用します。",
+        "B": "アドバタイズされるプレフィックスの長さは 64 ビットである必要があります。",
+        "C": "アドバタイズされるプレフィックスの長さは 48 ビットである必要があります。",
+        "D": "設定された IPv6 インターフェイス アドレスから取得されます。",
+        "E": "宛先は常に隣接ノードのリンクローカル アドレスです。"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "IPv6 router advertisement message is one type of the ICMPv6 packets with Type field value\nof\n134. It lists many facts, including the link-local IPv6 address of the router. Normally, it is sent\nto the all-IPv6-hosts local-scope multicast address of FF02::1. When sent in response to\nrouter solicitation messages (ICMPv6 Type 133), it flows back to either the unicast address of\nthe host that sent the RS or to the all-IPv6-hosts address FF02::1.\nThe advertised IPv6 prefix length must be 64 bits for the stateless address autoconfiguration\nto be operational."
+    },
+    {
+      "testQuestionNo": 15,
+      "sourceQuestionNo": 79,
+      "type": "single",
+      "question": "コントローラ上のプログラムとネットワークデバイス上のプログラム間の通信を可能にするインターフェイスはどれですか?",
+      "choices": {
+        "A": "ノースバウンド インターフェイス",
+        "B": "ソフトウェア仮想インターフェイス",
+        "C": "サウスバウンド インターフェイス",
+        "D": "トンネル インターフェイス"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Role of the Southbound Interface\nPrimary Function: The southbound interface enables direct communication between a\nprogram running on the controller (such as an SDN controller) and a program or software\nagent on networking devices like switches and routers.\nProtocols Used: Common protocols for southbound interfaces include OpenFlow, NETCONF,\nand REST APIs. These allow the controller to:\n- Push forwarding rules\n- Collect data and statistics\n- Manage device configurations dynamically"
+    },
+    {
+      "testQuestionNo": 16,
+      "sourceQuestionNo": 83,
+      "type": "single",
+      "question": "この JSON スキーマ内の「switch」という単語は何を表していますか?",
+      "choices": {
+        "A": "キー",
+        "B": "オブジェクト",
+        "C": "配列",
+        "D": "値"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 17,
+      "sourceQuestionNo": 85,
+      "type": "single",
+      "question": "ネットワークエンジニアは、認証サーバーの設定と動的インターフェースの作成から新しい無線LANの実装を開始します。基本設定を完了するには、次に何を行う必要がありますか？",
+      "choices": {
+        "A": "新しい WLAN を作成し、それに動的インターフェイスをバインドします。",
+        "B": "アクセス ポイントの高可用性と冗長性を設定します。",
+        "C": "管理インターフェイスで Telnet および RADIUS アクセスを有効にします。",
+        "D": "管理インターフェイスをインストールし、管理 IP を追加します。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "After configuring the authentication server and creating the dynamic interface, the next step\nin configuring a new WLAN is to create the WLAN and bind the dynamic interface to it. This\nwill allow the wireless clients to connect to the WLAN and authenticate using the configured\nauthentication server. Configuring high availability and redundancy for the access points,\nenabling Telnet and RADIUS access on the management interface, and installing the\nmanagement interface and adding the management IP are all important steps in configuring\na wireless LAN, but they come after creating the WLAN and binding the dynamic interface to\nit."
+    },
+    {
+      "testQuestionNo": 18,
+      "sourceQuestionNo": 87,
+      "type": "single",
+      "question": "状態を修復せずにクライアントデバイスが勝手にネットワークに接続するのを防ぐことができるテクノロジはどれですか?",
+      "choices": {
+        "A": "802.1x",
+        "B": "IP ソース ガード",
+        "C": "MAC 認証バイパス",
+        "D": "802.11n"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "802.1X is a network authentication protocol that opens ports for network access when an\norganization authenticates a user's identity and authorizes them for access to the network.\nThe user's identity is determined based on their credentials or certificate, which is confirmed\nby the RADIUS server."
+    },
+    {
+      "testQuestionNo": 19,
+      "sourceQuestionNo": 101,
+      "type": "multiple",
+      "question": "ネットワーク上のサーバーの 2 つの機能は何ですか? (2つ選んでください)",
+      "choices": {
+        "A": "仮想サーバークラスタリングのみを使用して冗長化を実現",
+        "B": "要求を行うワークステーションのデータを送受信するアプリケーションを実行します",
+        "C": "複数のワークステーションからのリクエストを同時に処理します",
+        "D": "他のサーバーと通信するために同じオペレーティング システムを実行します。",
+        "E": "単一のクライアント専用のデータ センターにのみ収容されます。"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "A server is a computer program or device that provides a service to another computer\nprogram and its user, also known as the client. In a data center, the physical computer that a\nserver program runs on is also frequently referred to as a server. That machine might be a\ndedicated server or it might be used for other purposes.\nIn the client/server programming model, a server program awaits and fulfills requests from\nclient programs, which might be running in the same, or other computers. A given application\nin a computer might function as a client with requests for services from other programs and\nas a server of requests from other programs."
+    },
+    {
+      "testQuestionNo": 20,
+      "sourceQuestionNo": 112,
+      "type": "single",
+      "question": "Cisco WLC への HTTP アクセスを有効にするコマンドはどれですか?",
+      "choices": {
+        "A": "ネットワーク設定 Telnet を有効にする",
+        "B": "config network secureweb enable",
+        "C": "config 証明書生成 webadmin",
+        "D": "config network webmode enable"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "To access GUI over browser, webmode must be enable on WLC. By default it is disabled.\nYou can enable it with below command on CLI:\nconfig network webmode enable"
+    },
+    {
+      "testQuestionNo": 21,
+      "sourceQuestionNo": 118,
+      "type": "single",
+      "question": "スイッチ上でフレームスイッチングはどのように機能しますか?",
+      "choices": {
+        "A": "送信元と宛先のMACアドレスを書き換えます",
+        "B": "CDPを使用してフレームを隣接ポートに転送します",
+        "C": "既知の宛先を宛先ポートに転送する",
+        "D": "すべてのインターフェースとVLANでデフォルトで無効になっています"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 22,
+      "sourceQuestionNo": 120,
+      "type": "single",
+      "question": "SOHOネットワークの特徴は？",
+      "choices": {
+        "A": "各スイッチをネットワーク内の他のすべてのスイッチに接続します",
+        "B": "複数のユーザーが単一のブロードバンド接続を共有できるようにします",
+        "C": "1000 人以上のユーザーに高スループット アクセスを提供します。",
+        "D": "負荷分散と冗長性を提供するために、少なくとも 3 層のデバイスが含まれています。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "The SOHO network allows computers in a home office or a remote office to connect to a\ncorporate network, or access centralized, shared resources over a single inexpensive\nbroadband connection."
+    },
+    {
+      "testQuestionNo": 23,
+      "sourceQuestionNo": 121,
+      "type": "single",
+      "question": "個別のブロードキャスト ドメインを作成するために使用されるスイッチングコンセプトはどれですか。",
+      "choices": {
+        "A": "STP",
+        "B": "VTP",
+        "C": "VLAN",
+        "D": "CSMA/CD"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 24,
+      "sourceQuestionNo": 122,
+      "type": "multiple",
+      "question": "SSID の 2 つの特徴は何ですか? (2 つ選択してください。)",
+      "choices": {
+        "A": "WLAN 内のクライアントを一意に識別します。",
+        "B": "最大32文字です",
+        "C": "WLAN内のアクセスポイントを一意に識別します",
+        "D": "WLAN への安全なアクセスを提供します。",
+        "E": "WLAN 内で非表示にしたりブロードキャストしたりできます。"
+      },
+      "answer": [
+        "B",
+        "E"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 25,
+      "sourceQuestionNo": 123,
+      "type": "single",
+      "question": "コントロールプレーンやデータプレーンの機能に関して、コントローラベースのネットワークと従来のネットワークの違いは何ですか?",
+      "choices": {
+        "A": "コントローラベースのネットワークはすべての重要なデータプレーン機能を集中管理し、従来のネットワークはデータプレーン機能を分散します。",
+        "B": "従来のネットワークはすべての重要なコントロールプレーン機能を集中管理しますが、コントローラ ベースのネットワークはコントロールプレーン機能を分散します。",
+        "C": "従来のネットワークはすべての重要なデータプレーン機能を集中管理し、コントローラベースのネットワークはデータプレーン機能を分散します。",
+        "D": "コントローラベースのネットワークはすべての重要なコントロールプレーン機能を集中管理し、従来のネットワークはコントロールプレーン機能を分散します。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 26,
+      "sourceQuestionNo": 125,
+      "type": "single",
+      "question": "インターネットにアクセスする前にユーザーが認証、登録、利用規約に同意するためのキャプティブ ポータルを提供する AP 機能はどれですか。",
+      "choices": {
+        "A": "ワンクリック",
+        "B": "ホットスポット",
+        "C": "強化されたBluetooth",
+        "D": "家全体"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 27,
+      "sourceQuestionNo": 132,
+      "type": "single",
+      "question": "この JSON スキーマ内の 4 行目には何が表されていますか?",
+      "choices": {
+        "A": "オブジェクト",
+        "B": "配列",
+        "C": "キー",
+        "D": "値"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 28,
+      "sourceQuestionNo": 139,
+      "type": "single",
+      "question": "QoS マーキングが有効になっている場合、Cisco デバイスによって変更される IP ヘッダーフィールドはどれですか。",
+      "choices": {
+        "A": "ECN",
+        "B": "ヘッダーチェックサム",
+        "C": "サービスの種類",
+        "D": "DSCP"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "When QoS (Quality of Service) marking is enabled on a Cisco device, it typically modifies the\nDSCP field in the IP header to indicate the level of service the packet should receive."
+    },
+    {
+      "testQuestionNo": 29,
+      "sourceQuestionNo": 141,
+      "type": "single",
+      "question": "Rapid PVST+が設定されたスイッチで入力されるコマンドのうち、特定の期間リッスンして学習するものはどれですか。",
+      "choices": {
+        "A": "スイッチ(config)#スパニングツリーVLAN 1最大年齢6",
+        "B": "スイッチ(config)#スパニングツリーVLAN 1 hello-time 10",
+        "C": "スイッチ(config)#スパニングツリーVLAN 1 優先度4096",
+        "D": "スイッチ(config)#スパニングツリーVLAN 1 転送時間 20"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 30,
+      "sourceQuestionNo": 143,
+      "type": "single",
+      "question": "Voice over WLAN 展開を設定するときに GUI で選択される QoSプロファイルはどれですか?",
+      "choices": {
+        "A": "ブロンズ",
+        "B": "プラチナ",
+        "C": "シルバー",
+        "D": "ゴールド"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "Cisco Unified Wireless Network solution WLANs support four levels of QoS: Platinum/Voice,\nGold/Video, Silver/Best Effort (default), and Bronze/Background.\nReference: https://www.cisco.com/c/en/us/td/docs/wireless/controller/7-\n4/configuration/guides/\nconsolidated/b_cg74_CONSOLIDATED/b_cg74_CONSOLIDATED_chapter_01010111.html"
+    },
+    {
+      "testQuestionNo": 31,
+      "sourceQuestionNo": 147,
+      "type": "single",
+      "question": "Rapid PVST+ の共有 LAN セグメント上のバックアップポートの動作モードと役割は何ですか?",
+      "choices": {
+        "A": "学習モードであり、LANから離れたトラフィックを処理するルートブリッジへの最短パスを提供します。",
+        "B": "ブロッキングモードであり、指定ブリッジへの代替パスを提供します",
+        "C": "転送モードであり、各VLANのルートブリッジへの最低コストパスを提供します。",
+        "D": "リスニングモードであり、ルートブリッジへの代替パスを提供します"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 32,
+      "sourceQuestionNo": 148,
+      "type": "single",
+      "question": "ネットワーク エンジニアは、ルーター R2 ギガビット イーサネット 1/1インターフェイスに接続するように、ルーター R1 ギガビット イーサネット 1/1インターフェイスを構成する必要があります。構成を適用するには、エンジニアはアドレス2001:0db8:0000:0000:0500:000a:400F:583B を圧縮する必要があります。インターフェイスでどのコマンドを発行する必要がありますか?",
+      "choices": {
+        "A": "ipv6 アドレス 2001:0db8::5:a:4F:583B",
+        "B": "ipv6 アドレス 2001:db8::500:a:400F:583B",
+        "C": "ipv6 アドレス 2001 db8:0::500:a:4F:583B",
+        "D": "ipv6 アドレス 2001::db8:0000::500:a:400F:583B"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 33,
+      "sourceQuestionNo": 150,
+      "type": "single",
+      "question": "図表のSW_1とSW_12は、合併する2つの企業を表しています。両社は別々のネットワークベンダーを使用しています。両側のVLANは、IPサブネットを共有するように移行されています。2 つの会社を結合し、会社間のすべての VLAN を渡すには、両側でどのコマンドシーケンスを発行する必要がありますか?",
+      "choices": {
+        "A": "スイッチポートモードトランクスイッチポートトランクカプセル化dot1q",
+        "B": "スイッチポートモードトランクスイッチポートトランクはVLANをすべて許可しますスイッチポート dot1q イーサタイプ 0800",
+        "C": "スイッチポートモードダイナミック望ましいスイッチポートトランクはVLANをすべて許可しますスイッチポートトランクネイティブVLAN 7",
+        "D": "スイッチポートダイナミックオートスイッチポートなし"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "The command \"switchport dot1q ethertype 0800\" is not required in this context and doesn't\nplay a role in joining VLANs between two switches. The \"switchport dot1q ethertype\"\ncommand is used to specify a particular EtherType to be used for tagging VLANs. The\ndefault EtherType for 802.1Q tagging is 0x8100, which is used to indicate that the frame\ncarries VLAN information. The value\n0800 corresponds to the EtherType for IPv4."
+    },
+    {
+      "testQuestionNo": 34,
+      "sourceQuestionNo": 152,
+      "type": "single",
+      "question": "TCP プロトコルと UDP プロトコルの違いは何ですか?",
+      "choices": {
+        "A": "TCP にはパケットの組み立てに固有の順序があり、UDPは特定の順序でパケットを再構成します。",
+        "B": "TCP の最小ヘッダー サイズは 20 バイトで、UDP のヘッダー サイズは 8 バイトです。",
+        "C": "TCP では接続を確立するために 5 つのパケットが必要ですが、UDP では 3つのパケットのみが必要です。",
+        "D": "TCP はチェックサムのみを使用し、UDP には確認応答メカニズムがあります。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are both transport\nlayer protocols. TCP has a minimum header size of 20 bytes, which includes fields for\nsequencing, acknowledgments, and flow control, ensuring reliable communication. UDP has\na smaller 8-byte header, making it more efficient for time-sensitive applications like streaming\nand VoIP, but it does not guarantee delivery or ordering."
+    },
+    {
+      "testQuestionNo": 35,
+      "sourceQuestionNo": 161,
+      "type": "single",
+      "question": "ルータがデフォルトの DNS ルックアップ設定で構成され、CLI に URLが入力されると、ルータはどのような動作をしますか?",
+      "choices": {
+        "A": "コマンドがキャンセルされるまで、URL の解決を継続的に試行します。",
+        "B": "URL への ping 要求を開始します。",
+        "C": "ユーザーに希望の IP アドレスを指定するよう要求します。",
+        "D": "ネットワーク上の DNS サーバーにクエリを実行しようとします。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 36,
+      "sourceQuestionNo": 163,
+      "type": "multiple",
+      "question": "HSRP グループの 2 つの要件は何ですか? (2 つ選択してください。)",
+      "choices": {
+        "A": "アクティブなルータが1つだけ",
+        "B": "1台以上のスタンバイルータ",
+        "C": "1つ以上のバックアップ仮想ルータ",
+        "D": "スタンバイアクティブルータが1つだけ",
+        "E": "正確に1つのバックアップ仮想ルータ"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "Exactly one active router: Only one Active Router per HSRP group will be elected based on\nhighest priority. In case of equal priority, Highest IP address will be elected as Active Router.\nOne or more standby routers: There can be one or more Standby Routers."
+    },
+    {
+      "testQuestionNo": 37,
+      "sourceQuestionNo": 170,
+      "type": "single",
+      "question": "プライベート IPv4 アドレスの特徴は何ですか?",
+      "choices": {
+        "A": "アウトバウンドACLが適用されるとインターネットを通過する",
+        "B": "IPv4アドレスの不足を緩和する",
+        "C": "ISPがWebサービスのために新しいサブネットをインターネットにアドバタイズすることを要求する場合に使用されます。",
+        "D": "インターネット経由の安全な接続を可能にします"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "Private IPv4 addressing helps conserve public IPv4 addresses by allowing multiple devices in\nprivate networks to use the same address ranges internally."
+    },
+    {
+      "testQuestionNo": 38,
+      "sourceQuestionNo": 172,
+      "type": "single",
+      "question": "ワイヤレスのニーズが最小限で、集中管理を必要としない小規模オフィスに最適なアーキテクチャはどれですか?",
+      "choices": {
+        "A": "分割MAC",
+        "B": "メッシュネットワーク",
+        "C": "自律AP",
+        "D": "クラウドベースのAP"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "An autonomous AP (Access Point) operates independently without requiring a central\ncontroller.\nThis architecture is ideal for small offices with minimal wireless needs because each AP\nfunctions as a standalone device, handling authentication, encryption, and traffic forwarding\non its own.\nUnlike split MAC, mesh networks, or cloud-based APs, an autonomous AP does not depend\non external controllers or cloud management, making it a cost-effective and simple solution\nfor small environments."
+    },
+    {
+      "testQuestionNo": 39,
+      "sourceQuestionNo": 181,
+      "type": "single",
+      "question": "実装者は、仮想化用のハードウェアを準備して、ホスト上に仮想マシンを作成しています。ハードウェアと仮想マシン間の通信を提供するには何が必要ですか?",
+      "choices": {
+        "A": "ハイパーバイザー",
+        "B": "ルーター",
+        "C": "ストレートケーブル",
+        "D": "スイッチ"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "A computer that hosts VMs requires specialized software called a hypervisor. The hypervisor\nemulates the computer's CPU, memory, hard disk, network and other hardware resources,\ncreating a pool of resources that can be allocated to the individual VMs according to their\nspecific requirements. The hypervisor can support multiple virtual hardware platforms that are\nisolated from each other, enabling VMs to run Linux and Windows Server OSes on the same\nphysical host."
+    },
+    {
+      "testQuestionNo": 40,
+      "sourceQuestionNo": 184,
+      "type": "single",
+      "question": "この JSON スキーマ内の 1 行目から 5 行目で終わる部分は何が表現されていますか?",
+      "choices": {
+        "A": "キー",
+        "B": "オブジェクト",
+        "C": "配列",
+        "D": "値"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Lines 1 to 5 show a JSON array, as indicated by the square brackets [ ]."
+    },
+    {
+      "testQuestionNo": 41,
+      "sourceQuestionNo": 204,
+      "type": "multiple",
+      "question": "デフォルト VLAN を示す VLAN ID はどれですか (2 つ選択してください)。",
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "1005",
+        "D": "1006",
+        "E": "4096"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "VLAN 1 is a system default VLAN, you can use this VLAN but you cannot delete it. By default\nVLAN 1 is use for every port on the switch.\nStandard VLAN range from 1002-1005 it's Cisco default for FDDI and Token Ring. You\ncannot delete VLANs 1002-1005. mostly we don't use VLAN in this range."
+    },
+    {
+      "testQuestionNo": 42,
+      "sourceQuestionNo": 206,
+      "type": "multiple",
+      "question": "Cisco ワイヤレス LAN コントローラの GUI で WPA2 PSK を使用して WLANを設定する場合、どの 2 つの形式を選択できますか? (2つ選んでください)",
+      "choices": {
+        "A": "アスキー",
+        "B": "base64",
+        "C": "バイナリ",
+        "D": "10 進数",
+        "E": "16 進数"
+      },
+      "answer": [
+        "A",
+        "E"
+      ],
+      "explanation": "When configuring a WLAN with WPA2 Preshared Key (PSK), we can choose the encryption\nkey format as either ASCII or HEX.\nReference: https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/config-\nguide/b_wl_16_10_cg/ multi-preshared-key.pdf"
+    },
+    {
+      "testQuestionNo": 43,
+      "sourceQuestionNo": 210,
+      "type": "single",
+      "question": "snmpv2 に関する次の記述のうち正しいものはどれですか?",
+      "choices": {
+        "A": "パスワードは少なくとも8文字以上必要です",
+        "B": "パスワードを暗号化する必要がある",
+        "C": "プライバシーアルゴリズムはデフォルトでmd5暗号化を使用します",
+        "D": "認証アルゴリズムとプライバシーアルゴリズムはデフォルト値なしで有効になっています"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 44,
+      "sourceQuestionNo": 211,
+      "type": "single",
+      "question": "エンジニアリング チームは、実装者に警告条件とエラー条件用に syslogを構成するよう依頼します。目的の結果を得るために実装者が構成するコマンドはどれですか?",
+      "choices": {
+        "A": "ログトラップ 5",
+        "B": "ログトラップ 2",
+        "C": "ログトラップ 4",
+        "D": "ログトラップ 3"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 45,
+      "sourceQuestionNo": 214,
+      "type": "single",
+      "question": "クライアントがプローブ要求を送信した後、プローブ応答によって示される 802.11フレーム タイプはどれですか?",
+      "choices": {
+        "A": "アクション",
+        "B": "管理",
+        "C": "コントロール",
+        "D": "データ"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "Management frames: Used for joining and leaving a wireless cell. Management frame types\ninclude association request, association response, and reassociation request, just to name a\nfew.\nControl frames: Used to acknowledge when data frames are received.\nData frames: Frames that contain data."
+    },
+    {
+      "testQuestionNo": 46,
+      "sourceQuestionNo": 221,
+      "type": "single",
+      "question": "安全なリモート CLI アクセスに使用されるプロトコルはどれですか?",
+      "choices": {
+        "A": "HTTPS",
+        "B": "HTTP",
+        "C": "テルネット",
+        "D": "SSH"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 47,
+      "sourceQuestionNo": 227,
+      "type": "single",
+      "question": "802.11a ノードが 802.11g アクセスポイントの範囲内でブロードキャストすると何が起こりますか?",
+      "choices": {
+        "A": "アクセス ポイントは送信しますが、ノードは受信できません。",
+        "B": "接続が発生",
+        "C": "ノードとアクセス ポイントの両方が送信できません。",
+        "D": "ノードは送信しますが、アクセス ポイントは受信できません。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 48,
+      "sourceQuestionNo": 229,
+      "type": "single",
+      "question": "SDN コントローラーは、転送の変更をサウスバウンド APIに中継するための通信プロトコルとして何を使用しますか?",
+      "choices": {
+        "A": "OpenFlow",
+        "B": "ジャワ",
+        "C": "残り",
+        "D": "XML"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "Southbound APIs facilitate control over the network and enable the SDN Controller to\ndynamically make changes according to real-time demands and needs.\nOpenFlow, which was developed by the Open Networking Foundation (ONF), is the first and\nprobably most well-known southbound interface. OpenFlow defines the way the SDN\nController should interact with the forwarding plane to make adjustments to the network, so it\ncan better adapt to changing business requirements. With OpenFlow, entries can be added\nand removed to the internal flow-table of switches and routers to make the network more\nresponsive to real-time traffic demands."
+    },
+    {
+      "testQuestionNo": 49,
+      "sourceQuestionNo": 243,
+      "type": "single",
+      "question": "この出力ではどのインターフェース状態が発生していますか?",
+      "choices": {
+        "A": "不良NIC",
+        "B": "ブロードキャストストーム",
+        "C": "デュプレックス不一致",
+        "D": "高スループット"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 50,
+      "sourceQuestionNo": 245,
+      "type": "single",
+      "question": "コントロール ベースのネットワーク アーキテクチャにおけるサウスバウンド APIの目的は何ですか?",
+      "choices": {
+        "A": "コントローラとアプリケーション間の機能通信",
+        "B": "コントローラとネットワーク ハードウェア間のファシリティ通信",
+        "C": "アプリケーション開発者がネットワークとやり取りできるようにします",
+        "D": "コントローラーを他の自動化およびオーケストレーション ツールと統合します。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "In a controller-based network architecture, the controller needs to communicate to the\nnetworking devices."
+    },
+    {
+      "testQuestionNo": 51,
+      "sourceQuestionNo": 246,
+      "type": "single",
+      "question": "アクセス ポイントがワイヤレス ネットワークデバイスへのワイヤレス接続を確立および維持するために使用する一意の識別子はどれですか?",
+      "choices": {
+        "A": "VLANID",
+        "B": "SSID",
+        "C": "RFID",
+        "D": "WLANID"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "An SSID is a unique identifier used by a client to establish a connection to a particular\nwireless network. When devices within a network need to communicate with each other, they\nneed to identify the WLAN. Identification is handled through a unique value given to that\nWLAN, known as the SSID."
+    },
+    {
+      "testQuestionNo": 52,
+      "sourceQuestionNo": 249,
+      "type": "single",
+      "question": "デバッグ プロセスがオンになっているデバイスによって異常に多数の syslogメッセージが生成された場合に、他のメッセージを許可しながらデバッグ メッセージがsyslog 経由で送信されるのを防ぐアクションはどれですか。",
+      "choices": {
+        "A": "アクセス リストを使用して syslog メッセージをフィルタリングします。",
+        "B": "グローバル コンフィギュレーション モードでログ モニターをオフにします。",
+        "C": "コンソールへのログ記録を無効にします。",
+        "D": "ログ トラップの重大度レベルを情報に設定します。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "Setting the logging trap severity level to informational prevents debug (which is a lower\npriority) messages from being sent via syslog, while still allowing higher-priority messages."
+    },
+    {
+      "testQuestionNo": 53,
+      "sourceQuestionNo": 265,
+      "type": "single",
+      "question": "フレームスイッチングの特徴は何ですか？",
+      "choices": {
+        "A": "送信元と宛先のMACアドレスを書き換えます",
+        "B": "宛先インターフェースを学習するための検索を実行します",
+        "C": "新しいフレームを受信したときに再送信要求を送信します",
+        "D": "不明な宛先からのフレームを検査してドロップします"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 54,
+      "sourceQuestionNo": 287,
+      "type": "single",
+      "question": "コントロール プレーンの機能は何ですか?",
+      "choices": {
+        "A": "ルーティングテーブル情報を交換します。",
+        "B": "ネットワーク デバイスへの CLI アクセスを提供します。",
+        "C": "転送情報ベースで出力インターフェイスを検索します。",
+        "D": "トラフィックを次のホップに転送します。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "The control plane is the part of a network that controls how data packets are forwarded -\nmeaning how data is sent from one place to another. The process of creating a routing table,\nfor example, is considered part of the control plane. Routers use various protocols to identify\nnetwork paths, and they store these paths in routing tables."
+    },
+    {
+      "testQuestionNo": 55,
+      "sourceQuestionNo": 294,
+      "type": "single",
+      "question": "無線ネットワークにおける暗号化の特徴は何ですか?",
+      "choices": {
+        "A": "ネットワークを攻撃する前にデータ脅威を阻止します",
+        "B": "権限のないユーザーを阻止するためのポリシーを使用します",
+        "C": "文字と数字の組み合わせを含める必要があります",
+        "D": "許可されたユーザーのデータをエンコードおよびデコードします"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 56,
+      "sourceQuestionNo": 303,
+      "type": "single",
+      "question": "どの OSPF コマンドを設定すると、すべてのインターフェースがエリア 0に含まれるようになりますか?",
+      "choices": {
+        "A": "ネットワーク 0.0.0.0 255.255.255.255 エリア 0",
+        "B": "ネットワーク 0.0.0.0 0.0.0.0 エリア 0",
+        "C": "ネットワーク 255.255.255.255 0.0.0.0 エリア 0",
+        "D": "ネットワーク全インターフェースエリア0"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 57,
+      "sourceQuestionNo": 304,
+      "type": "single",
+      "question": "QoS は音声トラフィックをどのように最適化しますか?",
+      "choices": {
+        "A": "帯域幅の使用量を減らす",
+        "B": "パケットロスを減らすことで",
+        "C": "音声トラフィックとビデオ トラフィックを区別することによって",
+        "D": "ジッターを大きくする"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 58,
+      "sourceQuestionNo": 305,
+      "type": "single",
+      "question": "ワンタイムパスワード、ログイン名、個人のスマートフォンを組み合わせて使用​するセキュリティ要素はどれですか?",
+      "choices": {
+        "A": "ルールベースのアクセス制御",
+        "B": "ソフトウェア定義セグメンテーション",
+        "C": "多要素認証",
+        "D": "属性ベースのアクセス制御"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Multifactor Authentication (MFA) enhances security by requiring multiple forms of verification\nbefore granting access. It typically involves:\nSomething you know (e.g., login name and password),\nSomething you have (e.g., a one-time password or code sent to a smartphone), Something\nyou are (e.g., biometrics like fingerprints or facial recognition).\nIn this case, a one-time password (OTP) sent to a smartphone is combined with the login\nname to provide a second layer of security beyond just the password."
+    },
+    {
+      "testQuestionNo": 59,
+      "sourceQuestionNo": 306,
+      "type": "single",
+      "question": "特定のサブネットで First Hop Redundancy Protocol を使用する目的は何ですか?",
+      "choices": {
+        "A": "ループのない物理トポロジーを保証",
+        "B": "宛先 IP アドレス指定に基づいてトラフィックをフィルタリングします",
+        "C": "ネットワーク上のホストにデフォルト ルートを送信します。",
+        "D": "ルーター間でマルチキャスト hello メッセージを転送します"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 60,
+      "sourceQuestionNo": 308,
+      "type": "single",
+      "question": "EIGRP for IPv6 環境でエラーログを表示するには、どのコマンドを入力する必要がありますか?",
+      "choices": {
+        "A": "IPv6 EIGRPネイバーを表示する",
+        "B": "IPv6 EIGRPトポロジを表示",
+        "C": "IPv6 EIGRPトラフィックを表示する",
+        "D": "IPv6 EIGRPイベントを表示する"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "show ip eigrp events\nTo display the Enhanced Interior Gateway Routing Protocol (EIGRP) event log, use the show\nip eigrp events command in user EXEC or privileged EXEC mode.\nhttps://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_eigrp/command/ire-cr-book/ire-\ns1.html#wp3095206170"
+    },
+    {
+      "testQuestionNo": 61,
+      "sourceQuestionNo": 310,
+      "type": "single",
+      "question": "REST API 要求が成功した後に返される HTTP ステータス コードはどれですか?",
+      "choices": {
+        "A": "200",
+        "B": "301",
+        "C": "404",
+        "D": "500"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "After a successful REST API request, the HTTP status code typically returned is 200 OK.\nThe\n200 status code indicates that the request was successful, and the server has fulfilled the\nrequest.\nThe 200 OK status code is commonly used in REST APIs when retrieving or updating a\nresource, indicating that the request was processed successfully, and the server is returning\nthe requested data or confirming the successful completion of the operation."
+    },
+    {
+      "testQuestionNo": 62,
+      "sourceQuestionNo": 313,
+      "type": "single",
+      "question": "UTP ケーブルと STP ケーブルを比較するとどうなりますか?",
+      "choices": {
+        "A": "UTP ケーブルはデータ転送速度が速く信頼性が高く、STPケーブルは遅く信頼性が低くなります。",
+        "B": "STP ケーブルはシールドされており、電磁干渉から保護されますが、UTPには電磁干渉に対する同様の保護がありません。",
+        "C": "STP ケーブルは入手が安価で設置も簡単ですが、UTPケーブルは高価で設置も困難です。",
+        "D": "UTP ケーブルはクロストークや干渉の影響を受けにくく、STPケーブルはクロストークや干渉の影響を受けやすくなります。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 63,
+      "sourceQuestionNo": 322,
+      "type": "single",
+      "question": "コントローラベースのネットワーク アーキテクチャでノースバウンド APIが果たす役割はどれですか?",
+      "choices": {
+        "A": "コントローラと物理ネットワーク ハードウェア間の通信",
+        "B": "デバイスのエラーをコントローラに報告します",
+        "C": "ネットワーク ハードウェアとトラフィックの統計を生成します",
+        "D": "コントローラとアプリケーション間の通信を容易にします"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "A northbound interface is an interface that allows a particular component of a network to\ncommunicate with a higher-level component. Conversely, a southbound interface allows a\nparticular network component to communicate with a lower-level component.\nIn a figurative sense, northbound flow can be thought of as going upward, while southbound\nflow can be thought of as going downward. In architectural diagrams, northbound interfaces\nare drawn at the top of the applicable component, while southbound interfaces are drawn at\nthe bottom of the component. While the terms northbound and southbound can apply to\nalmost any type of network or computer system, in recent years they have been used\nincreasingly in conjunction with application program interfaces (APIs) in software-defined\nnetworking (SDN).\nIn SDN, the southbound interface is the OpenFlow (or alternative) protocol specification. Its\nmain function is to enable communication between the SDN controller and the network nodes\n(both physical and virtual switches and routers) so that the router can discover network\ntopology, define network flows and implement requests relayed to it via northbound APIs.\nThe northbound interface describes the area of protocol-supported communication between\nthe controller and applications or higher layer control programs."
+    },
+    {
+      "testQuestionNo": 64,
+      "sourceQuestionNo": 326,
+      "type": "single",
+      "question": "CONTROLという名前のDHCPプールが作成されました。このプールは、使用可能なIPアドレスの最後から2番目をDHCPクライアントのデフォルトゲートウェイとして使用します。サーバーは172.16.32.15にあります。192.168.52.0/24 サブネット上のクライアントが DHCPサーバーに到達するプロセスの次のステップは何ですか?",
+      "choices": {
+        "A": "IPヘルパーアドレス 172.16.32.15",
+        "B": "IPデフォルトゲートウェイ 192.168.52.253",
+        "C": "IP転送プロトコル UDP 137",
+        "D": "IPデフォルトネットワーク 192.168.52.253"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "The question states that the pool has been created and that it uses the next to last usable IP\naddress as the default gateway for the DHCP clients. So that already implies that B is not the\nanswer. But just to confirm once and for all, 192.168.52.253 is NOT the last usable address,\nthat would be 192.168.52.254. The answer is A because we need to configure a helper\naddress since the DHCP server is on a different subnet."
+    },
+    {
+      "testQuestionNo": 65,
+      "sourceQuestionNo": 329,
+      "type": "multiple",
+      "question": "IPV4 プライベート IP 空間を使用する最も適切な理由はどれですか (2 つ選択してください)",
+      "choices": {
+        "A": "企業内コミュニケーションを可能にする",
+        "B": "NATを実装する",
+        "C": "アプリケーションを接続する",
+        "D": "グローバルアドレス空間を節約するため",
+        "E": "ルーティングオーバーヘッドを管理する"
+      },
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 66,
+      "sourceQuestionNo": 333,
+      "type": "single",
+      "question": "ラーニング ステートとリスニング ステートを回避し、ポートをただちにフォワーディングステートにするスパニング ツリー拡張機能はどれですか?",
+      "choices": {
+        "A": "BPDUフィルター",
+        "B": "PortFast",
+        "C": "バックボーンファスト",
+        "D": "BPDUガード"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "PortFast\nSpanning Tree Portfast causes layer 2 switch interfaces to enter forwarding state\nimmediately, bypassing the listening and learning states. It should be used on ports\nconnected directly to end hosts like servers or workstations. Note: If portfast isn't enabled,\nDHCP timeouts can occur while STP converges, causing more problems."
+    },
+    {
+      "testQuestionNo": 67,
+      "sourceQuestionNo": 359,
+      "type": "multiple",
+      "question": "DHCP サーバーの 2 つの機能は何ですか? (2 つ選択してください。)",
+      "choices": {
+        "A": "ネットワークに追加されたときにDHCPDISCOVERメッセージを発行する",
+        "B": "クライアントのDHCPOFFER要求に応答してIPアドレスを発行する",
+        "C": "集中IP管理をサポートする",
+        "D": "ネットワーク内のホストに動的IP設定を割り当てる",
+        "E": "ユーザーがホストに独自のIPアドレスを割り当てることを防ぐ"
+      },
+      "answer": [
+        "C",
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 68,
+      "sourceQuestionNo": 364,
+      "type": "single",
+      "question": "ゼロデイエクスプロイトとは何ですか?",
+      "choices": {
+        "A": "修正プログラムが公開される前に新たなネットワーク脆弱性が発見された場合",
+        "B": "犯人が二者間の会話に介入し、データを盗み取ったり改ざんしたりすることです。",
+        "C": "ネットワークが悪意のあるトラフィックで飽和状態になり、リソースと帯域幅が過負荷になる状態です。",
+        "D": "攻撃者が SQL サーバーに悪意のあるコードを挿入した場合です。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "\"Zero-day\" is a broad term that describes recently discovered security vulnerabilities that\nhackers can use to attack systems. The term \"zero-day\" refers to the fact that the vendor or\ndeveloper has only just learned of the flaw - which means they have had \"zero days\" to fix it."
+    },
+    {
+      "testQuestionNo": 69,
+      "sourceQuestionNo": 373,
+      "type": "single",
+      "question": "宛先ネットワークにトラフィックを送信するために使用されるインターフェースはどれですか?O 10.15.167.141/29 [110/6292] F0/5 経由O 10.15.167.141/29 [110/28805] F0/8 経由R 10.15.167.149/29 [120/11] F0/10経由R 10.15.167.141/29 [120/4] F0/18経由",
+      "choices": {
+        "A": "F0/5",
+        "B": "F0/8",
+        "C": "F0/10",
+        "D": "F0/18"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "The OSPF route (O) has a lower administrative distance (110) than RIP (120). Among the\nOSPF routes, F0/5 has the lowest metric (6292), so traffic is sent via F0/5."
+    },
+    {
+      "testQuestionNo": 70,
+      "sourceQuestionNo": 381,
+      "type": "single",
+      "question": "アクセス ポートのデフォルト VLAN とは何ですか?",
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "10",
+        "D": "1024"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 71,
+      "sourceQuestionNo": 393,
+      "type": "single",
+      "question": "ワイヤレス コントローラーによって提供されるサービスとは何ですか?",
+      "choices": {
+        "A": "インターネットからの脅威を軽減します。",
+        "B": "高密度ネットワークにおける干渉を管理します。",
+        "C": "有線デバイスと無線デバイス間のレイヤー 3 ルーティングを提供します。",
+        "D": "有線デバイスに IP アドレスを発行します。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 72,
+      "sourceQuestionNo": 396,
+      "type": "single",
+      "question": "リンク アグリゲーションは Cisco ワイヤレス LANコントローラでどのように実装されますか?",
+      "choices": {
+        "A": "クライアント トラフィックを渡すには、2 つ以上のポートを設定する必要があります。",
+        "B": "EtherChannelは「mode active」に設定する必要があります",
+        "C": "有効にすると、WLC帯域幅は500 Mbpsに低下します。",
+        "D": "クライアントトラフィックを通過させるには、1つの機能的な物理ポートが必要です。"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "Link aggregation (LAG) is a partial implementation of the 802.3ad port aggregation standard.\nIt bundles all of the controller's distribution system ports into a single 802.3ad port channel.\nRestriction for Link aggregation:\n- LAG requires the EtherChannel to be configured for `mode on' on both the controller and the\nCatalyst switch -> Answer B is not correct.\n- If the recommended load-balancing method cannot be configured on the Catalyst switch,\nthen configure the LAG connection as a single member link or disable LAG on the controller -\n> Answer A is not correct while answer D is correct.\nReference: https://www.cisco.com/c/en/us/td/docs/wireless/controller/7-5/configuration-\nguide/b_cg75/ b_cg75_chapter_0100010.html"
+    },
+    {
+      "testQuestionNo": 73,
+      "sourceQuestionNo": 397,
+      "type": "multiple",
+      "question": "ネットワーク エンジニアは、マネージド サービス クライアントに属するスイッチを新しいCisco Catalystスイッチに交換しています。新しいスイッチは、交換を含む更新されたセキュリティ基準に合わせて構成されます。暗号化された接続を使用し、モジュラス サイズを 1024 から 2 倍にする Telnetサービス。エンジニアが新しいスイッチに設定する必要がある 2つのコマンドはどれですか? （2つ選んでください。）",
+      "choices": {
+        "A": "暗号鍵生成 RSA 一般鍵モジュラス 1024",
+        "B": "トランスポート入力すべて",
+        "C": "暗号鍵生成 RSA 使用鍵",
+        "D": "暗号鍵生成 RSA モジュラス 2048",
+        "E": "トランスポート入力 ssh"
+      },
+      "answer": [
+        "D",
+        "E"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 74,
+      "sourceQuestionNo": 399,
+      "type": "multiple",
+      "question": "大規模な OSPF ネットワークで階層型設計が使用される理由を説明するものを 3つ選択してください。(3 つ選択してください)",
+      "choices": {
+        "A": "収束を早める",
+        "B": "ルーティングのオーバーヘッドを削減する",
+        "C": "ルーターを分散層スイッチに置き換えることでコストを削減します。",
+        "D": "帯域幅を増やすことでレイテンシを減らします。",
+        "E": "ネットワークの不安定性をネットワークの単一領域に限定します。",
+        "F": "ルーターの構成の複雑さを軽減します。"
+      },
+      "answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "explanation": "Hierarchical design of OSPF (basically means that you can separate the larger internetwork\ninto smaller internetworks called areas) helps us create a network with all features listed\nabove (decrease routing overhead, speed up convergence, confine network instability to\nsingle areas of the network)."
+    },
+    {
+      "testQuestionNo": 75,
+      "sourceQuestionNo": 404,
+      "type": "single",
+      "question": "ローカル ネットワークに接続しようとするデバイスを認証する IEEEメカニズムはどれですか。",
+      "choices": {
+        "A": "802.1x",
+        "B": "802.11",
+        "C": "802.2x",
+        "D": "802.3x"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 76,
+      "sourceQuestionNo": 407,
+      "type": "multiple",
+      "question": "デフォルト VLAN を示す VLAN ID はどれですか (2 つ選択してください)。",
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "1005",
+        "D": "1006",
+        "E": "4096"
+      },
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "VLAN 1 is a system default VLAN, you can use this VLAN but you cannot delete it. By default\nVLAN 1 is use for every port on the switch.\nStandard VLAN range from 1002-1005 it's Cisco default for FDDI and Token Ring. You\ncannot delete VLANs 1002-1005. mostly we don't use VLAN in this range."
+    },
+    {
+      "testQuestionNo": 77,
+      "sourceQuestionNo": 416,
+      "type": "single",
+      "question": "フローティング スタティック ルートが設定されている場合、プライマリルートに障害が発生したときにバックアップルートが確実に使用されるようにするアクションはどれですか?",
+      "choices": {
+        "A": "フローティング スタティック ルートは、プライマリルートよりも高いアドミニストレーティブディスタンスを持つ必要があるため、バックアップとして使用されます。",
+        "B": "バックアップ ルートがセカンダリになるように、プライマリルートのアドミニストレーティブ ディスタンスを大きくする必要があります。",
+        "C": "フローティング スタティック ルートは、プライマリルートよりもアドミニストレーティブディスタンスを低くする必要があるため、バックアップとして使用されます。",
+        "D": "ルーティング テーブルにルートをインストールするには、default-information originateコマンドを設定する必要があります。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "By default, IOS considers static routes better than OSPF-learned routes. By default, IOS\ngives static routes an administrative distance of 1 A floating static route floats or moves into\nand out of the IP routing table depending on whether the better (lower) administrative\ndistance route learned by the routing protocol happens to exist currently."
+    },
+    {
+      "testQuestionNo": 78,
+      "sourceQuestionNo": 420,
+      "type": "multiple",
+      "question": "IT クローゼット外のオフィススペースに設置されているネットワークポートが悪用されるのを防ぐための 2 つの推奨事項は何ですか (2 つ選択してください)",
+      "choices": {
+        "A": "静的ARPエントリを設定する",
+        "B": "ポートのPortFast機能を有効にする",
+        "C": "ポートベースの認証を実装する",
+        "D": "ポートを固定速度に設定する",
+        "E": "未使用のポートをシャットダウンする"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "explanation": "The 802.1x standard defines a client-server-based access control and authentication protocol\nthat prevents unauthorized clients from connecting to a LAN through publicly accessible ports\nunless they are properly authenticated. The authentication server authenticates each client\nconnected to a switch port before making available any services offered by the switch or the\nLAN.\nUnused or \"empty\" ports within any network device pose a security risk, as someone might\nplug a cable into them and connect an unauthorised device to the network. This can lead to a\nnumber of issues, including:\nNetwork not functioning as it should\nNetwork information vulnerable to outsiders\nTherefore, you should shut down every port that is not used on routers, switches, and other\nnetwork devices. Depending upon the device, the shutdown state might be the default, but\nyou should always verify this."
+    },
+    {
+      "testQuestionNo": 79,
+      "sourceQuestionNo": 421,
+      "type": "single",
+      "question": "SDN コントローラがネットワークを動的に変更できるようにする APIのタイプはどれですか?",
+      "choices": {
+        "A": "ノースバウンド API",
+        "B": "REST API",
+        "C": "SOAP API",
+        "D": "サウスバウンド API"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Data_Center/VMDC/SDN/SDN.ht\nml"
+    },
+    {
+      "testQuestionNo": 80,
+      "sourceQuestionNo": 430,
+      "type": "single",
+      "question": "エンジニアがVoIPハンドセットに接続されたスイッチポートを設定しています。音声VLAN 4で手動で割り当てられたMACアドレスabcd.abcd.abcdを使用してポートセキュリティを有効にするには、どのコマンドを設定する必要がありますか？",
+      "choices": {
+        "A": "スイッチポート ポートセキュリティ MACアドレス abcd.abcd.abcd VLAN 4",
+        "B": "スイッチポート ポートセキュリティ MACアドレス abcd.abcd.abcd VLAN 音声",
+        "C": "スイッチポート ポートセキュリティ MAC アドレス abcd.abcd.abcd",
+        "D": "スイッチポート ポートセキュリティ MAC アドレス スティッキー abcd.abcd.abcd VLAN"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "To enable port security with a manually assigned MAC address, the engineer would use the\n\"switchport port-security mac-address abcd.abcd.abcd\" command. This command sets the\nallowed MAC address for the port. The VLAN assignment for the VoIP handset is separate\nand not included in the port-security command."
+    },
+    {
+      "testQuestionNo": 81,
+      "sourceQuestionNo": 433,
+      "type": "single",
+      "question": "VRRP の利点は何ですか?",
+      "choices": {
+        "A": "ソースから 2 ホップ以上離れた宛先にトラフィックの負荷分散を提供します。",
+        "B": "2 台以上のルーターを使用する LAN で、デフォルトゲートウェイの冗長性を提供します。",
+        "C": "ネイバーが相互にルーティング テーブル情報を共有できるようにします。",
+        "D": "すべてのトラフィックをルート ブリッジに転送することで、レイヤ 2 LANでのループを防ぎます。ルート ブリッジは、最終的な転送決定を行います。"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 82,
+      "sourceQuestionNo": 434,
+      "type": "single",
+      "question": "インターネットにアクセスする前にユーザーが認証、登録、利用規約に同意するためのキャプティブ ポータルを提供する AP 機能はどれですか。",
+      "choices": {
+        "A": "ワンクリック",
+        "B": "ホットスポット",
+        "C": "強化されたBluetooth",
+        "D": "家全体"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "The Hotspot feature provides a captive portal that prompts users to authenticate, register, or\naccept terms and conditions before accessing the internet. This is commonly seen in public\nWi-Fi networks, such as those in cafes, hotels, and airports, where users must interact with a\nportal page. Captive portals are often used for guest access, allowing network administrators\nto control and monitor internet access while providing a seamless onboarding experience for\nusers."
+    },
+    {
+      "testQuestionNo": 83,
+      "sourceQuestionNo": 436,
+      "type": "single",
+      "question": "ファイアウォール経由で TCP 20 および 21を許可する社内イントラネット上で大きなファイルを転送するには、どのプロトコルを使用する必要がありますか?",
+      "choices": {
+        "A": "SMTP",
+        "B": "REST API",
+        "C": "TFTP",
+        "D": "FTP"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 84,
+      "sourceQuestionNo": 442,
+      "type": "single",
+      "question": "管理者がリモート アクセス IPsec VPN の実装を選択するのはなぜですか?",
+      "choices": {
+        "A": "インターネット経由でリモートユーザーとプライベートネットワークの間に暗号化されたトンネルを確立する",
+        "B": "ネゴシエートされたVPNゲートウェイを介してデバイスとユーザー間の認証に暗号化を使用する",
+        "C": "HTTPSサーバー、認証サブシステム、およびエンドユーザー間の安全なリンクを提供する",
+        "D": "SSL を使用した Webブラウザ経由でインターネットが利用可能な任意の場所から企業ネットワークにアクセスできるようにします。"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": "A remote access IPsec VPN is used to securely connect remote users to a private network\nover the internet by establishing an encrypted tunnel."
+    },
+    {
+      "testQuestionNo": 85,
+      "sourceQuestionNo": 443,
+      "type": "single",
+      "question": "ソフトウェア定義アーキテクチャ内のコントロール プレーンとデータプレーン間のインターフェイスはどこにありますか?",
+      "choices": {
+        "A": "制御層とインフラストラクチャ層",
+        "B": "アプリケーション層とインフラストラクチャ層",
+        "C": "アプリケーション層と管理層",
+        "D": "制御層とアプリケーション層"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 86,
+      "sourceQuestionNo": 445,
+      "type": "single",
+      "question": "10GBase-SR と 10GBase-LR インターフェースで共有されるプロパティはどれですか?",
+      "choices": {
+        "A": "どちらもシングルモードファイバータイプを使用します。",
+        "B": "どちらも伝送には UTP ケーブル メディアが必要です。",
+        "C": "どちらも伝送には光ファイバーケーブルメディアが必要です。",
+        "D": "どちらもマルチモード ファイバー タイプを使用します。"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 87,
+      "sourceQuestionNo": 446,
+      "type": "single",
+      "question": "アクセス ポイントがワイヤレス LAN コントローラに参加しようとしているときに、APマネージャ インターフェイスに送信されるメッセージはどれですか?",
+      "choices": {
+        "A": "ディスカバリ応答",
+        "B": "DHCP リクエスト",
+        "C": "DHCP 検出",
+        "D": "ディスカバリ リクエスト"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 88,
+      "sourceQuestionNo": 454,
+      "type": "single",
+      "question": "企業のオフィスは建物の 4 つのフロアを占めています。- 1 階には 24 人のユーザーがいます。- 2階には29人のユーザーがいます。- 3階には28人のユーザーがいます。- 4階には22人のユーザーがいます。ルータ構成の IP アドレスを要約して最も効率的に配布するサブネットはどれですか。",
+      "choices": {
+        "A": "サマリーとして 192.168.0.0/24、各フロアごとに 192.168.0.0/28",
+        "B": "192.168.0.0/23 をサマリーとして、192.168.0.0/25 を各フロアとして",
+        "C": "サマリーとして 192.168.0.0/25、各フロアごとに 192.168.0.0/27",
+        "D": "サマリーとして 192.168.0.0/26、各フロアごとに 192.168.0.0/29"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "A /27 supports up to 30 usable IP addresses per subnet, and a /25 will aggregate 4 /27's."
+    },
+    {
+      "testQuestionNo": 89,
+      "sourceQuestionNo": 455,
+      "type": "single",
+      "question": "ネットワーク上のエンドポイントの機能は何ですか?",
+      "choices": {
+        "A": "ネットワーク上のVLAN間でトラフィックを転送します",
+        "B": "サーバーとクライアントデバイスをネットワークに接続します",
+        "C": "ユーザーがデータを記録し、ファイルサーバーに送信できるようにします。",
+        "D": "建物内のユーザーに無線サービスを提供する"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "An endpoint is a remote computing device that communicates back and forth with a network\nto which it is connected. Examples of endpoints include:\n- Desktops\n- Laptops\n- Smartphones\n- Tablets\n- Servers\n- Workstations\n- Internet-of-things (IoT) devices"
+    },
+    {
+      "testQuestionNo": 90,
+      "sourceQuestionNo": 456,
+      "type": "single",
+      "question": "展示を参照してください。「警告」という言葉はどの構造に直接含まれていますか？",
+      "choices": {
+        "A": "配列",
+        "B": "オブジェクト",
+        "C": "ブール値",
+        "D": "文字列"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 91,
+      "sourceQuestionNo": 457,
+      "type": "single",
+      "question": "複数の DNSホストにルックアップ呼び出しを送信するスケジュールされたアルゴリズムを有効にするには、Cisco IOS デバイスでどのコマンドを入力できますか。",
+      "choices": {
+        "A": "IPドメインラウンドロビン",
+        "B": "IPネームサーバー 192.168.10.14 192.168.10.15",
+        "C": "IPドメイン検索",
+        "D": "IPドメインリスト"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 92,
+      "sourceQuestionNo": 462,
+      "type": "multiple",
+      "question": "光ファイバーケーブルと銅線ケーブルを区別する 2 つの事実は何ですか? (2つ選択してください。)",
+      "choices": {
+        "A": "パッチケーブルを購入する場合、コストが安くなります。",
+        "B": "PoE デバイスに電流をより遠くまで伝送します。",
+        "C": "より優れたスループット オプションを提供します。",
+        "D": "温度や湿度の変化に対してより敏感です。",
+        "E": "信号をより長い距離に伝送します。"
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 93,
+      "sourceQuestionNo": 478,
+      "type": "single",
+      "question": "ドロップ確率に基づいてサブクラスに分割される DSCPのホップ単位転送動作はどれですか。",
+      "choices": {
+        "A": "迅速",
+        "B": "デフォルト",
+        "C": "保証された",
+        "D": "クラスセレクター"
+      },
+      "answer": [
+        "A"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 94,
+      "sourceQuestionNo": 479,
+      "type": "single",
+      "question": "組織は、クラウド提供サービスの使用を開始することを決定しました。組織が独自のオペレーティング システムを仮想マシンにインストールできるようにするクラウドサービスはどれですか?",
+      "choices": {
+        "A": "サービスとしてのプラットフォーム",
+        "B": "サービスとしてのソフトウェア",
+        "C": "サービスとしてのネットワーク",
+        "D": "サービスとしてのインフラストラクチャ"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": "Below are the 3 cloud supporting services cloud providers provide to customer:\n+ SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed\nby a third- party vendor and whose interface is accessed on the clients' side. Most SaaS\napplications can be run directly from a web browser without any downloads or installations\nrequired, although some require plugins.\n+ PaaS (Platform as a Service): are used for applications, and other development, while\nproviding cloud components to software. What developers gain with PaaS is a framework\nthey can build upon to develop or customize applications. PaaS makes the development,\ntesting, and deployment of applications quick, simple, and cost-effective. With this\ntechnology, enterprise operations, or a third-party provider, can manage OSes, virtualization,\nservers, storage, networking, and the PaaS software itself. Developers, however, manage\nthe applications.\n+ IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and\nmanaging remote datacenter infrastructures, such as compute (virtualized or bare metal),\nstorage, networking, and networking services (e.g. firewalls). Instead of having to purchase\nhardware outright, users can purchase IaaS based on consumption, similar to electricity or\nother utility billing.\nIn general, IaaS provides hardware so that an organization can install their own operating\nsystem."
+    },
+    {
+      "testQuestionNo": 95,
+      "sourceQuestionNo": 483,
+      "type": "single",
+      "question": "中間者攻撃を防ぐために使用されるセキュリティ方法はどれですか?",
+      "choices": {
+        "A": "認可",
+        "B": "認証",
+        "C": "アンチリプレイ",
+        "D": "会計"
+      },
+      "answer": [
+        "B"
+      ],
+      "explanation": "Authentication ensures that the parties involved in communication confirm their identities to\neach other, typically using cryptographic techniques such as public key cryptography (e.g.,\nRSA) or digital certificates. This verification step prevents attackers from impersonating\nlegitimate parties and intercepting or altering data, which is the crux of MITM attacks."
+    },
+    {
+      "testQuestionNo": 96,
+      "sourceQuestionNo": 486,
+      "type": "single",
+      "question": "スパイン アンド リーフ トポロジのスイッチはどのように相互接続されていますか?",
+      "choices": {
+        "A": "各リーフ スイッチはいずれかのスパイン スイッチに接続されます。",
+        "B": "各リーフ スイッチは 2 つのスパイン スイッチに接続され、ループを形成します。",
+        "C": "各リーフ スイッチは各スパイン スイッチに接続されます。",
+        "D": "各リーフ スイッチは中央のリーフ スイッチに接続され、コア スパインスイッチにアップリンクされます。"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "Each leaf switch connects to all spine switches, which creates a large non-blocking fabric,\nincreasing the level of redundancy and reducing traffic bottlenecks."
+    },
+    {
+      "testQuestionNo": 97,
+      "sourceQuestionNo": 487,
+      "type": "single",
+      "question": "最大 MAC アドレス数を超えたため、スイッチ ポートでポートセキュリティ違反が発生しました。セキュリティ違反数を増やして SNMPトラップを転送するには、どのコマンドを設定する必要がありますか?",
+      "choices": {
+        "A": "スイッチポートポートセキュリティ違反アクセス",
+        "B": "スイッチポートポートセキュリティ違反保護",
+        "C": "スイッチポートポートセキュリティ違反制限",
+        "D": "スイッチポートポートセキュリティ違反シャットダウン"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 98,
+      "sourceQuestionNo": 488,
+      "type": "single",
+      "question": "PC1 は、新しくインストールされた PC2 にトラフィックを送信しようとします。PC2 MACアドレスはスイッチの MAC アドレス テーブルにリストされていないため、スイッチは同じVLAN内のすべてのポートにパケットを送信します。これはどのスイッチングの概念を表していますか?",
+      "choices": {
+        "A": "MAC アドレス エージング",
+        "B": "MACアドレステーブル",
+        "C": "フレームフラッディング",
+        "D": "スパニング ツリー プロトコル"
+      },
+      "answer": [
+        "C"
+      ],
+      "explanation": "When a switch receives a frame destined for an unknown MAC address (one not in its MAC\naddress table), it floods the frame out all ports in the same VLAN (except the port it was\nreceived on). This is called frame flooding and ensures the packet reaches its destination\neven if the switch doesn't yet know where the destination device is located."
+    },
+    {
+      "testQuestionNo": 99,
+      "sourceQuestionNo": 489,
+      "type": "single",
+      "question": "ワイヤレス LAN コントローラ GUI で WPA2 PSK を使用する WLANが設定されている場合、どのフォーマットがサポートされますか?",
+      "choices": {
+        "A": "ユニコード",
+        "B": "base64",
+        "C": "10 進数",
+        "D": "アスキー"
+      },
+      "answer": [
+        "D"
+      ],
+      "explanation": ""
+    },
+    {
+      "testQuestionNo": 100,
+      "sourceQuestionNo": 492,
+      "type": "multiple",
+      "question": "OSI モデルの目的に関する次の 2 つの記述のうち正しいものはどれですか。(2つ選択してください)",
+      "choices": {
+        "A": "各層で発生するネットワーク機能を定義する",
+        "B": "情報がネットワークを通じてどのように移動するかを理解するのに役立ちます",
+        "C": "1つのレイヤーの変更は他のレイヤーに影響を与えません",
+        "D": "階層化されたアプローチにより信頼性の高いデータ配信を保証します"
+      },
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": ""
+    }
+  ]
+}
