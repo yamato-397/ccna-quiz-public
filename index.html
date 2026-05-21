@@ -1,939 +1,228 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCNA 200-301 クイズ</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #f0f4f8;
-    --card: #ffffff;
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --correct: #16a34a;
-    --wrong: #dc2626;
-    --text: #1e293b;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --radius: 12px;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 16px;
-  }
-
-  /* ------------------------------------------------------------------ */
-  /* Login screen                                                         */
-  /* ------------------------------------------------------------------ */
-  #login-screen {
-    position: fixed;
-    inset: 0;
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    padding: 16px;
-  }
-  .login-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    padding: 36px 28px;
-    width: 100%;
-    max-width: 360px;
-  }
-  .login-card h2 {
-    color: var(--primary);
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 6px;
-  }
-  .login-card .login-sub {
-    color: var(--muted);
-    font-size: 0.83rem;
-    text-align: center;
-    margin-bottom: 28px;
-  }
-  .login-card form { display: flex; flex-direction: column; gap: 10px; }
-  .login-card label { font-size: 0.78rem; font-weight: 600; color: var(--muted); margin-bottom: -6px; }
-  .login-card input {
-    padding: 10px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.15s;
-    width: 100%;
-  }
-  .login-card input:focus { border-color: var(--primary); }
-  .login-error { color: var(--wrong); font-size: 0.8rem; min-height: 1.2em; }
-  .login-card button[type="submit"] { margin-top: 8px; padding: 12px; font-size: 1rem; width: 100%; }
-
-  /* ------------------------------------------------------------------ */
-  /* Header                                                               */
-  /* ------------------------------------------------------------------ */
-  header { text-align: center; margin-bottom: 20px; }
-  .header-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 4px;
-  }
-  header h1 { font-size: 1.5rem; color: var(--primary); }
-  header p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
-  .header-user-area { display: flex; align-items: center; gap: 8px; }
-  .header-user-name { font-size: 0.78rem; color: var(--muted); }
-
-  /* ------------------------------------------------------------------ */
-  /* Stats bar                                                            */
-  /* ------------------------------------------------------------------ */
-  #stats-bar {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .stat-box {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 14px;
-    text-align: center;
-    min-width: 76px;
-  }
-  .stat-box .val { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
-  .stat-box .lbl { font-size: 0.68rem; color: var(--muted); }
-
-  /* ------------------------------------------------------------------ */
-  /* Controls                                                             */
-  /* ------------------------------------------------------------------ */
-  #controls {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  button {
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    transition: opacity 0.15s;
-  }
-  button:disabled { opacity: 0.4; cursor: default; }
-  button:not(:disabled):hover { opacity: 0.85; }
-
-  .btn-primary { background: var(--primary); color: #fff; }
-  .btn-outline {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-  }
-  .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
-  .btn-danger { background: var(--wrong); color: #fff; }
-
-  /* Mode group */
-  .mode-group {
-    display: flex;
-    flex-wrap: wrap;
-    background: var(--border);
-    border-radius: 8px;
-    padding: 3px;
-    gap: 3px;
-  }
-  .mode-group button {
-    border-radius: 6px;
-    background: transparent;
-    color: var(--muted);
-    font-weight: 500;
-    font-size: 0.8rem;
-    padding: 6px 10px;
-  }
-  .mode-group button.active {
-    background: var(--card);
-    color: var(--primary);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
-
-  /* ------------------------------------------------------------------ */
-  /* Quiz card                                                            */
-  /* ------------------------------------------------------------------ */
-  #quiz-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 24px;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  #question-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-  .meta-left { display: flex; align-items: center; gap: 8px; }
-
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 600;
-  }
-  .badge-multiple { background: #ede9fe; color: #6d28d9; }
-  .badge-single   { background: #e0f2fe; color: #0369a1; }
-  .badge-mistake  { background: #fee2e2; color: var(--wrong); }
-
-  #question-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
-  }
-
-  /* Choices */
-  .choice-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-
-  .choice-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px 14px;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
-    line-height: 1.5;
-  }
-  .choice-label:hover { border-color: var(--primary); background: #eff6ff; }
-  .choice-label input { margin-top: 3px; flex-shrink: 0; }
-
-  .choice-label.correct  { border-color: var(--correct); background: #f0fdf4; }
-  .choice-label.wrong    { border-color: var(--wrong);   background: #fef2f2; }
-
-  .choice-key {
-    font-weight: 700;
-    color: var(--primary);
-    min-width: 1.2em;
-    flex-shrink: 0;
-  }
-
-  /* Result banner */
-  #result-banner {
-    display: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  #result-banner.correct { background: #dcfce7; color: var(--correct); }
-  #result-banner.wrong   { background: #fee2e2; color: var(--wrong); }
-
-  /* Explanation */
-  #explanation-box {
-    display: none;
-    background: #f8fafc;
-    border-left: 4px solid var(--primary);
-    border-radius: 0 8px 8px 0;
-    padding: 14px 16px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    white-space: pre-wrap;
-  }
-  #explanation-box .exp-title {
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 6px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  /* Nav */
-  #nav-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Progress bar */
-  #progress-wrap {
-    background: var(--border);
-    border-radius: 4px;
-    height: 6px;
-    margin-bottom: 16px;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #progress-bar {
-    height: 100%;
-    background: var(--primary);
-    border-radius: 4px;
-    transition: width 0.3s;
-  }
-
-  /* Loading / empty screens */
-  #screen-loading, #screen-empty {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--muted);
-  }
-
-  /* Mode notice */
-  #review-notice {
-    display: none;
-    background: #fffbeb;
-    border: 1px solid #fbbf24;
-    border-radius: 8px;
-    padding: 10px 16px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #92400e;
-    margin-bottom: 12px;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (max-width: 480px) {
-    #quiz-card { padding: 16px; }
-    header h1 { font-size: 1.25rem; }
-    .stat-box .val { font-size: 1.1rem; }
-    .mode-group button { font-size: 0.72rem; padding: 5px 8px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>CCNA対策クイズ</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="app">
 
-<!-- ================================================================ -->
-<!-- LOGIN SCREEN                                                       -->
-<!-- ================================================================ -->
-<div id="login-screen" style="display:none">
-  <div class="login-card">
-    <h2>CCNA 200-301 クイズ</h2>
-    <p class="login-sub">ログインして学習を開始してください。</p>
-    <form onsubmit="handleLogin(event)">
-      <label for="login-id">ユーザーID</label>
-      <input id="login-id" type="text" autocomplete="username" placeholder="ユーザーIDを入力" required>
-      <label for="login-pass">パスワード</label>
-      <input id="login-pass" type="password" autocomplete="current-password" placeholder="パスワードを入力" required>
-      <p id="login-error" class="login-error"></p>
-      <button type="submit" class="btn-primary">ログイン</button>
-    </form>
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!-- MAIN APP                                                           -->
-<!-- ================================================================ -->
-<div id="main-app" style="display:none">
-
-<header>
-  <div class="header-top">
-    <h1>CCNA 200-301 クイズ</h1>
-    <div class="header-user-area">
-      <span id="header-user" class="header-user-name"></span>
-      <button class="btn-outline btn-sm" onclick="logout()">ログアウト</button>
+  <!-- ===== LOGIN VIEW ===== -->
+  <div id="view-login" class="view">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-logo">
+          <span class="logo-icon">&#9741;</span>
+          <h1>CCNA対策クイズ</h1>
+          <p class="login-subtitle">社内学習用</p>
+        </div>
+        <form id="login-form" autocomplete="off">
+          <div class="form-group">
+            <label for="login-id">ID</label>
+            <input type="text" id="login-id" placeholder="ユーザーID" autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="login-pw">パスワード</label>
+            <input type="password" id="login-pw" placeholder="パスワード" autocomplete="current-password">
+          </div>
+          <div id="login-error" class="login-error hidden">IDまたはパスワードが正しくありません</div>
+          <button type="submit" class="btn btn-primary btn-full">ログイン</button>
+        </form>
+        <p class="login-note">※ 社内学習用の簡易ゲートです。セキュリティ目的ではありません。</p>
+      </div>
     </div>
   </div>
-  <p id="total-count-label">問題を読み込んでいます...</p>
-</header>
 
-<div id="stats-bar">
-  <div class="stat-box"><div class="val" id="stat-answered">0</div><div class="lbl">解答済み</div></div>
-  <div class="stat-box"><div class="val" id="stat-correct">0</div><div class="lbl">正解</div></div>
-  <div class="stat-box"><div class="val" id="stat-rate">-</div><div class="lbl">正答率</div></div>
-  <div class="stat-box"><div class="val" id="stat-wrong-count">0</div><div class="lbl">不正解</div></div>
-  <div class="stat-box"><div class="val" id="stat-total-mistakes">0</div><div class="lbl">総間違い回数</div></div>
-</div>
-
-<div id="controls">
-  <div class="mode-group">
-    <button id="btn-mode-order"       class="active" onclick="setMode('order')">番号順</button>
-    <button id="btn-mode-random"                     onclick="setMode('random')">ランダム</button>
-    <button id="btn-mode-review"                     onclick="setMode('review')">復習</button>
-    <button id="btn-mode-most-wrong"                 onclick="setMode('most-wrong')">間違い多い順</button>
-    <button id="btn-mode-unanswered"                 onclick="setMode('unanswered')">未回答のみ</button>
+  <!-- ===== PORTAL VIEW ===== -->
+  <div id="view-portal" class="view hidden">
+    <header class="portal-header">
+      <h1 class="portal-title">&#9741; CCNA対策クイズ</h1>
+      <button id="logout-btn" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+    <main class="portal-main">
+      <p class="portal-desc">学習したいカテゴリを選んでください</p>
+      <div class="portal-cards">
+        <div class="portal-card" id="card-quiz">
+          <div class="card-icon">&#128196;</div>
+          <h2 class="card-title">4択問題</h2>
+          <p class="card-desc">選択問題 397問<br>単一・複数回答対応</p>
+          <div class="card-stats" id="quiz-portal-stats">
+            <span id="quiz-stat-answered">0</span> / 397 回答済み
+          </div>
+          <button class="btn btn-primary btn-full card-btn">スタート</button>
+        </div>
+        <div class="portal-card" id="card-dnd">
+          <div class="card-icon">&#128290;</div>
+          <h2 class="card-title">D&amp;D問題</h2>
+          <p class="card-desc">ドラッグ&amp;ドロップ 27問<br>Grouping / Matching対応</p>
+          <div class="card-stats" id="dnd-portal-stats">
+            <span id="dnd-stat-answered">0</span> / 27 回答済み
+          </div>
+          <button class="btn btn-primary btn-full card-btn">スタート</button>
+        </div>
+      </div>
+    </main>
   </div>
-  <button class="btn-outline btn-sm" onclick="resetProgress()">進捗リセット</button>
-  <button class="btn-danger  btn-sm" onclick="resetMistakes()">間違い回数リセット</button>
-</div>
 
-<div id="review-notice">
-  <span id="review-notice-text"></span>（<span id="review-count">0</span>問）
-</div>
+  <!-- ===== QUIZ VIEW ===== -->
+  <div id="view-quiz" class="view hidden">
+    <header class="view-header">
+      <button id="quiz-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
+      <div class="view-header-title">4択問題</div>
+      <button id="quiz-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
 
-<div id="progress-wrap"><div id="progress-bar" style="width:0%"></div></div>
-
-<div id="screen-loading">読み込み中...</div>
-<div id="screen-empty" style="display:none">
-  <p>表示できる問題がありません。</p>
-  <p style="margin-top:8px;font-size:0.85rem;">このモードで対象となる問題がありません。</p>
-</div>
-
-<div id="quiz-card" style="display:none">
-  <div id="question-meta">
-    <div class="meta-left">
-      <span id="question-pos">1 / 100</span>
-      <span id="question-mistake" class="badge badge-mistake" style="display:none"></span>
+    <!-- Progress bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="quiz-progress-bar"></div>
     </div>
-    <span id="question-badge" class="badge badge-single">単一選択</span>
+
+    <!-- Stats row -->
+    <div class="quiz-stats-row">
+      <span id="quiz-position">1 / 397</span>
+      <span id="quiz-accuracy-display">正答率 - %</span>
+      <button id="quiz-reset-history" class="btn btn-ghost btn-xs">履歴リセット</button>
+    </div>
+
+    <!-- Filters -->
+    <div class="quiz-filters">
+      <div class="filter-row">
+        <label class="filter-label">Part:</label>
+        <select id="filter-part" class="filter-select">
+          <option value="">全て</option>
+          <option value="part_①">Part ①</option>
+          <option value="part_②">Part ②</option>
+          <option value="part_③">Part ③</option>
+          <option value="part_④">Part ④</option>
+          <option value="part_⑤">Part ⑤</option>
+        </select>
+      </div>
+      <div class="filter-row filter-checks">
+        <label class="filter-check">
+          <input type="checkbox" id="filter-unanswered"> 未回答のみ
+        </label>
+        <label class="filter-check">
+          <input type="checkbox" id="filter-wrong"> 間違えのみ
+        </label>
+        <label class="filter-check">
+          <input type="checkbox" id="filter-random"> シャッフル出題
+        </label>
+      </div>
+    </div>
+
+    <!-- Question card -->
+    <div class="question-card" id="quiz-card">
+      <div class="question-meta">
+        <span class="q-id" id="q-displayId">Q1</span>
+        <span class="q-part" id="q-part">Part ①</span>
+        <span class="q-multi hidden" id="q-multi-badge">複数選択可</span>
+        <span class="q-status" id="q-status-badge"></span>
+      </div>
+
+      <div class="question-text" id="q-text"></div>
+
+      <div class="question-image-wrap hidden" id="q-image-wrap">
+        <img id="q-image" src="" alt="問題画像" class="question-image">
+      </div>
+
+      <div class="choices-container" id="choices-container"></div>
+
+      <div class="answer-actions">
+        <button class="btn btn-primary" id="submit-btn">回答する</button>
+      </div>
+
+      <div class="feedback-area hidden" id="feedback-area">
+        <div class="feedback-result" id="feedback-result"></div>
+        <div class="feedback-correct" id="feedback-correct"></div>
+        <div class="feedback-explanation" id="feedback-explanation"></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="quiz-nav">
+      <button class="btn btn-outline" id="prev-btn">← 前の問題</button>
+      <button class="btn btn-outline" id="next-btn">次の問題 →</button>
+    </div>
   </div>
-  <div id="question-text"></div>
-  <div class="choice-list" id="choice-list"></div>
-  <div id="result-banner"></div>
-  <div id="explanation-box"><div class="exp-title">解説</div><div id="explanation-text"></div></div>
-  <div id="nav-buttons">
-    <button class="btn-outline" id="btn-prev" onclick="navigate(-1)">← 前へ</button>
-    <button class="btn-primary" id="btn-submit" onclick="submitAnswer()">回答する</button>
-    <button class="btn-primary" id="btn-next" onclick="navigate(1)" style="display:none">次へ →</button>
+
+  <!-- ===== D&D VIEW ===== -->
+  <div id="view-dnd" class="view hidden">
+    <header class="view-header">
+      <button id="dnd-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
+      <div class="view-header-title">D&amp;D問題</div>
+      <button id="dnd-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+
+    <!-- Progress -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="dnd-progress-bar"></div>
+    </div>
+    <div class="quiz-stats-row">
+      <span id="dnd-position">1 / 27</span>
+      <span id="dnd-accuracy-display">正答率 - %</span>
+      <button id="dnd-reset-history" class="btn btn-ghost btn-xs">履歴リセット</button>
+    </div>
+
+    <!-- D&D Filters -->
+    <div class="quiz-filters">
+      <div class="filter-row filter-checks">
+        <label class="filter-check">
+          <input type="checkbox" id="dnd-filter-shuffle"> シャッフル出題
+        </label>
+      </div>
+    </div>
+
+    <!-- D&D Question card -->
+    <div class="question-card" id="dnd-card">
+      <div class="question-meta">
+        <span class="q-id" id="dnd-q-id">Q1</span>
+        <span class="q-type-badge" id="dnd-type-badge">Grouping</span>
+        <span class="q-status" id="dnd-status-badge"></span>
+      </div>
+
+      <div class="question-text" id="dnd-q-text"></div>
+
+      <div class="question-image-wrap hidden" id="dnd-image-wrap">
+        <img id="dnd-image" src="" alt="問題画像" class="question-image">
+      </div>
+
+      <!-- D&D workspace (rendered dynamically) -->
+      <div id="dnd-workspace"></div>
+
+      <div class="answer-actions" id="dnd-actions">
+        <button class="btn btn-secondary" id="dnd-reset-btn">リセット</button>
+        <button class="btn btn-primary" id="dnd-submit-btn">回答する</button>
+      </div>
+
+      <div class="feedback-area hidden" id="dnd-feedback-area">
+        <div class="feedback-result" id="dnd-feedback-result"></div>
+        <div class="feedback-correct" id="dnd-feedback-correct"></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="quiz-nav">
+      <button class="btn btn-outline" id="dnd-prev-btn">← 前の問題</button>
+      <button class="btn btn-outline" id="dnd-next-btn">次の問題 →</button>
+    </div>
   </div>
-</div>
 
-</div><!-- /#main-app -->
-
-<script>
-// ================================================================
-// AUTH CONFIG
-// ================================================================
-
-// パスワードは SHA-256 ハッシュのみを保持。平文はソースに含まない。
-// 将来ユーザーを追加する場合は USERS にエントリを追加する。
-const USERS = {
-  OVER: {
-    passwordHash: '801f0c87466ebed7532ba1a0cd36934bc2fe053eff14bd08d33016e1b4bee1f0',
-  },
-};
-
-// ================================================================
-// AUTH STATE
-// ================================================================
-
-let currentUser = null;
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-async function tryLogin(userId, password) {
-  const user = USERS[userId];
-  if (!user) return false;
-  const entered = await sha256(password);
-  return entered === user.passwordHash;
-}
-
-function storageKey(base) {
-  return `${base}_${currentUser}`;
-}
-
-function showLoginScreen() {
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('main-app').style.display     = 'none';
-}
-
-async function handleLogin(e) {
-  e.preventDefault();
-  const userId   = document.getElementById('login-id').value.trim().toUpperCase();
-  const password = document.getElementById('login-pass').value;
-  const errEl    = document.getElementById('login-error');
-  errEl.textContent = '';
-
-  const ok = await tryLogin(userId, password);
-  if (ok) {
-    currentUser = userId;
-    localStorage.setItem('ccnaQuizUser', currentUser);
-    await startApp();
-  } else {
-    errEl.textContent = 'IDまたはパスワードが正しくありません。';
-  }
-}
-
-function logout() {
-  if (!confirm('ログアウトしますか？')) return;
-  localStorage.removeItem('ccnaQuizUser');
-  currentUser  = null;
-  allQuestions = [];
-  queue        = [];
-  queuePos     = 0;
-  progress     = {};
-  mistakes     = {};
-  showLoginScreen();
-}
-
-// ================================================================
-// QUIZ STATE
-// ================================================================
-
-// 選択肢の表示ラベル（シャッフル後に上から順に割り当てる）
-const CHOICE_LABELS = ['A', 'B', 'C', 'D', 'E', 'F'];
-
-let allQuestions = [];
-let queue        = [];
-let queuePos     = 0;
-let mode         = 'order';
-let answered     = false;
-
-let progress = {};  // { [no]: { answered: bool, correct: bool } }
-let mistakes = {};  // { [no]: { count: number, lastWrongAt: string } }
-
-// ================================================================
-// STORAGE
-// ================================================================
-
-function loadProgress() {
-  try {
-    const raw = localStorage.getItem(storageKey('ccnaQuizProgress'));
-    if (raw) { progress = JSON.parse(raw); return; }
-    // 旧キー（ccna_quiz_progress）からの移行
-    const old = localStorage.getItem('ccna_quiz_progress');
-    progress = old ? JSON.parse(old) : {};
-    if (old) saveProgress();
-  } catch { progress = {}; }
-}
-
-function saveProgress() {
-  try { localStorage.setItem(storageKey('ccnaQuizProgress'), JSON.stringify(progress)); } catch {}
-}
-
-function loadMistakes() {
-  try {
-    const raw = localStorage.getItem(storageKey('ccnaQuizMistakes'));
-    mistakes = raw ? JSON.parse(raw) : {};
-  } catch { mistakes = {}; }
-}
-
-function saveMistakes() {
-  try { localStorage.setItem(storageKey('ccnaQuizMistakes'), JSON.stringify(mistakes)); } catch {}
-}
-
-function resetProgress() {
-  if (!confirm('進捗をリセットしますか？\n（間違い回数は保持されます）')) return;
-  progress = {};
-  saveProgress();
-  buildQueue();
-  showCard();
-  updateStats();
-}
-
-function resetMistakes() {
-  if (!confirm('すべての問題の間違い回数をリセットしますか？')) return;
-  mistakes = {};
-  saveMistakes();
-  if (allQuestions.length && queue.length) updateMistakeBadge(allQuestions[queue[queuePos]].no);
-  updateStats();
-}
-
-// ================================================================
-// QUEUE BUILDING
-// ================================================================
-
-function buildQueue() {
-  const all = allQuestions.map((_, i) => i);
-
-  switch (mode) {
-    case 'order':
-      queue = all;
-      break;
-
-    case 'random':
-      queue = shuffle(all);
-      break;
-
-    case 'review':
-      // 間違いがある問題を間違い回数降順 → 直近降順で並べる
-      queue = all
-        .filter(i => {
-          const no = allQuestions[i].no;
-          return (mistakes[no] && mistakes[no].count > 0) ||
-                 (progress[no] && !progress[no].correct);
-        })
-        .sort((a, b) => {
-          const ca = mistakes[allQuestions[a].no]?.count ?? 0;
-          const cb = mistakes[allQuestions[b].no]?.count ?? 0;
-          if (cb !== ca) return cb - ca;
-          const la = mistakes[allQuestions[a].no]?.lastWrongAt ?? '';
-          const lb = mistakes[allQuestions[b].no]?.lastWrongAt ?? '';
-          return lb.localeCompare(la);
-        });
-      break;
-
-    case 'most-wrong':
-      queue = all
-        .filter(i => (mistakes[allQuestions[i].no]?.count ?? 0) > 0)
-        .sort((a, b) => {
-          const d = (mistakes[allQuestions[b].no]?.count ?? 0) -
-                    (mistakes[allQuestions[a].no]?.count ?? 0);
-          if (d !== 0) return d;
-          const la = mistakes[allQuestions[a].no]?.lastWrongAt ?? '';
-          const lb = mistakes[allQuestions[b].no]?.lastWrongAt ?? '';
-          return lb.localeCompare(la);
-        });
-      break;
-
-    case 'unanswered':
-      queue = all.filter(i => !progress[allQuestions[i].no]?.answered);
-      break;
-
-    default:
-      queue = all;
-  }
-  queuePos = 0;
-}
-
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-// ================================================================
-// RENDER
-// ================================================================
-
-const MODE_NOTICES = {
-  review:       '間違えた問題を間違い回数の多い順に表示しています',
-  'most-wrong': '間違い回数が多い順に表示しています',
-  unanswered:   '未回答の問題のみ表示しています',
-};
-
-function showCard() {
-  document.getElementById('screen-loading').style.display = 'none';
-  const empty  = document.getElementById('screen-empty');
-  const card   = document.getElementById('quiz-card');
-  const notice = document.getElementById('review-notice');
-
-  if (queue.length === 0) {
-    empty.style.display = 'block';
-    card.style.display  = 'none';
-    if (MODE_NOTICES[mode]) {
-      notice.style.display = 'block';
-      document.getElementById('review-notice-text').textContent = MODE_NOTICES[mode];
-      document.getElementById('review-count').textContent = 0;
-    } else {
-      notice.style.display = 'none';
-    }
-    updateProgressBar(0, 0);
-    updateStats();
-    return;
-  }
-
-  empty.style.display = 'none';
-  card.style.display  = 'block';
-
-  if (MODE_NOTICES[mode]) {
-    notice.style.display = 'block';
-    document.getElementById('review-notice-text').textContent = MODE_NOTICES[mode];
-    document.getElementById('review-count').textContent = queue.length;
-  } else {
-    notice.style.display = 'none';
-  }
-
-  renderQuestion();
-  updateStats();
-  updateProgressBar(queuePos, queue.length);
-}
-
-function updateMistakeBadge(no) {
-  const count = mistakes[no]?.count ?? 0;
-  const el    = document.getElementById('question-mistake');
-  if (count > 0) {
-    el.textContent   = `不正解: ${count}回`;
-    el.style.display = 'inline-block';
-  } else {
-    el.style.display = 'none';
-  }
-}
-
-function renderQuestion() {
-  const q = allQuestions[queue[queuePos]];
-  answered = false;
-
-  document.getElementById('question-pos').textContent = `${queuePos + 1} / ${queue.length}`;
-
-  const badge = document.getElementById('question-badge');
-  if (q.type === 'multiple') {
-    badge.textContent = `複数選択 (${q.answer.length}つ選択)`;
-    badge.className   = 'badge badge-multiple';
-  } else {
-    badge.textContent = '単一選択';
-    badge.className   = 'badge badge-single';
-  }
-
-  updateMistakeBadge(q.no);
-
-  document.getElementById('question-text').textContent = `Q${q.no}. ${q.question}`;
-
-  const list = document.getElementById('choice-list');
-  list.innerHTML = '';
-  // シャッフル後、上から順に A/B/C/D... の表示ラベルを割り当てる
-  // label.dataset.origKey に元キーを保持して正誤判定に使う
-  shuffle(Object.entries(q.choices)).forEach(([origKey, text], idx) => {
-    const dispLabel = CHOICE_LABELS[idx];
-
-    const label = document.createElement('label');
-    label.className        = 'choice-label';
-    label.dataset.key      = dispLabel;  // 表示ラベル (A/B/C/D...)
-    label.dataset.origKey  = origKey;    // 元データのキー（正誤判定用）
-
-    const input   = document.createElement('input');
-    input.type    = q.type === 'multiple' ? 'checkbox' : 'radio';
-    input.name    = 'choice';
-    input.value   = dispLabel;
-
-    const keySpan       = document.createElement('span');
-    keySpan.className   = 'choice-key';
-    keySpan.textContent = dispLabel + '.';
-
-    const textSpan       = document.createElement('span');
-    textSpan.textContent = text;
-
-    label.appendChild(input);
-    label.appendChild(keySpan);
-    label.appendChild(textSpan);
-    list.appendChild(label);
-  });
-
-  document.getElementById('result-banner').style.display    = 'none';
-  document.getElementById('explanation-box').style.display  = 'none';
-  document.getElementById('btn-submit').style.display       = 'inline-block';
-  document.getElementById('btn-next').style.display         = 'none';
-  document.getElementById('btn-prev').disabled = (queuePos === 0);
-  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
-}
-
-// ================================================================
-// SUBMIT
-// ================================================================
-
-function submitAnswer() {
-  if (answered) return;
-
-  const q        = allQuestions[queue[queuePos]];
-  const inputs   = document.querySelectorAll('#choice-list input');
-  const selected = [...inputs].filter(i => i.checked).map(i => i.value);
-
-  if (selected.length === 0) { alert('選択肢を選んでください。'); return; }
-
-  answered = true;
-
-  // selected は表示ラベル (A/B/C...) → 元キーへ変換して正誤判定
-  const labels       = [...document.querySelectorAll('.choice-label')];
-  const dispToOrig   = Object.fromEntries(labels.map(l => [l.dataset.key, l.dataset.origKey]));
-  const selectedOrig = selected.map(d => dispToOrig[d]);
-
-  const correctSet  = new Set(q.answer);
-  const selectedSet = new Set(selectedOrig);
-  const isCorrect   = q.answer.length === selectedOrig.length &&
-                      q.answer.every(a => selectedSet.has(a));
-
-  // 色付け: 正誤は元キー、選択判定は表示ラベルで行う
-  labels.forEach(label => {
-    const origKey = label.dataset.origKey;
-    const isSel   = selected.includes(label.dataset.key);
-    if      (correctSet.has(origKey) && isSel)  label.classList.add('correct');
-    else if (!correctSet.has(origKey) && isSel) label.classList.add('wrong');
-    else if (correctSet.has(origKey) && !isSel) label.classList.add('correct');
-  });
-
-  // 不正解バナー: 正解の「表示ラベル」を求める（シャッフル後の位置を示す）
-  const correctDispLabels = labels
-    .filter(l => correctSet.has(l.dataset.origKey))
-    .map(l => l.dataset.key)
-    .sort()
-    .join(', ');
-
-  const banner = document.getElementById('result-banner');
-  banner.style.display = 'block';
-  if (isCorrect) {
-    banner.textContent = '✓ 正解！';
-    banner.className   = 'correct';
-  } else {
-    banner.textContent = `✗ 不正解。正解: ${correctDispLabels}`;
-    banner.className   = 'wrong';
-    // 間違い回数を記録
-    if (!mistakes[q.no]) mistakes[q.no] = { count: 0, lastWrongAt: null };
-    mistakes[q.no].count++;
-    mistakes[q.no].lastWrongAt = new Date().toISOString();
-    saveMistakes();
-    updateMistakeBadge(q.no);
-  }
-
-  if (q.explanation) {
-    document.getElementById('explanation-text').textContent = q.explanation;
-    document.getElementById('explanation-box').style.display = 'block';
-  }
-
-  progress[q.no] = { answered: true, correct: isCorrect };
-  saveProgress();
-
-  document.getElementById('btn-submit').style.display = 'none';
-  document.getElementById('btn-next').style.display   = 'inline-block';
-  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
-
-  updateStats();
-}
-
-// ================================================================
-// NAVIGATION
-// ================================================================
-
-function navigate(dir) {
-  const newPos = queuePos + dir;
-  if (newPos < 0 || newPos >= queue.length) return;
-  queuePos = newPos;
-  renderQuestion();
-  updateProgressBar(queuePos, queue.length);
-
-  const q = allQuestions[queue[queuePos]];
-  if (progress[q.no]?.answered) restoreAnsweredState(q);
-}
-
-function restoreAnsweredState(q) {
-  answered = true;
-  const correctSet = new Set(q.answer);
-  const labels     = [...document.querySelectorAll('.choice-label')];
-
-  // 元キーで正解を判定して色付け
-  labels.forEach(label => {
-    if (correctSet.has(label.dataset.origKey)) label.classList.add('correct');
-  });
-
-  // 正解の表示ラベル（再シャッフル後の位置に合わせる）
-  const correctDispLabels = labels
-    .filter(l => correctSet.has(l.dataset.origKey))
-    .map(l => l.dataset.key)
-    .sort()
-    .join(', ');
-
-  const isCorrect = progress[q.no].correct;
-  const banner    = document.getElementById('result-banner');
-  banner.style.display = 'block';
-  if (isCorrect) {
-    banner.textContent = '✓ 正解！';
-    banner.className   = 'correct';
-  } else {
-    banner.textContent = `✗ 不正解。正解: ${correctDispLabels}`;
-    banner.className   = 'wrong';
-  }
-
-  if (q.explanation) {
-    document.getElementById('explanation-text').textContent = q.explanation;
-    document.getElementById('explanation-box').style.display = 'block';
-  }
-
-  document.getElementById('btn-submit').style.display = 'none';
-  document.getElementById('btn-next').style.display   = 'inline-block';
-  document.getElementById('btn-next').disabled = (queuePos === queue.length - 1);
-  document.getElementById('btn-prev').disabled = (queuePos === 0);
-}
-
-// ================================================================
-// MODE
-// ================================================================
-
-const ALL_MODES = ['order', 'random', 'review', 'most-wrong', 'unanswered'];
-
-function setMode(newMode) {
-  mode = newMode;
-  ALL_MODES.forEach(m => {
-    const btn = document.getElementById(`btn-mode-${m}`);
-    if (btn) btn.classList.toggle('active', m === newMode);
-  });
-  buildQueue();
-  showCard();
-}
-
-// ================================================================
-// STATS & PROGRESS BAR
-// ================================================================
-
-function updateStats() {
-  const entries       = Object.values(progress);
-  const answeredCount = entries.filter(e => e.answered).length;
-  const correctCount  = entries.filter(e => e.correct).length;
-  const wrongCount    = answeredCount - correctCount;
-  const rate          = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
-  const totalMistakes = Object.values(mistakes).reduce((s, m) => s + m.count, 0);
-
-  document.getElementById('stat-answered').textContent      = answeredCount;
-  document.getElementById('stat-correct').textContent       = correctCount;
-  document.getElementById('stat-rate').textContent          = answeredCount > 0 ? `${rate}%` : '-';
-  document.getElementById('stat-wrong-count').textContent   = wrongCount;
-  document.getElementById('stat-total-mistakes').textContent = totalMistakes;
-}
-
-function updateProgressBar(pos, total) {
-  const pct = total > 0 ? Math.round((pos / total) * 100) : 0;
-  document.getElementById('progress-bar').style.width = `${pct}%`;
-}
-
-// ================================================================
-// APP STARTUP
-// ================================================================
-
-async function startApp() {
-  document.getElementById('login-screen').style.display = 'none';
-  document.getElementById('main-app').style.display     = 'block';
-  document.getElementById('header-user').textContent    = `ログイン中: ${currentUser}`;
-
-  loadProgress();
-  loadMistakes();
-
-  try {
-    const res = await fetch('./questions.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    allQuestions = await res.json();
-  } catch (e) {
-    document.getElementById('screen-loading').textContent =
-      'questions.json の読み込みに失敗しました。スクリプトを実行してから再試行してください。';
-    return;
-  }
-
-  document.getElementById('total-count-label').textContent = `全 ${allQuestions.length} 問`;
-  buildQueue();
-  showCard();
-}
-
-async function init() {
-  const saved = localStorage.getItem('ccnaQuizUser');
-  if (saved && USERS[saved]) {
-    currentUser = saved;
-    await startApp();
-  } else {
-    showLoginScreen();
-  }
-}
-
-init();
-</script>
+  <!-- ===== IMAGE MODAL ===== -->
+  <div id="image-modal" class="modal hidden" role="dialog" aria-label="画像拡大">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="閉じる">&times;</button>
+      <img id="modal-image" src="" alt="拡大画像">
+    </div>
+  </div>
+
+</div><!-- #app -->
+
+<script src="js/auth.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/dnd.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
