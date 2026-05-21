@@ -769,7 +769,7 @@ function scoreTest() {
 
   // Submission UI（採点後にセクションを更新）
   updateSubmitUI();
-  if (AUTO_SUBMIT_TO_SPREADSHEET && GAS_WEB_APP_URL && !isAlreadySubmitted()) {
+  if (AUTO_SUBMIT_TO_SPREADSHEET && GAS_WEB_APP_URL) {
     submitToSpreadsheet();
   }
 }
@@ -901,21 +901,6 @@ function downloadAnswerJSON() {
 // SPREADSHEET SUBMISSION
 // ================================================================
 
-function submittedKey() {
-  return `ccnaTestSubmitted_${testData.testId}_${userId}`;
-}
-
-function isAlreadySubmitted() {
-  return !!localStorage.getItem(submittedKey());
-}
-
-function markAsSubmitted(attemptId) {
-  localStorage.setItem(submittedKey(), JSON.stringify({
-    submittedAt: new Date().toISOString(),
-    attemptId,
-  }));
-}
-
 function buildSubmissionPayload() {
   const total      = testData.totalQuestions;
   const correct    = gradeResults.filter(r => r.verdict === '正解').length;
@@ -971,16 +956,6 @@ function updateSubmitUI() {
     return;
   }
 
-  if (isAlreadySubmitted()) {
-    const saved = JSON.parse(localStorage.getItem(submittedKey()));
-    const dateStr = saved.submittedAt ? saved.submittedAt.slice(0, 19).replace('T', ' ') : '';
-    btn.disabled    = true;
-    btn.textContent = '送信済み';
-    setStatus(status, 'ok',
-      `このテストは送信済みです（${dateStr}）。管理用スプレッドシートに記録されています。`);
-    return;
-  }
-
   btn.style.display = 'inline-block';
   btn.disabled      = false;
   btn.textContent   = '送信する';
@@ -995,7 +970,6 @@ function setStatus(el, type, msg) {
 
 async function submitToSpreadsheet() {
   if (!GAS_WEB_APP_URL) return;
-  if (isAlreadySubmitted()) { updateSubmitUI(); return; }
 
   const btn    = document.getElementById('btn-send');
   const status = document.getElementById('submit-status');
@@ -1004,8 +978,7 @@ async function submitToSpreadsheet() {
   btn.textContent = '送信中...';
   setStatus(status, 'info', '送信しています...');
 
-  const payload   = buildSubmissionPayload();
-  const attemptId = payload.attemptId;
+  const payload = buildSubmissionPayload();
 
   try {
     await fetch(GAS_WEB_APP_URL, {
@@ -1014,11 +987,12 @@ async function submitToSpreadsheet() {
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body:    JSON.stringify(payload),
     });
-    // no-cors ではレスポンス本文を読めないため、送信試行として扱う
-    markAsSubmitted(attemptId);
-    btn.textContent = '送信済み';
-    setStatus(status, 'ok',
-      '送信しました。管理用スプレッドシートに反映されます。');
+    setStatus(status, 'ok', '送信しました。管理用スプレッドシートに反映されます。');
+    // 送信後もボタンを再度有効化（何回でも送信可能）
+    setTimeout(() => {
+      btn.disabled    = false;
+      btn.textContent = '再送信する';
+    }, 1500);
   } catch (e) {
     btn.disabled    = false;
     btn.textContent = '再送信する';
