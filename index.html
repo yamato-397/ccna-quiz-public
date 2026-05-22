@@ -62,6 +62,15 @@
           </div>
           <button class="btn btn-primary btn-full card-btn">スタート</button>
         </div>
+        <div class="portal-card portal-card-test" id="card-check-test">
+          <div class="card-icon">&#9989;</div>
+          <h2 class="card-title">確認テスト3回目</h2>
+          <p class="card-desc">ランダム抽出 100問<br>95%以上で合格判定</p>
+          <div class="card-stats" id="ct-portal-stats">
+            <span id="ct-stat-history">実施回数: 0回</span>
+          </div>
+          <button class="btn btn-primary btn-full card-btn">スタート</button>
+        </div>
       </div>
     </main>
   </div>
@@ -74,19 +83,16 @@
       <button id="quiz-logout" class="btn btn-ghost btn-sm">ログアウト</button>
     </header>
 
-    <!-- Progress bar -->
     <div class="progress-bar-wrap">
       <div class="progress-bar" id="quiz-progress-bar"></div>
     </div>
 
-    <!-- Stats row -->
     <div class="quiz-stats-row">
       <span id="quiz-position">1 / 397</span>
       <span id="quiz-accuracy-display">正答率 - %</span>
       <button id="quiz-reset-history" class="btn btn-ghost btn-xs">履歴リセット</button>
     </div>
 
-    <!-- Filters -->
     <div class="quiz-filters">
       <div class="filter-row">
         <label class="filter-label">Part:</label>
@@ -112,7 +118,6 @@
       </div>
     </div>
 
-    <!-- Question card -->
     <div class="question-card" id="quiz-card">
       <div class="question-meta">
         <span class="q-id" id="q-displayId">Q1</span>
@@ -120,19 +125,14 @@
         <span class="q-multi hidden" id="q-multi-badge">複数選択可</span>
         <span class="q-status" id="q-status-badge"></span>
       </div>
-
       <div class="question-text" id="q-text"></div>
-
       <div class="question-image-wrap hidden" id="q-image-wrap">
         <img id="q-image" src="" alt="問題画像" class="question-image">
       </div>
-
       <div class="choices-container" id="choices-container"></div>
-
       <div class="answer-actions">
         <button class="btn btn-primary" id="submit-btn">回答する</button>
       </div>
-
       <div class="feedback-area hidden" id="feedback-area">
         <div class="feedback-result" id="feedback-result"></div>
         <div class="feedback-correct" id="feedback-correct"></div>
@@ -140,7 +140,6 @@
       </div>
     </div>
 
-    <!-- Navigation -->
     <div class="quiz-nav">
       <button class="btn btn-outline" id="prev-btn">← 前の問題</button>
       <button class="btn btn-outline" id="next-btn">次の問題 →</button>
@@ -155,7 +154,6 @@
       <button id="dnd-logout" class="btn btn-ghost btn-sm">ログアウト</button>
     </header>
 
-    <!-- Progress -->
     <div class="progress-bar-wrap">
       <div class="progress-bar" id="dnd-progress-bar"></div>
     </div>
@@ -165,7 +163,6 @@
       <button id="dnd-reset-history" class="btn btn-ghost btn-xs">履歴リセット</button>
     </div>
 
-    <!-- D&D Filters -->
     <div class="quiz-filters">
       <div class="filter-row filter-checks">
         <label class="filter-check">
@@ -174,38 +171,145 @@
       </div>
     </div>
 
-    <!-- D&D Question card -->
     <div class="question-card" id="dnd-card">
       <div class="question-meta">
         <span class="q-id" id="dnd-q-id">Q1</span>
         <span class="q-type-badge" id="dnd-type-badge">Grouping</span>
         <span class="q-status" id="dnd-status-badge"></span>
       </div>
-
       <div class="question-text" id="dnd-q-text"></div>
-
       <div class="question-image-wrap hidden" id="dnd-image-wrap">
         <img id="dnd-image" src="" alt="問題画像" class="question-image">
       </div>
-
-      <!-- D&D workspace (rendered dynamically) -->
       <div id="dnd-workspace"></div>
-
       <div class="answer-actions" id="dnd-actions">
         <button class="btn btn-secondary" id="dnd-reset-btn">リセット</button>
         <button class="btn btn-primary" id="dnd-submit-btn">回答する</button>
       </div>
-
       <div class="feedback-area hidden" id="dnd-feedback-area">
         <div class="feedback-result" id="dnd-feedback-result"></div>
         <div class="feedback-correct" id="dnd-feedback-correct"></div>
       </div>
     </div>
 
-    <!-- Navigation -->
     <div class="quiz-nav">
       <button class="btn btn-outline" id="dnd-prev-btn">← 前の問題</button>
       <button class="btn btn-outline" id="dnd-next-btn">次の問題 →</button>
+    </div>
+  </div>
+
+  <!-- ===== CHECK TEST VIEW ===== -->
+  <div id="view-check-test" class="view hidden">
+    <header class="view-header">
+      <button id="ct-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
+      <div class="view-header-title">確認テスト3回目</div>
+      <button id="ct-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="ct-progress-bar"></div>
+    </div>
+
+    <div class="quiz-stats-row">
+      <span id="ct-position">1 / 100</span>
+      <span id="ct-answered-count">回答済み: 0 / 100</span>
+    </div>
+
+    <div class="quiz-filters">
+      <div class="filter-row filter-checks">
+        <label class="filter-check">
+          <input type="checkbox" id="ct-filter-shuffle"> シャッフル出題
+        </label>
+      </div>
+    </div>
+
+    <div class="question-card" id="ct-card">
+      <div class="question-meta">
+        <span class="q-id" id="ct-q-number">Q1</span>
+        <span class="q-part" id="ct-q-part"></span>
+        <span class="q-multi hidden" id="ct-multi-badge">複数選択可</span>
+        <span class="q-status" id="ct-status-badge"></span>
+      </div>
+      <div class="question-text" id="ct-q-text"></div>
+      <div class="question-image-wrap hidden" id="ct-image-wrap">
+        <img id="ct-image" src="" alt="問題画像" class="question-image">
+      </div>
+      <div class="choices-container" id="ct-choices-container"></div>
+      <div class="answer-actions">
+        <button class="btn btn-primary" id="ct-submit-btn">回答する</button>
+      </div>
+      <div class="feedback-area hidden" id="ct-feedback-area">
+        <div class="feedback-result" id="ct-feedback-result"></div>
+        <div class="feedback-correct" id="ct-feedback-correct"></div>
+        <div class="feedback-explanation" id="ct-feedback-explanation"></div>
+      </div>
+    </div>
+
+    <div class="quiz-nav">
+      <button class="btn btn-outline" id="ct-prev-btn">← 前の問題</button>
+      <button class="btn btn-outline" id="ct-next-btn">次の問題 →</button>
+    </div>
+
+    <!-- Finish button — shown when all 100 questions answered -->
+    <div id="ct-finish-wrap" class="ct-finish-wrap hidden">
+      <button class="btn btn-primary ct-finish-btn" id="ct-finish-btn">
+        &#127942; 100問完了 — 結果を見る
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== CHECK TEST RESULT VIEW ===== -->
+  <div id="view-check-test-result" class="view hidden">
+    <header class="view-header">
+      <div class="view-header-title">確認テスト3回目 — 結果</div>
+      <button id="ct-result-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+
+    <div class="ct-result-container">
+      <div class="ct-result-card">
+        <h2 class="ct-result-title">テスト結果</h2>
+
+        <div class="ct-score-wrap">
+          <div class="ct-score-main">
+            <span class="ct-score-label">正答数</span>
+            <span class="ct-score-value" id="ct-result-score">0 / 100</span>
+          </div>
+          <div class="ct-score-sub">
+            <span class="ct-rate-value" id="ct-result-rate">0%</span>
+            <span class="ct-score-detail" id="ct-result-incorrect"></span>
+            <span class="ct-score-detail" id="ct-result-duration"></span>
+          </div>
+        </div>
+
+        <div id="ct-result-verdict" class="ct-verdict"></div>
+
+        <div id="ct-submit-status" class="ct-submit-status hidden"></div>
+
+        <div class="ct-result-actions">
+          <button class="btn btn-outline" id="ct-result-back">← ポータルへ戻る</button>
+          <button class="btn btn-secondary hidden" id="ct-result-resubmit">未送信データを再送</button>
+        </div>
+
+        <div class="ct-wrong-section">
+          <h3 class="ct-wrong-title">間違えた問題</h3>
+          <div id="ct-wrong-list"></div>
+          <div class="ct-result-actions" style="margin-top:1rem">
+            <button class="btn btn-primary hidden" id="ct-retry-btn">間違えた問題を再演習</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STUDENT NAME MODAL ===== -->
+  <div id="ct-name-modal" class="modal hidden" role="dialog" aria-label="受験者名入力">
+    <div class="modal-backdrop"></div>
+    <div class="ct-name-modal-content">
+      <h2 class="ct-name-title">受験者名を入力してください</h2>
+      <p class="ct-name-note">同じセッション中は再入力不要です</p>
+      <input type="text" id="ct-name-input" class="ct-name-input" placeholder="例: 山田 太郎" maxlength="50">
+      <div id="ct-name-error" class="ct-name-error hidden">受験者名を入力してください</div>
+      <button class="btn btn-primary btn-full" id="ct-name-confirm">テスト開始</button>
     </div>
   </div>
 
@@ -220,9 +324,12 @@
 
 </div><!-- #app -->
 
+<script src="js/config.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/quiz.js"></script>
 <script src="js/dnd.js"></script>
+<script src="js/checkTest.js"></script>
+<script src="js/resultSubmitter.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

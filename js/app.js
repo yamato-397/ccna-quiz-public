@@ -2,7 +2,8 @@
 'use strict';
 
 const App = (() => {
-  let questionsData = null;
+  let questionsData   = null;
+  let checkTestData   = null;
 
   // ---- View management ----
   function showView(id) {
@@ -20,11 +21,19 @@ const App = (() => {
     return questionsData;
   }
 
+  async function loadCheckTestData() {
+    if (checkTestData) return checkTestData;
+    const res = await fetch('data/check-test-03.json');
+    if (!res.ok) throw new Error('Failed to load check-test-03.json');
+    checkTestData = await res.json();
+    return checkTestData;
+  }
+
   function getData() { return questionsData; }
 
   // ---- Image modal ----
   function initModal() {
-    const modal   = document.getElementById('image-modal');
+    const modal    = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-image');
     const closeBtn = document.getElementById('modal-close');
     const backdrop = document.getElementById('modal-backdrop');
@@ -47,12 +56,11 @@ const App = (() => {
       if (e.key === 'Escape') closeModal();
     });
 
-    // Expose globally so quiz/dnd can call it
     window.openImageModal = openModal;
   }
 
   // ---- Portal stats ----
-  function updatePortalStats(data) {
+  function updatePortalStats() {
     const hist = Quiz.getHistory();
     const answeredCount = Object.keys(hist.answers || {}).length;
     const el = document.getElementById('quiz-stat-answered');
@@ -62,6 +70,10 @@ const App = (() => {
     const dndAnswered = Object.keys(dndHist.answers || {}).length;
     const dndEl = document.getElementById('dnd-stat-answered');
     if (dndEl) dndEl.textContent = dndAnswered;
+
+    const ctHistory = CheckTest.getHistory();
+    const ctEl = document.getElementById('ct-stat-history');
+    if (ctEl) ctEl.textContent = `実施回数: ${ctHistory.length}回`;
   }
 
   // ---- Logout handler ----
@@ -75,7 +87,7 @@ const App = (() => {
     initModal();
 
     // Wire up logout buttons
-    ['logout-btn', 'quiz-logout', 'dnd-logout'].forEach(id => {
+    ['logout-btn', 'quiz-logout', 'dnd-logout', 'ct-logout', 'ct-result-logout'].forEach(id => {
       const btn = document.getElementById(id);
       if (btn) btn.addEventListener('click', handleLogout);
     });
@@ -84,8 +96,8 @@ const App = (() => {
     const loginForm = document.getElementById('login-form');
     loginForm.addEventListener('submit', e => {
       e.preventDefault();
-      const id = document.getElementById('login-id').value.trim();
-      const pw = document.getElementById('login-pw').value;
+      const id    = document.getElementById('login-id').value.trim();
+      const pw    = document.getElementById('login-pw').value;
       const errEl = document.getElementById('login-error');
       if (Auth.login(id, pw)) {
         errEl.classList.add('hidden');
@@ -98,12 +110,26 @@ const App = (() => {
     // Portal card navigation
     document.getElementById('card-quiz').addEventListener('click', goQuiz);
     document.getElementById('card-dnd').addEventListener('click', goDnd);
+    document.getElementById('card-check-test').addEventListener('click', goCheckTest);
 
-    // Quiz back button
+    // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
     document.getElementById('dnd-back').addEventListener('click', goPortal);
+    document.getElementById('ct-back').addEventListener('click', goPortal);
 
-    // Initial route
+    // Check test finish → result
+    document.getElementById('ct-finish-btn').addEventListener('click', () => {
+      CheckTest.showResult();
+    });
+
+    // Result view wiring
+    CheckTest.initResultButtons();
+
+    // ResultSubmitter pending check
+    if (typeof ResultSubmitter !== 'undefined') {
+      ResultSubmitter.initPendingCheck();
+    }
+
     if (Auth.isLoggedIn()) {
       await goPortal();
     } else {
@@ -114,8 +140,8 @@ const App = (() => {
   async function goPortal() {
     showView('portal');
     try {
-      const data = await loadData();
-      updatePortalStats(data);
+      await loadData();
+      updatePortalStats();
     } catch(e) {
       console.error('Data load error:', e);
     }
@@ -138,6 +164,15 @@ const App = (() => {
       DndQuiz.init(data.dd_questions);
     } catch(e) {
       console.error('DnD init error:', e);
+    }
+  }
+
+  async function goCheckTest() {
+    try {
+      const data = await loadCheckTestData();
+      CheckTest.start(data.questions);
+    } catch(e) {
+      console.error('CheckTest init error:', e);
     }
   }
 
