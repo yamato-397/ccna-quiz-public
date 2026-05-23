@@ -1,21 +1,41 @@
-/* checkTest.js — 確認テスト3回目ロジック */
+/* checkTest.js — 確認テスト（汎用・テスト3/4共用） */
 'use strict';
 
 const CheckTest = (() => {
-  const HISTORY_KEY  = 'ccna_check_test_03_history';
   const NAME_KEY     = 'ccna_check_test_name';
+  const PENDING_KEY  = 'ccna_check_test_pending';
   const PASSING_RATE = 95;
 
+  // ---- Configs ----
+  const CONFIGS = {
+    'check-test-03': {
+      id:         'check-test-03',
+      title:      '確認テスト3回目',
+      historyKey: 'ccna_check_test_03_history',
+    },
+    'check-test-04': {
+      id:         'check-test-04',
+      title:      '確認テスト4回目',
+      historyKey: 'ccna_check_test_04_history',
+    },
+  };
+
   // ---- History ----
-  function getHistory()       { try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; } }
-  function saveHistory(h)     { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
-  function appendHistory(rec) { const h = getHistory(); h.push(rec); saveHistory(h); }
+  function getHistory(id) {
+    const key = CONFIGS[id] ? CONFIGS[id].historyKey : 'ccna_check_test_history';
+    try { return JSON.parse(localStorage.getItem(key)) || []; } catch { return []; }
+  }
+  function appendHistory(cfg, rec) {
+    const h = getHistory(cfg.id);
+    h.push(rec);
+    localStorage.setItem(cfg.historyKey, JSON.stringify(h));
+  }
 
   // ---- Student name ----
-  function getStudentName() { return sessionStorage.getItem(NAME_KEY) || ''; }
-  function saveStudentName(n) { sessionStorage.setItem(NAME_KEY, n); }
+  function getStudentName()    { return sessionStorage.getItem(NAME_KEY) || ''; }
+  function saveStudentName(n)  { sessionStorage.setItem(NAME_KEY, n); }
 
-  // ---- Shuffle (Fisher-Yates) ----
+  // ---- Shuffle ----
   function shuffle(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -25,7 +45,7 @@ const CheckTest = (() => {
     return a;
   }
 
-  // ---- Per-session choice order cache ----
+  // ---- Per-session choice cache ----
   const choiceCache = new Map();
   function getShuffledChoices(q) {
     if (!choiceCache.has(q.id)) choiceCache.set(q.id, shuffle(q.choices));
@@ -37,41 +57,43 @@ const CheckTest = (() => {
   let displayList    = [];
   let currentIndex   = 0;
   let answered       = false;
-  let results        = {};   // id → { selected, correct, isCorrect }
-  let shuffleEnabled = false;
+  let results        = {};
   let startTime      = null;
   let studentName    = '';
+  let activeConfig   = null;
 
   // ---- DOM helpers ----
   const $ = id => document.getElementById(id);
 
   // ---- Init ----
-  function init(questions, name) {
-    allQuestions = questions || [];
-    studentName  = name || getStudentName();
+  function init(questions, name, cfg) {
+    allQuestions  = questions || [];
+    studentName   = name || getStudentName();
+    activeConfig  = cfg;
     choiceCache.clear();
-    results     = {};
-    currentIndex = 0;
-    answered    = false;
-    startTime   = Date.now();
+    results       = {};
+    currentIndex  = 0;
+    answered      = false;
+    startTime     = Date.now();
+    displayList   = [...allQuestions];
 
-    displayList = [...allQuestions];
+    // Update header title
+    const headerTitle = $('ct-header-title');
+    if (headerTitle) headerTitle.textContent = cfg.title;
 
     const shuffleCheck = $('ct-filter-shuffle');
     if (shuffleCheck) {
       shuffleCheck.checked = false;
-      shuffleEnabled = false;
       shuffleCheck.onchange = () => {
-        shuffleEnabled = shuffleCheck.checked;
-        displayList = shuffleEnabled ? shuffle([...allQuestions]) : [...allQuestions];
+        displayList  = shuffleCheck.checked ? shuffle([...allQuestions]) : [...allQuestions];
         currentIndex = 0;
         renderQuestion();
       };
     }
 
-    $('ct-submit-btn').onclick  = submitAnswer;
-    $('ct-prev-btn').onclick    = () => { if (currentIndex > 0) { currentIndex--; renderQuestion(); } };
-    $('ct-next-btn').onclick    = () => { if (currentIndex < displayList.length - 1) { currentIndex++; renderQuestion(); } };
+    $('ct-submit-btn').onclick = submitAnswer;
+    $('ct-prev-btn').onclick   = () => { if (currentIndex > 0) { currentIndex--; renderQuestion(); } };
+    $('ct-next-btn').onclick   = () => { if (currentIndex < displayList.length - 1) { currentIndex++; renderQuestion(); } };
 
     renderQuestion();
   }
@@ -79,9 +101,9 @@ const CheckTest = (() => {
   // ---- Render question ----
   function renderQuestion() {
     answered = false;
-
     if (displayList.length === 0) return;
-    const q      = displayList[currentIndex];
+
+    const q       = displayList[currentIndex];
     const isMulti = q.correctCount > 1;
 
     $('ct-q-number').textContent = `Q${currentIndex + 1}`;
@@ -90,8 +112,7 @@ const CheckTest = (() => {
     const multiBadge = $('ct-multi-badge');
     isMulti ? multiBadge.classList.remove('hidden') : multiBadge.classList.add('hidden');
 
-    // answered badge
-    const rec = results[q.id];
+    const rec         = results[q.id];
     const statusBadge = $('ct-status-badge');
     if (!rec) {
       statusBadge.textContent = '未回答';
@@ -106,7 +127,6 @@ const CheckTest = (() => {
 
     $('ct-q-text').textContent = q.question;
 
-    // Image
     const imgWrap = $('ct-image-wrap');
     const imgEl   = $('ct-image');
     if (q.hasImage && q.localImagePath) {
@@ -119,14 +139,13 @@ const CheckTest = (() => {
       imgWrap.classList.add('hidden');
     }
 
-    // Choices
     const displayChoices = getShuffledChoices(q);
     const container = $('ct-choices-container');
     container.innerHTML = '';
-    displayChoices.forEach((choice) => {
+    displayChoices.forEach(choice => {
       const item = document.createElement('label');
-      item.className      = 'choice-item';
-      item.dataset.value  = choice;
+      item.className     = 'choice-item';
+      item.dataset.value = choice;
 
       const input = document.createElement('input');
       input.type      = isMulti ? 'checkbox' : 'radio';
@@ -147,7 +166,6 @@ const CheckTest = (() => {
       container.appendChild(item);
     });
 
-    // Restore already-answered state
     if (rec) restoreAnsweredState(q, rec);
 
     const submitBtn = $('ct-submit-btn');
@@ -167,8 +185,7 @@ const CheckTest = (() => {
   }
 
   function restoreAnsweredState(q, rec) {
-    const items = document.querySelectorAll('#ct-choices-container .choice-item');
-    items.forEach(item => {
+    document.querySelectorAll('#ct-choices-container .choice-item').forEach(item => {
       item.classList.add('answered');
       const val       = item.dataset.value;
       const indicator = item.querySelector('.choice-indicator');
@@ -184,11 +201,11 @@ const CheckTest = (() => {
     });
   }
 
-  // ---- Submit answer ----
+  // ---- Submit ----
   function submitAnswer() {
     if (answered || displayList.length === 0) return;
-    const q      = displayList[currentIndex];
-    const inputs = document.querySelectorAll('#ct-choices-container input');
+    const q        = displayList[currentIndex];
+    const inputs   = document.querySelectorAll('#ct-choices-container input');
     const selected = [...inputs].filter(i => i.checked).map(i => i.value);
 
     if (selected.length === 0) {
@@ -199,13 +216,10 @@ const CheckTest = (() => {
     }
 
     answered = true;
+    const isCorrect  = JSON.stringify([...selected].sort()) === JSON.stringify([...q.correctAnswers].sort());
+    results[q.id]    = { selected, isCorrect };
 
-    const isCorrect = JSON.stringify([...selected].sort()) === JSON.stringify([...q.correctAnswers].sort());
-    results[q.id] = { selected, isCorrect };
-
-    // Mark choices
-    const items = document.querySelectorAll('#ct-choices-container .choice-item');
-    items.forEach(item => {
+    document.querySelectorAll('#ct-choices-container .choice-item').forEach(item => {
       item.classList.add('answered');
       const val       = item.dataset.value;
       const indicator = item.querySelector('.choice-indicator');
@@ -230,46 +244,36 @@ const CheckTest = (() => {
 
     updateProgress();
 
-    // Check if all answered
-    const answeredCount = Object.keys(results).length;
-    if (answeredCount === allQuestions.length) {
+    if (Object.keys(results).length === allQuestions.length) {
       setTimeout(showFinishButton, 400);
     }
   }
 
   function showFeedback(q, selected, isCorrect) {
-    const area = $('ct-feedback-area');
-    area.classList.remove('hidden');
-
+    $('ct-feedback-area').classList.remove('hidden');
     const res = $('ct-feedback-result');
     res.textContent = isCorrect ? '✓ 正解！' : '✗ 不正解';
     res.className   = 'feedback-result ' + (isCorrect ? 'correct' : 'incorrect');
-
     $('ct-feedback-correct').innerHTML =
-      '<strong>正解：</strong> ' +
-      q.correctAnswers.map(a => `<span>${escHtml(a)}</span>`).join('、');
-
+      '<strong>正解：</strong> ' + q.correctAnswers.map(a => `<span>${escHtml(a)}</span>`).join('、');
     $('ct-feedback-explanation').innerHTML =
       '<span class="explanation-label">解説</span>' +
       (q.explanation ? escHtml(q.explanation) : '解説は未登録です。');
   }
 
   function showFinishButton() {
-    const nav = $('ct-finish-wrap');
-    if (nav) nav.classList.remove('hidden');
+    const wrap = $('ct-finish-wrap');
+    if (wrap) wrap.classList.remove('hidden');
   }
 
   // ---- Progress ----
   function updateProgress() {
     const total   = displayList.length;
     const pos     = total > 0 ? currentIndex + 1 : 0;
-    const answered = Object.keys(results).length;
-
-    $('ct-position').textContent = `${pos} / ${total}`;
-    $('ct-answered-count').textContent = `回答済み: ${answered} / ${total}`;
-
-    const pct = total > 0 ? ((currentIndex + 1) / total) * 100 : 0;
-    $('ct-progress-bar').style.width = pct + '%';
+    const done    = Object.keys(results).length;
+    $('ct-position').textContent      = `${pos} / ${total}`;
+    $('ct-answered-count').textContent = `回答済み: ${done} / ${total}`;
+    $('ct-progress-bar').style.width  = (total > 0 ? ((currentIndex + 1) / total) * 100 : 0) + '%';
   }
 
   function scrollToTop() {
@@ -284,18 +288,18 @@ const CheckTest = (() => {
     const scoreRate      = Math.round((correctCount / allQuestions.length) * 100);
     const passed         = scoreRate >= PASSING_RATE;
     const durationSec    = Math.round((Date.now() - startTime) / 1000);
+    const cfg            = activeConfig;
 
     const wrongIds = allQuestions
       .filter(q => results[q.id] && !results[q.id].isCorrect)
       .map(q => q.id);
 
-    // Save history
     const rec = {
-      submittedAt:    new Date().toISOString(),
-      testId:         'check-test-03',
-      testTitle:      '確認テスト3回目',
+      submittedAt:      new Date().toISOString(),
+      testId:           cfg.id,
+      testTitle:        cfg.title,
       studentName,
-      totalQuestions: allQuestions.length,
+      totalQuestions:   allQuestions.length,
       correctCount,
       incorrectCount,
       scoreRate,
@@ -304,31 +308,27 @@ const CheckTest = (() => {
       durationSeconds:  durationSec,
       userAgent:        navigator.userAgent,
     };
-    appendHistory(rec);
+    appendHistory(cfg, rec);
 
-    // Submit to GAS
-    if (typeof ResultSubmitter !== 'undefined') {
-      ResultSubmitter.submit(rec);
-    }
+    if (typeof ResultSubmitter !== 'undefined') ResultSubmitter.submit(rec);
 
-    // Render result view
-    $('ct-result-score').textContent     = `${correctCount} / ${allQuestions.length}`;
-    $('ct-result-rate').textContent      = `${scoreRate}%`;
+    $('ct-result-title').textContent    = cfg.title + ' — 結果';
+    $('ct-result-score').textContent    = `${correctCount} / ${allQuestions.length}`;
+    $('ct-result-rate').textContent     = `${scoreRate}%`;
     $('ct-result-incorrect').textContent = `誤答: ${incorrectCount} 問`;
     $('ct-result-duration').textContent  = formatDuration(durationSec);
 
     const verdictEl = $('ct-result-verdict');
     if (passed) {
-      verdictEl.textContent  = '合格　本番受験OKライン達成！';
-      verdictEl.className    = 'ct-verdict ct-verdict-pass';
+      verdictEl.textContent = '合格　本番受験OKライン達成！';
+      verdictEl.className   = 'ct-verdict ct-verdict-pass';
     } else {
-      verdictEl.textContent  = '復習推奨。間違えた問題を再演習してください';
-      verdictEl.className    = 'ct-verdict ct-verdict-fail';
+      verdictEl.textContent = '復習推奨。間違えた問題を再演習してください';
+      verdictEl.className   = 'ct-verdict ct-verdict-fail';
     }
 
-    // Wrong questions list
-    const wrongList = $('ct-wrong-list');
-    wrongList.innerHTML = '';
+    const wrongList      = $('ct-wrong-list');
+    wrongList.innerHTML  = '';
     const wrongQuestions = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect);
     if (wrongQuestions.length === 0) {
       wrongList.innerHTML = '<p class="ct-no-wrong">全問正解です！</p>';
@@ -341,21 +341,20 @@ const CheckTest = (() => {
         wrongList.appendChild(li);
       });
       $('ct-retry-btn').classList.remove('hidden');
-      $('ct-retry-btn').onclick = () => startRetry(wrongQuestions);
+      $('ct-retry-btn').onclick = () => startRetry(wrongQuestions, cfg);
     }
 
-    // Show result view, hide quiz view
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     $('view-check-test-result').classList.remove('hidden');
   }
 
-  function startRetry(questions) {
-    allQuestions  = questions;
-    displayList   = [...questions];
-    results       = {};
-    currentIndex  = 0;
-    answered      = false;
-    startTime     = Date.now();
+  function startRetry(questions, cfg) {
+    allQuestions = questions;
+    displayList  = [...questions];
+    results      = {};
+    currentIndex = 0;
+    answered     = false;
+    startTime    = Date.now();
     choiceCache.clear();
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     $('view-check-test').classList.remove('hidden');
@@ -364,9 +363,7 @@ const CheckTest = (() => {
   }
 
   function formatDuration(sec) {
-    const m = Math.floor(sec / 60);
-    const s = sec % 60;
-    return `${m}分${String(s).padStart(2, '0')}秒`;
+    return `${Math.floor(sec / 60)}分${String(sec % 60).padStart(2, '0')}秒`;
   }
 
   function escHtml(str) {
@@ -375,15 +372,15 @@ const CheckTest = (() => {
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  // ---- Name entry modal ----
+  // ---- Name modal ----
   function showNameModal(onConfirm) {
     const existing = getStudentName();
     if (existing) { onConfirm(existing); return; }
 
     $('ct-name-modal').classList.remove('hidden');
-    const input  = $('ct-name-input');
-    const errEl  = $('ct-name-error');
-    const btn    = $('ct-name-confirm');
+    const input = $('ct-name-input');
+    const errEl = $('ct-name-error');
+    const btn   = $('ct-name-confirm');
 
     input.value = '';
     errEl.classList.add('hidden');
@@ -396,22 +393,22 @@ const CheckTest = (() => {
       $('ct-name-modal').classList.add('hidden');
       onConfirm(name);
     }
-
-    btn.onclick = confirm;
-    input.onkeydown = e => { if (e.key === 'Enter') confirm(); };
+    btn.onclick      = confirm;
+    input.onkeydown  = e => { if (e.key === 'Enter') confirm(); };
   }
 
   // ---- Public API ----
-  function start(questions) {
+  function start(questions, configId) {
+    const cfg = CONFIGS[configId];
+    if (!cfg) { console.error('Unknown test config:', configId); return; }
     showNameModal(name => {
       document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
-      document.getElementById('view-check-test').classList.remove('hidden');
-      document.getElementById('ct-finish-wrap').classList.add('hidden');
-      init(questions, name);
+      $('view-check-test').classList.remove('hidden');
+      $('ct-finish-wrap').classList.add('hidden');
+      init(questions, name, cfg);
     });
   }
 
-  // Wire result-view buttons (called from app.js after DOM ready)
   function initResultButtons() {
     const backBtn = $('ct-result-back');
     if (backBtn) backBtn.onclick = () => App.goPortal();
@@ -422,5 +419,5 @@ const CheckTest = (() => {
     }
   }
 
-  return { start, showResult, initResultButtons, getHistory, getStudentName };
+  return { start, showResult, initResultButtons, getHistory };
 })();

@@ -2,7 +2,7 @@
 'use strict';
 
 const ResultSubmitter = (() => {
-  const PENDING_KEY = 'ccna_check_test_03_pending';
+  const PENDING_KEY = 'ccna_check_test_pending';
 
   function getPending() { try { return JSON.parse(localStorage.getItem(PENDING_KEY)) || []; } catch { return []; } }
   function savePending(p) { localStorage.setItem(PENDING_KEY, JSON.stringify(p)); }

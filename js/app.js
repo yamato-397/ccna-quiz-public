@@ -2,8 +2,9 @@
 'use strict';
 
 const App = (() => {
-  let questionsData   = null;
-  let checkTestData   = null;
+  let questionsData    = null;
+  let checkTestData03  = null;
+  let checkTestData04  = null;
 
   // ---- View management ----
   function showView(id) {
@@ -21,12 +22,19 @@ const App = (() => {
     return questionsData;
   }
 
-  async function loadCheckTestData() {
-    if (checkTestData) return checkTestData;
+  async function loadCheckTestData(n) {
+    if (n === 4) {
+      if (checkTestData04) return checkTestData04;
+      const res = await fetch('data/check-test-04.json');
+      if (!res.ok) throw new Error('Failed to load check-test-04.json');
+      checkTestData04 = await res.json();
+      return checkTestData04;
+    }
+    if (checkTestData03) return checkTestData03;
     const res = await fetch('data/check-test-03.json');
     if (!res.ok) throw new Error('Failed to load check-test-03.json');
-    checkTestData = await res.json();
-    return checkTestData;
+    checkTestData03 = await res.json();
+    return checkTestData03;
   }
 
   function getData() { return questionsData; }
@@ -71,9 +79,10 @@ const App = (() => {
     const dndEl = document.getElementById('dnd-stat-answered');
     if (dndEl) dndEl.textContent = dndAnswered;
 
-    const ctHistory = CheckTest.getHistory();
-    const ctEl = document.getElementById('ct-stat-history');
-    if (ctEl) ctEl.textContent = `実施回数: ${ctHistory.length}回`;
+    const ct03El = document.getElementById('ct03-stat-history');
+    if (ct03El) ct03El.textContent = `実施回数: ${CheckTest.getHistory('check-test-03').length}回`;
+    const ct04El = document.getElementById('ct04-stat-history');
+    if (ct04El) ct04El.textContent = `実施回数: ${CheckTest.getHistory('check-test-04').length}回`;
   }
 
   // ---- Logout handler ----
@@ -110,7 +119,8 @@ const App = (() => {
     // Portal card navigation
     document.getElementById('card-quiz').addEventListener('click', goQuiz);
     document.getElementById('card-dnd').addEventListener('click', goDnd);
-    document.getElementById('card-check-test').addEventListener('click', goCheckTest);
+    document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
+    document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
@@ -167,10 +177,10 @@ const App = (() => {
     }
   }
 
-  async function goCheckTest() {
+  async function goCheckTest(n) {
     try {
-      const data = await loadCheckTestData();
-      CheckTest.start(data.questions);
+      const data = await loadCheckTestData(n);
+      CheckTest.start(data.questions, data.id);
     } catch(e) {
       console.error('CheckTest init error:', e);
     }
