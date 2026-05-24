@@ -940,6 +940,141 @@ input, select { font-family: inherit; }
   padding: 1rem;
 }
 
+/* ===== ANSWER REVIEW ===== */
+.ct-review-section {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+.ct-review-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+.ct-review-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.ct-review-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.ct-review-filter-btn {
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: border-color var(--transition), background var(--transition), color var(--transition);
+}
+.ct-review-filter-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+.ct-review-filter-btn:hover:not(.active) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.ct-review-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.6rem;
+  background: #fff;
+}
+.ct-review-item.review-correct { border-left: 4px solid var(--success); }
+.ct-review-item.review-wrong   { border-left: 4px solid var(--error); }
+.ct-review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.ct-review-qnum {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.ct-review-seq {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.ct-review-ref {
+  background: #f0f0f0;
+  color: var(--text-muted);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.ct-review-part {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.ct-review-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.badge-correct { background: var(--success-bg); color: var(--success); }
+.badge-wrong   { background: var(--error-bg);   color: var(--error); }
+.ct-review-question {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.ct-review-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+}
+.ct-review-my, .ct-review-correct-ans {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.ct-review-my.my-wrong .ct-review-val { color: var(--error); }
+.ct-review-correct-ans .ct-review-val { color: var(--success); font-weight: 600; }
+.ct-review-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  min-width: 5.5rem;
+}
+.ct-review-val {
+  flex: 1;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
 /* ===== STUDENT NAME MODAL ===== */
 .ct-name-modal-content {
   position: relative;

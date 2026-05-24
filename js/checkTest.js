@@ -1,23 +1,15 @@
-/* checkTest.js — 確認テスト（汎用・テスト3/4共用） */
+/* checkTest.js — 確認テスト（汎用・テスト3/4/5共用）+ 答え合わせ画面 */
 'use strict';
 
 const CheckTest = (() => {
   const NAME_KEY     = 'ccna_check_test_name';
-  const PENDING_KEY  = 'ccna_check_test_pending';
   const PASSING_RATE = 95;
 
-  // ---- Configs ----
+  // ---- Test configs ----
   const CONFIGS = {
-    'check-test-03': {
-      id:         'check-test-03',
-      title:      '確認テスト3回目',
-      historyKey: 'ccna_check_test_03_history',
-    },
-    'check-test-04': {
-      id:         'check-test-04',
-      title:      '確認テスト4回目',
-      historyKey: 'ccna_check_test_04_history',
-    },
+    'check-test-03': { id: 'check-test-03', title: '確認テスト3回目', historyKey: 'ccna_check_test_03_history' },
+    'check-test-04': { id: 'check-test-04', title: '確認テスト4回目', historyKey: 'ccna_check_test_04_history' },
+    'check-test-05': { id: 'check-test-05', title: '確認テスト5回目', historyKey: 'ccna_check_test_05_history' },
   };
 
   // ---- History ----
@@ -32,8 +24,8 @@ const CheckTest = (() => {
   }
 
   // ---- Student name ----
-  function getStudentName()    { return sessionStorage.getItem(NAME_KEY) || ''; }
-  function saveStudentName(n)  { sessionStorage.setItem(NAME_KEY, n); }
+  function getStudentName()   { return sessionStorage.getItem(NAME_KEY) || ''; }
+  function saveStudentName(n) { sessionStorage.setItem(NAME_KEY, n); }
 
   // ---- Shuffle ----
   function shuffle(arr) {
@@ -45,7 +37,7 @@ const CheckTest = (() => {
     return a;
   }
 
-  // ---- Per-session choice cache ----
+  // ---- Choice cache (session-stable) ----
   const choiceCache = new Map();
   function getShuffledChoices(q) {
     if (!choiceCache.has(q.id)) choiceCache.set(q.id, shuffle(q.choices));
@@ -53,37 +45,35 @@ const CheckTest = (() => {
   }
 
   // ---- State ----
-  let allQuestions   = [];
-  let displayList    = [];
-  let currentIndex   = 0;
-  let answered       = false;
-  let results        = {};
-  let startTime      = null;
-  let studentName    = '';
-  let activeConfig   = null;
+  let allQuestions = [];
+  let displayList  = [];
+  let currentIndex = 0;
+  let answered     = false;
+  let results      = {};   // id → { selected[], isCorrect }
+  let startTime    = null;
+  let studentName  = '';
+  let activeConfig = null;
 
-  // ---- DOM helpers ----
   const $ = id => document.getElementById(id);
 
   // ---- Init ----
   function init(questions, name, cfg) {
-    allQuestions  = questions || [];
-    studentName   = name || getStudentName();
-    activeConfig  = cfg;
+    allQuestions = questions || [];
+    studentName  = name || getStudentName();
+    activeConfig = cfg;
     choiceCache.clear();
-    results       = {};
-    currentIndex  = 0;
-    answered      = false;
-    startTime     = Date.now();
-    displayList   = [...allQuestions];
+    results      = {};
+    currentIndex = 0;
+    answered     = false;
+    startTime    = Date.now();
+    displayList  = [...allQuestions];
 
-    // Update header title
     const headerTitle = $('ct-header-title');
     if (headerTitle) headerTitle.textContent = cfg.title;
 
     const shuffleCheck = $('ct-filter-shuffle');
     if (shuffleCheck) {
-      shuffleCheck.checked = false;
+      shuffleCheck.checked  = false;
       shuffleCheck.onchange = () => {
         displayList  = shuffleCheck.checked ? shuffle([...allQuestions]) : [...allQuestions];
         currentIndex = 0;
@@ -169,13 +159,8 @@ const CheckTest = (() => {
     if (rec) restoreAnsweredState(q, rec);
 
     const submitBtn = $('ct-submit-btn');
-    if (rec) {
-      submitBtn.disabled    = true;
-      submitBtn.textContent = '回答済み';
-    } else {
-      submitBtn.disabled    = false;
-      submitBtn.textContent = '回答する';
-    }
+    submitBtn.disabled    = !!rec;
+    submitBtn.textContent = rec ? '回答済み' : '回答する';
 
     $('ct-feedback-area').classList.add('hidden');
     if (rec) showFeedback(q, rec.selected, rec.isCorrect);
@@ -215,9 +200,9 @@ const CheckTest = (() => {
       return;
     }
 
-    answered = true;
-    const isCorrect  = JSON.stringify([...selected].sort()) === JSON.stringify([...q.correctAnswers].sort());
-    results[q.id]    = { selected, isCorrect };
+    answered      = true;
+    const isCorrect = JSON.stringify([...selected].sort()) === JSON.stringify([...q.correctAnswers].sort());
+    results[q.id]   = { selected, isCorrect };
 
     document.querySelectorAll('#ct-choices-container .choice-item').forEach(item => {
       item.classList.add('answered');
@@ -243,10 +228,7 @@ const CheckTest = (() => {
     statusBadge.className   = 'q-status ' + (isCorrect ? 'status-correct' : 'status-wrong');
 
     updateProgress();
-
-    if (Object.keys(results).length === allQuestions.length) {
-      setTimeout(showFinishButton, 400);
-    }
+    if (Object.keys(results).length === allQuestions.length) setTimeout(showFinishButton, 400);
   }
 
   function showFeedback(q, selected, isCorrect) {
@@ -268,12 +250,11 @@ const CheckTest = (() => {
 
   // ---- Progress ----
   function updateProgress() {
-    const total   = displayList.length;
-    const pos     = total > 0 ? currentIndex + 1 : 0;
-    const done    = Object.keys(results).length;
-    $('ct-position').textContent      = `${pos} / ${total}`;
+    const total = displayList.length;
+    const done  = Object.keys(results).length;
+    $('ct-position').textContent       = `${currentIndex + 1} / ${total}`;
     $('ct-answered-count').textContent = `回答済み: ${done} / ${total}`;
-    $('ct-progress-bar').style.width  = (total > 0 ? ((currentIndex + 1) / total) * 100 : 0) + '%';
+    $('ct-progress-bar').style.width   = (total > 0 ? ((currentIndex + 1) / total) * 100 : 0) + '%';
   }
 
   function scrollToTop() {
@@ -290,9 +271,7 @@ const CheckTest = (() => {
     const durationSec    = Math.round((Date.now() - startTime) / 1000);
     const cfg            = activeConfig;
 
-    const wrongIds = allQuestions
-      .filter(q => results[q.id] && !results[q.id].isCorrect)
-      .map(q => q.id);
+    const wrongIds = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect).map(q => q.id);
 
     const rec = {
       submittedAt:      new Date().toISOString(),
@@ -309,12 +288,12 @@ const CheckTest = (() => {
       userAgent:        navigator.userAgent,
     };
     appendHistory(cfg, rec);
-
     if (typeof ResultSubmitter !== 'undefined') ResultSubmitter.submit(rec);
 
-    $('ct-result-title').textContent    = cfg.title + ' — 結果';
-    $('ct-result-score').textContent    = `${correctCount} / ${allQuestions.length}`;
-    $('ct-result-rate').textContent     = `${scoreRate}%`;
+    // Summary
+    $('ct-result-title').textContent     = cfg.title + ' — 結果';
+    $('ct-result-score').textContent     = `${correctCount} / ${allQuestions.length}`;
+    $('ct-result-rate').textContent      = `${scoreRate}%`;
     $('ct-result-incorrect').textContent = `誤答: ${incorrectCount} 問`;
     $('ct-result-duration').textContent  = formatDuration(durationSec);
 
@@ -327,6 +306,7 @@ const CheckTest = (() => {
       verdictEl.className   = 'ct-verdict ct-verdict-fail';
     }
 
+    // Wrong list + retry
     const wrongList      = $('ct-wrong-list');
     wrongList.innerHTML  = '';
     const wrongQuestions = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect);
@@ -344,8 +324,79 @@ const CheckTest = (() => {
       $('ct-retry-btn').onclick = () => startRetry(wrongQuestions, cfg);
     }
 
+    // Review (answer sheet)
+    renderReview();
+
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     $('view-check-test-result').classList.remove('hidden');
+  }
+
+  // ---- Answer Review ----
+  function renderReview() {
+    const listEl = $('ct-review-list');
+    if (!listEl) return;
+
+    // Build items for all questions (in original order)
+    const items = allQuestions.map((q, idx) => {
+      const rec       = results[q.id] || { selected: [], isCorrect: false };
+      const isCorrect = rec.isCorrect;
+      const part      = q.part ? q.part.replace('part_', 'Part ') : '';
+
+      const el = document.createElement('div');
+      el.className       = 'ct-review-item ' + (isCorrect ? 'review-correct' : 'review-wrong');
+      el.dataset.correct = isCorrect ? '1' : '0';
+
+      el.innerHTML = `
+        <div class="ct-review-header">
+          <div class="ct-review-qnum">
+            <span class="ct-review-seq">Q${idx + 1}</span>
+            <span class="ct-review-ref">対策資料 No.${q.displayId}</span>
+            <span class="ct-review-part">${escHtml(part)}</span>
+          </div>
+          <span class="ct-review-badge ${isCorrect ? 'badge-correct' : 'badge-wrong'}">${isCorrect ? '○ 正解' : '✗ 不正解'}</span>
+        </div>
+        <div class="ct-review-question">${escHtml(q.question)}</div>
+        <div class="ct-review-answers">
+          <div class="ct-review-my ${isCorrect ? '' : 'my-wrong'}">
+            <span class="ct-review-label">あなたの回答</span>
+            <span class="ct-review-val">${rec.selected.length ? rec.selected.map(s => escHtml(s)).join('、') : '（未回答）'}</span>
+          </div>
+          ${!isCorrect ? `<div class="ct-review-correct-ans">
+            <span class="ct-review-label">正解</span>
+            <span class="ct-review-val">${q.correctAnswers.map(a => escHtml(a)).join('、')}</span>
+          </div>` : ''}
+        </div>`;
+      return el;
+    });
+
+    // Filter tabs
+    const filterBtns = document.querySelectorAll('.ct-review-filter-btn');
+    function applyFilter(filter) {
+      filterBtns.forEach(b => b.classList.toggle('active', b.dataset.f === filter));
+      listEl.innerHTML = '';
+      items.forEach(el => {
+        if (filter === 'all' ||
+            (filter === 'correct' && el.dataset.correct === '1') ||
+            (filter === 'wrong'   && el.dataset.correct === '0')) {
+          listEl.appendChild(el);
+        }
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.onclick = () => applyFilter(btn.dataset.f);
+    });
+
+    // Update counts on filter buttons
+    const correctCount   = Object.values(results).filter(r => r.isCorrect).length;
+    const incorrectCount = allQuestions.length - correctCount;
+    document.querySelectorAll('.ct-review-filter-btn').forEach(b => {
+      if (b.dataset.f === 'all')     b.textContent = `全問 (${allQuestions.length})`;
+      if (b.dataset.f === 'correct') b.textContent = `正解 (${correctCount})`;
+      if (b.dataset.f === 'wrong')   b.textContent = `不正解 (${incorrectCount})`;
+    });
+
+    applyFilter('all');
   }
 
   function startRetry(questions, cfg) {
@@ -381,7 +432,6 @@ const CheckTest = (() => {
     const input = $('ct-name-input');
     const errEl = $('ct-name-error');
     const btn   = $('ct-name-confirm');
-
     input.value = '';
     errEl.classList.add('hidden');
     input.focus();
@@ -393,8 +443,8 @@ const CheckTest = (() => {
       $('ct-name-modal').classList.add('hidden');
       onConfirm(name);
     }
-    btn.onclick      = confirm;
-    input.onkeydown  = e => { if (e.key === 'Enter') confirm(); };
+    btn.onclick     = confirm;
+    input.onkeydown = e => { if (e.key === 'Enter') confirm(); };
   }
 
   // ---- Public API ----

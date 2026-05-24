@@ -80,6 +80,15 @@
           </div>
           <button class="btn btn-primary btn-full card-btn">スタート</button>
         </div>
+        <div class="portal-card portal-card-test" id="card-check-test-05">
+          <div class="card-icon">&#9989;</div>
+          <h2 class="card-title">確認テスト5回目</h2>
+          <p class="card-desc">ランダム抽出 100問<br>95%以上で合格判定</p>
+          <div class="card-stats">
+            <span id="ct05-stat-history">実施回数: 0回</span>
+          </div>
+          <button class="btn btn-primary btn-full card-btn">スタート</button>
+        </div>
       </div>
     </main>
   </div>
@@ -306,6 +315,19 @@
             <button class="btn btn-primary hidden" id="ct-retry-btn">間違えた問題を再演習</button>
           </div>
         </div>
+
+        <!-- 答え合わせ -->
+        <div class="ct-review-section">
+          <h3 class="ct-review-title">答え合わせ</h3>
+          <p class="ct-review-note">対策資料の問題番号・あなたの回答・正解を確認できます</p>
+          <div class="ct-review-filters">
+            <button class="ct-review-filter-btn active" data-f="all">全問</button>
+            <button class="ct-review-filter-btn" data-f="wrong">不正解</button>
+            <button class="ct-review-filter-btn" data-f="correct">正解</button>
+          </div>
+          <div id="ct-review-list"></div>
+        </div>
+
       </div>
     </div>
   </div>

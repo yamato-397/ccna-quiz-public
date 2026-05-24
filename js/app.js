@@ -5,6 +5,7 @@ const App = (() => {
   let questionsData    = null;
   let checkTestData03  = null;
   let checkTestData04  = null;
+  let checkTestData05  = null;
 
   // ---- View management ----
   function showView(id) {
@@ -23,18 +24,18 @@ const App = (() => {
   }
 
   async function loadCheckTestData(n) {
-    if (n === 4) {
-      if (checkTestData04) return checkTestData04;
-      const res = await fetch('data/check-test-04.json');
-      if (!res.ok) throw new Error('Failed to load check-test-04.json');
-      checkTestData04 = await res.json();
-      return checkTestData04;
-    }
-    if (checkTestData03) return checkTestData03;
-    const res = await fetch('data/check-test-03.json');
-    if (!res.ok) throw new Error('Failed to load check-test-03.json');
-    checkTestData03 = await res.json();
-    return checkTestData03;
+    const map = {
+      3: { cache: () => checkTestData03, set: d => { checkTestData03 = d; }, file: 'check-test-03.json' },
+      4: { cache: () => checkTestData04, set: d => { checkTestData04 = d; }, file: 'check-test-04.json' },
+      5: { cache: () => checkTestData05, set: d => { checkTestData05 = d; }, file: 'check-test-05.json' },
+    };
+    const entry = map[n] || map[3];
+    if (entry.cache()) return entry.cache();
+    const res = await fetch('data/' + entry.file);
+    if (!res.ok) throw new Error('Failed to load ' + entry.file);
+    const data = await res.json();
+    entry.set(data);
+    return data;
   }
 
   function getData() { return questionsData; }
@@ -83,6 +84,8 @@ const App = (() => {
     if (ct03El) ct03El.textContent = `実施回数: ${CheckTest.getHistory('check-test-03').length}回`;
     const ct04El = document.getElementById('ct04-stat-history');
     if (ct04El) ct04El.textContent = `実施回数: ${CheckTest.getHistory('check-test-04').length}回`;
+    const ct05El = document.getElementById('ct05-stat-history');
+    if (ct05El) ct05El.textContent = `実施回数: ${CheckTest.getHistory('check-test-05').length}回`;
   }
 
   // ---- Logout handler ----
@@ -121,6 +124,7 @@ const App = (() => {
     document.getElementById('card-dnd').addEventListener('click', goDnd);
     document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
     document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
+    document.getElementById('card-check-test-05').addEventListener('click', () => goCheckTest(5));
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
