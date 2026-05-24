@@ -865,6 +865,24 @@ input, select { font-family: inherit; }
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+.ct-dnd-score-wrap {
+  margin-top: -0.5rem;
+  border: 2px solid var(--primary-light);
+}
+.ct-dnd-score-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+.ct-dnd-score-wrap .ct-score-value {
+  font-size: 2rem;
+}
+.ct-dnd-score-wrap .ct-rate-value {
+  font-size: 1.2rem;
+}
 .ct-verdict {
   text-align: center;
   font-size: 1.1rem;

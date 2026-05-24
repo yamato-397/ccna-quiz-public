@@ -128,13 +128,28 @@ const App = (() => {
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
-    document.getElementById('dnd-back').addEventListener('click', goPortal);
+    document.getElementById('dnd-back').addEventListener('click', () => {
+      if (DndQuiz.isTestMode()) {
+        if (!confirm('テスト中です。ポータルへ戻るとD&D結果が失われます。よろしいですか？')) return;
+        DndQuiz.endTestMode();
+        return;
+      }
+      goPortal();
+    });
     document.getElementById('ct-back').addEventListener('click', goPortal);
 
-    // Check test finish → result
+    // Check test finish → D&D phase (test 5) or result
     document.getElementById('ct-finish-btn').addEventListener('click', () => {
-      CheckTest.showResult();
+      CheckTest.handleFinish();
     });
+
+    // D&D test mode finish → combined result
+    const dndTestFinishBtn = document.getElementById('dnd-test-finish-btn');
+    if (dndTestFinishBtn) {
+      dndTestFinishBtn.addEventListener('click', () => {
+        DndQuiz.endTestMode();
+      });
+    }
 
     // Result view wiring
     CheckTest.initResultButtons();
@@ -184,7 +199,7 @@ const App = (() => {
   async function goCheckTest(n) {
     try {
       const data = await loadCheckTestData(n);
-      CheckTest.start(data.questions, data.id);
+      CheckTest.start(data.questions, data.id, data.dd_questions);
     } catch(e) {
       console.error('CheckTest init error:', e);
     }

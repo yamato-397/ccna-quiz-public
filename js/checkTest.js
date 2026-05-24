@@ -1,4 +1,4 @@
-/* checkTest.js — 確認テスト（汎用・テスト3/4/5共用）+ 答え合わせ画面 */
+/* checkTest.js — 確認テスト（テスト3/4/5共用）+ 答え合わせ画面 */
 'use strict';
 
 const CheckTest = (() => {
@@ -7,9 +7,9 @@ const CheckTest = (() => {
 
   // ---- Test configs ----
   const CONFIGS = {
-    'check-test-03': { id: 'check-test-03', title: '確認テスト3回目', historyKey: 'ccna_check_test_03_history' },
-    'check-test-04': { id: 'check-test-04', title: '確認テスト4回目', historyKey: 'ccna_check_test_04_history' },
-    'check-test-05': { id: 'check-test-05', title: '確認テスト5回目', historyKey: 'ccna_check_test_05_history' },
+    'check-test-03': { id: 'check-test-03', title: '確認テスト3回目', historyKey: 'ccna_check_test_03_history', hasDnd: false },
+    'check-test-04': { id: 'check-test-04', title: '確認テスト4回目', historyKey: 'ccna_check_test_04_history', hasDnd: false },
+    'check-test-05': { id: 'check-test-05', title: '確認テスト5回目', historyKey: 'ccna_check_test_05_history', hasDnd: true  },
   };
 
   // ---- History ----
@@ -37,7 +37,7 @@ const CheckTest = (() => {
     return a;
   }
 
-  // ---- Choice cache (session-stable) ----
+  // ---- Choice cache ----
   const choiceCache = new Map();
   function getShuffledChoices(q) {
     if (!choiceCache.has(q.id)) choiceCache.set(q.id, shuffle(q.choices));
@@ -49,18 +49,22 @@ const CheckTest = (() => {
   let displayList  = [];
   let currentIndex = 0;
   let answered     = false;
-  let results      = {};   // id → { selected[], isCorrect }
+  let results      = {};
   let startTime    = null;
   let studentName  = '';
   let activeConfig = null;
+  let dndQuestions = [];   // D&D questions for test-05
+  let dndResults   = null; // { id: { correct } } received from DndQuiz
 
   const $ = id => document.getElementById(id);
 
   // ---- Init ----
-  function init(questions, name, cfg) {
+  function init(questions, name, cfg, ddQuestions) {
     allQuestions = questions || [];
     studentName  = name || getStudentName();
     activeConfig = cfg;
+    dndQuestions = ddQuestions || [];
+    dndResults   = null;
     choiceCache.clear();
     results      = {};
     currentIndex = 0;
@@ -245,7 +249,26 @@ const CheckTest = (() => {
 
   function showFinishButton() {
     const wrap = $('ct-finish-wrap');
-    if (wrap) wrap.classList.remove('hidden');
+    const btn  = $('ct-finish-btn');
+    if (!wrap || !btn) return;
+    if (activeConfig && activeConfig.hasDnd && dndQuestions.length > 0) {
+      btn.textContent = 'D&D問題へ進む →';
+    } else {
+      btn.textContent = '100問完了 — 結果を見る';
+    }
+    wrap.classList.remove('hidden');
+  }
+
+  // ---- D&D phase (test-05 only) ----
+  function startDndPhase() {
+    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+    $('view-dnd').classList.remove('hidden');
+    DndQuiz.initTestMode(dndQuestions, onDndComplete);
+  }
+
+  function onDndComplete(ddResults) {
+    dndResults = ddResults;
+    showResult();
   }
 
   // ---- Progress ----
@@ -264,12 +287,18 @@ const CheckTest = (() => {
 
   // ---- Result screen ----
   function showResult() {
-    const correctCount   = Object.values(results).filter(r => r.isCorrect).length;
-    const incorrectCount = allQuestions.length - correctCount;
-    const scoreRate      = Math.round((correctCount / allQuestions.length) * 100);
-    const passed         = scoreRate >= PASSING_RATE;
-    const durationSec    = Math.round((Date.now() - startTime) / 1000);
-    const cfg            = activeConfig;
+    const selCorrect   = Object.values(results).filter(r => r.isCorrect).length;
+    const selIncorrect = allQuestions.length - selCorrect;
+    const selRate      = Math.round((selCorrect / allQuestions.length) * 100);
+    const passed       = selRate >= PASSING_RATE;
+    const durationSec  = Math.round((Date.now() - startTime) / 1000);
+    const cfg          = activeConfig;
+
+    // D&D score
+    const hasDnd      = cfg.hasDnd && dndResults !== null;
+    const dndCorrect  = hasDnd ? Object.values(dndResults).filter(r => r.correct).length : 0;
+    const dndTotal    = hasDnd ? Object.keys(dndResults).length : 0;
+    const dndRate     = dndTotal > 0 ? Math.round((dndCorrect / dndTotal) * 100) : 0;
 
     const wrongIds = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect).map(q => q.id);
 
@@ -279,24 +308,39 @@ const CheckTest = (() => {
       testTitle:        cfg.title,
       studentName,
       totalQuestions:   allQuestions.length,
-      correctCount,
-      incorrectCount,
-      scoreRate,
+      correctCount:     selCorrect,
+      incorrectCount:   selIncorrect,
+      scoreRate:        selRate,
       passed,
       wrongQuestionIds: wrongIds,
       durationSeconds:  durationSec,
       userAgent:        navigator.userAgent,
+      dndCorrectCount:  dndCorrect,
+      dndTotalCount:    dndTotal,
     };
     appendHistory(cfg, rec);
     if (typeof ResultSubmitter !== 'undefined') ResultSubmitter.submit(rec);
 
-    // Summary
+    // ---- 4択スコア ----
     $('ct-result-title').textContent     = cfg.title + ' — 結果';
-    $('ct-result-score').textContent     = `${correctCount} / ${allQuestions.length}`;
-    $('ct-result-rate').textContent      = `${scoreRate}%`;
-    $('ct-result-incorrect').textContent = `誤答: ${incorrectCount} 問`;
+    $('ct-result-score').textContent     = `${selCorrect} / ${allQuestions.length}`;
+    $('ct-result-rate').textContent      = `${selRate}%`;
+    $('ct-result-incorrect').textContent = `誤答: ${selIncorrect} 問`;
     $('ct-result-duration').textContent  = formatDuration(durationSec);
 
+    // ---- D&Dスコア（test-05 のみ） ----
+    const dndSection = $('ct-dnd-score-wrap');
+    if (dndSection) {
+      if (hasDnd) {
+        $('ct-dnd-result-score').textContent = `${dndCorrect} / ${dndTotal}`;
+        $('ct-dnd-result-rate').textContent  = `${dndRate}%`;
+        dndSection.classList.remove('hidden');
+      } else {
+        dndSection.classList.add('hidden');
+      }
+    }
+
+    // ---- 合否バナー（4択基準） ----
     const verdictEl = $('ct-result-verdict');
     if (passed) {
       verdictEl.textContent = '合格　本番受験OKライン達成！';
@@ -306,7 +350,7 @@ const CheckTest = (() => {
       verdictEl.className   = 'ct-verdict ct-verdict-fail';
     }
 
-    // Wrong list + retry
+    // ---- 不正解リスト＋再演習 ----
     const wrongList      = $('ct-wrong-list');
     wrongList.innerHTML  = '';
     const wrongQuestions = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect);
@@ -324,7 +368,7 @@ const CheckTest = (() => {
       $('ct-retry-btn').onclick = () => startRetry(wrongQuestions, cfg);
     }
 
-    // Review (answer sheet)
+    // ---- 答え合わせ ----
     renderReview();
 
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
@@ -336,7 +380,6 @@ const CheckTest = (() => {
     const listEl = $('ct-review-list');
     if (!listEl) return;
 
-    // Build items for all questions (in original order)
     const items = allQuestions.map((q, idx) => {
       const rec       = results[q.id] || { selected: [], isCorrect: false };
       const isCorrect = rec.isCorrect;
@@ -369,7 +412,6 @@ const CheckTest = (() => {
       return el;
     });
 
-    // Filter tabs
     const filterBtns = document.querySelectorAll('.ct-review-filter-btn');
     function applyFilter(filter) {
       filterBtns.forEach(b => b.classList.toggle('active', b.dataset.f === filter));
@@ -383,17 +425,12 @@ const CheckTest = (() => {
       });
     }
 
-    filterBtns.forEach(btn => {
-      btn.onclick = () => applyFilter(btn.dataset.f);
-    });
-
-    // Update counts on filter buttons
-    const correctCount   = Object.values(results).filter(r => r.isCorrect).length;
-    const incorrectCount = allQuestions.length - correctCount;
-    document.querySelectorAll('.ct-review-filter-btn').forEach(b => {
+    const selCorrect   = Object.values(results).filter(r => r.isCorrect).length;
+    const selIncorrect = allQuestions.length - selCorrect;
+    filterBtns.forEach(b => {
       if (b.dataset.f === 'all')     b.textContent = `全問 (${allQuestions.length})`;
-      if (b.dataset.f === 'correct') b.textContent = `正解 (${correctCount})`;
-      if (b.dataset.f === 'wrong')   b.textContent = `不正解 (${incorrectCount})`;
+      if (b.dataset.f === 'correct') b.textContent = `正解 (${selCorrect})`;
+      if (b.dataset.f === 'wrong')   b.textContent = `不正解 (${selIncorrect})`;
     });
 
     applyFilter('all');
@@ -402,6 +439,8 @@ const CheckTest = (() => {
   function startRetry(questions, cfg) {
     allQuestions = questions;
     displayList  = [...questions];
+    dndQuestions = [];   // retry = 4択のみ
+    dndResults   = null;
     results      = {};
     currentIndex = 0;
     answered     = false;
@@ -427,7 +466,6 @@ const CheckTest = (() => {
   function showNameModal(onConfirm) {
     const existing = getStudentName();
     if (existing) { onConfirm(existing); return; }
-
     $('ct-name-modal').classList.remove('hidden');
     const input = $('ct-name-input');
     const errEl = $('ct-name-error');
@@ -435,7 +473,6 @@ const CheckTest = (() => {
     input.value = '';
     errEl.classList.add('hidden');
     input.focus();
-
     function confirm() {
       const name = input.value.trim();
       if (!name) { errEl.classList.remove('hidden'); return; }
@@ -448,15 +485,24 @@ const CheckTest = (() => {
   }
 
   // ---- Public API ----
-  function start(questions, configId) {
+  function start(questions, configId, ddQuestions) {
     const cfg = CONFIGS[configId];
     if (!cfg) { console.error('Unknown test config:', configId); return; }
     showNameModal(name => {
       document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
       $('view-check-test').classList.remove('hidden');
       $('ct-finish-wrap').classList.add('hidden');
-      init(questions, name, cfg);
+      init(questions, name, cfg, ddQuestions || []);
     });
+  }
+
+  // Called by ct-finish-btn click
+  function handleFinish() {
+    if (activeConfig && activeConfig.hasDnd && dndQuestions.length > 0) {
+      startDndPhase();
+    } else {
+      showResult();
+    }
   }
 
   function initResultButtons() {
@@ -469,5 +515,5 @@ const CheckTest = (() => {
     }
   }
 
-  return { start, showResult, initResultButtons, getHistory };
+  return { start, handleFinish, showResult, initResultButtons, getHistory };
 })();

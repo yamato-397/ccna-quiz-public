@@ -12,11 +12,26 @@ const DndQuiz = (() => {
   }
   function saveHistory(h) { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); }
   function recordAnswer(id, correct) {
+    if (testMode) {
+      testResults[id] = { correct, ts: Date.now() };
+      checkTestCompletion();
+      return;
+    }
     const h = getHistory();
     h.answers[id] = { correct, ts: Date.now() };
     saveHistory(h);
   }
   function resetHistory() { localStorage.removeItem(HISTORY_KEY); }
+
+  // ---- Test mode state ----
+  let testMode       = false;
+  let testResults    = {};   // { id: { correct: bool } }  — in-memory only
+  let testOnComplete = null;
+
+  function getEffectiveHistory() {
+    if (testMode) return { answers: testResults };
+    return getHistory();
+  }
 
   // ---- Shuffle utility (Fisher-Yates) ----
   function shuffle(arr) {
@@ -181,7 +196,7 @@ const DndQuiz = (() => {
     }
 
     currentQ = displayList[currentIndex];
-    const hist = getHistory();
+    const hist = getEffectiveHistory();
     const rec  = hist.answers[currentQ.id];
 
     // Meta
@@ -649,7 +664,7 @@ const DndQuiz = (() => {
     $('dnd-position').textContent = `${pos} / ${total}`;
     $('dnd-progress-bar').style.width = total > 0 ? (pos / total * 100) + '%' : '0%';
 
-    const hist = getHistory();
+    const hist = getEffectiveHistory();
     const recs = Object.values(hist.answers);
     if (recs.length === 0) {
       $('dnd-accuracy-display').textContent = '正答率 - %';
@@ -692,5 +707,52 @@ const DndQuiz = (() => {
     if (ws) ws.innerHTML = `<div class="empty-state"><p>${escHtml(msg)}</p></div>`;
   }
 
-  return { init, getHistory, resetHistory, normalizeDndQuestion };
+  // ---- Test mode functions ----
+  function checkTestCompletion() {
+    if (!testMode) return;
+    if (Object.keys(testResults).length >= displayList.length) {
+      const wrap = document.getElementById('dnd-test-finish-wrap');
+      if (wrap) wrap.classList.remove('hidden');
+    }
+  }
+
+  function endTestMode() {
+    const results   = { ...testResults };
+    testMode        = false;
+    testResults     = {};
+    const cb        = testOnComplete;
+    testOnComplete  = null;
+    // Restore UI
+    const titleEl = document.getElementById('dnd-header-title');
+    if (titleEl) titleEl.textContent = 'D&D問題';
+    const resetBtn = document.getElementById('dnd-reset-history');
+    if (resetBtn) resetBtn.classList.remove('hidden');
+    const wrap = document.getElementById('dnd-test-finish-wrap');
+    if (wrap) wrap.classList.add('hidden');
+    if (cb) cb(results);
+  }
+
+  function initTestMode(rawQuestions, onComplete) {
+    testMode       = true;
+    testResults    = {};
+    testOnComplete = onComplete;
+
+    init(rawQuestions);
+
+    const titleEl = document.getElementById('dnd-header-title');
+    if (titleEl) titleEl.textContent = '確認テスト5回目 - D&D編';
+
+    const resetBtn = document.getElementById('dnd-reset-history');
+    if (resetBtn) resetBtn.classList.add('hidden');
+
+    const filterCheck = document.getElementById('dnd-filter-shuffle');
+    if (filterCheck) filterCheck.parentElement.classList.add('hidden');
+
+    const wrap = document.getElementById('dnd-test-finish-wrap');
+    if (wrap) wrap.classList.add('hidden');
+  }
+
+  function isTestMode() { return testMode; }
+
+  return { init, initTestMode, endTestMode, isTestMode, getHistory, resetHistory, normalizeDndQuestion };
 })();

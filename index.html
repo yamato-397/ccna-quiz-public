@@ -168,7 +168,7 @@
   <div id="view-dnd" class="view hidden">
     <header class="view-header">
       <button id="dnd-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
-      <div class="view-header-title">D&amp;D問題</div>
+      <div class="view-header-title" id="dnd-header-title">D&amp;D問題</div>
       <button id="dnd-logout" class="btn btn-ghost btn-sm">ログアウト</button>
     </header>
 
@@ -214,13 +214,20 @@
       <button class="btn btn-outline" id="dnd-prev-btn">← 前の問題</button>
       <button class="btn btn-outline" id="dnd-next-btn">次の問題 →</button>
     </div>
+
+    <!-- Test mode finish button — shown when all D&D questions answered in test mode -->
+    <div id="dnd-test-finish-wrap" class="ct-finish-wrap hidden">
+      <button class="btn btn-primary ct-finish-btn" id="dnd-test-finish-btn">
+        &#127942; D&amp;D完了 — 結果を見る
+      </button>
+    </div>
   </div>
 
   <!-- ===== CHECK TEST VIEW ===== -->
   <div id="view-check-test" class="view hidden">
     <header class="view-header">
       <button id="ct-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
-      <div class="view-header-title">確認テスト3回目</div>
+      <div class="view-header-title" id="ct-header-title">確認テスト3回目</div>
       <button id="ct-logout" class="btn btn-ghost btn-sm">ログアウト</button>
     </header>
 
@@ -285,7 +292,7 @@
 
     <div class="ct-result-container">
       <div class="ct-result-card">
-        <h2 class="ct-result-title">テスト結果</h2>
+        <h2 class="ct-result-title" id="ct-result-title">テスト結果</h2>
 
         <div class="ct-score-wrap">
           <div class="ct-score-main">
@@ -296,6 +303,18 @@
             <span class="ct-rate-value" id="ct-result-rate">0%</span>
             <span class="ct-score-detail" id="ct-result-incorrect"></span>
             <span class="ct-score-detail" id="ct-result-duration"></span>
+          </div>
+        </div>
+
+        <!-- D&D score — shown only for test 5 -->
+        <div id="ct-dnd-score-wrap" class="ct-score-wrap ct-dnd-score-wrap hidden">
+          <div class="ct-dnd-score-header">D&amp;D問題</div>
+          <div class="ct-score-main">
+            <span class="ct-score-label">正答数</span>
+            <span class="ct-score-value" id="ct-dnd-result-score">0 / 14</span>
+          </div>
+          <div class="ct-score-sub">
+            <span class="ct-rate-value" id="ct-dnd-result-rate">0%</span>
           </div>
         </div>
 
