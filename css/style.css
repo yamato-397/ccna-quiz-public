@@ -787,6 +787,14 @@ input, select { font-family: inherit; }
   letter-spacing: 0.05em;
 }
 
+.portal-card-midterm {
+  border-color: #7c3aed;
+}
+.portal-card-midterm::before {
+  content: '中間';
+  background: #7c3aed;
+}
+
 /* ===== CHECK TEST — FINISH WRAP ===== */
 .ct-finish-wrap {
   display: flex;

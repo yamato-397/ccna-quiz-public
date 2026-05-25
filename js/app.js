@@ -6,6 +6,7 @@ const App = (() => {
   let checkTestData03  = null;
   let checkTestData04  = null;
   let checkTestData05  = null;
+  let midtermTestData  = null;
 
   // ---- View management ----
   function showView(id) {
@@ -25,9 +26,10 @@ const App = (() => {
 
   async function loadCheckTestData(n) {
     const map = {
-      3: { cache: () => checkTestData03, set: d => { checkTestData03 = d; }, file: 'check-test-03.json' },
-      4: { cache: () => checkTestData04, set: d => { checkTestData04 = d; }, file: 'check-test-04.json' },
-      5: { cache: () => checkTestData05, set: d => { checkTestData05 = d; }, file: 'check-test-05.json' },
+      3:         { cache: () => checkTestData03, set: d => { checkTestData03 = d; }, file: 'check-test-03.json' },
+      4:         { cache: () => checkTestData04, set: d => { checkTestData04 = d; }, file: 'check-test-04.json' },
+      5:         { cache: () => checkTestData05, set: d => { checkTestData05 = d; }, file: 'check-test-05.json' },
+      midterm:   { cache: () => midtermTestData, set: d => { midtermTestData = d; }, file: 'midterm-test.json' },
     };
     const entry = map[n] || map[3];
     if (entry.cache()) return entry.cache();
@@ -86,6 +88,8 @@ const App = (() => {
     if (ct04El) ct04El.textContent = `実施回数: ${CheckTest.getHistory('check-test-04').length}回`;
     const ct05El = document.getElementById('ct05-stat-history');
     if (ct05El) ct05El.textContent = `実施回数: ${CheckTest.getHistory('check-test-05').length}回`;
+    const midtermEl = document.getElementById('midterm-stat-history');
+    if (midtermEl) midtermEl.textContent = `実施回数: ${CheckTest.getHistory('midterm-test').length}回`;
   }
 
   // ---- Logout handler ----
@@ -125,6 +129,7 @@ const App = (() => {
     document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
     document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
     document.getElementById('card-check-test-05').addEventListener('click', () => goCheckTest(5));
+    document.getElementById('card-midterm-test').addEventListener('click', () => goCheckTest('midterm'));
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
