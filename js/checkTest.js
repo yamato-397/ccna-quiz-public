@@ -11,6 +11,7 @@ const CheckTest = (() => {
     'check-test-04': { id: 'check-test-04', title: '確認テスト4回目', historyKey: 'ccna_check_test_04_history', hasDnd: false },
     'check-test-05': { id: 'check-test-05', title: '確認テスト5回目', historyKey: 'ccna_check_test_05_history', hasDnd: true  },
     'midterm-test':  { id: 'midterm-test',  title: '中間テスト',       historyKey: 'ccna_midterm_test_history',  hasDnd: true  },
+    'check-test-06': { id: 'check-test-06', title: '確認テスト6回目', historyKey: 'ccna_check_test_06_history', hasDnd: true  },
   };
 
   // ---- History ----
