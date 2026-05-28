@@ -1,0 +1,2699 @@
+{
+  "id": "check-test-08",
+  "title": "確認テスト8回目",
+  "description": "約400問からランダム抽出した100問確認テスト + D&D全27問",
+  "questionCount": 100,
+  "passingScore": 95,
+  "questions": [
+    {
+      "id": "part_④-12",
+      "displayId": 12,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ネットワーク内のアプリケーションが、300台のサーバーから600台にスケールアップされています。各サーバーは、本番環境、バックアップ、管理トラフィックをサポートするために3つのネットワーク接続を必要とします。各接続は異なるサブネット上に存在します。本番環境ネットワーク用のルーター設定は、まず10.0.0.0/8ネットワーク内のサブネットを使用して設定する必要があります。これらの要件に対応し、無駄なIPアドレス空間を制限するために、ルーターのインターフェースにどのコマンドを設定する必要がありますか？",
+      "choices": [
+        "ip address 10.10.10.1 255.255.252.0",
+        "ip address 10.10.10.1 255.255.255.240",
+        "ip address 10.10.10.1 255.255.240.0",
+        "ip address 10.10.10.1 255.255.254.0"
+      ],
+      "correctAnswers": [
+        "ip address 10.10.10.1 255.255.252.0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-17",
+      "displayId": 17,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "SW1とSW2の間にVLAN 23が実装されています。SW1でshow interface ethernet0/0 switchportコマンドが実行されました。SW1のEthernet0/0はSW2へのアップリンクです。アップリンクインターフェースでどのコマンドを入力すると、PC 11とPC 12間の通信に影響を与えずにPC 1とPC 2が通信できるようになりますか？",
+      "choices": [
+        "スイッチポートトランクはVLAN 23を追加します",
+        "スイッチポートトランクはVLAN 2-1001を許可します",
+        "スイッチポートトランクはVLAN 23を許可します",
+        "スイッチポートトランクはVLAN 22-23を許可します"
+      ],
+      "correctAnswers": [
+        "スイッチポートトランクはVLAN 23を追加します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-1.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-1.jpeg"
+    },
+    {
+      "id": "part_⑤-66",
+      "displayId": 66,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "各仮想マシンの物理リソースを制御および分配するコンポーネントはどれですか?",
+      "choices": [
+        "ハイパーバイザー",
+        "物理エンクロージャー",
+        "OS",
+        "CPU"
+      ],
+      "correctAnswers": [
+        "ハイパーバイザー"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-76",
+      "displayId": 76,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "エンジニアは、3 台の PC を使用して現在の VLAN に IP アドレスを割り当てます。設定では、サブネット化とホスト数に同じクラス C サブネットを使用する 30 個の追加 VLAN の拡張も考慮する必要があります。予想される増加に備えてアドレス空間を確保しながらリクエストを満たすのはどのコマンド セットですか?",
+      "choices": [
+        "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.248",
+        "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.252",
+        "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.0",
+        "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.128"
+      ],
+      "correctAnswers": [
+        "Switch(config)#interface vlan 10\nSwitch(config-if)#ip address 192.168.0.1 255.255.255.248"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-14-20.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-14-20.jpeg"
+    },
+    {
+      "id": "part_③-51",
+      "displayId": 51,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "重複するWi-Fiチャネルが実装されるとどうなりますか？",
+      "choices": [
+        "ユーザーがワイヤレスネットワークのパフォーマンスを低下させる",
+        "ワイヤレスネットワークが不正アクセスに対して脆弱になる",
+        "ワイヤレスデバイスが異なるSSIDを区別できない",
+        "ネットワーク通信が盗聴される可能性がある"
+      ],
+      "correctAnswers": [
+        "ユーザーがワイヤレスネットワークのパフォーマンスを低下させる"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-60",
+      "displayId": 60,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "クライアントは、データ センターのコア スイッチに直接接続されているサーバーからのスループットが低下します。ネットワーク エンジニアは、サーバーへの接続の遅延が最小限であることを発見しましたが、データ転送は信頼できず、show interfaces counters errors コマンドの出力は、サーバーに接続されているインターフェイスの FCS-Err カウントが高いことを示しています。スループットの問題の原因は何ですか?",
+      "choices": [
+        "物理的なケーブル障害",
+        "高帯域幅の使用",
+        "速度の不一致",
+        "ケーブルが長すぎる"
+      ],
+      "correctAnswers": [
+        "物理的なケーブル障害"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-68",
+      "displayId": 68,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "両方のスイッチに適用した場合、どちらの構成がレイヤー2 LACP EtherChannelを確立しますか？",
+      "choices": [
+        "interface range G1/1-1/3\nswitchport mode trunk\nchannnel-group 1 mode active\nno shutdown",
+        "interface range G1/1-1/3\nswitchport mode trunk\nchannnel-group 1 mode desirable\nno shutdown",
+        "interface range G1/1-1/3\nswitchport mode access\nchannnel-group 1 mode passive\nno shutdown",
+        "interface range G1/1-1/3\nswitchport mode access\nchannnel-group 1 mode trunk\nno shutdown"
+      ],
+      "correctAnswers": [
+        "interface range G1/1-1/3\nswitchport mode trunk\nchannnel-group 1 mode active\nno shutdown"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q13.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q13.jpeg"
+    },
+    {
+      "id": "part_⑤-36",
+      "displayId": 36,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "Perfect Forward Secrecy に依存するワイヤレス セキュリティ プロトコルはどれですか?",
+      "choices": [
+        "WPA3",
+        "WPA",
+        "WEP",
+        "WPA2"
+      ],
+      "correctAnswers": [
+        "WPA3"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-97",
+      "displayId": 97,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "WAN回線が設置されるまでの間、IPアドレス192.168.1.1を持つローカルブロードバンドモデムを一時的に使用するように\nデフォルトルートを設定する必要があります。\nWAN回線は、インターネット上の2つの異なる自律システム間でネットワークプレフィックスを交換する外部ルーティングプロトコルを使用します。\nISPはデフォルトルートのみを受信します。\n新しいWAN回線が設置された際に優先されるようにするには、どのような設定を適用する必要がありますか?",
+      "choices": [
+        "IP route 0.0.0.0 0.0.0.0 192.168.1.1 25",
+        "IP route 0.0.0.0 0.0.0.0 192.168.1.1 20",
+        "IP route 0.0.0.0 0.0.0.0 192.168.1.1 track 1",
+        "IProute 0.0.0.0 0.0.0.0 192.168.1.1"
+      ],
+      "correctAnswers": [
+        "IP route 0.0.0.0 0.0.0.0 192.168.1.1 25"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-23",
+      "displayId": 23,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "図を参照してください。Gi0/0を経由するプライマリルートは両方のルータに設定されています。ワークステーションネッ\nトワーク間の接続を確立するには、セカンダリルートを設定する必要があります。\nこのタスクを完了するにはどのコマンド セットを構成する必要がありますか?",
+      "choices": [
+        "R1\nIP roure 172.16.2.0 255.255.255.224 172.16.0.6 111\nR2\nIP route 172.16.1.0 255.255.255.0 172.16.0.5 112",
+        "R1\nIP route 172.16.2.0 255.255.255.248 172.16.0.5 110\nR2\nIP route 172.16.1.0 255.255.255.0 172.16.0.6 110",
+        "R1\nIP route 172.16.2.0 255.255.255.240 172.16.0.2 113\nR2\nIP route 172.16.1.0 255.255.255.0 172.16.0.1 114",
+        "R1\nIP route 172.16.2.0 255.255.255.240 172.16.0.5 89\nR2\nIP route 172.16.1.0 255.255.255.0 172.16.0.6 89"
+      ],
+      "correctAnswers": [
+        "R1\nIP roure 172.16.2.0 255.255.255.224 172.16.0.6 111\nR2\nIP route 172.16.1.0 255.255.255.0 172.16.0.5 112"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no395.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no395.jpeg"
+    },
+    {
+      "id": "part_①-67",
+      "displayId": 67,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "展示を参照してください。\nネットワーク エンジニアは、インターフェイス fastethernet1/1 スイッチ SW1 の既存の構成を更新します。別のベンダー スイッチと同じグループ指定を使用して、EtherChannel を確立する必要があります。プロセスを完了するには、どの構成を実行する必要がありますか?",
+      "choices": [
+        "interface port-channel 2\nchannel-group 2 mode desirable",
+        "interface fastethernet 1/1\nchannel-group 2 mode on",
+        "interface port-channel 2\nchannel-group 2 mode auto",
+        "interface fastethernet 1/1\nchannel-group 2 mode active"
+      ],
+      "correctAnswers": [
+        "interface port-channel 2\nchannel-group 2 mode desirable"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2022_11_25_68.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2022_11_25_68.jpeg"
+    },
+    {
+      "id": "part_④-31",
+      "displayId": 31,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "イーサネット スイッチのポート構成のどのオプションを使用すると、複数の VLAN からのトラフィックが同じ物理リンクを介して伝送されるようになりますか?",
+      "choices": [
+        "trunk",
+        "access",
+        "LAG",
+        "EtherChannel"
+      ],
+      "correctAnswers": [
+        "trunk"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-59",
+      "displayId": 59,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "MAC アドレス テーブルから未使用の MAC アドレスを削除し、新しい MAC アドレスを追加できるようにするスイッチング機能はどれですか?",
+      "choices": [
+        "MAC アドレス エージング",
+        "MAC 移動",
+        "動的 MAC アドレス学習",
+        "MAC アドレス自動パージ"
+      ],
+      "correctAnswers": [
+        "MAC アドレス エージング"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-37",
+      "displayId": 37,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "ネットワーク デバイスのヘルス監視における Syslog レベル 7 の役割は何ですか?",
+      "choices": [
+        "デバイス上のさまざまなデバッグコマンドの出力を送信します",
+        "ネットワークアプライアンスの緊急事態について警告します",
+        "ネットワークデバイス上で確認できるエラー状態に関する情報を提供します",
+        "ネットワーク機器からの通常の動作メッセージを共有します"
+      ],
+      "correctAnswers": [
+        "デバイス上のさまざまなデバッグコマンドの出力を送信します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-60",
+      "displayId": 60,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "ネットワーク管理者がネットワーク環境に自動化を実装することを選択するのはなぜですか?",
+      "choices": [
+        "すべてのデバイスで一貫した構成状態を維持するプロセスを簡素化する",
+        "デバイス情報ストレージを一元化する",
+        "ネットワークの残りの部分とは別に管理プレーンを展開する",
+        "集中化​​されたユーザー アカウント管理を実装する"
+      ],
+      "correctAnswers": [
+        "すべてのデバイスで一貫した構成状態を維持するプロセスを簡素化する"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-4",
+      "displayId": 4,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "この出力で発生しているインターフェイスの状態はどれですか?",
+      "choices": [
+        "デュプレックスのミスマッチ",
+        "キューイング",
+        "コリジョン",
+        "高スループット"
+      ],
+      "correctAnswers": [
+        "デュプレックスのミスマッチ"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2023_03_16_93.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2023_03_16_93.jpeg"
+    },
+    {
+      "id": "part_④-24",
+      "displayId": 24,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "FlexConnect モードで実行されている AP に接続し、WLAN がフレックス ローカル スイッチングを使用する場合、どのスイッチ ポート構成を設定する必要がありますか?",
+      "choices": [
+        "プルーニングされたVLANを持つトランクポート",
+        "1つのVLANを持つアクセスポート",
+        "IPアドレスを持つレイヤ3ポート",
+        "MACフィルタリングが有効になっているタグ付きポート"
+      ],
+      "correctAnswers": [
+        "プルーニングされたVLANを持つトランクポート"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-8",
+      "displayId": 8,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "show interfaces trunk コマンドの出力にネイティブ VLANの不一致に関する情報が含まれるようにするには、どの機能またはプロトコルを有効にする必要がありますか?",
+      "choices": [
+        "CDP",
+        "RSTP",
+        "ポートファスト",
+        "DTP"
+      ],
+      "correctAnswers": [
+        "CDP"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-102",
+      "displayId": 102,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "無線ネットワークにおける暗号化の特徴は何ですか?",
+      "choices": [
+        "許可されたユーザーのデータをエンコードおよびデコードします",
+        "ネットワークを攻撃する前にデータ脅威を阻止します",
+        "権限のないユーザーを阻止するためのポリシーを使用します",
+        "文字と数字の組み合わせを含める必要があります"
+      ],
+      "correctAnswers": [
+        "許可されたユーザーのデータをエンコードおよびデコードします"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-13",
+      "displayId": 13,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "管理者が WLC GUI にアクセスして構成設定を更新するために使用するインターフェイスはどれですか。",
+      "choices": [
+        "management",
+        "service",
+        "dynamic",
+        "virtual"
+      ],
+      "correctAnswers": [
+        "management"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-57",
+      "displayId": 57,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "この出力で発生しているインターフェイスの状態はどれですか?",
+      "choices": [
+        "衝突",
+        "不良のNIC",
+        "デュプレックスの不一致",
+        "高スループット"
+      ],
+      "correctAnswers": [
+        "衝突"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2023_03_16_83.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2023_03_16_83.jpeg"
+    },
+    {
+      "id": "part_②-23",
+      "displayId": 23,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "どのような条件下では、FlexConnect ワイヤレス アーキテクチャが他のアーキテクチャの選択肢よりも優先されるのでしょうか。",
+      "choices": [
+        "複数のリモート オフィスへの接続遅延が 300 ミリ秒を超えると予想される場合",
+        "個別の WLC がない複数のリモート オフィスの集中管理が必要な場合",
+        "さまざまなリモート オフィスで高精度の位置情報サービスが必要な場合",
+        "各リモート オフィスでネットワーク管理用に独自のローカル WLC が必要な場合"
+      ],
+      "correctAnswers": [
+        "複数のリモート オフィスへの接続遅延が 300 ミリ秒を超えると予想される場合"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-18",
+      "displayId": 18,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "図を参照してください。境界ルータに静的ルートが実装されています。境界ルータから172. 16.153.154に送信されたpingのネクストホップIPアドレスは何ですか？",
+      "choices": [
+        "10.56.22.23",
+        "10.35.47.17",
+        "10.65.34.19",
+        "10.12.13.14"
+      ],
+      "correctAnswers": [
+        "10.56.22.23"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no5.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no5.jpeg"
+    },
+    {
+      "id": "part_②-32",
+      "displayId": 32,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "機械学習は不正なネットワークアクセスの検出をどのように改善するのでしょうか?",
+      "choices": [
+        "侵入を示すパターンを識別します",
+        "古いソフトウェアを監視します",
+        "セキュリティポリシーの更新を指示します",
+        "セキュリティクリアランスレベルを割り当てます"
+      ],
+      "correctAnswers": [
+        "侵入を示すパターンを識別します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-10",
+      "displayId": 10,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "同じハイパーバイザー上で実行されている複数の仮想マシンに分散されている物理コンポーネントはどれですか?",
+      "choices": [
+        "ハードウェア リソース",
+        "ネットワーク インターフェイス",
+        "バックプレーン ネットワーク",
+        "外部ストレージ"
+      ],
+      "correctAnswers": [
+        "ハードウェア リソース"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-23",
+      "displayId": 23,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "VLANホッピング攻撃からネットワークを保護する方法は何ですか？",
+      "choices": [
+        "ネイティブVLANを未使用のVLANIDに変更します",
+        "ダイナミックARPインスペクションを有効にします",
+        "トラフィックがVLANを変更しないようにACLを構成します",
+        "インターネットに面したVLANにポートセキュリティを実装します"
+      ],
+      "correctAnswers": [
+        "ネイティブVLANを未使用のVLANIDに変更します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-64",
+      "displayId": 64,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "エンジニアは、Cisco WLC GUI を使用して、AES と事前共有キー Cisc0123456 を使用した WPA2 暗号化用に WLAN を設定しています。エンジニアが [レイヤー 2 セキュリティ] ドロップダウン リストから [WPA + WPA2] オプションを選択した後、プロセスを完了するにはどの 2 つのタスクを実行する必要がありますか? (2 つ選択してください)",
+      "choices": [
+        "[Auth Key Mgmt] ドロップダウン リストから [PSK] を選択し、[PSK Format] を ASCII に設定してキーを入力します",
+        "[WPA2 Policy] および [AES] チェック ボックスをオンにします",
+        "[Auth Key Mgmt] ドロップダウン リストから [CCKM] を選択し、[PSK Format] を 16 進数に設定してキーを入力します",
+        " [PSK Format] ドロップダウン リストから [ASCII] を選択し、キーを入力して、[Auth Key Mgmt] 設定は空白のままにします",
+        " [WPA2 Policy]、[AES]、および [TKIP] チェック ボックスをオンにします"
+      ],
+      "correctAnswers": [
+        "[Auth Key Mgmt] ドロップダウン リストから [PSK] を選択し、[PSK Format] を ASCII に設定してキーを入力します",
+        "[WPA2 Policy] および [AES] チェック ボックスをオンにします"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-41",
+      "displayId": 41,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "図を参照してください。JSONデータ内のappleは何を表していますか？",
+      "choices": [
+        "文字列",
+        "数値",
+        "オブジェクト",
+        "配列"
+      ],
+      "correctAnswers": [
+        "文字列"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no268.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no268.jpeg"
+    },
+    {
+      "id": "part_①-6",
+      "displayId": 6,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "インターフェイスTenGigabitEthernet0 / 0を流れるトラフィックでは、転送速度が遅くなります。問題の理由は何ですか？\n",
+      "choices": [
+        "デュプレックスの非互換性",
+        "トラフィック渋滞が激しい",
+        "速度の競合",
+        "キューイングドロップ"
+      ],
+      "correctAnswers": [
+        "デュプレックスの非互換性"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2022_0222_06.1.jpg",
+      "hasImage": true,
+      "localImagePath": "images/2022_0222_06.1.jpeg"
+    },
+    {
+      "id": "part_③-40",
+      "displayId": 40,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "展示を参照してください。ルータR1は192.168.12.16へのトラフィックをどのように処理しますか？",
+      "choices": [
+        "宛先アドレスを含む最長のプレフィックスを持つため、RIPルートを選択します",
+        "宛先アドレスを含む最短のプレフィックスがあるため、IS-ISルートを選択します",
+        "アドミニストレーティブディスタンスが最も低いため、EIGRPルートを選択します",
+        "最もコストが低いため、OSPFルートを選択する"
+      ],
+      "correctAnswers": [
+        "宛先アドレスを含む最長のプレフィックスを持つため、RIPルートを選択します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "6-1-18.JPG",
+      "hasImage": true,
+      "localImagePath": "images/6-1-18.jpeg"
+    },
+    {
+      "id": "part_②-35",
+      "displayId": 35,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "SNMP トラップと SNMP ポーリングの違いは何ですか?",
+      "choices": [
+        "SNMPトラップはネットワークデバイスでプッシュモデルを使用して開始され、SNMPポーリングはサーバーで開始されます",
+        "SNMPトラップはプロアクティブ監視に使用され、SNMPポーリングはリアクティブ監視に使用されます",
+        "SNMPトラップはネットワーク管理システムによって開始され、ネットワークデバイスはSNMPポーリングを開始します",
+        "SNMPトラップはMIBを介して定期的に更新を送信し、SNMPポーリングはオンデマンドでデータを送信します"
+      ],
+      "correctAnswers": [
+        "SNMPトラップはネットワークデバイスでプッシュモデルを使用して開始され、SNMPポーリングはサーバーで開始されます"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-33",
+      "displayId": 33,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "ユーザーがOSPFを構成し、OSPFでギガビットイーサネットインターフェイスをアドバタイズしました。デフォルトでは、このインターフェイスはどのタイプのOSPFネットワークに属しますか？",
+      "choices": [
+        "ブロードキャスト",
+        "Non broadcast",
+        "ポイントツーポイント",
+        "ポイントツーマルチポイント"
+      ],
+      "correctAnswers": [
+        "ブロードキャスト"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-7",
+      "displayId": 7,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "トラフィックを宛先ネットワークに送信するためにどのインターフェイスが使用されますか?",
+      "choices": [
+        "G0/12",
+        "G0/1",
+        "G0/9",
+        "G0/19"
+      ],
+      "correctAnswers": [
+        "G0/12"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2023_06_06_44.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2023_06_06_44.jpeg"
+    },
+    {
+      "id": "part_⑤-85",
+      "displayId": 85,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "ネットワーク エンジニアは、マネージド サービス クライアントに属するスイッチを新しい Cisco Catalyst スイッチに交換しています。新しいスイッチは、Telnet サービスを暗号化された接続に置き換え、モジュラス サイズを 1024 から 2 倍にするなど、更新されたセキュリティ標準に合わせて構成されます。エンジニアが新しいスイッチで構成する必要がある 2 つのコマンドはどれですか? (2つ選んでください)",
+      "choices": [
+        "トランスポート入力 ssh",
+        "暗号鍵生成 RSA モジュラス 2048",
+        "トランスポート入力すべて",
+        "暗号鍵生成 RSA 一般鍵モジュラス 1024",
+        "暗号鍵生成 RSA 使用鍵"
+      ],
+      "correctAnswers": [
+        "トランスポート入力 ssh",
+        "暗号鍵生成 RSA モジュラス 2048"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-15",
+      "displayId": 15,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "DNS ルックアップ操作に関する次の 2 つの記述のうち正しいものはどれですか。(2 つ選択してください。)",
+      "choices": [
+        "クライアントはドメイン名から IP アドレスへの解決要求を DNS サーバーに送信します",
+        "宛先ポート 53 を使用します",
+        "DNS サーバーは宛先に ping を送信して、使用可能かどうかを確認します",
+        "クライアントは、IP アドレスからドメイン名の解決を求める要求を DNS サーバーに送信します",
+        "宛先のプライマリ IP アドレスがダウンしている場合、DNS サーバーはクライアントを代替 IP アドレスに転送できます"
+      ],
+      "correctAnswers": [
+        "クライアントはドメイン名から IP アドレスへの解決要求を DNS サーバーに送信します",
+        "宛先ポート 53 を使用します"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-63",
+      "displayId": 63,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "2 つのネットワーク セグメント間のワイヤレス接続を提供する AP モードはどれですか?",
+      "choices": [
+        "ブリッジ",
+        "ルート",
+        "ローカル",
+        "FlexConnect"
+      ],
+      "correctAnswers": [
+        "ブリッジ"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-81",
+      "displayId": 81,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "エンジニアは、プレフィックス2019：C15C：0CAF：E001 ::/64のIPv6静的ルートを使用してルータR1を設定しています。ネクストホップは2019：C15C：0CAF：E002 :: 1である必要があります。ルートは、R1ギガビット0/0インターフェイスを介して到達可能である必要があります。指定されたルートを構成するコマンドはどれですか？",
+      "choices": [
+        "R1(config)# ipv6 route 2019：C15C：0CAF：E001 :: / 64 2019：C15C：0CAF：E002 :: 1",
+        "R1(config-if)# ipv6 route 2019：C15C：0CAF：E001 :: / 64 2019：C15C：0CAF：E002 :: 1",
+        "R1(config-if)# ip route 2019：C15C：0CAF：E001 :: / 64 GigabitEthernet0 / 0",
+        "R1(config)# ip route 2019：C15C： 0CAF：E001 :: / 64 GigabitEthernet0 / 0"
+      ],
+      "correctAnswers": [
+        "R1(config)# ipv6 route 2019：C15C：0CAF：E001 :: / 64 2019：C15C：0CAF：E002 :: 1"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-8",
+      "displayId": 8,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "通常、従来のネットワーク デバイスによって実行されていた機能が、ソフトウェア デファインド コントローラに置き換えられるのはどれですか?",
+      "choices": [
+        "ルート テーブルの構築と転送テーブルの更新",
+        "VPN リンク処理の暗号化と復号化",
+        "NAT 操作中の送信元アドレスまたは宛先アドレスの変更",
+        "データリンク フレーム内のパケットのカプセル化とカプセル化解除"
+      ],
+      "correctAnswers": [
+        "ルート テーブルの構築と転送テーブルの更新"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-81",
+      "displayId": 81,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ユニキャスト アドレスではなくマルチキャスト アドレスにパケットを転送する IPv6 アドレス ブロックはどれですか",
+      "choices": [
+        "FF00::/12",
+        "FE80::/10",
+        "FC00::/7",
+        "2000::/3"
+      ],
+      "correctAnswers": [
+        "FF00::/12"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-34",
+      "displayId": 34,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "WLC のローカル Web ページでクライアントにユーザ名とパスワードを要求するゲスト WLAN を作成する必要があります。[レイヤー 3] タブで [認証] オプションを有効にする前に、[レイヤー 2] タブで実行する必要がある操作はどれですか? (2つ選んでください)",
+      "choices": [
+        "MAC フィルタリング オプションのチェックボックスをオフにします。",
+        "レイヤー 2 セキュリティ オプションを [なし] に設定します。",
+        "[セキュリティ タイプ] オプションを [個人] に設定します。",
+        "WPA 暗号化オプションを TKIP から CCMP128 (AES) に変更します。",
+        "WPA ポリシー オプションのチェック ボックスをオフにし、WPA2 ポリシー オプションのチェック ボックスをオンにします。"
+      ],
+      "correctAnswers": [
+        "MAC フィルタリング オプションのチェックボックスをオフにします。",
+        "レイヤー 2 セキュリティ オプションを [なし] に設定します。"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "2022_11_14_87.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2022_11_14_87.jpeg"
+    },
+    {
+      "id": "part_⑤-65",
+      "displayId": 65,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "最大MACアドレス数を超えたため、スイッチポートでポートセキュリティ違反が発生しました。セキュリティ違反数をインクリメントしてSNMPトラップを転送するには、どのコマンドを設定する必要がありますか。",
+      "choices": [
+        "スイッチポートポート-セキュリティ違反の制限",
+        "スイッチポートポート-セキュリティ違反アクセス",
+        "スイッチポートポート-セキュリティ違反保護",
+        "スイッチポートポート-セキュリティ違反のシャットダウン"
+      ],
+      "correctAnswers": [
+        "スイッチポートポート-セキュリティ違反の制限"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-38",
+      "displayId": 38,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "IPv6 は ISP への R1 に実装する必要があります。R1 と ISP 間のアップリンクは手動割り当てで構成する必要があり、LAN インターフェイスはセルフプロビジョニングする必要があります。どちらの接続でも、該当する IPv6 ネットワークを使用する必要があります。R1 に適用する必要がある 2 つの構成はどれですか? (2つお選びください)",
+      "choices": [
+        "interface Gi0/0\nipv6 address 2001:db8:0:AFFF::/64 eui-64",
+        "interface Gi0/1\nipv6 address 2001:db8:0F1B:FCCB:ACCE:FCED:ABCD:FA00:/127",
+        "interface Gi0/1\nipv6 address 2001:db8:0F1B:FCCB:ACCE:FCED:ABCD:FA02:/127",
+        "interface Gi0/0\nipv6 address 2001:db8:1:AFFF::/64 eui-64",
+        "interface Gi0/0\nipv6 address 2001:db8:0F1B:FCCB:ACCE:FCED:ABCD:FA03:/127"
+      ],
+      "correctAnswers": [
+        "interface Gi0/0\nipv6 address 2001:db8:0:AFFF::/64 eui-64",
+        "interface Gi0/1\nipv6 address 2001:db8:0F1B:FCCB:ACCE:FCED:ABCD:FA00:/127"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "24_3_18-11.jpg",
+      "hasImage": true,
+      "localImagePath": "images/24_3_18-11.jpeg"
+    },
+    {
+      "id": "part_②-40",
+      "displayId": 40,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "JSON 形式のコンテンツを必要とするアプリケーションからの REST リクエストに含める必要があるヘッダーはどれですか?",
+      "choices": [
+        "Accept: application/json",
+        "Accept-Encoding: application/json",
+        "Content-Type: application/json",
+        "Accept-Language: application/json"
+      ],
+      "correctAnswers": [
+        "Accept: application/json"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-29",
+      "displayId": 29,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "複数の VLAN のトラフィックを伝送するために使用されるポート構成のタイプはどれですか?",
+      "choices": [
+        "trunk",
+        "access",
+        "LAG",
+        "EtherChannel"
+      ],
+      "correctAnswers": [
+        "trunk"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-48",
+      "displayId": 48,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ネットワーク エンジニアは、ルーター ループバック インターフェイスを IPv6 アドレス空間に移行する必要があります。インターフェイスの現在の IPv4 アドレスが 10.54.73.1/32 で、エンジニアが IPv6 アドレス 0:0:0:0:0:ffff:a36:4901 を構成する場合、どのプレフィックス長を使用する必要がありますか?",
+      "choices": [
+        "/96",
+        "/64",
+        "/128",
+        "/124"
+      ],
+      "correctAnswers": [
+        "/96"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-27",
+      "displayId": 27,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "R3のループバックIPは、R1の2つのインターフェースを介して学習されています。R1は10Gbpsの参照帯域幅に設定されています。メトリック計算に基づくと、送信ルーティングにはどのネクストホップIPが使用されますか？",
+      "choices": [
+        "10.12.0.6",
+        "10.12.0.1",
+        "10.12.0.2",
+        "10.12.0.5"
+      ],
+      "correctAnswers": [
+        "10.12.0.6"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-49.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-49.jpeg"
+    },
+    {
+      "id": "part_④-28",
+      "displayId": 28,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ダイジェスト認証のどの機能が、資格情報がプレーンテキストで送信されるのを防ぎますか?",
+      "choices": [
+        "チャレンジレスポンスメカニズム",
+        "SSL/TLS暗号化",
+        "トークンベースの認証",
+        "公開鍵インフラストラクチャ"
+      ],
+      "correctAnswers": [
+        "チャレンジレスポンスメカニズム"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-63",
+      "displayId": 63,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "図を参照してください。ルータはインターネットトラフィックにどのパスを使用しますか？",
+      "choices": [
+        "0.0.0.0/0",
+        "10.10.13.0/24",
+        "10.10.10.0/28",
+        "209.165.200.0/27"
+      ],
+      "correctAnswers": [
+        "0.0.0.0/0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "729.jpg",
+      "hasImage": true,
+      "localImagePath": "images/729.jpeg"
+    },
+    {
+      "id": "part_②-25",
+      "displayId": 25,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "エンジニアは、新しい無線LANコントローラ上のすべてのWi-Fiサービスを文書化する必要があります。Wi-Fi SSID「Office_WLan」にはレイヤー2セキュリティが設定されています。この設定によって何が決定されますか？",
+      "choices": [
+        "強力な暗号化と認証を提供するガロアキャッシュアルゴリズムが設定されています",
+        "既知のMACアドレスを持つ承認済みデバイスのみがネットワークに接続できるようにする、追加のセキュリティレイヤーが実装されています",
+        "NACとネットワークデバイス間では、x.509標準を使用した強力な相互認証が使用されています",
+        "さまざまなレイヤー2およびレイヤー3攻撃から保護するための堅牢なセキュリティメカニズムが設定されています"
+      ],
+      "correctAnswers": [
+        "強力な暗号化と認証を提供するガロアキャッシュアルゴリズムが設定されています"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-26",
+      "displayId": 26,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "エンド ホストに接続されたスイッチ ポートで PortFast を設定する 2 つの理由は何ですか (2 つ選択してください)",
+      "choices": [
+        "トポロジ変更プロセスからポートの動作を保護するため",
+        "ホストが起動するとすぐにポッドが転送状態に入るため",
+        "ポートで学習できるMACアドレスの数を1にするため",
+        "ポートがスパニングツリープロトコル操作に参加するのを防ぐため",
+        "別のスイッチまたはホストがポートを介して通信するのをブロックするため"
+      ],
+      "correctAnswers": [
+        "トポロジ変更プロセスからポートの動作を保護するため",
+        "ホストが起動するとすぐにポッドが転送状態に入るため"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-55",
+      "displayId": 55,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "HTTP 内の PUT メソッドとは何ですか?",
+      "choices": [
+        "宛先でデータを置き換えます",
+        "Web サイトを表示します",
+        "読み取り専用操作です",
+        "非べき等操作です"
+      ],
+      "correctAnswers": [
+        "宛先でデータを置き換えます"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-3",
+      "displayId": 3,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "図を参照してください。R1のEthernet0/0にサブインターフェースを追加して、IPアドレス10.20.20.1/24のVLAN 20を許可するには、どのようなコマンドが必要ですか？",
+      "choices": [
+        "R1 (config)#interface ethernet0/0.20\nR1 (config)#encapsulation dot1q 20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "R1 (config)#interface ethernet0/0\nR1 (config)#encapsulation dot1q 20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "R1 (config)#interface ethernet0/0.20\nR1(config)#ip address 10.20.20.1 255.255.255.0",
+        "R1 (config)#interface ethernet0/0\nR1(config)#ip address 10.20.20.1 255.255.255.0"
+      ],
+      "correctAnswers": [
+        "R1 (config)#interface ethernet0/0.20\nR1 (config)#encapsulation dot1q 20\nR1(config)#ip address 10.20.20.1 255.255.255.0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-22.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-22.jpeg"
+    },
+    {
+      "id": "part_⑤-56",
+      "displayId": 56,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "REST API は通信にどのプロトコルを使用しますか?",
+      "choices": [
+        "HTTP",
+        "STP",
+        "SNMP",
+        "SSH"
+      ],
+      "correctAnswers": [
+        "HTTP"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-25",
+      "displayId": 25,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "ネットワークを介してパケットを転送するときに、ルーターはどのアクションを実行しますか?",
+      "choices": [
+        "ルーターは、元の送信元および宛先 MAC アドレスを、送信元ルーターの MAC アドレスを送信元として、隣接する MAC アドレスを宛先として置き換えます",
+        "ルーターは、送信元および宛先ラベルを、送信元および次の送信元ルーターのインターフェイス ラベルに置き換えます。",
+        "ルーターは、送信元と宛先の IP アドレスをカプセル化します。送信元のルーターの IP アドレスをソースとして、近隣の IP アドレスを宛先として使用します。",
+        "ルーターは、元のパケットをカプセル化し、次に、ソース ルータの MAC アドレスを送信し、それを透過的に宛先に送信します。"
+      ],
+      "correctAnswers": [
+        "ルーターは、元の送信元および宛先 MAC アドレスを、送信元ルーターの MAC アドレスを送信元として、隣接する MAC アドレスを宛先として置き換えます"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-71",
+      "displayId": 71,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "バックドア マルウェアの定義は?",
+      "choices": [
+        "権限のないユーザーによるアクセスを可能にするためにコンピューターにインストールされる悪意のあるコード",
+        "他の悪意のあるプログラムを起動するために使用される悪意のあるプログラム",
+        "ユーザーのマシンに感染し、そのマシンを使用してスパムを送信する悪意のあるコード",
+        "他の悪意のあるコードをダウンロードすることを主な目的とする悪意のあるコード"
+      ],
+      "correctAnswers": [
+        "権限のないユーザーによるアクセスを可能にするためにコンピューターにインストールされる悪意のあるコード"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-50",
+      "displayId": 50,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "展示を参照してください。\nシスコのエンジニアは、lantest という新しい WLAN を作成します。高速の 2.4 GHz クライアントのみが接続するために実行する必要がある 2 つのアクションはどれですか? (2つ選んでください)",
+      "choices": [
+        "[ステータス] オプションを有効にします。",
+        "Radio Policy オプションを 802.11g のみに設定します。",
+        "Interface/Interface Group(G) をゲスト以外のインターフェースに設定します。",
+        "Radio Policy オプションを 802.11a のみに設定します。",
+        "ブロードキャスト SSID オプションを有効にします。"
+      ],
+      "correctAnswers": [
+        "[ステータス] オプションを有効にします。",
+        "Radio Policy オプションを 802.11g のみに設定します。"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "2023_03_16_89.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2023_03_16_89.jpeg"
+    },
+    {
+      "id": "part_②-42",
+      "displayId": 42,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "AireOS GUI を使用する場合、コントローラ管理ページを同時に閲覧できるユーザーの総数はどれくらいですか?",
+      "choices": [
+        "5",
+        "2",
+        "8",
+        "9"
+      ],
+      "correctAnswers": [
+        "5"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-79",
+      "displayId": 79,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "情報Syslogを取得するには、どのレベルの重大度を設定する必要がありますか？",
+      "choices": [
+        "デバッグ",
+        "通知",
+        "アラート",
+        "クリティカル"
+      ],
+      "correctAnswers": [
+        "デバッグ"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-91",
+      "displayId": 91,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "無線ネットワークにおける暗号化の特徴は何ですか?",
+      "choices": [
+        "ネットワークを通過するデータの傍受を防止します",
+        "スパイウェアに対する保護を強化",
+        "ユーザーにログインIDの入力を求める",
+        "暗号を使用してゼロデイネットワーク攻撃を検出し、防止します"
+      ],
+      "correctAnswers": [
+        "ネットワークを通過するデータの傍受を防止します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-9",
+      "displayId": 9,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "プライベート IPv4 アドレスの特徴は何ですか?",
+      "choices": [
+        "インターネットから分離されたアドレス空間",
+        "ネットワークルータ上の転送テーブルを削減する",
+        "送信ACLが適用されるとインターネットを通過する",
+        "デバイス間のルーティングの必要性を排除する"
+      ],
+      "correctAnswers": [
+        "インターネットから分離されたアドレス空間"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-33",
+      "displayId": 33,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "新しいWi-Fiネットワークを計画するネットワークアーキテクトは、自律型、クラウドベース、分割MACアーキテクチャの中から選択する必要があります。アーキテクトが考慮すべき2つのポイントはどれですか？（2つ選択してください）",
+      "choices": [
+        "軽量アクセスポイントは、スプリットMACアーキテクチャでのみ使用されます",
+        "3つのアーキテクチャはすべて、有線インフラストラクチャに接続されたワイヤレスデバイスを管理するためにアクセスポイントを使用します",
+        "3つのアーキテクチャはいずれも、アクセスポイントの管理にWLCを使用する必要があります",
+        "クラウドベースアーキテクチャは、アクセスポイントとクライアント間の通信にCAPWAPプロトコルを独自に使用します",
+        "自律アーキテクチャは、アクセスポイントをリモートで管理するためにトンネリングプロトコルのみを使用します"
+      ],
+      "correctAnswers": [
+        "軽量アクセスポイントは、スプリットMACアーキテクチャでのみ使用されます",
+        "3つのアーキテクチャはすべて、有線インフラストラクチャに接続されたワイヤレスデバイスを管理するためにアクセスポイントを使用します"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-53",
+      "displayId": 53,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "ITクローゼットの外のオフィススペースにあるときにネットワークポートが悪用されるのを防ぐための2つの推奨事項は何ですか？（2つ選択してください）",
+      "choices": [
+        "未使用のポートをシャットダウンします",
+        "ポートベースの認証を実装する",
+        "ポートでPortFast機能を有効にする",
+        "ポートを固定速度に構成する",
+        "静的ARPエントリを設定する"
+      ],
+      "correctAnswers": [
+        "未使用のポートをシャットダウンします",
+        "ポートベースの認証を実装する"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-73",
+      "displayId": 73,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "SDN ネットワーク内でコントロール プレーンをデータ プレーンから分離する利点は何ですか?",
+      "choices": [
+        "ネットワーク全体の複雑さが軽減される",
+        "データ クエリがコントロール プレーンに制限される",
+        "コストが削減される",
+        "仮想マシンの作成がデータ プレーンにオフロードされる"
+      ],
+      "correctAnswers": [
+        "ネットワーク全体の複雑さが軽減される"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-92",
+      "displayId": 92,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "クライアントとサーバーが同じ物理ネットワーク上にない場合、DHCPのクライアントとサーバー間で要求と応答を転送するために使用されるデバイスはどれですか?",
+      "choices": [
+        "DHCP リレー エージェント",
+        "DHCP サーバー",
+        "DHCP DISCOVER",
+        "DHCP OFFER"
+      ],
+      "correctAnswers": [
+        "DHCP リレー エージェント"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-6",
+      "displayId": 6,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "HSRP はどのようにしてファーストホップ冗長性を提供するのでしょうか?",
+      "choices": [
+        "LAN上のホストのデフォルトゲートウェイとして機能するルータのグループに、共有仮想MACアドレスと仮想IPアドレスを使用します",
+        "異なるルーティングリンクとデータパスを介して複数のパケットを同じ宛先に転送します",
+        "同じVLANに設定されているすべてのインターフェースからトラフィックをフラッディングすることで、パスに沿ってレイヤ2トラフィックを負荷分散します",
+        " IPルーティングテーブル内の同じ宛先への複数のルートに同じメトリック値を割り当てることでトラフィックを負荷分散します"
+      ],
+      "correctAnswers": [
+        "LAN上のホストのデフォルトゲートウェイとして機能するルータのグループに、共有仮想MACアドレスと仮想IPアドレスを使用します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-48",
+      "displayId": 48,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "SSID で使用される文字の最大長はどれくらいですか?",
+      "choices": [
+        "32",
+        "16",
+        "48",
+        "64"
+      ],
+      "correctAnswers": [
+        "32"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-91",
+      "displayId": 91,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ネットワーク上のさまざまなデバイスに対してさまざまなレベルの syslog を構成する目的は何ですか?",
+      "choices": [
+        "各デバイスからのさまざまな重大度レベルのメッセージをレート制限するため",
+        "各デバイスからの syslog メッセージの重大度を設定するため",
+        "各 syslog メッセージの発信元を識別するため",
+        "さまざまなデバイスからの syslog メッセージの数を制御するためローカルに保存されている"
+      ],
+      "correctAnswers": [
+        "各デバイスからのさまざまな重大度レベルのメッセージをレート制限するため"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-1",
+      "displayId": 1,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "SDN 環境におけるノースバウンド API の機能は何ですか?",
+      "choices": [
+        "オーケストレーションおよびネットワーク自動化サービスを提供します",
+        "構成の分散処理をサポートします",
+        "ソフトウェアをアップグレードし、ファイルを復元します",
+        "グローバルなプロビジョニングと構成に依存します"
+      ],
+      "correctAnswers": [
+        "オーケストレーションおよびネットワーク自動化サービスを提供します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-20",
+      "displayId": 20,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ルータ R1 が IP アドレス 192.168.2.86 および 10.20.1.50 に到達するための正しいネクストホップは何ですか?",
+      "choices": [
+        "172.16.1.2",
+        "172.16.1.4",
+        "172.16.1.1",
+        "172.16.1.3"
+      ],
+      "correctAnswers": [
+        "172.16.1.2"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-42.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-42.jpeg"
+    },
+    {
+      "id": "part_②-14",
+      "displayId": 14,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "インターフェイス GigabitEthernet0/0/1 の問題は何ですか?",
+      "choices": [
+        "デュプレックスの不一致",
+        "ケーブルの切断",
+        "ポートのセキュリティ",
+        "高スループット"
+      ],
+      "correctAnswers": [
+        "デュプレックスの不一致"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "24_3_18-3.jpg",
+      "hasImage": true,
+      "localImagePath": "images/24_3_18-3.jpeg"
+    },
+    {
+      "id": "part_③-25",
+      "displayId": 25,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "デバッグ プロセスがオンになっているデバイスによって異常に多数の syslog メッセージが生成された場合に、他のメッセージを許可しながらデバッグ メッセージが syslog 経由で送信されるのを防ぐアクションはどれですか。",
+      "choices": [
+        "ロギングトラップの重大度レベルを「情報」に設定します",
+        "コンソールへのロギングを無効にします",
+        "グローバル設定モードでロギングモニタをオフにします",
+        "アクセスリストを使用してsyslogメッセージをフィルタリングします"
+      ],
+      "correctAnswers": [
+        "ロギングトラップの重大度レベルを「情報」に設定します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-31",
+      "displayId": 31,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "展示を参照してください。ネットワークエンジニアは、CPEルーターを設定して、\n172.20.1.0/24ネットワークのIPアドレスを中央DHCPサーバーから取得するには、エンジニ\nアはCPEにどの設定を適用する必要がありますか？",
+      "choices": [
+        "interface GigabitEthernet0/1\nIP helper-address 172.20.255.11",
+        "interface GigabitEthernet0/0\nIP helper-address 172.20.1.1",
+        "interface GigabitEthernet0/0\nIP helper-address 172.20.255.1",
+        "interface GigabitEthernet0/1\nIP helper-address 172.20.254.1"
+      ],
+      "correctAnswers": [
+        "interface GigabitEthernet0/1\nIP helper-address 172.20.255.11"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no1141.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no1141.jpeg"
+    },
+    {
+      "id": "part_①-49",
+      "displayId": 49,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "コントローラベースのネットワーキングは、従来のネットワーキングと比べてどのようなメリットがありますか？",
+      "choices": [
+        "1つの集中型ポートからネットワークの構成と監視が可能",
+        "最大の冗長性を提供するために2層から3層のネットワークアーキテクチャに移行",
+        "DDoS攻撃から保護するための追加のセキュリティ層を提供する",
+        "コントロールとデータプレーンの機能を単一のデバイスに組み合わせて、レイテンシを最小限に抑える"
+      ],
+      "correctAnswers": [
+        "1つの集中型ポートからネットワークの構成と監視が可能"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-4",
+      "displayId": 4,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "展示を参照してください。\nEtherChannel は、速度 1000 で構成され、チャネル グループ 1 の両端でデュプレックスが全二重に設定されています。LACP 通信に応答するが開始しないようにスイッチ A のチャネルを構成するには、次の手順を実行します。",
+      "choices": [
+        "interface port-channel 1\nchannel-group 1 mode passive",
+        "interface port-channel 1\nchannel-group 1 mode auto",
+        "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode on",
+        "interface range gigabitethernet0/0/0 -15\nchannel-group 1 mode desirable"
+      ],
+      "correctAnswers": [
+        "interface port-channel 1\nchannel-group 1 mode passive"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2022_11_25_64.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2022_11_25_64.jpeg"
+    },
+    {
+      "id": "part_④-10",
+      "displayId": 10,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "REST ベースの API がリソースを作成するために呼び出す 2 つの HTTP 動詞はどれですか (2 つ選択してください)",
+      "choices": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE",
+        "PATCH"
+      ],
+      "correctAnswers": [
+        "POST",
+        "PUT"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_③-61",
+      "displayId": 61,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "ネットワークに IPv4 プライベート アドレッシングを実装する 2 つの理由は何ですか? (2つ選んでください)\n",
+      "choices": [
+        "グローバルな一意のIPv4アドレスを保存するため",
+        "外部からのDoS攻撃から保護するため",
+        "ルータ上のルーティングテーブルを拡張するため",
+        "ネットワークを統合する際のリナンバリングを容易にするため",
+        "内部アプリケーションでプライベートIPv4アドレスを一意なものとして扱えるようにするため"
+      ],
+      "correctAnswers": [
+        "グローバルな一意のIPv4アドレスを保存するため",
+        "外部からのDoS攻撃から保護するため"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-26",
+      "displayId": 26,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "別紙を参照してください。現在のリース期間が終了した場合、クライアントはIPアドレスの 更新のためにどのアドレスに連絡すればよいですか？",
+      "choices": [
+        "192.168.25.100",
+        "192.168.25.103",
+        "192.168.25.1",
+        "192.168.25.254"
+      ],
+      "correctAnswers": [
+        "192.168.25.100"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no567.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no567.jpeg"
+    },
+    {
+      "id": "part_③-48",
+      "displayId": 48,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "展示を参照してください。\nネットワーク エンジニアは、クライアントが 1 時間ごとに再認証する必要があり、WLAN への同時接続数を 10 に制限するように CCNA WLAN を構成します。この構成を完了する 2 つのアクションはどれですか? (2つ選んでください)",
+      "choices": [
+        "Maximum Allowed Clients の値を 10 に設定します",
+        "[セッション タイムアウトを有効にする] オプションを有効にして、値を 3600 に設定します。",
+        "Client Exclusion オプションを有効にして、値を 3600 に設定します。",
+        "Maximum Allowed Clients Per AP Radio の値を 10 に設定します。",
+        "Wi-Fi Direct Clients Policy オプションを有効にします。"
+      ],
+      "correctAnswers": [
+        "Maximum Allowed Clients の値を 10 に設定します",
+        "[セッション タイムアウトを有効にする] オプションを有効にして、値を 3600 に設定します。"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "2023_02_16_79.JPG",
+      "hasImage": true,
+      "localImagePath": "images/2023_02_16_79.jpeg"
+    },
+    {
+      "id": "part_④-77",
+      "displayId": 77,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "ルータR1およびR3のデフォルト設定があります。ルータのR2優先度は99に設定されています。R3のどのコマンドが10.0.4.0/24ネットワークのDRとしてルータを設定しますか？",
+      "choices": [
+        "R3(config)# interface Gig0/1\nR3（config-if）#ip ospf priority 100",
+        "R3(config)# interface Gig0/0\nR3（config-if）#ip ospf priority 100",
+        "R3(config)# interface Gig0/0\nR3（config-if）#ip ospf priority 1",
+        "R3(config)# interface Gig0/1\nR3（config-if）#ip ospf priority 0"
+      ],
+      "correctAnswers": [
+        "R3(config)# interface Gig0/1\nR3（config-if）#ip ospf priority 100"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "619.jpg",
+      "hasImage": true,
+      "localImagePath": "images/619.jpeg"
+    },
+    {
+      "id": "part_①-2",
+      "displayId": 2,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "ネゴシエーションプロトコルを使用せずに2つのスイッチ間でEtherChannelを構成するには\n、どのモードを使用する必要がありますか？",
+      "choices": [
+        "on",
+        "auto",
+        "active",
+        "desirable"
+      ],
+      "correctAnswers": [
+        "on"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-25",
+      "displayId": 25,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "ポイントツーポイント専用回線の利点は何ですか?",
+      "choices": [
+        "設定のシンプルさ",
+        "低コスト",
+        "フルメッシュ機能",
+        "デザインの柔軟性"
+      ],
+      "correctAnswers": [
+        "設定のシンプルさ"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-45",
+      "displayId": 45,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "展示品を参照してください。R1がDRになるために、エンジニアがこのネットワークに適用する必要がある2つの構成はどれですか。（2つ選択してください。",
+      "choices": [
+        "R1(config)# interface fastethernet 0/0\nR1(config-if)# ip ospf priority 200",
+        "R3(config)# interface fastethernet 0/0\nR3(config-if)# ip ospf priority 0",
+        "R1(config)# interface fastethernet 0/0\nR1(config-if)# ip ospf priority 0",
+        "R3(config)# interface fastethernet 0/0\nR3(config-if）)# ip ospf priority 200",
+        "R1(config)# router ospf 1\nR1(config-router)# router-id 192.168.100.1"
+      ],
+      "correctAnswers": [
+        "R1(config)# interface fastethernet 0/0\nR1(config-if)# ip ospf priority 200",
+        "R3(config)# interface fastethernet 0/0\nR3(config-if)# ip ospf priority 0"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "no541.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no541.jpeg"
+    },
+    {
+      "id": "part_②-28",
+      "displayId": 28,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "ネットワークエンジニアは、認証サーバーの設定と動的インターフェースの作成から新しい無線LANの実装を開始します。基本設定を完了するには、次に何を行う必要がありますか？",
+      "choices": [
+        "新しいWLANを作成し、それに動的インターフェースをバインドします",
+        "管理インターフェースをインストールし、管理IPを追加します",
+        "アクセスポイントの高可用性と冗長性を設定します",
+        "管理インターフェースでTelnetとRADIUSアクセスを有効にします"
+      ],
+      "correctAnswers": [
+        "新しいWLANを作成し、それに動的インターフェースをバインドします"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_⑤-3",
+      "displayId": 3,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "ネットワーク管理者はどのようにして軽量モードの AP を安全に管理するのでしょうか?",
+      "choices": [
+        "HTTPS経由でWLC GUIを使用する",
+        "SSHを使用した仮想インターフェース経由でCLIを使用する",
+        "帯域外接続経由でCLIを使用する",
+        "インバンドSSH接続経由でAP GUIを使用する"
+      ],
+      "correctAnswers": [
+        "HTTPS経由でWLC GUIを使用する"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-37",
+      "displayId": 37,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "グローバル IPv6 アドレスと一意のローカル IPv6 アドレスの類似点は何ですか?",
+      "choices": [
+        "サブネット化に同じプロセスを使用します",
+        "それらは同じ組織によって割り当てられます",
+        "グローバル インターネット上でルーティング可能",
+        "これらはマルチキャスト IPv6 グループ タイプの一部です"
+      ],
+      "correctAnswers": [
+        "サブネット化に同じプロセスを使用します"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-59",
+      "displayId": 59,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "無線環境における非重複チャネルの役割は何ですか?",
+      "choices": [
+        "干渉を減らすため",
+        "チャネルボンディングを可能にするため",
+        "より高速なローミングを可能にするため",
+        "帯域幅を増やすため"
+      ],
+      "correctAnswers": [
+        "干渉を減らすため"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-32",
+      "displayId": 32,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "OSPFネイバールータA、B、C、Dは10.227.150.160/27へのルートを送信しています。10.227.150.160/27への現在のルートが利用できなくなった場合、ルータYは10.227.150.160/27へのトラフィックをルーティングするためにどのコストを使用しますか？",
+      "choices": [
+        "コスト20",
+        "コスト30",
+        "コスト40",
+        "コスト50"
+      ],
+      "correctAnswers": [
+        "コスト20"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-54.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-54.jpeg"
+    },
+    {
+      "id": "part_③-53",
+      "displayId": 53,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "ネットワーク管理者は、64ビットアドレス2001：0EB8：00C1：220：0001：0000：0000：0331/64を使用して新しいIPv6ネットワークをセットアップしています。構成を簡素化するために、管理者はアドレスを圧縮することにしました。管理者はどのIPアドレスを構成する必要がありますか？",
+      "choices": [
+        "ipv6 address 2001:EB8:C1:2200:1::331/64",
+        "ipv6 address 2001:EB8:C1:2200:1:0000:331/64",
+        "ipv6 address 21:EB8:C1:2200:1::331/64",
+        "ipv6 address 2001:EB8:C1:22:1::331/64"
+      ],
+      "correctAnswers": [
+        "ipv6 address 2001:EB8:C1:2200:1::331/64"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-55",
+      "displayId": 55,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "パケットがルータR1を経由してホスト172.16.0.14に送信されています。ルータはどの宛先にパケットを送信しますか？",
+      "choices": [
+        "209.165.200.246 via Serial0/1/0",
+        "209.165.200.254 via Serial0/0/0",
+        "209.165.200.254 via Serial0/0/1",
+        "209.165.200.250 via Serial0/0/0"
+      ],
+      "correctAnswers": [
+        "209.165.200.246 via Serial0/1/0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-67.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-67.jpeg"
+    },
+    {
+      "id": "part_②-41",
+      "displayId": 41,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "ネットワーク管理者が RFC 1918 アドレス空間の実装を選択するのはなぜでしょうか?",
+      "choices": [
+        "IPネットワーク設計に柔軟性を提供するため",
+        "インターネット上のトラフィックをルーティングするため",
+        "ネットワーク上のホストの数を制限するため",
+        "別のネットワークと重複するアドレス空間を提供するため"
+      ],
+      "correctAnswers": [
+        "IPネットワーク設計に柔軟性を提供するため"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-46",
+      "displayId": 46,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "WLC で使用する場合、分散システム ポートを 1 つの 802.3ad グループにまとめることができるのはどの機能ですか。",
+      "choices": [
+        "LAG",
+        "PAgP",
+        "ISL",
+        "QinQ"
+      ],
+      "correctAnswers": [
+        "LAG"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_①-61",
+      "displayId": 61,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "syslog ファシリティとは何ですか?",
+      "choices": [
+        "ログ メッセージを生成できるプロセスを表す値のセット",
+        "システムがログ メッセージを送信するように構成されているホスト",
+        "ログ メッセージを受信するためにネットワーク管理システムを認証するパスワード",
+        "設定された重大度に関連付けられたログ メッセージのグループ"
+      ],
+      "correctAnswers": [
+        "ログ メッセージを生成できるプロセスを表す値のセット"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_②-16",
+      "displayId": 16,
+      "category": "選択問題",
+      "part": "part_②",
+      "question": "デバイスは、IP アドレス 100.100.100.100 宛てのパケットをどのように処理しますか?",
+      "choices": [
+        "最も長い一致を持つルートを選択します O 100.100.100.100/32 [110/21] via 192.168.1.1, 00:05:57, Ethernet0/1",
+        "メトリックが最も低いルート R 100.0.0.0/8 [120/2] を 192.168.3.1、00:00:13、Ethernet0/3 経由で選択します",
+        "最も高いメトリックを持つルートD 100.100.100.0/24 [90/435200] 192.168.2.1、00:00:13、Ethernet0/2経由を選択します",
+        "常に静的ルートが動的ルートよりも優先され、192.168.4.1経由のルートS 100.100.0.0/16 [1/0]が選択されます"
+      ],
+      "correctAnswers": [
+        "最も長い一致を持つルートを選択します O 100.100.100.100/32 [110/21] via 192.168.1.1, 00:05:57, Ethernet0/1"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2024_0906_4.jpg",
+      "hasImage": true,
+      "localImagePath": "images/2024_0906_4.jpeg"
+    },
+    {
+      "id": "part_⑤-29",
+      "displayId": 29,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "図を参照してください。パケットはルータR1を経由してホスト172.16.0.14に送信されてい ます。 パケットの宛先ルートは何ですか?",
+      "choices": [
+        "209.165.200.246 Serial0/1/0 経由",
+        "209.165.200.254 Serial0/0/0 経由",
+        "209.165.200.254 Serial0/0/1 経由",
+        "209.165.200.250 Serial0/0/0 経由"
+      ],
+      "correctAnswers": [
+        "209.165.200.246 Serial0/1/0 経由"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no1042.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no1042.jpeg"
+    },
+    {
+      "id": "part_③-42",
+      "displayId": 42,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "ノースバウンドAPIは、コントローラーベースのネットワークアーキテクチャでどのような目的に役立ちますか？",
+      "choices": [
+        "コントローラーとアプリケーション間の通信の促進",
+        "コントローラーと物理ネットワークハードウェアの間の通信",
+        "コントローラーのデバイスエラーの報告",
+        "ネットワークハードウェアとトラフィックの統計情報の生成"
+      ],
+      "correctAnswers": [
+        "コントローラーとアプリケーション間の通信の促進"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-11",
+      "displayId": 11,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "デフォルトのルーティング プロトコル設定が使用されていることを考慮すると、10.255.2.2/32 ルートを学習するために使用されるルーティング プロトコルはどれですか。",
+      "choices": [
+        "EIGRP",
+        "BGP",
+        "RIP",
+        "OSPF"
+      ],
+      "correctAnswers": [
+        "EIGRP"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-16-33.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-16-33.jpeg"
+    },
+    {
+      "id": "part_⑤-16",
+      "displayId": 16,
+      "category": "選択問題",
+      "part": "part_⑤",
+      "question": "図を参照してください。ネットワークエンジニアは、R1が10.0.0.0/24ネットワーク宛ての\nすべてのパケットをR3に、PC1宛てのすべてのパケットをR2に送信するように設定する必\n要があります。エンジニアはどの設定を実施する必要がありますか？",
+      "choices": [
+        "R1(config)#ip route 10.0.0.0 255.255.255.0 192.168.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 172.16.0.2",
+        "R1(config)#ip route 10.0.0.0 255.255.0.0 172.16.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2",
+        "R1(config)#ip route 10.0.0.0 255.255.0.0 192.168.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.0 172.16.0.2",
+        "R1(config)#ip route 10.0.0.0 255.255.255.0 172.16.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 192.168.0.2"
+      ],
+      "correctAnswers": [
+        "R1(config)#ip route 10.0.0.0 255.255.255.0 192.168.0.2\nR1(config)#ip route 10.0.0.5 255.255.255.255 172.16.0.2"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no756.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no756.jpeg"
+    },
+    {
+      "id": "part_③-32",
+      "displayId": 32,
+      "category": "選択問題",
+      "part": "part_③",
+      "question": "展示を参照してください。\nOSPFがこのネットワークで実行されている場合、ルーター2はサイトBからサイトAの10.10.13.128/25へのトラフィックをどのように処理しますか？",
+      "choices": [
+        "10.10.13 128/25にパケットを送信できません",
+        "インターフェースFa0 / 2からのみパケットを送信します",
+        "インターフェースFa0 / 1からのみパケットを送信します",
+        "Fa0 / 1およびFa0 / 2からのトラフィックを負荷分散します"
+      ],
+      "correctAnswers": [
+        "10.10.13 128/25にパケットを送信できません"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "2020-1.jpg",
+      "hasImage": true,
+      "localImagePath": "images/2020-1.jpeg"
+    },
+    {
+      "id": "part_①-13",
+      "displayId": 13,
+      "category": "選択問題",
+      "part": "part_①",
+      "question": "ある組織は新しいセキュリティポリシーを策定し、それを印刷して全従業員に配布し、従業員がポリシーを確認して適用できるようにすることを決定しました。この組織はセキュリティプログラムのどの要素を実施していますか？",
+      "choices": [
+        "ユーザートレーニング",
+        "資産の識別",
+        "物理的なアクセス制御",
+        "脆弱性管理"
+      ],
+      "correctAnswers": [
+        "ユーザートレーニング"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "part_④-88",
+      "displayId": 88,
+      "category": "選択問題",
+      "part": "part_④",
+      "question": "エンジニアがネットワーク 10.120.10.0/24 をインストールしました。新しいネットワークを OSPF ルーティング テーブルに追加するには、どの設定を R14 ルーターに適用する必要がありますか?",
+      "choices": [
+        "router ospf 100\nnetwork 10.120.10.0 0.0.0.255 area 0",
+        "router ospf 100 area 0\nnetwork 10.120.10.0 0.0.0.255",
+        "router ospf 120\nnetwork 10.120.10.0 255.255.255.0 area 0\nip route 10.120.10.0 255.255.255.0 fa0/1",
+        "router ospf 100\nnetwork 10.120.10.0 255.255.255.0 area 0"
+      ],
+      "correctAnswers": [
+        "router ospf 100\nnetwork 10.120.10.0 0.0.0.255 area 0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-13-89.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-13-89.jpeg"
+    }
+  ],
+  "dd_questions": [
+    {
+      "id": "dd-9",
+      "title": "Question 09",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の特性を右側の IPv6 アドレス タイプにドラッグ アンド ドロップします。",
+      "question": "ユニークローカル|マルチキャスト",
+      "choices": [
+        "グループに送信されるユニキャストソースがある",
+        "インターネット上でルーティングできない",
+        "アドレスが競合せずにサイトを結合できる",
+        "単一のアドレスではなくグループ アドレスにパケットを送信する"
+      ],
+      "answer": "ユニークローカル:インターネット上でルーティングできない,アドレスが競合せずにサイトを結合できる|マルチキャスト:グループに送信されるユニキャストソースがある,単一のアドレスではなくグループ アドレスにパケットを送信する",
+      "placeholders": [
+        "ユニークローカル",
+        "マルチキャスト"
+      ],
+      "grouplimits": "ユニークローカル:2|マルチキャスト:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-21",
+      "title": "Question 21",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のプロトコルの利点を右側の対応するタイプにドラッグ アンド ドロップします。\r\nすべてのオプションが使用されるわけではありません。",
+      "question": "TCP|UDP",
+      "choices": [
+        "受信側への通信速度を最適化します",
+        "ステートフルパケットインスペクションを用いる",
+        "送信側と受信側の間の接続を制御します",
+        "マルチキャスト転送が可能",
+        "パケットの到達を保証します",
+        "ライブデータやリアルタイムデータを転送します",
+        "小さなパケットを使用することで、エンドツーエンドの遅延を低減します"
+      ],
+      "answer": "TCP:受信側への通信速度を最適化します,送信側と受信側の間の接続を制御します,パケットの到達を保証します|UDP:マルチキャスト転送が可能,ライブデータやリアルタイムデータを転送します,小さなパケットを使用することで、エンドツーエンドの遅延を低減します",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-10",
+      "title": "Question 10",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "左側のサブネットマスクを、右側の対応するサブネットにドラッグ＆ドロップします。\nすべてのサブネットマスクが使用されるわけではありません.",
+      "question": "10.10.13.0|10.10.13.128|10.10.13.160|10.10.13.252",
+      "choices": [
+        "255.255.255.224",
+        "255.255.255.252",
+        "255.255.255.248",
+        "255.255.255.128",
+        "255.255.248.0",
+        "255.255.255.240"
+      ],
+      "answer": "255.255.255.128|255.255.255.240|255.255.255.248|255.255.255.252",
+      "placeholders": [
+        "10.10.13.0",
+        "10.10.13.128",
+        "10.10.13.160",
+        "10.10.13.252"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-16",
+      "title": "Question 16",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "DHCPスヌーピング用語を左から右の説明にドラッグアンドドロップします。\r",
+      "question": "管理ドメインに不明なネットワーク上のホストのリスト|ネットワーク上のホストにIPアドレスを伝播するネットワークコンポーネント|管理ドメイン内の不明なDHCPサーバー|すべてのデフォルト状態インターフェイス|ネットワーク管理者の制御下にある内部デバイス",
+      "choices": [
+        "スヌーピングバインディングデータベース",
+        "DHCPサーバー",
+        "スプリアスDHCPサーバー",
+        "untrusted",
+        "trusted"
+      ],
+      "answer": "スヌーピングバインディングデータベース|DHCPサーバー|スプリアスDHCPサーバー|untrusted|trusted",
+      "placeholders": [
+        "管理ドメインに不明なネットワーク上のホストのリスト",
+        "ネットワーク上のホストにIPアドレスを伝播するネットワークコンポーネント",
+        "管理ドメイン内の不明なDHCPサーバー",
+        "すべてのデフォルト状態インターフェイス",
+        "ネットワーク管理者の制御下にある内部デバイス"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-5",
+      "title": "Question 05",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のプロトコル特性を右側の対応するタイプにドラッグ＆ドロップします。すべてが使用されるわけではありません",
+      "question": "TCP|UDP",
+      "choices": [
+        "確認応答メカニズム",
+        "保証された送信",
+        "低オーバーヘッド",
+        "コネクションレス"
+      ],
+      "answer": "TCP:確認応答メカニズム,保証された送信|UDP:低オーバーヘッド,コネクションレス",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:2|UDP:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-24",
+      "title": "Question 24",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の特性を右側のケーブル タイプにドラッグ アンド ドロップします。",
+      "question": "copper|multi-mode fiber",
+      "choices": [
+        "電磁干渉や磁気干渉の影響を受ける",
+        "信号が伝わるにつれて、クラッドとコアの間で屈折が増大する",
+        "傍受が容易であり、機密情報を入手されやすい",
+        "光パルスを使用して信号を伝送する"
+      ],
+      "answer": "copper:電磁干渉や磁気干渉の影響を受ける,傍受が容易であり、機密情報を入手されやすい|multi-mode fiber:信号が伝わるにつれて、クラッドとコアの間で屈折が増大する,光パルスを使用して信号を伝送する",
+      "placeholders": [
+        "copper",
+        "multi-mode fiber"
+      ],
+      "grouplimits": "copper:2|multi-mode fiber:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-1",
+      "title": "Question 01",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のTCPおよびUDPの特性を、右側のサポートプロトコルにドラッグ＆ドロップします。",
+      "question": "TCP|UDP",
+      "choices": [
+        "シーケンス番号を使用",
+        "確認パケットに依存",
+        "データの整合性を確保",
+        "リアルタイムアプリケーションをサポート",
+        "トランスポート層でコネクションレス",
+        "最小限のエラーチェック"
+      ],
+      "answer": "TCP:シーケンス番号を使用,確認パケットに依存,データの整合性を確保|UDP:リアルタイムアプリケーションをサポート,トランスポート層でコネクションレス,最小限のエラーチェック",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-11",
+      "title": "Question 11",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "学習したプレフィックスを左側から右側のサブネット マスクにドラッグ アンド ドロップします\r",
+      "question": "255.255.254.0|255.255.255.128|255.255.255.240|255.255.255.224|255.255.255.248",
+      "choices": [
+        "172.16.3.192",
+        "172.16.2.128",
+        "172.16.4.0",
+        "172.16.3.64",
+        "172.16.3.128"
+      ],
+      "answer": "172.16.4.0|172.16.2.128|172.16.3.128|172.16.3.64|172.16.3.192",
+      "placeholders": [
+        "255.255.254.0",
+        "255.255.255.128",
+        "255.255.255.240",
+        "255.255.255.224",
+        "255.255.255.248"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-13",
+      "title": "Question 13",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の特性を右側の対応するプロトコルタイプにドラッグ＆ドロップします。\r\nすべての特性が使用されるわけではありません。\r",
+      "question": "TCP|UDP",
+      "choices": [
+        "OSI第3層に所属する",
+        "3ウェイハンドシェイクを使用",
+        "信頼性の高い接続を提供",
+        "より高速なデータ転送",
+        "ストリーミングや VoIP に使用",
+        "ウェブブラウジングに最適",
+        "コネクションレス プロトコル"
+      ],
+      "answer": "TCP:3ウェイハンドシェイクを使用,ウェブブラウジングに最適,信頼性の高い接続を提供|UDP:より高速なデータ転送,ストリーミングや VoIP に使用,コネクションレス プロトコル",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-25",
+      "title": "Question 25",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "question": "10.10.13.0|10.10.13.144|10.10.13.160|209.165.202.128",
+      "choices": [
+        "255.255.255.128",
+        "255.255.255.224",
+        "255.255.255.240",
+        "255.255.255.248",
+        "255.255.255.252"
+      ],
+      "answer": "255.255.255.128|255.255.255.240|255.255.255.248|255.255.255.224",
+      "placeholders": [
+        "10.10.13.0",
+        "10.10.13.144",
+        "10.10.13.160",
+        "209.165.202.128"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-26",
+      "title": "Question 26",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の特性を右側のタイプにドラッグ アンド ドロップします。",
+      "question": "コントローラベースのネットワーク|従来のネットワーク",
+      "choices": [
+        "このタイプは、複数のデバイスにわたって一貫した構成を展開する",
+        "このタイプには分散管理プレーンがある",
+        "Southbound APIは構成を適用するために使用される",
+        "分散制御プレーンが必要になる"
+      ],
+      "answer": "コントローラベースのネットワーク:このタイプは、複数のデバイスにわたって一貫した構成を展開する,Southbound APIは構成を適用するために使用される|従来のネットワーク:このタイプには分散管理プレーンがある,分散制御プレーンが必要になる",
+      "placeholders": [
+        "コントローラベースのネットワーク",
+        "従来のネットワーク"
+      ],
+      "grouplimits": "コントローラベースのネットワーク:2|従来のネットワーク:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-23",
+      "title": "Question 23",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のAAA機能を、右側の対応するAAAセキュリティサービスにドラッグ&ドロップします。すべてのオプションが使用されるわけではありません。",
+      "question": "Accounting|Authorization",
+      "choices": [
+        "ユーザー単位、またはグループ単位でのアクセス許可を可能にします",
+        "RADIUSサーバーを活用して、リバースTelnetセッションへのユーザーアクセスを許可します",
+        "ユーザーがネットワークにアクセスした時間を、リモートサーバー上に記録します",
+        "ユーザーが実行できるCLIコマンドを制限します",
+        "TACACS+を使用して、ネットワーク管理者が入力した設定コマンドをログに記録します",
+        "デバイスへのアクセスを許可する前に、ユーザー名とパスワードを検証します"
+      ],
+      "answer": "Accounting:ユーザーがネットワークにアクセスした時間を、リモートサーバー上に記録します,TACACS+を使用して、ネットワーク管理者が入力した設定コマンドをログに記録します|Authorization:ユーザー単位、またはグループ単位でのアクセス許可を可能にします,ユーザーが実行できるCLIコマンドを制限します",
+      "placeholders": [
+        "Accounting",
+        "Authorization"
+      ],
+      "grouplimits": "Accounting:2|Authorization:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-19",
+      "title": "Question 19",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "学習されたプレフィックスを左側から、右側の学習元となった優先ルート方式にドラッグ アンド ドロップします。 すべての選択肢を利用しません\" から \"攻撃緩和手法を、緩和対象となる攻撃の種類にDDします。",
+      "question": "アカウンティング|認証|認可",
+      "choices": [
+        "ログセッション統計",
+        "レコードのユーザーコマンド",
+        "ルーターへのアクセスを保護します",
+        "ユーザーの資格情報を検証します",
+        "ユーザーのアクセス権限を制限する",
+        "ユーザーが有効モードに変更できるようにする"
+      ],
+      "answer": "アカウンティング:ログセッション統計,レコードのユーザーコマンド|認証:ルーターへのアクセスを保護します,ユーザーの資格情報を検証します|認可:ユーザーのアクセス権限を制限する,ユーザーが有効モードに変更できるようにする",
+      "placeholders": [
+        "アカウンティング",
+        "認証",
+        "認可"
+      ],
+      "grouplimits": "アカウンティング:2|認証:2|認可:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-6",
+      "title": "Question 06",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "IPv6 アドレスを左側から右側の対応するアドレス タイプにドラッグ アンド ドロップします。\r",
+      "question": "グローバルユニキャスト|リンクローカルユニキャスト|マルチキャスト|ユニークローカル",
+      "choices": [
+        "fcba:926a:e8e:7a25:b1:c6d2:1a76:8fdc",
+        "ff05::1:3",
+        "fe80:a00:27ff:feeb:8eaa",
+        "2001:db8:600d:cafe::123"
+      ],
+      "answer": "2001:db8:600d:cafe::123|fe80:a00:27ff:feeb:8eaa|ff05::1:3|fcba:926a:e8e:7a25:b1:c6d2:1a76:8fdc",
+      "placeholders": [
+        "グローバルユニキャスト",
+        "リンクローカルユニキャスト",
+        "マルチキャスト",
+        "ユニークローカル"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-14",
+      "title": "Question 14",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "パケットの宛先は192.168.20.108です。\n宛先ルートのパラメータを左側から右側のルーティングテーブルコンポーネントにドラッグ＆ドロップしてください。\nすべてのパラメータが使用されるわけではありません",
+      "question": "サブネットプレフィックス|管理距離(Administrative Distance)|メトリック/コスト",
+      "choices": [
+        "/29",
+        "/28",
+        "40",
+        "90",
+        "25",
+        "/27",
+        "110"
+      ],
+      "answer": "/29|90|40",
+      "placeholders": [
+        "サブネットプレフィックス",
+        "管理距離(Administrative Distance)",
+        "メトリック/コスト"
+      ],
+      "grouplimits": "",
+      "imagePath": "images/q14.jpeg"
+    },
+    {
+      "id": "dd-4",
+      "title": "Question 04",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のTCPおよびUDPの特性を、右側のサポートプロトコルにドラッグ＆ドロップします。",
+      "question": "TCP|UDP",
+      "choices": [
+        "パケットを送信する前に、クライアントとサーバーが接続を確立する必要があります",
+        "デバイス間でファイルを確実に共有するために使用されます",
+        "データチャネルを必要とせずに、パケットに含まれるデータに基づいて送信されます",
+        "最小の遅延でストリーミング操作に適しています"
+      ],
+      "answer": "TCP:デバイス間でファイルを確実に共有するために使用されます,パケットを送信する前に、クライアントとサーバーが接続を確立する必要があります|UDP:データチャネルを必要とせずに、パケットに含まれるデータに基づいて送信されます,最小の遅延でストリーミング操作に適しています",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:2|UDP:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-17",
+      "title": "Question 17",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の特性を右側のケーブルタイプにドラッグアンドドロップします。",
+      "question": "copper(銅線)|multi-mode fiber",
+      "choices": [
+        "簡単に接続して安全な情報を取得可能",
+        "",
+        "長距離では注意力が高まる",
+        "シールド付とシールドなしのツイストペアで構成されている",
+        "取り扱い時に損傷を受けやすい"
+      ],
+      "answer": "copper(銅線):簡単に接続して安全な情報を取得可能,シールド付とシールドなしのツイストペアで構成されている|multi-mode fiber:長距離では注意力が高まる,取り扱い時に損傷を受けやすい",
+      "placeholders": [
+        "copper(銅線)",
+        "multi-mode fiber"
+      ],
+      "grouplimits": "copper(銅線):2|multi-mode fiber:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-7",
+      "title": "Question 07",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "IPv6 アドレスの種類を左側から右側の説明にドラッグ アンド ドロップします。",
+      "question": "サイト内でローカルにのみ使用されるマルチキャスト アドレス|インターフェイスで IPv6 が有効になっている場合にリンク上で自動的に作成されるアドレス|インターネットへのルーティングが禁止されています|文書化のために予約された一意のアドレス",
+      "choices": [
+        "FF05::23:becf:22:1111",
+        "FE80::abcf:ffff:12de:3992",
+        "FD00:0000:0000:1a2d:a153:3992:a19d:ccca",
+        "2001:DB8::bced:1234:456d:aacc"
+      ],
+      "answer": "FF05::23:becf:22:1111|FE80::abcf:ffff:12de:3992|FD00:0000:0000:1a2d:a153:3992:a19d:ccca|2001:DB8::bced:1234:456d:aacc",
+      "placeholders": [
+        "サイト内でローカルにのみ使用されるマルチキャスト アドレス",
+        "インターフェイスで IPv6 が有効になっている場合にリンク上で自動的に作成されるアドレス",
+        "インターネットへのルーティングが禁止されています",
+        "文書化のために予約された一意のアドレス"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-27",
+      "title": "Question 27",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "左側のコマンドを、右側の対応する順番にドラッグ&ドロップします。すべてのオプションが使用されるわけではありません。\r\n",
+      "question": "1|2|3|4",
+      "choices": [
+        "configure terminal",
+        "enable",
+        "enable secret $hf!@4fs",
+        "exit",
+        "line vty 0 4",
+        "service password-encrption"
+      ],
+      "answer": "enable|configure terminal|enable secret $hf!@4fs|line vty 0 4",
+      "placeholders": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-20",
+      "title": "Question 20",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "question": "10.10.13.0|10.10.13.128|10.10.13.160|10.10.13.252",
+      "choices": [
+        "255.255.248.0",
+        "255.255.255.128",
+        "255.255.255.224",
+        "255.255.255.240",
+        "255.255.255.248",
+        "255.255.255.252"
+      ],
+      "answer": "255.255.255.128|255.255.255.240|255.255.255.248|255.255.255.252",
+      "placeholders": [
+        "10.10.13.0",
+        "10.10.13.128",
+        "10.10.13.160",
+        "10.10.13.252"
+      ],
+      "grouplimits": "",
+      "imagePath": "images/q20.jpeg"
+    },
+    {
+      "id": "dd-18",
+      "title": "Question 18",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "攻撃緩和手法を、緩和対象となる攻撃の種類にDDします。",
+      "question": "IP設定を偽装する不正サーバー|キャッシュポイズニング|フラッディング攻撃|ネットワーク上の不正クライアント",
+      "choices": [
+        "DHCPスヌーピング",
+        "動的ARP検査　（dynamic arp inspection）",
+        "IP source Guard",
+        "ストームコントロール"
+      ],
+      "answer": "IP source Guard|動的ARP検査　（dynamic arp inspection）|ストームコントロール|DHCPスヌーピング",
+      "placeholders": [
+        "IP設定を偽装する不正サーバー",
+        "キャッシュポイズニング",
+        "フラッディング攻撃",
+        "ネットワーク上の不正クライアント"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-2",
+      "title": "Question 02",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "トランスポート層プロトコルの特性を左側から右側の対応するプロトコルにドラッグ アンド ドロップします。",
+      "question": "TCP|UDP",
+      "choices": [
+        "特定の順序でデータを送信",
+        "確立された接続が必要",
+        "ウェブブラウジングをサポート",
+        "ライブストリーミングに適している",
+        "再送信はサポートされていない",
+        "パケット損失を許容する"
+      ],
+      "answer": "TCP:特定の順序でデータを送信,確立された接続が必要,ウェブブラウジングをサポート|UDP:ライブストリーミングに適している,再送信はサポートされていない,パケット損失を許容する",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-12",
+      "title": "Question 12",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "学習されたプレフィックスを左側から、右側の学習元となった優先ルート方式にドラッグ アンド ドロップします。\r\nすべての選択肢を利用しません\r",
+      "question": "static|EIGRP|OSPF|RIP",
+      "choices": [
+        "192.168.1.0/24",
+        "207.165.200.244/30",
+        "172.16.2.0/24",
+        "207.165.200.248/30",
+        "192.168.2.0/24"
+      ],
+      "answer": "207.165.200.244/30|192.168.2.0/24|192.168.1.0/24|172.16.2.0/24",
+      "placeholders": [
+        "static",
+        "EIGRP",
+        "OSPF",
+        "RIP"
+      ],
+      "grouplimits": "",
+      "imagePath": "images/q12.jpeg"
+    },
+    {
+      "id": "dd-22",
+      "title": "Question 22",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側のAAAに関する記述を、右側の対応するAAAサービスにドラッグ&ドロップしてください。すべてのオプションが使用されるわけではありません。",
+      "question": "Authentication|Authorization",
+      "choices": [
+        "ユーザーごとに固有の属性を割り当てます",
+        "ユーザーが実行できるCLIコマンドを制限します",
+        "ログインの試行を許可、または拒否します",
+        "ユーザーが消費したネットワークリソースの量を記録します",
+        "ユーザーが利用しているサービスを追跡します",
+        "ローカル、PPP、RADIUS、TACACS+といったオプションをサポートしています"
+      ],
+      "answer": "Authentication:ログインの試行を許可、または拒否します,ローカル、PPP、RADIUS、TACACS+といったオプションをサポートしています|Authorization:ユーザーごとに固有の属性を割り当てます,ユーザーが実行できるCLIコマンドを制限します",
+      "placeholders": [
+        "Authentication",
+        "Authorization"
+      ],
+      "grouplimits": "Authentication:2|Authorization:2",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-8",
+      "title": "Question 08",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "IPv6アドレスを左から右のタイプにドラッグアンドドロップします。",
+      "question": "グローバルユニキャスト|リンクローカルユニキャスト|マルチキャスト|ユニークローカル",
+      "choices": [
+        "2000:1092:a1e8:827d:527c:3ce7:9816:1",
+        "fe80:cc72:4b9e:445c:8179:0420:5988:7",
+        "ff00:ec6c:dbb1:3e8b:6d46:bd27:a236:12",
+        "fc00:9860:653f:5146:8cb2:a27c:cb6f:3"
+      ],
+      "answer": "2000:1092:a1e8:827d:527c:3ce7:9816:1|fe80:cc72:4b9e:445c:8179:0420:5988:7|ff00:ec6c:dbb1:3e8b:6d46:bd27:a236:12|fc00:9860:653f:5146:8cb2:a27c:cb6f:3",
+      "placeholders": [
+        "グローバルユニキャスト",
+        "リンクローカルユニキャスト",
+        "マルチキャスト",
+        "ユニークローカル"
+      ],
+      "grouplimits": "",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-3",
+      "title": "Question 03",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "トランスポート層プロトコルの特性を左側から右側の対応するプロトコルにドラッグ アンド ドロップします。",
+      "question": "TCP|UDP",
+      "choices": [
+        "音声トラフィックに最適",
+        "失われたパケットの再送信のサポートを提供",
+        "パケット内のオーバーヘッドを最小限に抑えます",
+        "32 ビットのシーケンス番号を使用",
+        "必要なコンピュータ リソースが少なくなります",
+        "パケット配信を保証"
+      ],
+      "answer": "TCP:パケット配信を保証,32 ビットのシーケンス番号を使用,失われたパケットの再送信のサポートを提供|UDP:音声トラフィックに最適,パケット内のオーバーヘッドを最小限に抑えます,必要なコンピュータ リソースが少なくなります",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    },
+    {
+      "id": "dd-15",
+      "title": "Question 15",
+      "category": "D&D",
+      "type": "Grouping",
+      "problemTitle": "左側の TCP および UDP 特性を右側のサポート プロトコルにドラッグ アンド\r\nドロップします。すべてのオプションが使用されるわけではありません。",
+      "question": "TCP|UDP",
+      "choices": [
+        "シーケンス番号を使用する",
+        "リアルタイムアプリケーションをサポートする",
+        "確認応答パケットに依存する",
+        "OSI第5層（セッション層）で動作する",
+        "トランスポート層でコネクションレスである",
+        "最小限のエラーチェックを行う",
+        "データの完全性を保証する"
+      ],
+      "answer": "TCP:シーケンス番号を使用する,確認応答パケットに依存する,データの完全性を保証する|UDP:リアルタイムアプリケーションをサポートする,トランスポート層でコネクションレスである,最小限のエラーチェックを行う",
+      "placeholders": [
+        "TCP",
+        "UDP"
+      ],
+      "grouplimits": "TCP:3|UDP:3",
+      "imagePath": ""
+    }
+  ]
+}
