@@ -234,7 +234,7 @@ const App = (() => {
   async function goCheckTest(n) {
     try {
       const data = await loadCheckTestData(n);
-      CheckTest.start(data.questions, data.id, data.dd_questions);
+      CheckTest.start(data.questions, data.id, data.dd_questions, data.simulation_questions);
     } catch(e) {
       console.error('CheckTest init error:', e);
     }

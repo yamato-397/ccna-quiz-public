@@ -7,16 +7,16 @@ const CheckTest = (() => {
 
   // ---- Test configs ----
   const CONFIGS = {
-    'check-test-03': { id: 'check-test-03', title: '確認テスト3回目', historyKey: 'ccna_check_test_03_history', hasDnd: false },
-    'check-test-04': { id: 'check-test-04', title: '確認テスト4回目', historyKey: 'ccna_check_test_04_history', hasDnd: false },
-    'check-test-05': { id: 'check-test-05', title: '確認テスト5回目', historyKey: 'ccna_check_test_05_history', hasDnd: true  },
-    'midterm-test':  { id: 'midterm-test',  title: '中間テスト',       historyKey: 'ccna_midterm_test_history',  hasDnd: true  },
-    'check-test-06': { id: 'check-test-06', title: '確認テスト6回目', historyKey: 'ccna_check_test_06_history', hasDnd: true  },
-    'check-test-07': { id: 'check-test-07', title: '確認テスト7回目', historyKey: 'ccna_check_test_07_history', hasDnd: true  },
-    'check-test-08': { id: 'check-test-08', title: '確認テスト8回目', historyKey: 'ccna_check_test_08_history', hasDnd: true  },
-    'check-test-09': { id: 'check-test-09', title: '確認テスト9回目', historyKey: 'ccna_check_test_09_history', hasDnd: true  },
-    'check-test-10': { id: 'check-test-10', title: '確認テスト10回目', historyKey: 'ccna_check_test_10_history', hasDnd: true  },
-    'check-test-11': { id: 'check-test-11', title: '確認テスト11回目', historyKey: 'ccna_check_test_11_history', hasDnd: true  },
+    'check-test-03': { id: 'check-test-03', title: '確認テスト3回目',  historyKey: 'ccna_check_test_03_history', hasDnd: false, hasSimulation: false },
+    'check-test-04': { id: 'check-test-04', title: '確認テスト4回目',  historyKey: 'ccna_check_test_04_history', hasDnd: false, hasSimulation: false },
+    'check-test-05': { id: 'check-test-05', title: '確認テスト5回目',  historyKey: 'ccna_check_test_05_history', hasDnd: true,  hasSimulation: false },
+    'midterm-test':  { id: 'midterm-test',  title: '中間テスト',        historyKey: 'ccna_midterm_test_history',  hasDnd: true,  hasSimulation: false },
+    'check-test-06': { id: 'check-test-06', title: '確認テスト6回目',  historyKey: 'ccna_check_test_06_history', hasDnd: true,  hasSimulation: false },
+    'check-test-07': { id: 'check-test-07', title: '確認テスト7回目',  historyKey: 'ccna_check_test_07_history', hasDnd: true,  hasSimulation: false },
+    'check-test-08': { id: 'check-test-08', title: '確認テスト8回目',  historyKey: 'ccna_check_test_08_history', hasDnd: true,  hasSimulation: false },
+    'check-test-09': { id: 'check-test-09', title: '確認テスト9回目',  historyKey: 'ccna_check_test_09_history', hasDnd: true,  hasSimulation: false },
+    'check-test-10': { id: 'check-test-10', title: '確認テスト10回目', historyKey: 'ccna_check_test_10_history', hasDnd: true,  hasSimulation: false },
+    'check-test-11': { id: 'check-test-11', title: '確認テスト11回目', historyKey: 'ccna_check_test_11_history', hasDnd: true,  hasSimulation: true  },
   };
 
   // ---- History ----
@@ -60,18 +60,22 @@ const CheckTest = (() => {
   let startTime    = null;
   let studentName  = '';
   let activeConfig = null;
-  let dndQuestions = [];   // D&D questions for test-05
-  let dndResults   = null; // { id: { correct } } received from DndQuiz
+  let dndQuestions = [];    // D&D questions
+  let dndResults   = null;  // { id: { correct } } from DndQuiz
+  let simQuestions = [];    // Simulation questions
+  let simResult    = null;  // { details, totalReq, totalCorrect } from SimulationTest
 
   const $ = id => document.getElementById(id);
 
   // ---- Init ----
-  function init(questions, name, cfg, ddQuestions) {
+  function init(questions, name, cfg, ddQuestions, simulationQuestions) {
     allQuestions = questions || [];
     studentName  = name || getStudentName();
     activeConfig = cfg;
     dndQuestions = ddQuestions || [];
     dndResults   = null;
+    simQuestions = simulationQuestions || [];
+    simResult    = null;
     choiceCache.clear();
     results      = {};
     currentIndex = 0;
@@ -266,7 +270,7 @@ const CheckTest = (() => {
     wrap.classList.remove('hidden');
   }
 
-  // ---- D&D phase (test-05 only) ----
+  // ---- D&D phase ----
   function startDndPhase() {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     $('view-dnd').classList.remove('hidden');
@@ -275,6 +279,21 @@ const CheckTest = (() => {
 
   function onDndComplete(ddResults) {
     dndResults = ddResults;
+    // D&D完了後: シミュレーション問題があればシミュレーションへ
+    if (activeConfig && activeConfig.hasSimulation && simQuestions.length > 0) {
+      startSimulationPhase();
+    } else {
+      showResult();
+    }
+  }
+
+  // ---- Simulation phase ----
+  function startSimulationPhase() {
+    SimulationTest.start(simQuestions, onSimulationComplete);
+  }
+
+  function onSimulationComplete(result) {
+    simResult = result;
     showResult();
   }
 
@@ -302,10 +321,16 @@ const CheckTest = (() => {
     const cfg          = activeConfig;
 
     // D&D score
-    const hasDnd      = cfg.hasDnd && dndResults !== null;
-    const dndCorrect  = hasDnd ? Object.values(dndResults).filter(r => r.correct).length : 0;
-    const dndTotal    = hasDnd ? Object.keys(dndResults).length : 0;
-    const dndRate     = dndTotal > 0 ? Math.round((dndCorrect / dndTotal) * 100) : 0;
+    const hasDnd     = cfg.hasDnd && dndResults !== null;
+    const dndCorrect = hasDnd ? Object.values(dndResults).filter(r => r.correct).length : 0;
+    const dndTotal   = hasDnd ? Object.keys(dndResults).length : 0;
+    const dndRate    = dndTotal > 0 ? Math.round((dndCorrect / dndTotal) * 100) : 0;
+
+    // Simulation score
+    const hasSim     = cfg.hasSimulation && simResult !== null;
+    const simCorrect = hasSim ? simResult.totalCorrect : 0;
+    const simTotal   = hasSim ? simResult.totalReq    : 0;
+    const simRate    = simTotal > 0 ? Math.round((simCorrect / simTotal) * 100) : 0;
 
     const wrongIds = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect).map(q => q.id);
 
@@ -324,6 +349,8 @@ const CheckTest = (() => {
       userAgent:        navigator.userAgent,
       dndCorrectCount:  dndCorrect,
       dndTotalCount:    dndTotal,
+      simCorrectCount:  simCorrect,
+      simTotalCount:    simTotal,
     };
     appendHistory(cfg, rec);
     if (typeof ResultSubmitter !== 'undefined') ResultSubmitter.submit(rec);
@@ -335,7 +362,7 @@ const CheckTest = (() => {
     $('ct-result-incorrect').textContent = `誤答: ${selIncorrect} 問`;
     $('ct-result-duration').textContent  = formatDuration(durationSec);
 
-    // ---- D&Dスコア（test-05 のみ） ----
+    // ---- D&Dスコア ----
     const dndSection = $('ct-dnd-score-wrap');
     if (dndSection) {
       if (hasDnd) {
@@ -344,6 +371,18 @@ const CheckTest = (() => {
         dndSection.classList.remove('hidden');
       } else {
         dndSection.classList.add('hidden');
+      }
+    }
+
+    // ---- シミュレーションスコア ----
+    const simSection = $('ct-sim-score-wrap');
+    if (simSection) {
+      if (hasSim) {
+        $('ct-sim-result-score').textContent = `${simCorrect} / ${simTotal}`;
+        $('ct-sim-result-rate').textContent  = `${simRate}%`;
+        simSection.classList.remove('hidden');
+      } else {
+        simSection.classList.add('hidden');
       }
     }
 
@@ -375,14 +414,17 @@ const CheckTest = (() => {
       $('ct-retry-btn').onclick = () => startRetry(wrongQuestions, cfg);
     }
 
-    // ---- 答え合わせ ----
+    // ---- 4択答え合わせ ----
     renderReview();
+
+    // ---- シミュレーション答え合わせ ----
+    renderSimReview(hasSim ? simResult : null);
 
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     $('view-check-test-result').classList.remove('hidden');
   }
 
-  // ---- Answer Review ----
+  // ---- 4択 Answer Review ----
   function renderReview() {
     const listEl = $('ct-review-list');
     if (!listEl) return;
@@ -443,11 +485,62 @@ const CheckTest = (() => {
     applyFilter('all');
   }
 
+  // ---- シミュレーション答え合わせ ----
+  function renderSimReview(result) {
+    const section = $('ct-sim-review-section');
+    const listEl  = $('ct-sim-review-list');
+    if (!section || !listEl) return;
+
+    if (!result) { section.classList.add('hidden'); return; }
+
+    section.classList.remove('hidden');
+    listEl.innerHTML = '';
+
+    result.details.forEach(qDetail => {
+      const qEl = document.createElement('div');
+      qEl.className = 'sim-review-question';
+
+      const titleEl = document.createElement('div');
+      titleEl.className   = 'sim-review-q-title';
+      titleEl.textContent = qDetail.title;
+      qEl.appendChild(titleEl);
+
+      qDetail.devDetails.forEach(dev => {
+        const devEl = document.createElement('div');
+        devEl.className = 'sim-review-device';
+
+        const devHeader = document.createElement('div');
+        devHeader.className = 'sim-review-device-header';
+        devHeader.textContent = `【${dev.deviceName}】 ${dev.correct} / ${dev.total} コマンド正解`;
+        devEl.appendChild(devHeader);
+
+        const table = document.createElement('div');
+        table.className = 'sim-review-table';
+
+        dev.hits.forEach(h => {
+          const row = document.createElement('div');
+          row.className = 'sim-review-row ' + (h.hit ? 'sim-hit' : 'sim-miss');
+          row.innerHTML =
+            `<span class="sim-review-icon">${h.hit ? '✓' : '✗'}</span>` +
+            `<code class="sim-review-cmd">${escHtml(h.req)}</code>`;
+          table.appendChild(row);
+        });
+
+        devEl.appendChild(table);
+        qEl.appendChild(devEl);
+      });
+
+      listEl.appendChild(qEl);
+    });
+  }
+
   function startRetry(questions, cfg) {
     allQuestions = questions;
     displayList  = [...questions];
-    dndQuestions = [];   // retry = 4択のみ
+    dndQuestions = [];
     dndResults   = null;
+    simQuestions = [];
+    simResult    = null;
     results      = {};
     currentIndex = 0;
     answered     = false;
@@ -492,14 +585,14 @@ const CheckTest = (() => {
   }
 
   // ---- Public API ----
-  function start(questions, configId, ddQuestions) {
+  function start(questions, configId, ddQuestions, simulationQuestions) {
     const cfg = CONFIGS[configId];
     if (!cfg) { console.error('Unknown test config:', configId); return; }
     showNameModal(name => {
       document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
       $('view-check-test').classList.remove('hidden');
       $('ct-finish-wrap').classList.add('hidden');
-      init(questions, name, cfg, ddQuestions || []);
+      init(questions, name, cfg, ddQuestions || [], simulationQuestions || []);
     });
   }
 
@@ -507,6 +600,8 @@ const CheckTest = (() => {
   function handleFinish() {
     if (activeConfig && activeConfig.hasDnd && dndQuestions.length > 0) {
       startDndPhase();
+    } else if (activeConfig && activeConfig.hasSimulation && simQuestions.length > 0) {
+      startSimulationPhase();
     } else {
       showResult();
     }
