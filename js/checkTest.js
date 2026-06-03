@@ -18,6 +18,7 @@ const CheckTest = (() => {
     'check-test-10': { id: 'check-test-10', title: '確認テスト10回目', historyKey: 'ccna_check_test_10_history', hasDnd: true,  hasSimulation: false },
     'check-test-11': { id: 'check-test-11', title: '確認テスト11回目', historyKey: 'ccna_check_test_11_history', hasDnd: true,  hasSimulation: true  },
     'check-test-12': { id: 'check-test-12', title: '確認テスト12回目', historyKey: 'ccna_check_test_12_history', hasDnd: true,  hasSimulation: true  },
+    'check-test-13': { id: 'check-test-13', title: '確認テスト13回目', historyKey: 'ccna_check_test_13_history', hasDnd: true,  hasSimulation: true, simulationSampleSize: 5 },
   };
 
   // ---- History ----
@@ -290,7 +291,8 @@ const CheckTest = (() => {
 
   // ---- Simulation phase ----
   function startSimulationPhase() {
-    SimulationTest.start(simQuestions, onSimulationComplete);
+    const sampleSize = activeConfig.simulationSampleSize || null;
+    SimulationTest.start(simQuestions, onSimulationComplete, sampleSize);
   }
 
   function onSimulationComplete(result) {

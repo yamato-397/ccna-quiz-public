@@ -195,14 +195,29 @@ const SimulationTest = (() => {
     ].join('\n');
   }
 
+  // ---- Fisher-Yates シャッフル ----
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
   // ---- 開始 ----
-  function start(simQuestions, completeFn) {
-    questions  = simQuestions;
+  // sampleSize: 指定すると全問からランダムに sampleSize 問を選択（CT-13 用）
+  function start(simQuestions, completeFn, sampleSize) {
+    let selected = simQuestions;
+    if (sampleSize && sampleSize < simQuestions.length) {
+      selected = shuffle([...simQuestions]).slice(0, sampleSize);
+    }
+    questions  = selected;
     userInputs = {};
     onComplete = completeFn;
 
-    console.log('[sim] start() — questions:', simQuestions.length);
-    simQuestions.forEach((q, qi) => {
+    console.log('[sim] start() — total:', simQuestions.length, '/ selected:', selected.length, sampleSize ? `(random sample of ${sampleSize})` : '(all)');
+    selected.forEach((q, qi) => {
       q.devices.forEach((dev, di) => {
         console.log(`[sim]   Q${qi + 1} [${dev.name}] requiredCommands:`, dev.requiredCommands);
       });
