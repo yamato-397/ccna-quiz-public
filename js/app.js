@@ -16,6 +16,20 @@ const App = (() => {
   let checkTestData12  = null;
   let checkTestData13  = null;
 
+  // ---- Random utilities ----
+  function shuffleArr(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function pickRandomItems(arr, count) {
+    return shuffleArr(arr).slice(0, count);
+  }
+
   // ---- View management ----
   function showView(id) {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
@@ -122,6 +136,8 @@ const App = (() => {
     if (ct12El) ct12El.textContent = `実施回数: ${CheckTest.getHistory('check-test-12').length}回`;
     const ct13El = document.getElementById('ct13-stat-history');
     if (ct13El) ct13El.textContent = `実施回数: ${CheckTest.getHistory('check-test-13').length}回`;
+    const ct11rEl = document.getElementById('ct11r-stat-history');
+    if (ct11rEl) ct11rEl.textContent = `実施回数: ${CheckTest.getHistory('check-test-11-random').length}回`;
   }
 
   // ---- Logout handler ----
@@ -170,6 +186,7 @@ const App = (() => {
     document.getElementById('card-check-test-11').addEventListener('click', () => goCheckTest(11));
     document.getElementById('card-check-test-12').addEventListener('click', () => goCheckTest(12));
     document.getElementById('card-check-test-13').addEventListener('click', () => goCheckTest(13));
+    document.getElementById('card-check-test-11-random').addEventListener('click', goRandomCheckTest11);
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
@@ -247,6 +264,38 @@ const App = (() => {
       CheckTest.start(data.questions, data.id, data.dd_questions, data.simulation_questions);
     } catch(e) {
       console.error('CheckTest init error:', e);
+    }
+  }
+
+  async function goRandomCheckTest11() {
+    try {
+      const [qData, ct11Data] = await Promise.all([loadData(), loadCheckTestData(11)]);
+
+      const allChoiceQ = qData.selection_questions || [];
+      const allDndQ    = qData.dd_questions || [];
+      const allSimQ    = ct11Data.simulation_questions || [];
+
+      const choiceCount = 100;
+      const simCount    = Math.ceil(allSimQ.length * 0.5);
+
+      if (allChoiceQ.length < choiceCount) {
+        alert(`4択問題が不足しています（${allChoiceQ.length}問 / 必要: ${choiceCount}問）`);
+        return;
+      }
+
+      const selectedChoiceQuestions     = pickRandomItems(allChoiceQ, choiceCount);
+      const selectedDndQuestions        = allDndQ;
+      const selectedSimulationQuestions = pickRandomItems(allSimQ, simCount);
+
+      console.log('[random test] selected choice questions:', selectedChoiceQuestions.map(q => q.id));
+      console.log('[random test] choice count:', selectedChoiceQuestions.length);
+      console.log('[random test] dnd count:', selectedDndQuestions.length);
+      console.log('[random test] selected simulation questions:', selectedSimulationQuestions.map(q => q.id));
+      console.log('[random test] simulation count:', selectedSimulationQuestions.length);
+
+      CheckTest.start(selectedChoiceQuestions, 'check-test-11-random', selectedDndQuestions, selectedSimulationQuestions);
+    } catch(e) {
+      console.error('Random check test init error:', e);
     }
   }
 
