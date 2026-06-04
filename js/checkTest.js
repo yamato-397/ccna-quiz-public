@@ -19,7 +19,7 @@ const CheckTest = (() => {
     'check-test-11': { id: 'check-test-11', title: '確認テスト11回目', historyKey: 'ccna_check_test_11_history', hasDnd: true,  hasSimulation: true  },
     'check-test-12': { id: 'check-test-12', title: '確認テスト12回目', historyKey: 'ccna_check_test_12_history', hasDnd: true,  hasSimulation: true  },
     'check-test-13': { id: 'check-test-13', title: '確認テスト13回目', historyKey: 'ccna_check_test_13_history', hasDnd: true,  hasSimulation: true, simulationSampleSize: 5 },
-    'check-test-11-random': { id: 'check-test-11-random', title: '確認テスト 第11回（ランダム検証版）', historyKey: 'ccna_check_test_11_random_history', hasDnd: true, hasSimulation: true },
+    'check-test-14': { id: 'check-test-14', title: '確認テスト14回目', historyKey: 'ccna_check_test_14_history', hasDnd: true, hasSimulation: true },
   };
 
   // ---- History ----

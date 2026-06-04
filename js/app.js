@@ -136,8 +136,8 @@ const App = (() => {
     if (ct12El) ct12El.textContent = `実施回数: ${CheckTest.getHistory('check-test-12').length}回`;
     const ct13El = document.getElementById('ct13-stat-history');
     if (ct13El) ct13El.textContent = `実施回数: ${CheckTest.getHistory('check-test-13').length}回`;
-    const ct11rEl = document.getElementById('ct11r-stat-history');
-    if (ct11rEl) ct11rEl.textContent = `実施回数: ${CheckTest.getHistory('check-test-11-random').length}回`;
+    const ct14El = document.getElementById('ct14-stat-history');
+    if (ct14El) ct14El.textContent = `実施回数: ${CheckTest.getHistory('check-test-14').length}回`;
   }
 
   // ---- Logout handler ----
@@ -186,7 +186,7 @@ const App = (() => {
     document.getElementById('card-check-test-11').addEventListener('click', () => goCheckTest(11));
     document.getElementById('card-check-test-12').addEventListener('click', () => goCheckTest(12));
     document.getElementById('card-check-test-13').addEventListener('click', () => goCheckTest(13));
-    document.getElementById('card-check-test-11-random').addEventListener('click', goRandomCheckTest11);
+    document.getElementById('card-check-test-14').addEventListener('click', goCheckTest14);
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
@@ -267,7 +267,7 @@ const App = (() => {
     }
   }
 
-  async function goRandomCheckTest11() {
+  async function goCheckTest14() {
     try {
       const [qData, ct11Data] = await Promise.all([loadData(), loadCheckTestData(11)]);
 
@@ -293,7 +293,7 @@ const App = (() => {
       console.log('[random test] selected simulation questions:', selectedSimulationQuestions.map(q => q.id));
       console.log('[random test] simulation count:', selectedSimulationQuestions.length);
 
-      CheckTest.start(selectedChoiceQuestions, 'check-test-11-random', selectedDndQuestions, selectedSimulationQuestions);
+      CheckTest.start(selectedChoiceQuestions, 'check-test-14', selectedDndQuestions, selectedSimulationQuestions);
     } catch(e) {
       console.error('Random check test init error:', e);
     }
