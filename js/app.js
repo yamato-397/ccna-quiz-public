@@ -15,6 +15,7 @@ const App = (() => {
   let checkTestData11  = null;
   let checkTestData12  = null;
   let checkTestData13  = null;
+  let checkTestData14  = null;
 
   // ---- Random utilities ----
   function shuffleArr(arr) {
@@ -60,6 +61,7 @@ const App = (() => {
       11:        { cache: () => checkTestData11, set: d => { checkTestData11 = d; }, file: 'check-test-11.json' },
       12:        { cache: () => checkTestData12, set: d => { checkTestData12 = d; }, file: 'check-test-12.json' },
       13:        { cache: () => checkTestData13, set: d => { checkTestData13 = d; }, file: 'check-test-13.json' },
+      14:        { cache: () => checkTestData14, set: d => { checkTestData14 = d; }, file: 'check-test-14.json' },
     };
     const entry = map[n] || map[3];
     if (entry.cache()) return entry.cache();
@@ -186,7 +188,7 @@ const App = (() => {
     document.getElementById('card-check-test-11').addEventListener('click', () => goCheckTest(11));
     document.getElementById('card-check-test-12').addEventListener('click', () => goCheckTest(12));
     document.getElementById('card-check-test-13').addEventListener('click', () => goCheckTest(13));
-    document.getElementById('card-check-test-14').addEventListener('click', goCheckTest14);
+    document.getElementById('card-check-test-14').addEventListener('click', () => goCheckTest(14));
 
     // Back buttons
     document.getElementById('quiz-back').addEventListener('click', goPortal);
@@ -264,38 +266,6 @@ const App = (() => {
       CheckTest.start(data.questions, data.id, data.dd_questions, data.simulation_questions);
     } catch(e) {
       console.error('CheckTest init error:', e);
-    }
-  }
-
-  async function goCheckTest14() {
-    try {
-      const [qData, ct11Data] = await Promise.all([loadData(), loadCheckTestData(11)]);
-
-      const allChoiceQ = qData.selection_questions || [];
-      const allDndQ    = qData.dd_questions || [];
-      const allSimQ    = ct11Data.simulation_questions || [];
-
-      const choiceCount = 100;
-      const simCount    = Math.ceil(allSimQ.length * 0.5);
-
-      if (allChoiceQ.length < choiceCount) {
-        alert(`4択問題が不足しています（${allChoiceQ.length}問 / 必要: ${choiceCount}問）`);
-        return;
-      }
-
-      const selectedChoiceQuestions     = pickRandomItems(allChoiceQ, choiceCount);
-      const selectedDndQuestions        = allDndQ;
-      const selectedSimulationQuestions = pickRandomItems(allSimQ, simCount);
-
-      console.log('[random test] selected choice questions:', selectedChoiceQuestions.map(q => q.id));
-      console.log('[random test] choice count:', selectedChoiceQuestions.length);
-      console.log('[random test] dnd count:', selectedDndQuestions.length);
-      console.log('[random test] selected simulation questions:', selectedSimulationQuestions.map(q => q.id));
-      console.log('[random test] simulation count:', selectedSimulationQuestions.length);
-
-      CheckTest.start(selectedChoiceQuestions, 'check-test-14', selectedDndQuestions, selectedSimulationQuestions);
-    } catch(e) {
-      console.error('Random check test init error:', e);
     }
   }
 
