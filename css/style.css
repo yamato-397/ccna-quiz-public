@@ -1362,3 +1362,79 @@ input, select { font-family: inherit; }
   margin-bottom: 0.4rem;
   line-height: 1.4;
 }
+
+/* ===== MASTERED QUESTION FEATURE ===== */
+
+/* Quiz view — mastered progress row */
+.quiz-mastered-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  background: #f0faf4;
+  border-bottom: 1px solid #c8e6d3;
+  font-size: 0.82rem;
+}
+#quiz-mastered-display {
+  color: #1a6e44;
+  font-weight: 600;
+}
+
+/* Question meta — mastered badge */
+.q-mastered-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #d4f5e6;
+  color: #1a6e44;
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+/* Mastered toggle button area */
+.mastered-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.btn-mastered-off {
+  background: #f8fdf9;
+  color: #555;
+  border: 1.5px solid #ccc;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.btn-mastered-off:hover {
+  background: #e8f5ee;
+  border-color: #7abf9e;
+  color: #1a6e44;
+}
+.btn-mastered-on {
+  background: #d4f5e6;
+  color: #1a6e44;
+  border: 1.5px solid #7abf9e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+.btn-mastered-on:hover {
+  background: #b8edce;
+  border-color: #4da07a;
+}
+
+/* Portal card — mastered count */
+.mastered-stat-label {
+  font-size: 0.8rem;
+  color: #1a6e44;
+  font-weight: 600;
+}

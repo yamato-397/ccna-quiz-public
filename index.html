@@ -47,9 +47,10 @@
         <div class="portal-card" id="card-quiz">
           <div class="card-icon">&#128196;</div>
           <h2 class="card-title">4択問題</h2>
-          <p class="card-desc">選択問題 397問<br>単一・複数回答対応</p>
+          <p class="card-desc">選択問題 516問<br>単一・複数回答対応</p>
           <div class="card-stats" id="quiz-portal-stats">
-            <span id="quiz-stat-answered">0</span> / 397 回答済み
+            <span id="quiz-stat-answered">0</span> / 516 回答済み<br>
+            <span class="mastered-stat-label">&#11088; 習得済み <span id="quiz-stat-mastered">0</span> 問</span>
           </div>
           <button class="btn btn-primary btn-full card-btn">スタート</button>
         </div>
@@ -223,9 +224,13 @@
     </div>
 
     <div class="quiz-stats-row">
-      <span id="quiz-position">1 / 397</span>
+      <span id="quiz-position">1 / 516</span>
       <span id="quiz-accuracy-display">正答率 - %</span>
       <button id="quiz-reset-history" class="btn btn-ghost btn-xs">履歴リセット</button>
+    </div>
+    <div class="quiz-mastered-row">
+      <span id="quiz-mastered-display">&#11088; 習得済み 0 / 516</span>
+      <button id="quiz-reset-mastered" class="btn btn-ghost btn-xs">習得リセット</button>
     </div>
 
     <div class="quiz-filters">
@@ -238,6 +243,7 @@
           <option value="part_③">Part ③</option>
           <option value="part_④">Part ④</option>
           <option value="part_⑤">Part ⑤</option>
+          <option value="part_⑥">Part ⑥</option>
         </select>
       </div>
       <div class="filter-row filter-checks">
@@ -246,6 +252,9 @@
         </label>
         <label class="filter-check">
           <input type="checkbox" id="filter-wrong"> 間違えのみ
+        </label>
+        <label class="filter-check">
+          <input type="checkbox" id="filter-unmastered"> 未習得のみ
         </label>
         <label class="filter-check">
           <input type="checkbox" id="filter-random"> シャッフル出題
@@ -259,6 +268,7 @@
         <span class="q-part" id="q-part">Part ①</span>
         <span class="q-multi hidden" id="q-multi-badge">複数選択可</span>
         <span class="q-status" id="q-status-badge"></span>
+        <span class="q-mastered-badge hidden" id="q-mastered-badge">&#11088; 習得済み</span>
       </div>
       <div class="question-text" id="q-text"></div>
       <div class="question-image-wrap hidden" id="q-image-wrap">
@@ -272,6 +282,9 @@
         <div class="feedback-result" id="feedback-result"></div>
         <div class="feedback-correct" id="feedback-correct"></div>
         <div class="feedback-explanation" id="feedback-explanation"></div>
+      </div>
+      <div class="mastered-action">
+        <button class="btn btn-sm btn-mastered-off" id="mastered-toggle-btn">&#9734; 習得済みにする</button>
       </div>
     </div>
 

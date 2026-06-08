@@ -115,6 +115,9 @@ const App = (() => {
     const el = document.getElementById('quiz-stat-answered');
     if (el) el.textContent = answeredCount;
 
+    const masteredEl = document.getElementById('quiz-stat-mastered');
+    if (masteredEl) masteredEl.textContent = Quiz.getMasteredTotal();
+
     const dndHist = DndQuiz.getHistory();
     const dndAnswered = Object.keys(dndHist.answers || {}).length;
     const dndEl = document.getElementById('dnd-stat-answered');

@@ -2,7 +2,8 @@
 'use strict';
 
 const Quiz = (() => {
-  const HISTORY_KEY = 'ccna_quiz_history';
+  const HISTORY_KEY  = 'ccna_quiz_history';
+  const MASTERED_KEY = 'ccna_mastered_questions';
 
   // ---- History helpers ----
   function getHistory() {
@@ -22,6 +23,41 @@ const Quiz = (() => {
     localStorage.removeItem(HISTORY_KEY);
   }
 
+  // ---- Mastered helpers ----
+  function getMastered() {
+    try { return JSON.parse(localStorage.getItem(MASTERED_KEY)) || {}; }
+    catch { return {}; }
+  }
+  function saveMastered(m) {
+    localStorage.setItem(MASTERED_KEY, JSON.stringify(m));
+  }
+  function isQuestionMastered(id) {
+    return !!getMastered()[id];
+  }
+  function setQuestionMastered(id, mastered) {
+    const m = getMastered();
+    if (mastered) m[id] = true;
+    else delete m[id];
+    saveMastered(m);
+  }
+  function getMasteredCount(questions) {
+    const m = getMastered();
+    return (questions || []).filter(q => m[q.id]).length;
+  }
+  function getMasteredTotal() {
+    try { return Object.keys(JSON.parse(localStorage.getItem(MASTERED_KEY) || '{}')).length; }
+    catch { return 0; }
+  }
+  function resetMastered(scope) {
+    if (!scope || scope === 'all') {
+      localStorage.removeItem(MASTERED_KEY);
+    } else {
+      const m = getMastered();
+      scope.forEach(q => delete m[q.id]);
+      saveMastered(m);
+    }
+  }
+
   // ---- Shuffle utility (Fisher-Yates) ----
   function shuffle(arr) {
     const a = [...arr];
@@ -33,9 +69,7 @@ const Quiz = (() => {
   }
 
   // ---- Per-session choice order cache (stable within one page load) ----
-  // Maps question id → shuffled choices array
   const choiceOrderCache = new Map();
-
   function getShuffledChoices(q) {
     if (!choiceOrderCache.has(q.id)) {
       choiceOrderCache.set(q.id, shuffle(q.choices));
@@ -44,12 +78,11 @@ const Quiz = (() => {
   }
 
   // ---- State ----
-  let allQuestions = [];
+  let allQuestions      = [];
   let filteredQuestions = [];
-  let currentIndex = 0;
-  let answered = false;
+  let currentIndex      = 0;
+  let answered          = false;
 
-  // ---- DOM refs ----
   const $ = id => document.getElementById(id);
 
   // ---- Compute filtered list ----
@@ -57,6 +90,7 @@ const Quiz = (() => {
     const part           = $('filter-part').value;
     const onlyUnanswered = $('filter-unanswered').checked;
     const onlyWrong      = $('filter-wrong').checked;
+    const onlyUnmastered = $('filter-unmastered') ? $('filter-unmastered').checked : false;
     const random         = $('filter-random').checked;
     const hist = getHistory();
 
@@ -65,6 +99,7 @@ const Quiz = (() => {
       const rec = hist.answers[q.id];
       if (onlyUnanswered && rec) return false;
       if (onlyWrong && (!rec || rec.correct)) return false;
+      if (onlyUnmastered && isQuestionMastered(q.id)) return false;
       return true;
     });
 
@@ -73,6 +108,30 @@ const Quiz = (() => {
     }
     filteredQuestions = list;
     currentIndex = 0;
+  }
+
+  // ---- Mastered UI update ----
+  function updateMasteredUI() {
+    if (filteredQuestions.length === 0) {
+      const badge = $('q-mastered-badge');
+      if (badge) badge.classList.add('hidden');
+      const btn = $('mastered-toggle-btn');
+      if (btn) { btn.textContent = '☆ 習得済みにする'; btn.className = 'btn btn-sm btn-mastered-off'; }
+      return;
+    }
+    const q        = filteredQuestions[currentIndex];
+    const mastered = isQuestionMastered(q.id);
+
+    const badge = $('q-mastered-badge');
+    if (badge) {
+      badge.classList.toggle('hidden', !mastered);
+    }
+
+    const btn = $('mastered-toggle-btn');
+    if (btn) {
+      btn.textContent = mastered ? '⭐ 習得済みを解除' : '☆ 習得済みにする';
+      btn.className   = mastered ? 'btn btn-sm btn-mastered-on' : 'btn btn-sm btn-mastered-off';
+    }
   }
 
   // ---- Render one question ----
@@ -95,7 +154,7 @@ const Quiz = (() => {
     const multiBadge = $('q-multi-badge');
     isMulti ? multiBadge.classList.remove('hidden') : multiBadge.classList.add('hidden');
 
-    // Status badge
+    // Status badge (answer history)
     const statusBadge = $('q-status-badge');
     if (!rec) {
       statusBadge.textContent = '未回答';
@@ -132,7 +191,7 @@ const Quiz = (() => {
       const item = document.createElement('label');
       item.className = 'choice-item';
       item.dataset.index = i;
-      item.dataset.value = choice;  // text-based, shuffle-safe
+      item.dataset.value = choice;
 
       const input = document.createElement('input');
       input.type = isMulti ? 'checkbox' : 'radio';
@@ -162,6 +221,9 @@ const Quiz = (() => {
     // Hide feedback
     $('feedback-area').classList.add('hidden');
 
+    // Mastered UI
+    updateMasteredUI();
+
     updateProgress();
     scrollToTop();
   }
@@ -177,6 +239,8 @@ const Quiz = (() => {
     $('q-image-wrap').classList.add('hidden');
     $('submit-btn').classList.add('hidden');
     $('feedback-area').classList.add('hidden');
+    const badge = $('q-mastered-badge');
+    if (badge) badge.classList.add('hidden');
     updateProgress();
   }
 
@@ -186,7 +250,6 @@ const Quiz = (() => {
 
     const q = filteredQuestions[currentIndex];
     const inputs = document.querySelectorAll('#choices-container input');
-    // Judgment is text-based (input.value = choice text), shuffle-safe
     const selected = [...inputs].filter(i => i.checked).map(i => i.value);
 
     if (selected.length === 0) {
@@ -198,7 +261,6 @@ const Quiz = (() => {
 
     answered = true;
 
-    // Compare sorted arrays — text-based, shuffle-independent
     const sortedSelected = [...selected].sort();
     const sortedCorrect  = [...q.correctAnswers].sort();
     const isCorrect = JSON.stringify(sortedSelected) === JSON.stringify(sortedCorrect);
@@ -263,6 +325,13 @@ const Quiz = (() => {
       const acc = Math.round((correct / recs.length) * 100);
       $('quiz-accuracy-display').textContent = `正答率 ${acc}% (${correct}/${recs.length})`;
     }
+
+    // Mastered progress
+    const masteredEl = $('quiz-mastered-display');
+    if (masteredEl) {
+      const cnt = getMasteredCount(allQuestions);
+      masteredEl.textContent = `⭐ 習得済み ${cnt} / ${allQuestions.length}`;
+    }
   }
 
   // ---- Navigation ----
@@ -288,10 +357,9 @@ const Quiz = (() => {
   // ---- Init ----
   function init(questions) {
     allQuestions = questions || [];
-    // Clear choice cache on new session start so shuffle resets when re-entering quiz
     choiceOrderCache.clear();
 
-    ['filter-part', 'filter-unanswered', 'filter-wrong', 'filter-random'].forEach(id => {
+    ['filter-part', 'filter-unanswered', 'filter-wrong', 'filter-unmastered', 'filter-random'].forEach(id => {
       const el = $(id);
       if (el) {
         el.removeEventListener('change', onFilterChange);
@@ -306,6 +374,28 @@ const Quiz = (() => {
     $('prev-btn').onclick = prevQuestion;
     $('next-btn').onclick = nextQuestion;
 
+    // Mastered toggle button
+    const masteredBtn = $('mastered-toggle-btn');
+    if (masteredBtn) {
+      masteredBtn.onclick = () => {
+        if (filteredQuestions.length === 0) return;
+        const q          = filteredQuestions[currentIndex];
+        const nowMastered = !isQuestionMastered(q.id);
+        setQuestionMastered(q.id, nowMastered);
+        updateMasteredUI();
+        updateProgress();
+        // 未習得フィルタ中に習得済みにした場合 → 次の問題へ（リスト再構築）
+        if (nowMastered && $('filter-unmastered') && $('filter-unmastered').checked) {
+          applyFilters();
+          if (currentIndex >= filteredQuestions.length) {
+            currentIndex = Math.max(0, filteredQuestions.length - 1);
+          }
+          renderQuestion();
+        }
+      };
+    }
+
+    // History reset
     $('quiz-reset-history').onclick = () => {
       if (confirm('回答履歴をリセットしますか？')) {
         resetHistory();
@@ -313,6 +403,31 @@ const Quiz = (() => {
         renderQuestion();
       }
     };
+
+    // Mastered reset
+    const masteredResetBtn = $('quiz-reset-mastered');
+    if (masteredResetBtn) {
+      masteredResetBtn.onclick = () => {
+        const part = $('filter-part').value;
+        if (part) {
+          const partName = part.replace('part_', 'Part ');
+          const partQs   = allQuestions.filter(q => q.part === part);
+          if (confirm(`${partName} の習得済みフラグをすべて解除します。よろしいですか？`)) {
+            resetMastered(partQs);
+            updateMasteredUI();
+            updateProgress();
+            renderQuestion();
+          }
+        } else {
+          if (confirm('全partの習得済みフラグをすべて解除します。よろしいですか？')) {
+            resetMastered('all');
+            updateMasteredUI();
+            updateProgress();
+            renderQuestion();
+          }
+        }
+      };
+    }
 
     applyFilters();
     renderQuestion();
@@ -323,5 +438,5 @@ const Quiz = (() => {
     renderQuestion();
   }
 
-  return { init, getHistory, resetHistory };
+  return { init, getHistory, resetHistory, getMasteredTotal, getMasteredCount };
 })();
