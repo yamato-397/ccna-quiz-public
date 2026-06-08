@@ -1438,3 +1438,135 @@ input, select { font-family: inherit; }
   color: #1a6e44;
   font-weight: 600;
 }
+
+/* ===== QUIZ PARTS VIEW ===== */
+.quiz-parts-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 2rem;
+}
+
+/* 全体学習セクション */
+.quiz-overall-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.qp-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.9rem;
+}
+.qp-parts-label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.quiz-overall-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.88rem;
+}
+.qp-overall-stat { color: var(--text-muted); }
+.qp-overall-stat strong { color: var(--text); }
+.qp-stat-mastered strong { color: #1a6e44; }
+.qp-stat-unmastered strong { color: var(--primary); }
+.quiz-overall-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* パート別カードグリッド */
+.quiz-part-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* 各パートカード */
+.qpc-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: box-shadow var(--transition);
+}
+.qpc-card:hover { box-shadow: var(--shadow-lg); }
+.qpc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.qpc-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.qpc-badge-total {
+  font-size: 0.78rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.qpc-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  font-size: 0.82rem;
+}
+.qpc-stat { color: var(--text-muted); }
+.qpc-stat strong { color: var(--text); }
+.qpc-stat-mastered strong { color: #1a6e44; }
+.qpc-stat-image { font-size: 0.78rem; color: var(--text-muted); }
+
+/* 習得率プログレスバー */
+.qpc-progress-wrap {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.qpc-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4da07a, #1a7a4e);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.qpc-pct-label {
+  font-size: 0.75rem;
+  color: #1a6e44;
+  font-weight: 600;
+  text-align: right;
+  margin-top: -0.3rem;
+}
+
+/* パートカードのボタン群 */
+.qpc-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+.qpc-buttons .btn-primary { flex: 1 1 100%; }
+.qpc-buttons .btn-outline  { flex: 1 1 auto; font-size: 0.82rem; }
+.qpc-buttons .btn-ghost    { font-size: 0.78rem; color: var(--error); }
+.qpc-buttons .btn-ghost:hover { color: var(--error); opacity: 0.8; }
+
+@media (max-width: 480px) {
+  .quiz-part-cards { grid-template-columns: 1fr; }
+  .quiz-overall-buttons { flex-direction: column; }
+}

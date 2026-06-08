@@ -211,10 +211,35 @@
     </main>
   </div>
 
+  <!-- ===== QUIZ PARTS VIEW ===== -->
+  <div id="view-quiz-parts" class="view hidden">
+    <header class="view-header">
+      <button id="quiz-parts-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
+      <div class="view-header-title">4択問題 — パート選択</div>
+      <button id="quiz-parts-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+
+    <div class="quiz-parts-container">
+      <!-- 全体学習 -->
+      <div class="quiz-overall-section">
+        <h2 class="qp-section-title">&#128218; 全体学習</h2>
+        <div class="quiz-overall-stats" id="quiz-overall-stats"></div>
+        <div class="quiz-overall-buttons">
+          <button class="btn btn-primary" id="qp-start-all">全問を学習（全Part）</button>
+          <button class="btn btn-outline" id="qp-start-unmastered-all">未習得のみ学習（全Part）</button>
+        </div>
+      </div>
+
+      <!-- パート別カード -->
+      <div class="qp-section-title qp-parts-label">&#127959; パート別学習</div>
+      <div class="quiz-part-cards" id="quiz-part-cards"></div>
+    </div>
+  </div>
+
   <!-- ===== QUIZ VIEW ===== -->
   <div id="view-quiz" class="view hidden">
     <header class="view-header">
-      <button id="quiz-back" class="btn btn-ghost btn-sm">← ポータルへ</button>
+      <button id="quiz-back" class="btn btn-ghost btn-sm">← パート選択へ</button>
       <div class="view-header-title">4択問題</div>
       <button id="quiz-logout" class="btn btn-ghost btn-sm">ログアウト</button>
     </header>

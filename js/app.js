@@ -168,7 +168,7 @@ const App = (() => {
     initModal();
 
     // Wire up logout buttons
-    ['logout-btn', 'quiz-logout', 'dnd-logout', 'ct-logout', 'ct-result-logout'].forEach(id => {
+    ['logout-btn', 'quiz-logout', 'quiz-parts-logout', 'dnd-logout', 'ct-logout', 'ct-result-logout'].forEach(id => {
       const btn = document.getElementById(id);
       if (btn) btn.addEventListener('click', handleLogout);
     });
@@ -189,7 +189,7 @@ const App = (() => {
     });
 
     // Portal card navigation
-    document.getElementById('card-quiz').addEventListener('click', goQuiz);
+    document.getElementById('card-quiz').addEventListener('click', goQuizParts);
     document.getElementById('card-dnd').addEventListener('click', goDnd);
     document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
     document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
@@ -209,7 +209,14 @@ const App = (() => {
     document.getElementById('card-check-test-17').addEventListener('click', () => goCheckTest(17));
 
     // Back buttons
-    document.getElementById('quiz-back').addEventListener('click', goPortal);
+    document.getElementById('quiz-parts-back').addEventListener('click', goPortal);
+    document.getElementById('quiz-back').addEventListener('click', goQuizParts);
+
+    // Quiz parts — overall study buttons
+    document.getElementById('qp-start-all').addEventListener('click', () =>
+      goQuizWithOptions({ shuffle: true }));
+    document.getElementById('qp-start-unmastered-all').addEventListener('click', () =>
+      goQuizWithOptions({ unmastered: true, shuffle: true }));
     document.getElementById('dnd-back').addEventListener('click', () => {
       if (DndQuiz.isTestMode()) {
         if (!confirm('テスト中です。ポータルへ戻るとD&D結果が失われます。よろしいですか？')) return;
@@ -258,6 +265,7 @@ const App = (() => {
     }
   }
 
+  // 4択全体 (オプションなし) — 後方互換で残す
   async function goQuiz() {
     showView('quiz');
     try {
@@ -266,6 +274,112 @@ const App = (() => {
     } catch(e) {
       console.error('Quiz init error:', e);
     }
+  }
+
+  // パート選択ビューを表示
+  async function goQuizParts() {
+    showView('quiz-parts');
+    try {
+      const data = await loadData();
+      renderQuizPartCards(data.selection_questions);
+    } catch(e) {
+      console.error('QuizParts error:', e);
+    }
+  }
+
+  // オプション付きで4択クイズを開始（パート別学習用）
+  // options: { part?, unmastered?, wrong?, unanswered?, shuffle? }
+  async function goQuizWithOptions(options) {
+    showView('quiz');
+    try {
+      const data = await loadData();
+      Quiz.init(data.selection_questions, options);
+    } catch(e) {
+      console.error('Quiz init error:', e);
+    }
+  }
+
+  // パート別学習カードを描画
+  function renderQuizPartCards(questions) {
+    // ---- 全体統計 ----
+    const totalQ         = questions.length;
+    const masteredTotal  = Quiz.getMasteredTotal();
+    const unmasteredAll  = totalQ - masteredTotal;
+    const overallEl      = document.getElementById('quiz-overall-stats');
+    if (overallEl) {
+      overallEl.innerHTML =
+        `<span class="qp-overall-stat">全問：<strong>${totalQ}問</strong></span>` +
+        `<span class="qp-overall-stat qp-stat-mastered">&#11088; 習得済み：<strong>${masteredTotal}問</strong></span>` +
+        `<span class="qp-overall-stat qp-stat-unmastered">未習得：<strong>${unmasteredAll}問</strong></span>`;
+    }
+
+    // ---- パートごとのカード ----
+    const partMap = {};
+    questions.forEach(q => {
+      const key = q.part || '';
+      if (!partMap[key]) partMap[key] = [];
+      partMap[key].push(q);
+    });
+
+    const container = document.getElementById('quiz-part-cards');
+    if (!container) return;
+    container.innerHTML = '';
+
+    Object.keys(partMap).sort().forEach(part => {
+      const partQs      = partMap[part];
+      const total       = partQs.length;
+      const mastered    = Quiz.getMasteredCount(partQs);
+      const unmastered  = total - mastered;
+      const withImage   = partQs.filter(q => q.hasImage).length;
+      const pct         = total > 0 ? Math.round(mastered / total * 100) : 0;
+      const partDisplay = part.replace('part_', 'Part ');
+
+      const card = document.createElement('div');
+      card.className = 'qpc-card';
+      card.innerHTML =
+        `<div class="qpc-header">` +
+          `<h3 class="qpc-title">${escQ(partDisplay)}</h3>` +
+          `<span class="qpc-badge-total">${total}問</span>` +
+        `</div>` +
+        `<div class="qpc-stats-row">` +
+          `<span class="qpc-stat qpc-stat-mastered">&#11088; 習得済み：<strong>${mastered}</strong></span>` +
+          `<span class="qpc-stat qpc-stat-unmastered">未習得：<strong>${unmastered}</strong></span>` +
+          (withImage > 0 ? `<span class="qpc-stat qpc-stat-image">&#128247; 画像付き：<strong>${withImage}</strong></span>` : '') +
+        `</div>` +
+        `<div class="qpc-progress-wrap"><div class="qpc-progress-bar" style="width:${pct}%"></div></div>` +
+        `<p class="qpc-pct-label">習得率 ${pct}%</p>` +
+        `<div class="qpc-buttons">` +
+          `<button class="btn btn-sm btn-primary qpc-btn-all">全${total}問を学習</button>` +
+          `<button class="btn btn-sm btn-outline qpc-btn-unmastered">未習得のみ（${unmastered}問）</button>` +
+          `<button class="btn btn-xs btn-ghost qpc-btn-reset">習得リセット</button>` +
+        `</div>`;
+
+      card.querySelector('.qpc-btn-all').onclick = () =>
+        goQuizWithOptions({ part, shuffle: true });
+
+      card.querySelector('.qpc-btn-unmastered').onclick = () => {
+        if (unmastered === 0) {
+          alert(`${partDisplay} の未習得問題は0件です。\n習得リセット後、再度お試しください。`);
+          return;
+        }
+        goQuizWithOptions({ part, unmastered: true, shuffle: true });
+      };
+
+      card.querySelector('.qpc-btn-reset').onclick = () => {
+        if (confirm(`${partDisplay} の習得済みフラグをすべて解除します。よろしいですか？`)) {
+          Quiz.resetMastered(partQs);
+          renderQuizPartCards(questions);  // カードを再描画
+        }
+      };
+
+      container.appendChild(card);
+    });
+  }
+
+  function escQ(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
   async function goDnd() {

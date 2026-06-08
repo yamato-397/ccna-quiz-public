@@ -355,9 +355,28 @@ const Quiz = (() => {
   }
 
   // ---- Init ----
-  function init(questions) {
+  // options: { part, unmastered, wrong, unanswered, shuffle }
+  function init(questions, options) {
     allQuestions = questions || [];
     choiceOrderCache.clear();
+
+    // Pre-apply filter options (e.g., from part-based study buttons)
+    if (options) {
+      const partEl = $('filter-part');
+      if (partEl) partEl.value = options.part || '';
+
+      const unmasteredEl = $('filter-unmastered');
+      if (unmasteredEl) unmasteredEl.checked = !!options.unmastered;
+
+      const wrongEl = $('filter-wrong');
+      if (wrongEl) wrongEl.checked = !!options.wrong;
+
+      const unansweredEl = $('filter-unanswered');
+      if (unansweredEl) unansweredEl.checked = !!options.unanswered;
+
+      const randomEl = $('filter-random');
+      if (randomEl) randomEl.checked = !!options.shuffle;
+    }
 
     ['filter-part', 'filter-unanswered', 'filter-wrong', 'filter-unmastered', 'filter-random'].forEach(id => {
       const el = $(id);
@@ -438,5 +457,5 @@ const Quiz = (() => {
     renderQuestion();
   }
 
-  return { init, getHistory, resetHistory, getMasteredTotal, getMasteredCount };
+  return { init, getHistory, resetHistory, getMasteredTotal, getMasteredCount, resetMastered };
 })();
