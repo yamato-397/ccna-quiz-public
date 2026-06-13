@@ -2698,7 +2698,7 @@
       "devices": [
         {
           "name": "SW1",
-          "description": "vlan 77(User_VLAN), vlan 177(Voice_VLAN) / e0/1-3: access vlan 77, voice vlan 177 / lldp run / e0/0: lldp transmit, lldp receive",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2723,7 +2723,7 @@
         },
         {
           "name": "SW2",
-          "description": "SW1と同じ設定（vlan 77/177, e0/1-3 access, lldp）",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2755,7 +2755,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "vlan 35(SALES) / lldp run / e0/2: access vlan 35, no lldp receive, no lldp transmit",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2774,7 +2774,7 @@
         },
         {
           "name": "SW-2",
-          "description": "vlan 39(MARKETING) / lldp run / e0/2: access vlan 39",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2798,7 +2798,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "cdp run / e0/0: cdp enable / e0/1-2: no cdp enable",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2814,7 +2814,7 @@
         },
         {
           "name": "SW-2",
-          "description": "vlan 30(SALES), vlan 20 / e0/2: access vlan 20 / e0/3: access vlan 30",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2843,7 +2843,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "e0/1: access vlan 10, voice vlan 11 / vlan 10 Engineering / lldp run / e0/0: lldp transmit/receive / e0/2: no cdp enable",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2867,7 +2867,7 @@
         },
         {
           "name": "SW-2",
-          "description": "e0/1: access vlan 30 / lldp run / e0/0: lldp transmit/receive",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2891,7 +2891,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "e0/0-1: trunk + channel-group 12 mode active / e0/2: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2910,7 +2910,7 @@
         },
         {
           "name": "SW-2",
-          "description": "e0/0-1: trunk + channel-group 12 mode passive / e0/2: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2929,7 +2929,7 @@
         },
         {
           "name": "SW-3",
-          "description": "e0/0-1: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",

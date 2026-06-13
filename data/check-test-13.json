@@ -2691,7 +2691,7 @@
       "devices": [
         {
           "name": "R1",
-          "description": "e0/0にIPv4: 10.0.12.5 255.255.255.252、IPv6: 2001:db8:12::1/126を設定",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2705,7 +2705,7 @@
         },
         {
           "name": "R2",
-          "description": "e0/0にIPv4: 10.0.12.6 255.255.255.252、IPv6: 2001:db8:12::3/126を設定",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2726,7 +2726,7 @@
       "devices": [
         {
           "name": "SW1",
-          "description": "e0/0-1: trunk+LACP active, allowed vlan 1,11,12 / port-channel12: trunk, allowed vlan 1,11,12 / e0/2: trunk, allowed vlan 12",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2751,7 +2751,7 @@
         },
         {
           "name": "SW2",
-          "description": "e0/0-1: trunk+LACP active, allowed vlan 1,11,12 / port-channel12: trunk, allowed vlan 1,11,12",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2778,7 +2778,7 @@
       "devices": [
         {
           "name": "R2",
-          "description": "router ospf 10, router-id 10.2.2.2, network 3本(area 0), e0/0-1 DR priority 255, clear ip ospf process",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2797,7 +2797,7 @@
         },
         {
           "name": "R1",
-          "description": "OSPFプロセスのリセット",
+          "description": "",
           "requiredCommands": [
             "en",
             "clear ip ospf process",
@@ -2813,7 +2813,7 @@
       "devices": [
         {
           "name": "SW1",
-          "description": "vlan 77(User_VLAN), vlan 177(Voice_VLAN) / e0/1-3: access vlan 77, voice vlan 177 / lldp run / e0/0: lldp transmit, lldp receive",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2838,7 +2838,7 @@
         },
         {
           "name": "SW2",
-          "description": "SW1と同じ設定（vlan 77/177, e0/1-3 access, lldp）",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2870,7 +2870,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "vlan 35(SALES) / lldp run / e0/2: access vlan 35, no lldp receive, no lldp transmit",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2889,7 +2889,7 @@
         },
         {
           "name": "SW-2",
-          "description": "vlan 39(MARKETING) / lldp run / e0/2: access vlan 39",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2913,7 +2913,7 @@
       "devices": [
         {
           "name": "R2",
-          "description": "e0/1: ip nat inside / e0/0: ip nat outside / access-list 10 permit 10.0.12.0 0.0.0.3 / ip nat inside source list 10 int e0/0 overload",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2931,7 +2931,7 @@
         },
         {
           "name": "SW1",
-          "description": "ntp server 10.2.2.2 / int vlan 101: ip helper-address 10.0.12.2 / ip domain-name 2048.ccna.com / crypto key generate rsa modulus 2048 / ip ssh version 2 / username admin privilege 15 secret cisco / line vty 0 15: transport input ssh, login local",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2959,7 +2959,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "cdp run / e0/0: cdp enable / e0/1-2: no cdp enable",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -2975,7 +2975,7 @@
         },
         {
           "name": "SW-2",
-          "description": "vlan 30(SALES), vlan 20 / e0/2: access vlan 20 / e0/3: access vlan 30",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3004,7 +3004,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "e0/1: access vlan 10, voice vlan 11 / vlan 10 Engineering / lldp run / e0/0: lldp transmit/receive / e0/2: no cdp enable",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3028,7 +3028,7 @@
         },
         {
           "name": "SW-2",
-          "description": "e0/1: access vlan 30 / lldp run / e0/0: lldp transmit/receive",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3052,7 +3052,7 @@
       "devices": [
         {
           "name": "R1",
-          "description": "router ospf 30, router-id 10.0.12.1 / interface range e0/0-1: ip ospf 30 area 0, ip ospf priority 255 / clear ip ospf process",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3076,7 +3076,7 @@
       "devices": [
         {
           "name": "SW-1",
-          "description": "e0/0-1: trunk + channel-group 12 mode active / e0/2: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3095,7 +3095,7 @@
         },
         {
           "name": "SW-2",
-          "description": "e0/0-1: trunk + channel-group 12 mode passive / e0/2: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
@@ -3114,7 +3114,7 @@
         },
         {
           "name": "SW-3",
-          "description": "e0/0-1: trunk, native vlan 35",
+          "description": "",
           "requiredCommands": [
             "en",
             "conf t",
