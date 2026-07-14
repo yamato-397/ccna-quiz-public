@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CCNA 座学予習確認テスト 第1回</title>
+<title>CCNA 確認テスト【ネットワークとは〜TCP/IP〜Cisco操作】</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -157,7 +157,35 @@ header h1 { font-size: 1.05rem; font-weight: 700; }
 /* ── RESULT STATES (quiz screen) ── */
 .choice-label.correct-selected { background: #e8f5e9; border-color: #4caf50; }
 .choice-label.wrong-selected   { background: #ffebee; border-color: #f44336; }
-.choice-label.correct-miss     { background: #fff9c4; border-color: #fbc02d; }
+.choice-label.correct-miss     { background: #e8f5e9; border-color: #4caf50; opacity: .8; }
+
+/* ── RESULT DETAIL CHOICE ROWS ── */
+.ri-choice-row {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+.ri-choice-row.rc-correct   { background: #e8f5e9; border: 1.5px solid #4caf50; }
+.ri-choice-row.rc-wrong     { background: #ffebee; border: 1.5px solid #f44336; }
+.ri-choice-row.rc-neutral   { border: 1.5px solid transparent; }
+.ri-choice-content { flex: 1; min-width: 0; word-break: break-word; line-height: 1.5; }
+.ri-choice-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  white-space: nowrap;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.ri-tag-correct { background: #c8e6c9; color: #1b5e20; }
+.ri-tag-wrong   { background: #ffcdd2; color: #b71c1c; }
 
 /* ── NAV BUTTONS ── */
 .nav-buttons {
@@ -357,7 +385,7 @@ button:disabled { opacity: .4; cursor: not-allowed; }
 <body>
 
 <header>
-  <h1>CCNA 座学予習確認テスト 第1回</h1>
+  <h1>CCNA 確認テスト【ネットワークとは〜TCP/IP〜Cisco操作】</h1>
   <div class="header-sub" id="header-sub"></div>
 </header>
 <div id="progress-wrap"><div id="progress-bar"></div></div>
@@ -369,7 +397,7 @@ button:disabled { opacity: .4; cursor: not-allowed; }
   <!-- ======== START SCREEN ======== -->
   <div id="screen-start">
     <div class="card">
-      <div class="start-title">CCNA 座学予習確認テスト 第1回</div>
+      <div class="start-title">CCNA 確認テスト【ネットワークとは〜TCP/IP〜Cisco操作】</div>
 
       <div class="info-grid">
         <span class="info-label">問題数</span>
@@ -685,19 +713,22 @@ function renderDetailList() {
   container.innerHTML = '';
 
   gradeResults.forEach((r, idx) => {
-    const item   = document.createElement('div');
+    const item = document.createElement('div');
     item.className = 'result-item';
 
     // ── Header ──
     const header = document.createElement('div');
     header.className = 'result-item-header';
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', 'false');
 
     const vcls = r.verdict === '正解' ? 'v-correct'
                : r.verdict === '不正解' ? 'v-wrong'
                : 'v-unanswered';
 
     header.innerHTML =
-      '<span class="verdict-badge ' + vcls + '">' + r.verdict + '</span>' +
+      '<span class="verdict-badge ' + vcls + '" aria-label="' + r.verdict + '">' + r.verdict + '</span>' +
       '<span style="font-size:0.85rem;color:#555;flex-shrink:0">問題 ' + (idx + 1) + '</span>' +
       '<span style="font-size:0.85rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' +
         escHtml(r.q.question.slice(0, 55)) + (r.q.question.length > 55 ? '…' : '') +
@@ -706,17 +737,42 @@ function renderDetailList() {
     // ── Body ──
     const body = document.createElement('div');
     body.className = 'result-item-body';
+    body.id = 'detail-body-' + idx;
+    header.setAttribute('aria-controls', body.id);
 
+    // Choice rows
     const choicesHtml = r.q.choices.map((text, i) => {
       const isCorrect  = (i === r.q.correctIndex);
       const isSelected = (r.saved === i);
-      let mark;
-      if (isCorrect && isSelected)  mark = '✅';
-      else if (isCorrect)           mark = '🟡';
-      else if (isSelected)          mark = '❌';
-      else                          mark = '　';
-      return '<div class="ri-choice-row"><span class="ri-mark">' + mark + '</span>' +
-             '<span><strong>' + CHOICES_LABEL[i] + '.</strong> ' + escHtml(text) + '</span></div>';
+      let mark, rowClass, tagHtml, ariaLabel;
+
+      if (isCorrect && isSelected) {
+        mark     = '✅';
+        rowClass = 'rc-correct';
+        tagHtml  = '<span class="ri-choice-tag ri-tag-correct">正解</span>';
+        ariaLabel = '正解（あなたの回答）';
+      } else if (isCorrect) {
+        mark     = '✅';
+        rowClass = 'rc-correct';
+        tagHtml  = '<span class="ri-choice-tag ri-tag-correct">正解</span>';
+        ariaLabel = '正解';
+      } else if (isSelected) {
+        mark     = '❌';
+        rowClass = 'rc-wrong';
+        tagHtml  = '<span class="ri-choice-tag ri-tag-wrong">あなたの回答</span>';
+        ariaLabel = 'あなたの回答（不正解）';
+      } else {
+        mark     = '';
+        rowClass = 'rc-neutral';
+        tagHtml  = '';
+        ariaLabel = '';
+      }
+
+      return '<div class="ri-choice-row ' + rowClass + '"' +
+             (ariaLabel ? ' aria-label="' + CHOICES_LABEL[i] + '. ' + ariaLabel + '"' : '') + '>' +
+             '<span class="ri-mark" aria-hidden="true" style="flex-shrink:0;width:1.4em;font-size:1em">' + mark + '</span>' +
+             '<span class="ri-choice-content"><strong>' + CHOICES_LABEL[i] + '.</strong> ' + escHtml(text) + tagHtml + '</span>' +
+             '</div>';
     }).join('');
 
     const yourAns = r.saved !== null
@@ -726,13 +782,21 @@ function renderDetailList() {
 
     body.innerHTML =
       '<div class="ri-qtext">' + escHtml(r.q.question) + '</div>' +
-      '<div class="ri-choices">' + choicesHtml + '</div>' +
+      '<div class="ri-choices" role="list">' + choicesHtml + '</div>' +
       '<div class="ri-row"><strong>あなたの回答：</strong>' + yourAns + '</div>' +
       '<div class="ri-row"><strong>正解：</strong>' + correctAns + '</div>' +
       '<div class="ri-exp">' + escHtml(r.q.explanation) + '</div>' +
       '<div class="ri-src">参照箇所：' + escHtml(r.q.sourceReference) + '</div>';
 
-    header.addEventListener('click', () => body.classList.toggle('open'));
+    function toggleDetail() {
+      const isOpen = body.classList.toggle('open');
+      header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    header.addEventListener('click', toggleDetail);
+    header.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDetail(); }
+    });
+
     item.appendChild(header);
     item.appendChild(body);
     container.appendChild(item);
