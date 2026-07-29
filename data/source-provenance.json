@@ -1,102 +1,5 @@
 {
-  "choice": {
-    "ref-choice-0001": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-4",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0002": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-5",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0003": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-6",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0004": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-8",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0005": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-10",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0006": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-15",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0007": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-16",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0008": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-18",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0009": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-25",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0010": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-27",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0011": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-31",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0012": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-201",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0013": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-202",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0014": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-203",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0015": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-204",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    },
-    "ref-choice-0016": {
-      "sourceSite": "reference-site",
-      "sourceQuestionId": "part_⑦-205",
-      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
-      "scrapedAt": "2026-07-29T10:04:56.371Z"
-    }
-  },
+  "choice": {},
   "dnd": {
     "ref-dnd-0001": {
       "sourceSite": "reference-site",
@@ -181,5 +84,13 @@
       "sourceQuestionId": "part_⑥-63",
       "note": "正解競合をユーザー指示により参考サイトの値へ修正(2026-07-30)"
     }
+  },
+  "choicePart7FullMirror": {
+    "sourceSite": "reference-site",
+    "sourceSheet": "part_⑦",
+    "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+    "scrapedAt": "2026-07-29T10:04:56.371Z",
+    "count": 205,
+    "note": "参考サイトのpart_⑦シートを205問すべてそのまま反映（ユーザー指示、2026-07-30）。"
   }
 }
