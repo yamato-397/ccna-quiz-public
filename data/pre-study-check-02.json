@@ -1,0 +1,235 @@
+{
+  "id": "pre-study-02",
+  "title": "CCNA 座学予習確認テスト 第2回",
+  "theme": "VLAN・L2スイッチング",
+  "questionCount": 12,
+  "sections": {
+    "review": { "label": "第1回の復習", "count": 2 },
+    "new":    { "label": "今回の範囲",   "count": 10 }
+  },
+  "sources": [
+    { "title": "Ethernet LANをはじめから",    "url": "https://www.infraexpert.com/study/study13.html" },
+    { "title": "Catalystスイッチをはじめから","url": "https://www.infraexpert.com/study/study18.html" },
+    { "title": "VLANをはじめから",           "url": "https://www.infraexpert.com/study/study26.html" },
+    { "title": "STPをはじめから",             "url": "https://www.infraexpert.com/study/study27.html" },
+    { "title": "VLANの技術",                  "url": "https://www.infraexpert.com/study/study48.html" }
+  ],
+  "questions": [
+    {
+      "id": "pre-study-02-001",
+      "section": "review",
+      "sectionLabel": "第1回の復習",
+      "topic": "OSI参照モデルのPDU",
+      "question": "L2スイッチが転送処理の単位として扱うPDU（プロトコルデータユニット）として正しいものはどれですか？",
+      "choices": [
+        "パケット",
+        "セグメント",
+        "ビット",
+        "フレーム"
+      ],
+      "correctIndex": 3,
+      "explanation": "L2スイッチはデータリンク層（レイヤ2）で動作し、EthernetフレームのMACアドレスを参照して転送先ポートを判断します。データリンク層のPDUは「フレーム」です。\n\nAのパケットはレイヤ3（ネットワーク層）のPDUで、ルータが処理します。Bのセグメントはレイヤ4（トランスポート層・TCP）のPDUです。Cのビットはレイヤ1（物理層）のPDUです。L2スイッチはフレームを処理対象としているため、ビットやパケットとは区別して覚えましょう。",
+      "sourceTitle": "ネットワークをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/study14.html",
+      "sourceReference": "ネットワークをはじめから - OSI参照モデルとは（PDU プロトコルデータユニット）"
+    },
+    {
+      "id": "pre-study-02-002",
+      "section": "review",
+      "sectionLabel": "第1回の復習",
+      "topic": "ARPリクエストと通信方式",
+      "question": "ホストがARPリクエストを送信する際に最初に使用される通信方式として正しいものはどれですか？",
+      "choices": [
+        "ユニキャスト（相手1台を宛先に指定して送信する）",
+        "ブロードキャスト（同一ブロードキャストドメイン内の全ノードへ送信する）",
+        "マルチキャスト（224.0.0.0〜239.255.255.255 のグループ宛に送信する）",
+        "エニーキャスト（最も近いノードへ転送する）"
+      ],
+      "correctIndex": 1,
+      "explanation": "ARPリクエストは、相手のMACアドレスがまだわからない段階で送信します。宛先MACアドレスが不明なため、同一ブロードキャストドメイン内のすべてのノードへブロードキャストで送信します。対象のIPアドレスを持つホストだけがARPリプライを返します。\n\nAのユニキャストは宛先MACアドレスが判明している場合に使用する1対1通信です。ARPリクエストの段階ではMACアドレスが未知のため使用できません。Cのマルチキャストは特定グループへの通信であり、ARPリクエストはこれを使用しません。DのエニーキャストはARPでは使用されません。",
+      "sourceTitle": "TCP/IPをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/study15.html",
+      "sourceReference": "TCP/IPをはじめから - ARPとは（ARPの動作）"
+    },
+    {
+      "id": "pre-study-02-003",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "MACアドレステーブルの学習",
+      "question": "L2スイッチがMACアドレステーブルを学習する際に参照する情報として正しいものはどれですか？",
+      "choices": [
+        "受信フレームの送信元MACアドレスと受信ポート番号",
+        "受信フレームの宛先MACアドレスと受信ポート番号",
+        "送信フレームの送信元IPアドレスと受信ポート番号",
+        "受信フレームの送信元IPアドレスと送信元ポート番号"
+      ],
+      "correctIndex": 0,
+      "explanation": "L2スイッチは、受信したEthernetフレームの「送信元MACアドレス」と「受信ポート番号」の組み合わせをMACアドレステーブルに登録（学習）します。これにより次回以降は宛先MACアドレスに対応するポートにのみフレームを転送（フィルタリング）できるようになります。学習したMACアドレスは一定時間通信がなければ削除されます（エージング）。\n\nBの「宛先MACアドレスから学習する」は誤りです。スイッチは送信元MACアドレスから学習します。C・DはIPアドレスを参照するとしていますが、IPアドレスはレイヤ3の情報であり、L2スイッチは参照しません。",
+      "sourceTitle": "Ethernet LANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/ethernet7.html",
+      "sourceReference": "Ethernet LAN - Layer2スイッチとは（MACアドレスの学習、フィルタリング）"
+    },
+    {
+      "id": "pre-study-02-004",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "Unknown Unicastのフラッディング",
+      "question": "L2スイッチが、宛先MACアドレスがMACアドレステーブルに存在しないフレーム（Unknown Unicast）を受信した場合の動作として正しいものはどれですか？",
+      "choices": [
+        "フレームを破棄して送信元に届かなかった旨を通知する",
+        "ルータに転送してネットワーク層で宛先を解決する",
+        "受信ポートを含むすべてのポートにフレームをコピーして転送する",
+        "受信ポートを除く同一VLAN内のすべてのポートにフレームをフラッディングする"
+      ],
+      "correctIndex": 3,
+      "explanation": "宛先MACアドレスがMACアドレステーブルに存在しない場合、スイッチは受信ポートを除く同一VLAN内のすべてのポートにフレームをコピーして転送します。この動作を「フラッディング」といいます。フラッディングは同一VLAN内に限定されており、異なるVLANへは転送されません。\n\nAの「破棄して通知」は誤りで、スイッチはフレームを破棄せずにフラッディングします。Bのルータへ転送してL3処理を依頼するのはL2スイッチの動作ではありません。Cの「受信ポートを含む全ポートへ転送」は誤りで、受信ポートには転送しません。",
+      "sourceTitle": "Ethernet LANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/ethernet7.html",
+      "sourceReference": "Ethernet LAN - Layer2スイッチとは（フラッディング）"
+    },
+    {
+      "id": "pre-study-02-005",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "VLAN確認コマンド",
+      "question": "CatalystスイッチでVLAN IDとポートの割り当て状況を簡潔に確認するためのコマンドとして正しいものはどれですか？",
+      "choices": [
+        "show interfaces trunk",
+        "show vlan brief",
+        "show ip route",
+        "show version"
+      ],
+      "correctIndex": 1,
+      "explanation": "`show vlan brief`は、CatalystスイッチでVLAN IDとそのVLANに割り当てられているポートの一覧を簡潔に表示するコマンドです。設定したVLANとアクセスポートの割り当て確認に使用します。詳細情報は`show vlan`で確認できます。\n\nAの`show interfaces trunk`はトランクポートの設定状態（許可VLAN・ネイティブVLANなど）を確認するコマンドです。Cの`show ip route`はIPルーティングテーブルを表示するL3コマンドです。Dの`show version`はIOSバージョンやハードウェア情報を表示するコマンドです。",
+      "sourceTitle": "VLANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/vlanz4.html",
+      "sourceReference": "VLAN - VLANのステータス確認方法（show vlan）"
+    },
+    {
+      "id": "pre-study-02-006",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "MACアドレステーブル確認コマンド",
+      "question": "CatalystスイッチでMACアドレステーブルの内容を表示するコマンドとして正しいものはどれですか？",
+      "choices": [
+        "show arp",
+        "show ip interface brief",
+        "show mac address-table",
+        "show interfaces status"
+      ],
+      "correctIndex": 2,
+      "explanation": "`show mac address-table`は、CatalystスイッチのMACアドレステーブルを表示するコマンドです。学習したMACアドレス、対応するポート、VLAN番号、タイプ（DYNAMICまたはSTATIC）などを確認できます。\n\nAの`show arp`はIPアドレスとMACアドレスの対応表（ARPテーブル）を表示するコマンドで、L3スイッチやルータで使用します。Bの`show ip interface brief`はIPインターフェースの状態を確認するL3コマンドです。Dの`show interfaces status`はポートのリンク状態や速度・デュプレックスを確認するコマンドです。",
+      "sourceTitle": "Catalystスイッチをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/catalyst7.html",
+      "sourceReference": "Catalystスイッチ - MACテーブルの確認、MACのスタティック登録"
+    },
+    {
+      "id": "pre-study-02-007",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "VLANを使用する目的",
+      "question": "VLANを使用する主な目的として正しいものはどれですか？",
+      "choices": [
+        "同一スイッチの全ポートを1つのブロードキャストドメインに集約する",
+        "物理ケーブルを使用せずに無線LAN環境を構築する",
+        "スイッチ上で論理的にブロードキャストドメインを分割して通信効率や管理性を向上させる",
+        "スイッチだけで異なるVLAN間の通信を自動的に中継する"
+      ],
+      "correctIndex": 2,
+      "explanation": "VLANはスイッチ上で論理的にブロードキャストドメインを分割するために使用されます。ブロードキャストの範囲を制限して通信効率を向上させたり、部門ごとにセグメントを分けてセキュリティや管理性を改善したりできます。1台のスイッチ上だけでなく、複数台のスイッチにまたがってVLANを設定することも可能です。\n\nAはデフォルトのスイッチ動作の説明であり、VLANはむしろそれをセグメントに分割します。BはVLANではなく無線LAN技術の説明です。DはL2スイッチのみでは実現できず、異なるVLAN間の通信にはルータやL3スイッチなどのレイヤ3機能が必要です。",
+      "sourceTitle": "VLANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/vlanz1.html",
+      "sourceReference": "VLAN - VLANの概要（VLANとは、VLANの特徴）"
+    },
+    {
+      "id": "pre-study-02-008",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "アクセスポートのコンフィグ設定",
+      "question": "CatalystスイッチのインターフェースをVLAN 10のアクセスポートとして設定する際に使用するコマンドの組み合わせとして正しいものはどれですか？",
+      "choices": [
+        "(config-if)# switchport mode access の後、(config-if)# switchport access vlan 10 を実行する",
+        "(config-if)# switchport mode trunk の後、(config-if)# switchport access vlan 10 を実行する",
+        "(config-if)# switchport mode access の後、(config-if)# switchport trunk native vlan 10 を実行する",
+        "(config)# vlan 10 のみを実行するだけで、ポートに自動的に割り当てられる"
+      ],
+      "correctIndex": 0,
+      "explanation": "アクセスポートの設定は、①インターフェースモードをアクセスに設定（`switchport mode access`）、②所属するVLANを指定（`switchport access vlan 10`）の順で行います。\n\nBの`switchport mode trunk`はトランクポートの設定コマンドです。アクセスポートに`trunk`は指定しません。Cの`switchport trunk native vlan`はトランクポートのネイティブVLAN設定コマンドであり、アクセスポートの設定には使用しません。DのVLAN作成（`vlan 10`）は必要な前準備ですが、それだけではポートへの割り当ては完了せず、各インターフェースへの設定が別途必要です。",
+      "sourceTitle": "VLANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/vlanz3.html",
+      "sourceReference": "VLAN - アクセスポート - コンフィグ設定"
+    },
+    {
+      "id": "pre-study-02-009",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "IEEE 802.1Q",
+      "question": "IEEE 802.1Qに関する説明として正しいものはどれですか？",
+      "choices": [
+        "ISLと同様にCisco独自のVLANタグ方式であり、主にCisco機器間で使用される",
+        "IEEE標準のVLANタグ方式で、EthernetフレームにVLAN識別情報を付加することで1本のリンク上で複数のVLANを識別できる",
+        "VLAN IDを8ビットで管理するため、最大255種類のVLANを識別できる",
+        "802.1Qはルータ間でのみ使用できるプロトコルであり、スイッチ間のトランクリンクには使用できない"
+      ],
+      "correctIndex": 1,
+      "explanation": "IEEE 802.1QはEthernetフレームにVLAN識別情報（VLANタグ）を付加するIEEE標準のタグ方式です。802.1Qのトランクリンクでは、1本の物理リンク上で複数のVLANのトラフィックを識別・転送できます。現在の業界標準であり、Ciscoを含む各社のスイッチが対応しています。\n\nAのISLはCisco独自の旧来のVLANタグ方式であり、802.1QはISLとは別のIEEE標準です。Cは誤りで、VLAN IDは12ビットで管理されており、1〜4094のVLAN IDを使用できます。DはVLANタグはスイッチ間トランクリンクやルータ・スイッチ間でこそ使用するものであり、ルータ間専用ではありません。",
+      "sourceTitle": "VLANをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/vlanz2.html",
+      "sourceReference": "VLAN - アクセスポートとトランクポート（IEEE802.1Q / ISL）"
+    },
+    {
+      "id": "pre-study-02-010",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "STPを使用する目的",
+      "question": "STP（スパニングツリープロトコル）を使用する主な目的として正しいものはどれですか？",
+      "choices": [
+        "異なるVLAN間のルーティングをスイッチが自動的に行うため",
+        "スイッチのMACアドレステーブルを自動的に最適化するため",
+        "ブロードキャストドメインを物理的に分割して帯域幅を効率化するため",
+        "冗長なレイヤ2ネットワークでループが発生することを防ぎ、一部のポートを論理的にブロッキング状態にするため"
+      ],
+      "correctIndex": 3,
+      "explanation": "STPは、冗長なレイヤ2ネットワークにおいてフレームがループし続ける「ブロードキャストストーム」の発生を防ぐためのプロトコルです。STPのアルゴリズムにより一部のポートが自動的に論理的なブロッキング状態に設定され、ループが解消されます。物理ケーブルを切断するのではなく、論理的に通信を停止させる点が重要です。障害発生時は自動的に代替経路を有効化します。\n\nAのVLAN間ルーティングはルータやL3スイッチが担う機能です。BのMACアドレステーブルの最適化はSTPの目的ではありません。CのブロードキャストドメインはVLANによって論理的に分割されるものであり、STPとは異なる技術です。",
+      "sourceTitle": "STPをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/stpz1.html",
+      "sourceReference": "STP - スパニングツリープロトコルとは（BPDUとは、ブロードキャストストーム）"
+    },
+    {
+      "id": "pre-study-02-011",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "ルートブリッジの選出基準",
+      "question": "STPにおけるルートブリッジの選出基準として正しいものはどれですか？",
+      "choices": [
+        "ブリッジID（優先度とMACアドレスで構成）が最も小さいスイッチが選出される",
+        "スイッチのポート数が最も多いスイッチが選出される",
+        "MACアドレスだけで比較して最も大きい値のスイッチが選出される",
+        "管理者が任意のスイッチを指定しない限り、ルートブリッジは決まらない"
+      ],
+      "correctIndex": 0,
+      "explanation": "ルートブリッジはブリッジID（Bridge ID）が最も小さいスイッチが選出されます。ブリッジIDは「優先度（プライオリティ）」と「MACアドレス」を組み合わせた値です。デフォルトのプライオリティは32768で、プライオリティが同じ場合はMACアドレスが小さいスイッチが選出されます。管理者はプライオリティ値を変更することで、特定のスイッチをルートブリッジに誘導できます。\n\nBのポート数は選出基準ではありません。Cは「MACアドレスだけで決まる」という説明が誤りで、ブリッジIDにはプライオリティが含まれます。また最も「大きい値」ではなく最も「小さい値」が選出されます。DSTPが有効であればブリッジIDにより自動的にルートブリッジが選出されるため、手動指定なしでも決まります。",
+      "sourceTitle": "STPをはじめから（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/stpz2.html",
+      "sourceReference": "STP - スパニングツリープロトコルの動作（ルートブリッジの選出、Bridge ID）"
+    },
+    {
+      "id": "pre-study-02-012",
+      "section": "new",
+      "sectionLabel": "今回の範囲",
+      "topic": "音声VLAN（Voice VLAN）",
+      "question": "音声VLAN（Voice VLAN）に関する説明として正しいものはどれですか？",
+      "choices": [
+        "音声VLANはIEEE標準の機能であり、すべてのベンダーのスイッチで同一コマンドで設定できる",
+        "音声VLANが設定されたアクセスポートでは、すべてのVLANのトラフィックを無制限に転送できる",
+        "Cisco IP Phoneを接続するアクセスポートに音声VLANを設定することで、PCのデータトラフィックとIP Phoneの音声トラフィックを異なるVLANに分離できる",
+        "音声VLANを使用するためにはルータのサブインターフェース設定が必須である"
+      ],
+      "correctIndex": 2,
+      "explanation": "音声VLAN（Voice VLAN）は、CatalystスイッチのアクセスポートにデータVLANと音声VLANを同時に設定できるCisco IOSの機能です。Cisco IP PhoneはスイッチのポートとPCの両方に接続できるため、1つのスイッチポートでPCとIP Phoneを接続できます。音声トラフィックを別VLANに分離することで音声品質（QoS）の確保が容易になります。\n\nAは誤りで、音声VLANはCisco IOSの機能であり、すべてのベンダーで同一コマンドが使えるわけではありません。Bは誤りで、音声VLANが設定されたアクセスポートはデータVLANと音声VLANの2つを扱えますが、すべてのVLANを転送できるわけではありません。Dはルータのサブインターフェースなしにスイッチのアクセスポートで`switchport voice vlan`コマンドを使って設定できます。",
+      "sourceTitle": "VLANの技術（infraexpert.com）",
+      "sourceUrl": "https://www.infraexpert.com/study/vlanz7.html",
+      "sourceReference": "音声VLAN（Voice VLAN）とは"
+    }
+  ]
+}
