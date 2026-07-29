@@ -1,0 +1,284 @@
+[
+  {
+    "comparisonId": "choice-00305",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_⑤-10"
+    ],
+    "referenceQuestionIds": [
+      "part_⑤-10"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑤-10",
+      "displayId": 10,
+      "type": "multiple",
+      "part": "part_⑤",
+      "category": "選択問題",
+      "question": "ネットワーク自動化において Ansible が提供する 2 つの機能はどれですか? (2 つ選択してください。)",
+      "options": [
+        "手動プレイブックの実行",
+        "エージェントレス展開",
+        "ロールベースのアクセス制御",
+        "ネットワーク資格情報の提供",
+        "バージョン管理を使用してジョブテンプレートを起動する"
+      ],
+      "correctAnswerTexts": [
+        "手動プレイブックの実行",
+        "エージェントレス展開"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "3ac4f69800c502dee74668ff205f2ecee13693d581f0e3120b8fad7858d015d6",
+      "sourceQuestionId": "part_⑤-10",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00460",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_⑥-63"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-63"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-63",
+      "displayId": 63,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。パケットが宛先アドレスに到達するためにどのインターフェースを通るか\n10.10.10.14 ですか?",
+      "options": [
+        "ファストイーサネット 0/1",
+        "ファストイーサネット 0/0",
+        "シリアル 0/0",
+        "ファストイーサネット 0/2"
+      ],
+      "correctAnswerTexts": [
+        "ファストイーサネット 0/1"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no38.png"
+      ],
+      "imageHashes": [
+        "8a94f86c1a2f76087d0d4f83e264a13ed6af2934588b361f1969d937c0a1c67a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "ec9b639371749f25df7d56253c26a1d4b83ae9e1cb9757c75aa39ea002be7499",
+      "sourceQuestionId": "part_⑥-63",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00518",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_⑤-14"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-2"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-2",
+      "displayId": 2,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "MAC 学習はどのように機能しますか?",
+      "options": [
+        "MAC アドレスを受信ポートに関連付けます",
+        "ポートを動的に学習された最大 10 個のアドレスに制限します",
+        "管理 VLAN のセキュリティを強化します",
+        "アドレス テーブルにリストされていない受信 MAC アドレスをドロップします"
+      ],
+      "correctAnswerTexts": [
+        "MAC アドレスを受信ポートに関連付けます"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "0a9e2959c3e66a3b82370eda196558b3e25947dd61fb3ba7c327b11428a0ee78",
+      "sourceQuestionId": "part_⑦-2",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00527",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_⑤-50"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-11"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-11",
+      "displayId": 11,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "SW1 に VLAN 間ルーティングが設定されています。クライアント A は、デフォルト ゲートウェイ IP 10.0.0.1 で VLAN 10 の OS として Linux を実行していますが、Windows を実行している VLAN 20 のクライアント B に ping できません。クライアント A の IP 設定が正しいことを確認するには、どのような操作を行う必要がありますか?",
+      "options": [
+        "ク​​ライアント A でifconfigコマンドを実行して、 IP とサブネット マスクが 255.254.0.0 の範囲内であることを確認します",
+        "クライアント A でipconfigコマンドを実行して、IP アドレスがホスト範囲 10.0.0.1 ～ 10.0.255.254 の範囲内であることを確認します",
+        "クライアント A で ipconfig コマンドを実行して、正しい 10.0.0.1 デフォルト ゲートウェイが使用されていることを確認します",
+        "クライアント A で ifconfig コマンドを実行して、サブネット マスクが 255.255.128.0 に設定されていることを確認します"
+      ],
+      "correctAnswerTexts": [
+        "ク​​ライアント A でifconfigコマンドを実行して、 IP とサブネット マスクが 255.254.0.0 の範囲内であることを確認します"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-15-44.jpg"
+      ],
+      "imageHashes": [
+        "9b41fe55abd814fab75080426da7a367af9096e4efd88f97b7fbb96da9b0e3e1"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d60c0c56e3dc0683153a2f8134d4ccfe2bb9ef290c32166031efdc33b4aeced6",
+      "sourceQuestionId": "part_⑦-11",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00533",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_③-25"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-17"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-17",
+      "displayId": 17,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "デバッグ プロセスがオンになっているデバイスによって異常に多数の syslog メッセージが生成された場合に、他のメッセージを許可しながらデバッグ メッセージが syslog 経由で送信されるのを防ぐアクションはどれですか。",
+      "options": [
+        "ロギングトラップの重大度レベルを情報レベルに設定します",
+        "コンソールへのロギングを無効にします",
+        "グローバル設定モードでロギングモニタをオフにします",
+        "アクセスリストを使用してsyslogメッセージをフィルタリングします"
+      ],
+      "correctAnswerTexts": [
+        "ロギングトラップの重大度レベルを情報レベルに設定します"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "448d8b7faf707427603990185a933ebc5a4df2359d1c217c7e7884fbf220cdd1",
+      "sourceQuestionId": "part_⑦-17",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00636",
+    "type": "choice",
+    "status": "ANSWER_CONFLICT",
+    "mySiteQuestionIds": [
+      "part_⑤-10"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-120"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": false,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)だが正解が異なる",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-120",
+      "displayId": 120,
+      "type": "multiple",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "ネットワーク自動化において Ansible が提供する 2 つの機能はどれですか? (2 つ選択してください。)",
+      "options": [
+        "手動プレイブックの実行",
+        "エージェントレス展開",
+        "ロールベースのアクセス制御",
+        "ネットワーク資格情報の提供",
+        "バージョン管理を使用してジョブテンプレートを起動する"
+      ],
+      "correctAnswerTexts": [
+        "手動プレイブックの実行",
+        "エージェントレス展開"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "3ac4f69800c502dee74668ff205f2ecee13693d581f0e3120b8fad7858d015d6",
+      "sourceQuestionId": "part_⑦-120",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  }
+]

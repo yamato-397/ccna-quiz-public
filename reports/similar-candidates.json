@@ -1,0 +1,986 @@
+[
+  {
+    "comparisonId": "sim-00758",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-01"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob1"
+    ],
+    "questionSimilarity": 0.713,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.71)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob1",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン R1/R2間でのIPv4およびIPv6アドレスを設定してください。\nR1: IPv4ネットワークで使用可能な最初のホストIPアドレス(10.0.12.5/30)を E0/0 に設定してください。 / R1: IPv6ネットワークで使用可能な最初のホストIPアドレス(2001:db8:12::1/126)を E0/0 に設定してください。 / デフォルトで停止（shutdown）しているインターフェースを有効化（up）してください。 / R1と同様にR2においても同様にインターフェースの設定を行ってください。",
+      "title": "IPv4/IPv6アドレス設定",
+      "scenario": "ガイドライン R1/R2間でのIPv4およびIPv6アドレスを設定してください。",
+      "devices": [
+        {
+          "name": "R1",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        },
+        {
+          "name": "R2",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        }
+      ],
+      "tasks": [
+        "R1: IPv4ネットワークで使用可能な最初のホストIPアドレス(10.0.12.5/30)を E0/0 に設定してください。",
+        "R1: IPv6ネットワークで使用可能な最初のホストIPアドレス(2001:db8:12::1/126)を E0/0 に設定してください。",
+        "デフォルトで停止（shutdown）しているインターフェースを有効化（up）してください。",
+        "R1と同様にR2においても同様にインターフェースの設定を行ってください。"
+      ],
+      "options": [
+        "int e0/0",
+        "ip address 10.0.12.5 255.255.255.252",
+        "ipv6 address 2001:db8:12::1/126",
+        "no shut",
+        "int e0/0",
+        "ip address 10.0.12.6 255.255.255.252",
+        "ipv6 address 2001:db8:12::3/126",
+        "no shut"
+      ],
+      "correctAnswerTexts": [
+        "R1: INT e0/0 IPV6 equals 2001:db8:12::1/126",
+        "R1: runningConfig.interfaces.e0/0.ip equals 10.0.12.5",
+        "R1: runningConfig.startupConfig saved (任意)",
+        "R2: INT e0/0 IPV6 equals 2001:db8:12::3/126",
+        "R2: runningConfig.interfaces.e0/0.ip equals 10.0.12.6",
+        "R2: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.ip",
+          "message": "R1: IPアドレスが正しくありません",
+          "device": "R1",
+          "expected": "10.0.12.5"
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/0 IPV6",
+          "message": "R1: IPv6アドレスが正しくありません",
+          "device": "R1",
+          "expected": "2001:db8:12::1/126"
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.ip",
+          "message": "R2: IPアドレスが正しくありません",
+          "device": "R2",
+          "expected": "10.0.12.6"
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/0 IPV6",
+          "message": "R2: IPv6アドレスが正しくありません",
+          "device": "R2",
+          "expected": "2001:db8:12::3/126"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "R1: 設定が保存(copy run start)されていません",
+          "device": "R1",
+          "expected": "(任意)"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "R2: 設定が保存(copy run start)されていません",
+          "device": "R2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob1.png"
+      ],
+      "imageHashes": [
+        "b0020a11ba7e597e2e9f35cdd416450bd45bbfb8e2b3e9cba20a8ccc89bcbc6e"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "8494fe0012242a0b17d5e3f5ef5b15b4ee167477a74dd82133faa71dbfbe05b7",
+      "sourceQuestionId": "ref-sim-prob1",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00759",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-02"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob2"
+    ],
+    "questionSimilarity": 0.538,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.54)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob2",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン トランクを設定し、LACPによるリンク集約を行ってください。\nSW1 & SW2: E0/0とE0/1にトランクを設定し、\nVLAN 1,12,22のみ通信できるように許可します。 / SW1: E0/2をトランクに設定し、VLAN 12および22を許可します。 / SW1 & SW2: E0/0とE0/1をLACP(番号12)でリンク集約し、activeモードで設定してください。トランク構成は維持します。",
+      "title": "トランクとLACP設定",
+      "scenario": "ガイドライン トランクを設定し、LACPによるリンク集約を行ってください。",
+      "devices": [
+        {
+          "name": "SW1",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "SW2",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        }
+      ],
+      "tasks": [
+        "SW1 & SW2: E0/0とE0/1にトランクを設定し、\nVLAN 1,12,22のみ通信できるように許可します。",
+        "SW1: E0/2をトランクに設定し、VLAN 12および22を許可します。",
+        "SW1 & SW2: E0/0とE0/1をLACP(番号12)でリンク集約し、activeモードで設定してください。トランク構成は維持します。"
+      ],
+      "options": [
+        "int range e0/0 - 1",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk allowed vlan 1,12,22",
+        "int e0/2",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk allowed vlan 12,22",
+        "int range e0/0 - 1",
+        "channel-group 12 mode active",
+        "exit",
+        "int port-channel 12",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk allowed vlan 1,12,22"
+      ],
+      "correctAnswerTexts": [
+        "SW1: PORT_CHANNEL 12 ENABLED equals True",
+        "SW1: runningConfig.interfaces.e0/2.switchport.trunk_allowed_vlans equals 12,22",
+        "SW1: runningConfig.startupConfig saved (任意)",
+        "SW2: PORT_CHANNEL 12 ENABLED equals True",
+        "SW2: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "PORT_CHANNEL 12 ENABLED",
+          "message": "SW1: Port-channel 12 が正しく設定されていません",
+          "device": "SW1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "PORT_CHANNEL 12 ENABLED",
+          "message": "SW2: Port-channel 12 が正しく設定されていません",
+          "device": "SW2",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/2.switchport.trunk_allowed_vlans",
+          "message": "SW1: e0/2の許可VLANが正しくありません",
+          "device": "SW1",
+          "expected": "12,22"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW1: 設定が保存されていません",
+          "device": "SW1",
+          "expected": "(任意)"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW2: 設定が保存されていません",
+          "device": "SW2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob2.png"
+      ],
+      "imageHashes": [
+        "9fda1b8f66d2af13286eb416baeee029ed40c9c79aee1e271a72df93f93062da"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "c518a96e26e2fb4ca68d473e035373528a2057906d89cec1693e81a0172c1740",
+      "sourceQuestionId": "ref-sim-prob2",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00760",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-03"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob3"
+    ],
+    "questionSimilarity": 0.552,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.55)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob3",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン ネットワークのOSPFルーティングを設定してください。\nR2: OSPFプロセス10を構成し、ルーターIDを10.2.2.2に設定してください。 / R2: ネットワーク 10.2.2.2/32, 10.0.12.0/30, 10.0.23.0/28 をプレフィックスと完全に一致するようにエリア0としてアドバタイズしてください。 / R2: R2が常にエリア0のDRになるよう、E0/0とE0/1のOSPFプライオリティを255に設定してください。 / R2 & R1: clear ip ospf process でプロセスをリセットしてください。",
+      "title": "OSPF設定",
+      "scenario": "ガイドライン ネットワークのOSPFルーティングを設定してください。",
+      "devices": [
+        {
+          "name": "R1",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        },
+        {
+          "name": "R2",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        }
+      ],
+      "tasks": [
+        "R2: OSPFプロセス10を構成し、ルーターIDを10.2.2.2に設定してください。",
+        "R2: ネットワーク 10.2.2.2/32, 10.0.12.0/30, 10.0.23.0/28 をプレフィックスと完全に一致するようにエリア0としてアドバタイズしてください。",
+        "R2: R2が常にエリア0のDRになるよう、E0/0とE0/1のOSPFプライオリティを255に設定してください。",
+        "R2 & R1: clear ip ospf process でプロセスをリセットしてください。"
+      ],
+      "options": [
+        "router ospf 10",
+        "router-id 10.2.2.2",
+        "router ospf 10",
+        "network 10.2.2.2 0.0.0.0 area 0",
+        "network 10.0.12.0 0.0.0.3 area 0",
+        "network 10.0.23.0 0.0.0.15 area 0",
+        "int range e0/0 - 1",
+        "ip ospf priority 255",
+        "clear ip ospf process",
+        "y"
+      ],
+      "correctAnswerTexts": [
+        "R2: OSPF 10 ROUTER_ID equals 10.2.2.2",
+        "R2: runningConfig.interfaces.e0/0.ospfPriority equals 255",
+        "R2: runningConfig.interfaces.e0/1.ospfPriority equals 255",
+        "R2: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "OSPF 10 ROUTER_ID",
+          "message": "R2: OSPFルーターIDが正しくありません",
+          "device": "R2",
+          "expected": "10.2.2.2"
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.ospfPriority",
+          "message": "R2: e0/0のOSPFプライオリティが正しくありません",
+          "device": "R2",
+          "expected": 255
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/1.ospfPriority",
+          "message": "R2: e0/1のOSPFプライオリティが正しくありません",
+          "device": "R2",
+          "expected": 255
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "R2: 設定が保存されていません",
+          "device": "R2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob3.png"
+      ],
+      "imageHashes": [
+        "a3d2a265f246f4d80a255e7c44c7bf0c83b5b9617db78735e6cd69b052ea1d93"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "1dc8d34dac3907ddf51072546a90193436d7af71cfa0b9e091d1005d861a7410",
+      "sourceQuestionId": "ref-sim-prob3",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00761",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-05"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob4"
+    ],
+    "questionSimilarity": 0.548,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.55)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob4",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン ネットワーク内のデバイス間の接続を確認し、VLANとLLDPを適切に構成してください。\nSW-1: VLAN 35 を作成し、名前を「SALES」に設定してください。 / SW-2: VLAN 39 を作成し、名前を「MARKETING」に設定してください。 / SW-1: PC1 (e0/2) を VLAN 35 のアクセスポートに設定してください。 / SW-2: PC2 (e0/2) を VLAN 39 のアクセスポートに設定してください。 / 両SW: LLDPを有効化し、SW-1のPC1接続ポート(e0/2)では無効にしてください。",
+      "title": "VLANとLLDP構成",
+      "scenario": "ガイドライン ネットワーク内のデバイス間の接続を確認し、VLANとLLDPを適切に構成してください。",
+      "devices": [
+        {
+          "name": "SW-1",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "SW-2",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        }
+      ],
+      "tasks": [
+        "SW-1: VLAN 35 を作成し、名前を「SALES」に設定してください。",
+        "SW-2: VLAN 39 を作成し、名前を「MARKETING」に設定してください。",
+        "SW-1: PC1 (e0/2) を VLAN 35 のアクセスポートに設定してください。",
+        "SW-2: PC2 (e0/2) を VLAN 39 のアクセスポートに設定してください。",
+        "両SW: LLDPを有効化し、SW-1のPC1接続ポート(e0/2)では無効にしてください。"
+      ],
+      "options": [
+        "vlan 35",
+        "name SALES",
+        "vlan 39",
+        "name MARKETING",
+        "int e0/2",
+        "switchport mode access",
+        "switchport access vlan 35",
+        "int e0/2",
+        "switchport mode access",
+        "switchport access vlan 39",
+        "lldp run",
+        "SW-1:",
+        "int e0/2",
+        "no lldp transmit",
+        "no lldp receive"
+      ],
+      "correctAnswerTexts": [
+        "SW-1: runningConfig.interfaces.e0/2.lldp.transmit equals False",
+        "SW-1: runningConfig.interfaces.e0/2.switchport.access_vlan equals 35",
+        "SW-1: runningConfig.lldp.enabled equals True",
+        "SW-1: runningConfig.startupConfig saved (任意)",
+        "SW-1: runningConfig.vlans.35.name equals SALES",
+        "SW-2: runningConfig.interfaces.e0/2.switchport.access_vlan equals 39",
+        "SW-2: runningConfig.startupConfig saved (任意)",
+        "SW-2: runningConfig.vlans.39.name equals MARKETING"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "runningConfig.vlans.35.name",
+          "message": "SW-1: VLAN 35の名前が SALES ではありません",
+          "device": "SW-1",
+          "expected": "SALES"
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.vlans.39.name",
+          "message": "SW-2: VLAN 39の名前が MARKETING ではありません",
+          "device": "SW-2",
+          "expected": "MARKETING"
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/2.switchport.access_vlan",
+          "message": "SW-1: e0/2 が VLAN 35 に設定されていません",
+          "device": "SW-1",
+          "expected": 35
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/2.switchport.access_vlan",
+          "message": "SW-2: e0/2 が VLAN 39 に設定されていません",
+          "device": "SW-2",
+          "expected": 39
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.lldp.enabled",
+          "message": "SW-1: LLDPが有効になっていません",
+          "device": "SW-1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/2.lldp.transmit",
+          "message": "SW-1: e0/2 で LLDP 送信が無効にされていません",
+          "device": "SW-1",
+          "expected": false
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-1: 設定が保存(copy run start)されていません",
+          "device": "SW-1",
+          "expected": "(任意)"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-2: 設定が保存(copy run start)されていません",
+          "device": "SW-2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob4.png"
+      ],
+      "imageHashes": [
+        "17bb245e944c47387003e9f3c3dfa5e79a2d8cee010f70370038395f3cf9c488"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "99ac6cf09d59b0f83244f627fb60292959f0946bebdd86625f6d0f29396d08d3",
+      "sourceQuestionId": "ref-sim-prob4",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00762",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-10"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob5"
+    ],
+    "questionSimilarity": 0.472,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.47)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob5",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン SW-1〜SW-3に対してトランクの設定、ネイティブVLANの設定、およびLACPの設定を行ってください。\nSW-1 & SW-2: e0/0 と e0/1 を 802.1q トランクモードに設定してください。 / SW-1(e0/2), SW-2(e0/2): トランクに設定し、ネイティブVLANを 35 に設定してください。 / SW-1 & SW-2: e0/0 と e0/1 をポードチャネル12で構成し、SW-1は active モード、SW-2は passive モードに設定してください。",
+      "title": "トランク・ネイティブVLAN・LACP",
+      "scenario": "ガイドライン SW-1〜SW-3に対してトランクの設定、ネイティブVLANの設定、およびLACPの設定を行ってください。",
+      "devices": [
+        {
+          "name": "SW-1",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "SW-2",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        }
+      ],
+      "tasks": [
+        "SW-1 & SW-2: e0/0 と e0/1 を 802.1q トランクモードに設定してください。",
+        "SW-1(e0/2), SW-2(e0/2): トランクに設定し、ネイティブVLANを 35 に設定してください。",
+        "SW-1 & SW-2: e0/0 と e0/1 をポードチャネル12で構成し、SW-1は active モード、SW-2は passive モードに設定してください。"
+      ],
+      "options": [
+        "int range e0/0 - 1",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk allowed vlan all",
+        "SW-1:",
+        "int e0/2",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk native vlan 35",
+        "SW-2:",
+        "int e0/2",
+        "switchport trunk encapsulation dot1q",
+        "switchport mode trunk",
+        "switchport trunk native vlan 35",
+        "SW-1:",
+        "int range e0/0 - 1",
+        "channel-group 12 mode active",
+        "SW-2:",
+        "int range e0/0 - 1",
+        "channel-group 12 mode passive"
+      ],
+      "correctAnswerTexts": [
+        "SW-1: INT e0/2 TRUNK_NATIVE_VLAN equals 35",
+        "SW-1: PORT_CHANNEL 12 ENABLED equals True",
+        "SW-1: runningConfig.startupConfig saved (任意)",
+        "SW-2: INT e0/2 TRUNK_NATIVE_VLAN equals 35",
+        "SW-2: PORT_CHANNEL 12 ENABLED equals True",
+        "SW-2: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "PORT_CHANNEL 12 ENABLED",
+          "message": "SW-1: Port-channel 12 が正しく設定されていません",
+          "device": "SW-1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "PORT_CHANNEL 12 ENABLED",
+          "message": "SW-2: Port-channel 12 が正しく設定されていません",
+          "device": "SW-2",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/2 TRUNK_NATIVE_VLAN",
+          "message": "SW-1: e0/2のネイティブVLANが35ではありません",
+          "device": "SW-1",
+          "expected": 35
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/2 TRUNK_NATIVE_VLAN",
+          "message": "SW-2: e0/2のネイティブVLANが35ではありません",
+          "device": "SW-2",
+          "expected": 35
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-1: 設定が保存されていません",
+          "device": "SW-1",
+          "expected": "(任意)"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-2: 設定が保存されていません",
+          "device": "SW-2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob5.jpg"
+      ],
+      "imageHashes": [
+        "152ef4eb991f8cddffa601f896d28b67355594f7b952f695e66cb70110beb2cd"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "5221b3f61deadbeb94d434e397d17315c875c69491be097ce5b470485df4ff4a",
+      "sourceQuestionId": "ref-sim-prob5",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00763",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-09"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob6"
+    ],
+    "questionSimilarity": 0.544,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.54)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob6",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン R1に対してプロセスIDとルータIDを使用してOSPFを設定し、インターフェースでOSPFを有効化してください。\nR1: プロセス ID 30、ルーター ID を 10.0.12.1 として OSPF を設定してください。 / R1: e0/0 - 1 に対して、OSPF プロセス 30 (エリア 0) を有効化し、プライオリティを 255 に設定してください。設定後プロセスをクリアしてください。",
+      "title": "OSPF設定(インターフェース)",
+      "scenario": "ガイドライン R1に対してプロセスIDとルータIDを使用してOSPFを設定し、インターフェースでOSPFを有効化してください。",
+      "devices": [
+        {
+          "name": "R1",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        }
+      ],
+      "tasks": [
+        "R1: プロセス ID 30、ルーター ID を 10.0.12.1 として OSPF を設定してください。",
+        "R1: e0/0 - 1 に対して、OSPF プロセス 30 (エリア 0) を有効化し、プライオリティを 255 に設定してください。設定後プロセスをクリアしてください。"
+      ],
+      "options": [
+        "router ospf 30",
+        "router-id 10.0.12.1",
+        "int range e0/0 - 1",
+        "ip ospf 30 area 0",
+        "ip ospf priority 255",
+        "end",
+        "clear ip ospf process",
+        "y"
+      ],
+      "correctAnswerTexts": [
+        "R1: INT e0/0 OSPF_AREA equals 0",
+        "R1: INT e0/0 OSPF_PROCESS equals 30",
+        "R1: INT e0/1 OSPF_AREA equals 0",
+        "R1: INT e0/1 OSPF_PROCESS equals 30",
+        "R1: OSPF 30 ROUTER_ID equals 10.0.12.1",
+        "R1: runningConfig.interfaces.e0/0.ospfPriority equals 255",
+        "R1: runningConfig.interfaces.e0/1.ospfPriority equals 255",
+        "R1: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "OSPF 30 ROUTER_ID",
+          "message": "R1: OSPFルーターIDが正しくありません",
+          "device": "R1",
+          "expected": "10.0.12.1"
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/0 OSPF_PROCESS",
+          "message": "R1: e0/0でOSPFプロセス30が有効になっていません",
+          "device": "R1",
+          "expected": 30
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/0 OSPF_AREA",
+          "message": "R1: e0/0のOSPFエリアが0ではありません",
+          "device": "R1",
+          "expected": 0
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.ospfPriority",
+          "message": "R1: e0/0のOSPFプライオリティが正しくありません",
+          "device": "R1",
+          "expected": 255
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/1 OSPF_PROCESS",
+          "message": "R1: e0/1でOSPFプロセス30が有効になっていません",
+          "device": "R1",
+          "expected": 30
+        },
+        {
+          "match": "equals",
+          "path": "INT e0/1 OSPF_AREA",
+          "message": "R1: e0/1のOSPFエリアが0ではありません",
+          "device": "R1",
+          "expected": 0
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/1.ospfPriority",
+          "message": "R1: e0/1のOSPFプライオリティが正しくありません",
+          "device": "R1",
+          "expected": 255
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "R1: 設定が保存されていません",
+          "device": "R1",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob6.jpg"
+      ],
+      "imageHashes": [
+        "c96d9ffc8f6035fc4a53832e421e627aba837b75c8b5466609dd2c4fef9063a4"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "3163de3a6c78d20febb7ea9e407ac8b9ec1068e0b8e7467b038f63e5efef4938",
+      "sourceQuestionId": "ref-sim-prob6",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00764",
+    "type": "simulation",
+    "status": "SIMILAR",
+    "mySiteQuestionIds": [
+      "sim-08"
+    ],
+    "referenceQuestionIds": [
+      "ref-sim-prob7"
+    ],
+    "questionSimilarity": 0.653,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "タイトル類似度/コマンド重複度から同一シナリオの可能性あり(score=0.65)。ただし採点方式(コマンド行一致 vs 状態バリデーション)が全く異なるため要手動確認。",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob7",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン デバイス間の接続は確立されています。SW-1およびSW-2に対してVLAN、LLDP、CDPの設定を行ってください。\nSW-1: e0/1 をアクセスモードにし、VLAN 10とVoice VLAN 11を設定してください。 / SW-2: e0/1 をアクセスモードにし、VLAN 30を設定してください。 / SW-1: VLAN 10 を作成し、名前を「Engineering」に設定してください。 / SW-1 & SW-2: LLDPを有効化し、e0/0でLLDP送受信を設定してください。 / SW-1: e0/2 でCDPが無効になるように設定してください。",
+      "title": "VLANとLLDP/CDP設定",
+      "scenario": "ガイドライン デバイス間の接続は確立されています。SW-1およびSW-2に対してVLAN、LLDP、CDPの設定を行ってください。",
+      "devices": [
+        {
+          "name": "SW-1",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "SW-2",
+          "type": "switch",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        }
+      ],
+      "tasks": [
+        "SW-1: e0/1 をアクセスモードにし、VLAN 10とVoice VLAN 11を設定してください。",
+        "SW-2: e0/1 をアクセスモードにし、VLAN 30を設定してください。",
+        "SW-1: VLAN 10 を作成し、名前を「Engineering」に設定してください。",
+        "SW-1 & SW-2: LLDPを有効化し、e0/0でLLDP送受信を設定してください。",
+        "SW-1: e0/2 でCDPが無効になるように設定してください。"
+      ],
+      "options": [
+        "int e0/1",
+        "switchport mode access",
+        "switchport access vlan 10",
+        "switchport voice vlan 11",
+        "int e0/1",
+        "switchport mode access",
+        "switchport access vlan 30",
+        "vlan 10",
+        "name Engineering",
+        "exit",
+        "lldp run",
+        "int e0/0",
+        "lldp transmit",
+        "lldp receive",
+        "int e0/2",
+        "no cdp enable"
+      ],
+      "correctAnswerTexts": [
+        "SW-1: runningConfig.cdp.interfaces.e0/2 equals False",
+        "SW-1: runningConfig.interfaces.e0/0.lldp.receive equals True",
+        "SW-1: runningConfig.interfaces.e0/0.lldp.transmit equals True",
+        "SW-1: runningConfig.interfaces.e0/1.switchport.access_vlan equals 10",
+        "SW-1: runningConfig.interfaces.e0/1.switchport.voice_vlan equals 11",
+        "SW-1: runningConfig.lldp.enabled equals True",
+        "SW-1: runningConfig.startupConfig saved (任意)",
+        "SW-1: runningConfig.vlans.10.name equals Engineering",
+        "SW-2: runningConfig.interfaces.e0/1.switchport.access_vlan equals 30",
+        "SW-2: runningConfig.lldp.enabled equals True",
+        "SW-2: runningConfig.startupConfig saved (任意)"
+      ],
+      "validations": [
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/1.switchport.access_vlan",
+          "message": "SW-1: e0/1のアクセスVLANが10ではありません",
+          "device": "SW-1",
+          "expected": 10
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/1.switchport.voice_vlan",
+          "message": "SW-1: e0/1のVoice VLANが11ではありません",
+          "device": "SW-1",
+          "expected": 11
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/1.switchport.access_vlan",
+          "message": "SW-2: e0/1のアクセスVLANが30ではありません",
+          "device": "SW-2",
+          "expected": 30
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.vlans.10.name",
+          "message": "SW-1: VLAN 10の名前が Engineering ではありません",
+          "device": "SW-1",
+          "expected": "Engineering"
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.lldp.enabled",
+          "message": "SW-1: LLDPが有効になっていません",
+          "device": "SW-1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.lldp.enabled",
+          "message": "SW-2: LLDPが有効になっていません",
+          "device": "SW-2",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.lldp.transmit",
+          "message": "SW-1: e0/0でLLDP送信が設定されていません",
+          "device": "SW-1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.interfaces.e0/0.lldp.receive",
+          "message": "SW-1: e0/0でLLDP受信が設定されていません",
+          "device": "SW-1",
+          "expected": true
+        },
+        {
+          "match": "equals",
+          "path": "runningConfig.cdp.interfaces.e0/2",
+          "message": "SW-1: e0/2でCDPが無効になっていません",
+          "device": "SW-1",
+          "expected": false
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-1: 設定が保存されていません",
+          "device": "SW-1",
+          "expected": "(任意)"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SW-2: 設定が保存されていません",
+          "device": "SW-2",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob7.jpg"
+      ],
+      "imageHashes": [
+        "501d78ae19bf855454dc8f86b483a8f87c969ed732d302ff2f7c2113edcb1b55"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "ada709ae737da5af9013c8ad39ac673c0eeaf4c866488461cffbb365f4acb56a",
+      "sourceQuestionId": "ref-sim-prob7",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  }
+]

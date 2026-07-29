@@ -1,0 +1,50 @@
+{
+  "counts": {
+    "EXACT_MATCH": 668,
+    "EQUIVALENT": 58,
+    "SIMILAR": 7,
+    "ANSWER_CONFLICT": 6,
+    "AMBIGUOUS": 0,
+    "MY_SITE_ONLY": 11,
+    "REFERENCE_ONLY": 19
+  },
+  "byType": {
+    "choice": {
+      "EXACT_MATCH": 647,
+      "EQUIVALENT": 52,
+      "SIMILAR": 0,
+      "REFERENCE_ONLY": 16,
+      "MY_SITE_ONLY": 8,
+      "ANSWER_CONFLICT": 6,
+      "AMBIGUOUS": 0
+    },
+    "dnd": {
+      "EXACT_MATCH": 21,
+      "EQUIVALENT": 6,
+      "SIMILAR": 0,
+      "REFERENCE_ONLY": 1,
+      "MY_SITE_ONLY": 0,
+      "ANSWER_CONFLICT": 0,
+      "AMBIGUOUS": 0
+    },
+    "simulation": {
+      "EXACT_MATCH": 0,
+      "EQUIVALENT": 0,
+      "SIMILAR": 7,
+      "REFERENCE_ONLY": 2,
+      "MY_SITE_ONLY": 3,
+      "ANSWER_CONFLICT": 0,
+      "AMBIGUOUS": 0
+    }
+  },
+  "additionCandidates": 19,
+  "additionCandidatesByType": {
+    "choice": 16,
+    "dnd": 1,
+    "simulation": 2
+  },
+  "additionCandidatesByPart": {
+    "part_⑦": 16,
+    "分類保留": 3
+  }
+}

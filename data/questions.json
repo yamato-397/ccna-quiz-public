@@ -7,10 +7,16 @@
       "dd": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec"
     },
     "counts": {
-      "selection": 516,
-      "dd": 27,
-      "total": 543,
-      "selectionWithImages": 159
+      "selection": 532,
+      "dd": 28,
+      "total": 560,
+      "selectionWithImages": 172
+    },
+    "comparisonAddition": {
+      "addedAt": "2026-07-29T23:40:00+09:00",
+      "addedChoice": 16,
+      "addedDnd": 1,
+      "note": "参考サイト(ccnatiger)との突合により不足していたpart_⑦相当16問とD&D 1問(dd-28)を追加。extractedAtは既存分の取得日時のため変更していない。"
     }
   },
   "selection_questions": [
@@ -6266,7 +6272,7 @@
         "バージョン管理を使用してジョブテンプレートを起動する"
       ],
       "correctAnswers": [
-        "ネットワーク資格情報の提供",
+        "手動プレイブックの実行",
         "エージェントレス展開"
       ],
       "correctCount": 2,
@@ -9428,7 +9434,7 @@
         "ファストイーサネット 0/2"
       ],
       "correctAnswers": [
-        "シリアル 0/0"
+        "ファストイーサネット 0/1"
       ],
       "correctCount": 1,
       "explanation": "",
@@ -10622,6 +10628,343 @@
       "explanation": "",
       "imageName": "",
       "hasImage": false
+    },
+    {
+      "id": "ref-choice-0001",
+      "displayId": 4,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "展示を参照してください\n ルート172.16.4.0のサブネットマスクは？",
+      "choices": [
+        "255.255.248.0",
+        "255.255.240.0",
+        "255.255.254.0",
+        "255.255.255.192"
+      ],
+      "correctAnswers": [
+        "255.255.248.0"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-11-30-60.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-11-30-60.jpg"
+    },
+    {
+      "id": "ref-choice-0002",
+      "displayId": 5,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "エンジニアは、外部 EIGRP ネットワークでフローティング スタティック ルートを設定する必要があります。宛先サブネットは、R86 の LAN インターフェイス上の /29 です。R14 で実行する必要があるコマンドはどれですか?",
+      "choices": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171",
+        "ip route 10.80.65.0 255.255.248.0 10.73.65.66 1",
+        "ip route 10.80.65.0 255.255.255.240 fa0/1 89",
+        "ip route 10.73.65.66 0.0.0.224 10.80.65.0 255"
+      ],
+      "correctAnswers": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-12-29-2.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-12-29-2.jpg"
+    },
+    {
+      "id": "ref-choice-0003",
+      "displayId": 6,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "ルーター R14 は構成中です。PC 10 へのホスト ルートを確立するには、どの構成を使用する必要がありますか?",
+      "choices": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66",
+        "ip route 10.80.65.10 255.255.255.254 10.80.65.1",
+        "ip route 10.73.65.66 0.0.0.255 10.80.65.10",
+        "ip route 10.73.65.65 255.0.0.0 10.80.65.10"
+      ],
+      "correctAnswers": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-12-29-12.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-12-29-12.jpg"
+    },
+    {
+      "id": "ref-choice-0004",
+      "displayId": 8,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "エンジニアは、スイッチ SW1 の管理アクセス構成を更新して、安全で暗号化されたリモート構成を許可しています。エンジニアがスイッチに適用する必要がある 2 つのコマンドまたはコマンド シーケンスはどれですか? (2つ選んでください)",
+      "choices": [
+        "SW1(config)#line vty 0 15\n SW1(config-line)#transport input ssh",
+        "SW1(config)# username NEW secret R3mote123",
+        "SW1(config)# crypto key generate rsa",
+        "SW1(config)# interface f0/1\n SW1(config-if)# switch port mode trunk",
+        "SW1(config)#enable secret ccnaTest123"
+      ],
+      "correctAnswers": [
+        "SW1(config)#line vty 0 15\n SW1(config-line)#transport input ssh",
+        "SW1(config)# username NEW secret R3mote123"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "q-12-29-15.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-12-29-15.jpg"
+    },
+    {
+      "id": "ref-choice-0005",
+      "displayId": 10,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "ワイヤレス LAN コントローラで WPA2-PSK WLAN が設定されている場合、ASCII formar で必要な最小文字数は何ですか",
+      "choices": [
+        "8",
+        "6",
+        "12",
+        "18"
+      ],
+      "correctAnswers": [
+        "8"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "ref-choice-0006",
+      "displayId": 15,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "展示品を参照してください。EIGRPを介して学習されたネットワークプレフィックスはどれですか",
+      "choices": [
+        "192.168.2.0/24",
+        "172.16.0.0/16",
+        "207.165.200.0/24",
+        "192.168.1.0/24"
+      ],
+      "correctAnswers": [
+        "192.168.2.0/24"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no543.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no543.jpg"
+    },
+    {
+      "id": "ref-choice-0007",
+      "displayId": 16,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "展示品を参照してください。ルータR1は現在、インターネットへのプライマリルートとしてR3を使用するように設定されており、ルートはデフォルトの管理距離設定を使用します。ネットワークエンジニアは、R2をバックアップとして使用するようにR1を構成する必要がありますが、R3がダウンした場合に限ります。R3へのリンクの管理距離設定を変更せずにR2をバックアップルートとして正しく使用するために、エンジニアはR1でどのコマンドを設定する必要がありますか？",
+      "choices": [
+        "ip route 0,0.0.0 0.0.0.0 g0 / 1 6",
+        "ip route 0.0.0.0 0.0.0.0 g0 / 1 1",
+        "ip route 0.0.0.0 0.0.0.0 209.165.201.5 10",
+        "ip route 0.0.0.0 0.0.0.0 209.165.200.226 1"
+      ],
+      "correctAnswers": [
+        "ip route 0,0.0.0 0.0.0.0 g0 / 1 6"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no585.JPG",
+      "hasImage": true,
+      "localImagePath": "images/no585.jpg"
+    },
+    {
+      "id": "ref-choice-0008",
+      "displayId": 18,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "ネットワーク管理者は、2つのサイト間でDHCPサービスを有効にする必要があります。DHCPDISCOVERメッセージをサーバーに渡すには、ルーターに何を構成する必要がありますか？",
+      "choices": [
+        "DHCPリレーエージェント",
+        "DHCPバインディング",
+        "DHCPスヌーピング",
+        "DHCPプール"
+      ],
+      "correctAnswers": [
+        "DHCPリレーエージェント"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "ref-choice-0009",
+      "displayId": 25,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "異なるキャンパスビル内にそれぞれ設置された 2 つの個別のネットワーク セグメントをワイヤレスで接続する AP モードはどれですか。",
+      "choices": [
+        "ブリッジ",
+        "メッシュ",
+        "ポイントツーポイント",
+        "ローカル"
+      ],
+      "correctAnswers": [
+        "ブリッジ"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "",
+      "hasImage": false
+    },
+    {
+      "id": "ref-choice-0010",
+      "displayId": 27,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "どのルーターまたはルーターグループが NTP クライアントですか?",
+      "choices": [
+        "R1、R2、および R3",
+        "R1",
+        "R2およびR3",
+        "R1、R3、および R4"
+      ],
+      "correctAnswers": [
+        "R1、R2、および R3"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "q-11-8-72.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-11-8-72.jpg"
+    },
+    {
+      "id": "ref-choice-0011",
+      "displayId": 31,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "ネットワーク エンジニアは、新しいスイッチでポート セキュリティの構成を開始しました。次の要件を満たす必要があります。\n – MAC アドレスを動的に学習する必要があります。\n – 不要なトラフィックが見られる場合、インターフェイスを無効にせずにログ メッセージを生成する必要があります。\n \n このタスクを完了するために構成する必要がある 2 つのコマンドはどれですか? (2つ選んでください)",
+      "choices": [
+        "SW(config-if)#switchport port-security mac-address sticky",
+        "SW(config-if)#switchport port-security violation restrict",
+        "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+        "SW(config-if)#switchport port-security maximum 2",
+        "SW(config-if)#switchport port-security violation shutdown"
+      ],
+      "correctAnswers": [
+        "SW(config-if)#switchport port-security mac-address sticky",
+        "SW(config-if)#switchport port-security violation restrict"
+      ],
+      "correctCount": 2,
+      "explanation": "",
+      "imageName": "q-10-26-2.jpg",
+      "hasImage": true,
+      "localImagePath": "images/q-10-26-2.jpg"
+    },
+    {
+      "id": "ref-choice-0012",
+      "displayId": 201,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "choices": [
+        "高スループット",
+        "ブロードキャストストーム",
+        "デュプレックス不一致",
+        "キューイング"
+      ],
+      "correctAnswers": [
+        "高スループット"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no_16.png",
+      "hasImage": true,
+      "localImagePath": "images/no_16.png"
+    },
+    {
+      "id": "ref-choice-0013",
+      "displayId": 202,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "choices": [
+        "デュプレックス不一致",
+        "衝突",
+        "ブロードキャストストーム",
+        "キューイング"
+      ],
+      "correctAnswers": [
+        "デュプレックス不一致"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no259.png",
+      "hasImage": true,
+      "localImagePath": "images/no259.png"
+    },
+    {
+      "id": "ref-choice-0014",
+      "displayId": 203,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "choices": [
+        "キューイング",
+        "不良NIC",
+        "ブロードキャストストーム",
+        "デュプレックス不一致"
+      ],
+      "correctAnswers": [
+        "キューイング"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no_402.png",
+      "hasImage": true,
+      "localImagePath": "images/no_402.png"
+    },
+    {
+      "id": "ref-choice-0015",
+      "displayId": 204,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "choices": [
+        "ブロードキャストストーム",
+        "不良NIC",
+        "衝突",
+        "デュプレックス不一致"
+      ],
+      "correctAnswers": [
+        "ブロードキャストストーム"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no527.png",
+      "hasImage": true,
+      "localImagePath": "images/no527.png"
+    },
+    {
+      "id": "ref-choice-0016",
+      "displayId": 205,
+      "category": "選択問題",
+      "part": "part_⑦",
+      "question": "展示を参照してください。ルータR19のパフォーマンスが低下する原因は何ですか？\n\n※実際の試験では赤いラインはありません",
+      "choices": [
+        "ポートのオーバーサブスクリプション",
+        "過剰なCRCエラー",
+        "速度とデュプレックス不一致",
+        "過度の衝突"
+      ],
+      "correctAnswers": [
+        "ポートのオーバーサブスクリプション"
+      ],
+      "correctCount": 1,
+      "explanation": "",
+      "imageName": "no921.png",
+      "hasImage": true,
+      "localImagePath": "images/no921.png"
     }
   ],
   "dd_questions": [
@@ -11252,6 +11595,31 @@
       ],
       "grouplimits": "",
       "imagePath": ""
+    },
+    {
+      "id": "ref-dnd-0001",
+      "title": "Question 28",
+      "category": "D&D",
+      "type": "Matching",
+      "problemTitle": "展示を参照してください。左側の設定コマンドを、設定内の位置に対応する文字にドラッグ＆ドロップします。",
+      "question": "R1|R2|R2|R3",
+      "choices": [
+        "ip route 10.10.13.0 255.255.255.128 10.10.10.1",
+        "ip route 10.10.13.0 255.255.255.128 10.10.10.5",
+        "ip route 10.10.13.10 255.255.255.255 10.10.10.1",
+        "ip route 10.10.14.0 255.255.255.0 10.10.10.2",
+        "ip route 10.10.14.0 255.255.255.0 10.10.10.6",
+        "ip route 10.10.14.10 255.255.255.255 10.10.10.6"
+      ],
+      "answer": "ip route 10.10.13.0 255.255.255.128 10.10.10.1|ip route 10.10.13.0 255.255.255.128 10.10.10.5|ip route 10.10.14.0 255.255.255.0 10.10.10.2|ip route 10.10.14.0 255.255.255.0 10.10.10.6",
+      "placeholders": [
+        "R1",
+        "R2",
+        "R2",
+        "R3"
+      ],
+      "grouplimits": "",
+      "imagePath": "images/dd28.jpg"
     }
   ]
 }

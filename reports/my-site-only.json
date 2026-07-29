@@ -1,0 +1,200 @@
+[
+  {
+    "comparisonId": "choice-00722",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_④-76"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_④",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00723",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-58"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00724",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-59"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00725",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-63"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00726",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-76"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00727",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-82"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00728",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-95"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "choice-00729",
+    "type": "choice",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "part_⑤-99"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑤",
+    "partConfidence": "high",
+    "reason": "参考サイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "sim-00767",
+    "type": "simulation",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "sim-04"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "参考サイトに対応するシミュレーション問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "sim-00768",
+    "type": "simulation",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "sim-06"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "参考サイトに対応するシミュレーション問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  },
+  {
+    "comparisonId": "sim-00769",
+    "type": "simulation",
+    "status": "MY_SITE_ONLY",
+    "mySiteQuestionIds": [
+      "sim-07"
+    ],
+    "referenceQuestionIds": [],
+    "questionSimilarity": 0,
+    "optionSimilarity": 0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "参考サイトに対応するシミュレーション問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": null
+  }
+]

@@ -1,0 +1,154 @@
+[
+  {
+    "comparisonId": "choice-00520",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-4",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00521",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-5",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00522",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-6",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00524",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-8",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00526",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-10",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00531",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-15",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00532",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-16",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00534",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-18",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00541",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-25",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00543",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-27",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00547",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-31",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00717",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-201",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00718",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-202",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00719",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-203",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00720",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-204",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "choice-00721",
+    "type": "choice",
+    "referenceQuestionId": "part_⑦-205",
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "approved": false
+  },
+  {
+    "comparisonId": "dnd-00757",
+    "type": "dnd",
+    "referenceQuestionId": "dd-28",
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "approved": false
+  },
+  {
+    "comparisonId": "sim-00765",
+    "type": "simulation",
+    "referenceQuestionId": "ref-sim-prob8",
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "approved": false
+  },
+  {
+    "comparisonId": "sim-00766",
+    "type": "simulation",
+    "referenceQuestionId": "ref-sim-prob9",
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "approved": false
+  }
+]

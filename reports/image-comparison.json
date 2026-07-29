@@ -1,0 +1,17 @@
+{
+  "choice": {
+    "mySiteWithImage": 159,
+    "referenceWithImage": 223,
+    "matchedButImageDiffers": 51
+  },
+  "dnd": {
+    "mySiteWithImage": 3,
+    "referenceWithImage": 7,
+    "matchedButImageDiffers": 6
+  },
+  "simulation": {
+    "mySiteWithImage": 0,
+    "referenceWithImage": 9,
+    "matchedButImageDiffers": 0
+  }
+}

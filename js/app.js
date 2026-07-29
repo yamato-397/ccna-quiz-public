@@ -3,6 +3,7 @@
 
 const App = (() => {
   let questionsData    = null;
+  let simulationQuestionsData = null;
   let checkTestData03  = null;
   let checkTestData04  = null;
   let checkTestData05  = null;
@@ -110,6 +111,14 @@ const App = (() => {
     return data;
   }
 
+  async function loadSimulationData() {
+    if (simulationQuestionsData) return simulationQuestionsData;
+    const res = await fetch('data/simulation-questions.json');
+    if (!res.ok) throw new Error('Failed to load simulation-questions.json');
+    simulationQuestionsData = await res.json();
+    return simulationQuestionsData;
+  }
+
   function getData() { return questionsData; }
 
   // ---- Image modal ----
@@ -154,6 +163,11 @@ const App = (() => {
     const dndAnswered = Object.keys(dndHist.answers || {}).length;
     const dndEl = document.getElementById('dnd-stat-answered');
     if (dndEl) dndEl.textContent = dndAnswered;
+
+    if (typeof SimulationPractice !== 'undefined') {
+      const simEl = document.getElementById('sim-stat-answered');
+      if (simEl) simEl.textContent = SimulationPractice.getAnsweredCount();
+    }
 
     const ct03El = document.getElementById('ct03-stat-history');
     if (ct03El) ct03El.textContent = `実施回数: ${CheckTest.getHistory('check-test-03').length}回`;
@@ -255,6 +269,8 @@ const App = (() => {
     // Portal card navigation
     document.getElementById('card-quiz').addEventListener('click', goQuizParts);
     document.getElementById('card-dnd').addEventListener('click', goDnd);
+    const simCard = document.getElementById('card-simulation');
+    if (simCard) simCard.addEventListener('click', goSimulationPractice);
     document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
     document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
     document.getElementById('card-check-test-05').addEventListener('click', () => goCheckTest(5));
@@ -469,6 +485,16 @@ const App = (() => {
       DndQuiz.init(data.dd_questions);
     } catch(e) {
       console.error('DnD init error:', e);
+    }
+  }
+
+  async function goSimulationPractice() {
+    showView('simulation');
+    try {
+      const data = await loadSimulationData();
+      SimulationPractice.start(data.questions, { shuffle: false });
+    } catch(e) {
+      console.error('SimulationPractice init error:', e);
     }
   }
 

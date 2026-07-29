@@ -1,0 +1,2932 @@
+[
+  {
+    "comparisonId": "choice-00454",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-57"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-57"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-57",
+      "displayId": 57,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。R1から10.10.2.0/24サブネットへのトラフィックは、ネクストホッ\nプとして192.168.1.2を使用します。\nネットワーク エンジニアは、宛先 10.10.2.1 のトラフィックがルータ R3を通過し、10.10.2.0/24 サブネットへのその他すべてのトラフィックが R2を通過するように R1 構成を更新したいと考えています。\nどのコマンドを使用する必要がありますか?",
+      "options": [
+        "ip route 10.10.2.1 255.255.255.255192.168.1.4 100",
+        "ip route 10.10.2.1 255.255.255.255 192.168.1.4 115",
+        "ip route 10.10.2.0 255.255.255.0 192.168.1.4 115",
+        "ip route 10.10.2.0 255.255.255.0 192.168.1.4 100"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.10.2.1 255.255.255.255192.168.1.4 100"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no3.png"
+      ],
+      "imageHashes": [
+        "35a854fde14754d5d5766ca916478a2605c4dd489c373717106bb281127c5f4b"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d401c5e4f3ef0128b56fc7e3948926698a31c2a9fe975eea10d370fa844ccf72",
+      "sourceQuestionId": "part_⑥-57",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00455",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-58"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-58"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-58",
+      "displayId": 58,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータがBGPから受信したパケットは、シリアルインターフェースを経由して次の場所に入ります。\n209.165.201.1。各ルートはルーティングテーブル内に存在します。\n宛先 IP が 10.1.1.19のトラフィックを転送するために使用されるインターフェースはどれですか。",
+      "options": [
+        "F0/0",
+        "F0/4",
+        "F0/1",
+        "F0/3"
+      ],
+      "correctAnswerTexts": [
+        "F0/0"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no14.png"
+      ],
+      "imageHashes": [
+        "443e675b576a30164d012b7c6fe24bac99d5ddc3e1ed02f5841bfc544741e0f8"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "a8e17e6856d2154ac6916869eb873d096059e356c8d1df8e0ea782acb63dd60a",
+      "sourceQuestionId": "part_⑥-58",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00456",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-59"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-59"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-59",
+      "displayId": 59,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。DHCPサーバーは、図に示されている各サブネットのDHCPプールで構成されています。VLAN上のDHCPクライアントを許可するには、スイッチSW1にどのコマンドを設定する必要がありますか？\n10 DHCP サーバーから動的 IP アドレスを受信するには?",
+      "options": [
+        "SW1(config-if)#ip helper-address 192.168.20.2",
+        "SW1(config-if)#ip helper-address 192.168.10.1",
+        "SW1(config-if)#ip helper-address 192.168.20.1",
+        "SW1(config-if)#ip helper-address 192.168.10.2"
+      ],
+      "correctAnswerTexts": [
+        "SW1(config-if)#ip helper-address 192.168.20.2"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no15.png"
+      ],
+      "imageHashes": [
+        "a096425222686afe1d8eb1e68ac97730ec9408e41110d3dd1781aa612686b884"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "ed1f3c9afff6e6fb0dbe34c4d1f16450e900d900c87ed0b5a261262e4a7ad735",
+      "sourceQuestionId": "part_⑥-59",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00457",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-60"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-60"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-60",
+      "displayId": 60,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。インターフェースG0/0上の任意のホストからのトラフィックを許可し、インターフェースG/0/1からのトラフィックを拒否するには、アクセスリストが必要です。どのアクセスリストを適用する必要がありますか？",
+      "options": [
+        "ip access-list standard 99\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.0.255.255",
+        "ip access-list standard 99\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.255.255.255",
+        "ip access-list standard 199\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.255.255.255",
+        "ip access-list standard 199\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.0.255.255"
+      ],
+      "correctAnswerTexts": [
+        "ip access-list standard 99\npermit 10.100.100.0 0.0.0.255\ndeny 192.168.0.0 0.0.255.255"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no21.png"
+      ],
+      "imageHashes": [
+        "c9c65a71a06437156157e0520eabc130a448ca566d0e6ee0267f51c055c4805f"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "3bb89b34313c199d3f56a40e8831f2c88b54ec10a2d07d7be944dcbda29c803f",
+      "sourceQuestionId": "part_⑥-60",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00458",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-61"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-61"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-61",
+      "displayId": 61,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "別紙を参照してください。スイッチの設定後、スイッチ1の出力に基づき、PC AとPC B間のpingテストが失敗します。どのエラーを修正する必要がありますか？",
+      "options": [
+        "ネイティブVLANの不一致があります",
+        "スイッチ ポートにアクセス モードが設定されています。",
+        "PCが間違ったVLANに接続されています",
+        "トランク上のすべてのVLANが有効になっていません"
+      ],
+      "correctAnswerTexts": [
+        "ネイティブVLANの不一致があります"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no31.png"
+      ],
+      "imageHashes": [
+        "31900d9cad0a9ba535581b1c5b7405a7865412dfded72665e8cff045a5ff821f"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "57b00b9db02942b2faf32b14abf09067f57b1620a0bd61caf5fae2809c54a927",
+      "sourceQuestionId": "part_⑥-61",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00459",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-62"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-62"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-62",
+      "displayId": 62,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "添付資料を参照してください。My_WLAN 無線LAN は WPA2 レイヤー 2 PSKセキュリティで設定されています。ユーザーが「Data」という別のサブネット上のこのWLANに接続できるようにするには、管理者はどのような追加設定を行う必要がありますか？",
+      "options": [
+        "ステータスを有効にし、インターフェイス/インターフェイス グループのドロップダウン リストからデータを選択します。",
+        "ブロードキャスト SSID を有効にし、インターフェイス/インターフェイス グループのドロップダウン リストからデータを選択します。",
+        "ステータスを有効にし、NAS-ID をデータに設定します。",
+        "ステータスを有効にし、ブロードキャスト SSID を有効にします。"
+      ],
+      "correctAnswerTexts": [
+        "ステータスを有効にし、インターフェイス/インターフェイス グループのドロップダウン リストからデータを選択します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no33.png"
+      ],
+      "imageHashes": [
+        "090155ba9c6d98cdc9ce9308e79a4b10b21d409d8e946fb38e005ed7a1e98415"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "62d784927f26a7a034ea76222abda8018f71aed843d43fe0a9a6c77eaaed8cbf",
+      "sourceQuestionId": "part_⑥-62",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00461",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-64"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-64"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-64",
+      "displayId": 64,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。172.16.32.254 から送信されたパケットは 172.16.32.8に送信されます。優先宛先ルートのサブネットマスクは何ですか？",
+      "options": [
+        "255.255.255.192",
+        "255.255.224.0",
+        "255.255.255.0",
+        "255.255.255.252"
+      ],
+      "correctAnswerTexts": [
+        "255.255.255.192"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no49.png"
+      ],
+      "imageHashes": [
+        "18dd04687ff8adfdf493233ad3b851338a8efa9f795e14f63b15b9d6fd4bfc34"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "7fb57d0b5036435929ca23c1e59d628b43c2af189ade15dc84f6687d9a22c712",
+      "sourceQuestionId": "part_⑥-64",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00462",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-65"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-65"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-65",
+      "displayId": 65,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR1が宛先IPアドレス10.56.0.62のパケットを受信すると、ど のインターフェースを経由してパケットをルーティングしますか？",
+      "options": [
+        "VIan58",
+        "Null0",
+        "VLAN60",
+        "VIan59"
+      ],
+      "correctAnswerTexts": [
+        "VIan58"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no58.png"
+      ],
+      "imageHashes": [
+        "05f849215de739c56209b64def74d13d1d54f316259722fe7fd7da524a8a7923"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "0697fcff2b9a4b84aa7db73b4dd3ecced0def5e572bf6a535c5ed2a15e8d3ac9",
+      "sourceQuestionId": "part_⑥-65",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00463",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-66"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-66"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-66",
+      "displayId": 66,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルート172.16.4.0のサブネットマスクは何ですか？",
+      "options": [
+        "255.255.248.0",
+        "255.255.255.192",
+        "255.255.254.0",
+        "255.255.240.0"
+      ],
+      "correctAnswerTexts": [
+        "255.255.248.0"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no62.png"
+      ],
+      "imageHashes": [
+        "78305ffea4a248340ea033087cb6a509265e4654c0f2cfdc18699bec30185838"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d3ebf365f255535046565ae474afbb03a41d30014e7590ab4419f2d74fede141",
+      "sourceQuestionId": "part_⑥-66",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00464",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-67"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-67"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-67",
+      "displayId": 67,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルーターは192.168.12.16へのトラフィックをどのように管理する のでしょうか？",
+      "options": [
+        "宛先アドレスを含むプレフィックスが最も長いため、RIP ルートを選択します。",
+        "管理距離が最も短いため、EIGRP ルートを選択します。",
+        "3 つのルート間でトラフィックの負荷を分散します。",
+        "宛先アドレスを含むプレフィックスが最も長いため、OSPF ルートを選択します。"
+      ],
+      "correctAnswerTexts": [
+        "宛先アドレスを含むプレフィックスが最も長いため、RIP ルートを選択します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no73.png"
+      ],
+      "imageHashes": [
+        "cac64d7d9e28435653ce2e0f5fb9db1580cac1207f9a1f19db399639b39ddc76"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "b8e562e7b5bcfd15bd9cb67affec7b4f25f8c7ac27ee7c98e3e362fe21a309a7",
+      "sourceQuestionId": "part_⑥-67",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00465",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-68"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-68"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-68",
+      "displayId": 68,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ネットワークエンジニアが、図のように直接接続された2台のルー タの設定を開始しました。2台のルータをOSPFネイバーにするには、エンジニアはR2でど のコマンドシーケンスを設定する必要がありますか？",
+      "options": [
+        "interface GigabitEthernet0/1\nip ospf 1 area 1",
+        "router ospf 1\nnetwork 192.168.12.1 0.0.0.0 area 1",
+        "interface GigabitEthernet0/1\nip ospf 1 area 0",
+        "router ospf 1\nnetwork 192.168.12.0 0.0.0.127 area 0"
+      ],
+      "correctAnswerTexts": [
+        "interface GigabitEthernet0/1\nip ospf 1 area 1"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no74.png"
+      ],
+      "imageHashes": [
+        "f0cd65e3499201288f75ce597016acbac124964049fa9eda35c5913244d943af"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "9c341eec25f801e703f2a69dfab83f70f42a1a946e0ec5fc81c27ac14687f914",
+      "sourceQuestionId": "part_⑥-68",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00466",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-69"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-69"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-69",
+      "displayId": 69,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "この JSON スキーマ内の「port」という単語は何を表していますか?",
+      "options": [
+        "キー",
+        "値",
+        "配列",
+        "オブジェクト"
+      ],
+      "correctAnswerTexts": [
+        "キー"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no90.png"
+      ],
+      "imageHashes": [
+        "b81cd55601af55fb95726f0201d4ad36a794ce65539d3b90cf3619cad5bafde0"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "fac04cb56bb9f191e947fbca9bdf64a0b3448b6fe82a5068577d218bc48f0bda",
+      "sourceQuestionId": "part_⑥-69",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00467",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-70"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-70"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-70",
+      "displayId": 70,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータ1はホスト宛のパケットにどのネクストホップIPアドレスを 使用しますか？",
+      "options": [
+        "10.10.10.9",
+        "10.10.10.5",
+        "10.10.11.2",
+        "10.10.12.2"
+      ],
+      "correctAnswerTexts": [
+        "10.10.10.9"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no96.png"
+      ],
+      "imageHashes": [
+        "816ec135df7b825e20292907447d5cb54b923202139d5a7db9a9048da9fb1870"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "efbeeda6faec167cdc5421cef824b59ae85f3195e897be5cbca7d22b385104d4",
+      "sourceQuestionId": "part_⑥-70",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00468",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-71"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-71"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-71",
+      "displayId": 71,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "この JSON スキーマ内の 4 行目には何が表されていますか?",
+      "options": [
+        "オブジェクト",
+        "配列",
+        "キー",
+        "値"
+      ],
+      "correctAnswerTexts": [
+        "オブジェクト"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no132.png"
+      ],
+      "imageHashes": [
+        "1c43b9f46397c040fb4b1bf91839b2774c1f34e6d84b6fd0bc51c639f8bb6e17"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "43f81549be6f10addeedf7914a0b61a788b067a7618f748aac3e2100a8794ea9",
+      "sourceQuestionId": "part_⑥-71",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00469",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-72"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-72"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-72",
+      "displayId": 72,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。10.10.10.1 から送信されたパケットは 10.10.8.14 に送信されます。宛先ルートのサブネットマスクは何ですか？",
+      "options": [
+        "255.255.255.240",
+        "255.255.254.0",
+        "255.255.255.248",
+        "255.255.255.252"
+      ],
+      "correctAnswerTexts": [
+        "255.255.255.240"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no182.png"
+      ],
+      "imageHashes": [
+        "313be0bf6906c87f0ad757f26e5dd32dfc17192f4ef8297816eec005889a4be2"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "a07c70b807aa5f7c4863927c46c645ee4016535eeafb0254f335a29ca6a1d7fa",
+      "sourceQuestionId": "part_⑥-72",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00470",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-73"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-73"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-73",
+      "displayId": 73,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR1はOSPFエリア0にあります。エンジニアは、トラフィックを誘導するために使用するパスに影響を与えるためにR1の設定を更新した後、4つのギガビットインターフェースのそれぞれが10.10.0.0/16への同じルートを持っていることを確認しました。\nR1はルートに到達するためにトラフィックを送信するためにどのインターフェースを選択しますか?",
+      "options": [
+        "ギガビットトイーサネット0/1",
+        "ギガビットイーサネット0/0",
+        "ギガビットイーサネット0/2",
+        "ギガビットイーサネット0/3"
+      ],
+      "correctAnswerTexts": [
+        "ギガビットトイーサネット0/1"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no185.png"
+      ],
+      "imageHashes": [
+        "6339240db564b3510c9e5347888dfe1dfb2027bf40cff8f3b008342205f54af9"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "fb7323d3ca185b75ab7527fcc65e9ef1e571d951bed3b4b83591c501e3392a1f",
+      "sourceQuestionId": "part_⑥-73",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00471",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-74"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-74"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-74",
+      "displayId": 74,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR2のLANセグメントのIPv6アドレスは、EUI64形式で設定する必要があります。設定すると、ルータはどのIPv6アドレスを生成しますか ？",
+      "options": [
+        "2001:db8:bd69:1469:11BE:BFFF:FEB9:1",
+        "2001:db8:bd69:1469:12D8:BAFE:FF01:1",
+        "2001:db8:bd69:1469:1130:ABFF:FECC:1",
+        "2001:db8:bd69:1469:4628:255F:FE32:1"
+      ],
+      "correctAnswerTexts": [
+        "2001:db8:bd69:1469:11BE:BFFF:FEB9:1"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no230.png"
+      ],
+      "imageHashes": [
+        "abfd0805e1db57f6ae77b46751e47d26fc5f8a2d95a5302c822c765f3c6a5e1c"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "4952dbefc45ff05f9995f237f2fea32281b3798eca6583f46fdb5de90cba7812",
+      "sourceQuestionId": "part_⑥-74",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00472",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-75"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-75"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-75",
+      "displayId": 75,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "展示を参照してください。R86に静的ルートを設定して、トラフィックを転送する必要があります。\nR14上にある172.16.34.0/29ネットワークです。このリクエストを実行するにはどのコマンドを使用する必要がありますか？",
+      "options": [
+        "ip route 172.16.34.0 255.255.255.248 10.73.65.65",
+        "ip route 10.73.65.65 255.255.255.248 172.16.34.0",
+        "ip route 172.16.34.0 0.0.0.7 10.73.65.64",
+        "ip route 172.16.34.0 255.255.224.0 10.73.65.66"
+      ],
+      "correctAnswerTexts": [
+        "ip route 172.16.34.0 255.255.255.248 10.73.65.65"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no338.png"
+      ],
+      "imageHashes": [
+        "1d57c10128cd6bad7a4bb1c314ca37b4eca68402f82493329e62d2afd6b5ea7c"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "83e8f30d0fbda0661906e297e70875ab5a4c1b2c517da8e296446f3a614c41ec",
+      "sourceQuestionId": "part_⑥-75",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00473",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-76"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-76"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-76",
+      "displayId": 76,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。エンジニアは、2.4GHzと5GHzで動作する無線ネットワーク向けに 、WPA2を使用して安全な事前共有キーベースのSSIDを作成しています。このプロセスを完 了するために、エンジニアが実行する必要がある2つのタスクはどれですか？(2つ選択して ください。)",
+      "options": [
+        "WPA2 WPA3暗号化にAES (CCMP128)オプションを選択します。",
+        "認証キー管理のPSKオプションを選択します",
+        "認証キー管理に802.1xオプションを選択します。",
+        "認証キー管理にAESオプションを選択します。",
+        "WPA ポリシー オプションを選択します。"
+      ],
+      "correctAnswerTexts": [
+        "WPA2 WPA3暗号化にAES (CCMP128)オプションを選択します。",
+        "認証キー管理のPSKオプションを選択します"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no354.png"
+      ],
+      "imageHashes": [
+        "510ccd03c15a64c11ed6f18baafc50436bdeae66286392ee829b72d6827e51b8"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "83e88601b807eae7596b7f9fd4d14484e6a3b26f177b5fe6c1eade04c796cfb2",
+      "sourceQuestionId": "part_⑥-76",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00474",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-77"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-77"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-77",
+      "displayId": 77,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "宛先ネットワークにトラフィックを送信するために使用されるインターフェースはどれです か?",
+      "options": [
+        "G0/16",
+        "G0/21",
+        "G0/4",
+        "G0/5"
+      ],
+      "correctAnswerTexts": [
+        "G0/16"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no369.png"
+      ],
+      "imageHashes": [
+        "f266983ce8554830b5bde39811385b3770918fa82041105a79a6f643af9449d7"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "b13e4e18f7aab9928d6e00a84d57fb634f98df1e6fd4f6aefab047697ef3bb4a",
+      "sourceQuestionId": "part_⑥-77",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00475",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-78"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-78"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-78",
+      "displayId": 78,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。OSPFが稼働しているときはOSPFルーティングを使用し、OSPFが ダウンしているときでもサーバーに到達できるようにするには、R1でどのルートを設定す る必要がありますか？",
+      "options": [
+        "ip route 10.1.1.10 255.255.255.255 gi0/0 125",
+        "ip route 10.1.1.10 255.255.255.255 172.16.2.2 100",
+        "ip route 10.1.1.0 255.255.255.0 gi0/1 125",
+        "ip route 10.1.1.0 255.255.255.0 172.16.2.2 100"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.1.1.10 255.255.255.255 gi0/0 125"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no370.png"
+      ],
+      "imageHashes": [
+        "e2db6bf4dd5fb250487c7bc425fe231131ee3b736f6a8aa0bb744bdb87771a4a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "3522c4f50eb880cbe86b717500b803292abd73f0f0864bf117353a486610184a",
+      "sourceQuestionId": "part_⑥-78",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00476",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-79"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-79"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-79",
+      "displayId": 79,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。プライマリリンクに障害が発生した場合にトラフィックをR2のLAN ネットワークに渡すために、ルータR1にセカンダリルートが必要です。ルータを設定する にはどのコマンドを入力する必要がありますか？",
+      "options": [
+        "ip route 10.0.2.0 255.255.255.248 10.0.0.6 91",
+        "ip route 10.0.2.0 255.255.255.240 10.0.0.7 92",
+        "ip route 10.0.2.0 255.255.255.240 10.0.0.6 91",
+        "ip route 10.0.2.0 255.255.255.248 null0 93"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.0.2.0 255.255.255.248 10.0.0.6 91"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no410.png"
+      ],
+      "imageHashes": [
+        "4d756d50d08ae663715572b431ccd9ff0d83543c93ff7ea797ced157f9a29c60"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "19ae48deb683448f414b702cd3cf3f77046d48d2e349270d04a54dcf02d96a25",
+      "sourceQuestionId": "part_⑥-79",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00477",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-80"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-80"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-80",
+      "displayId": 80,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。10.10.10.1 から送信されたパケットは 172.16.3.254 に宛てられています。宛先ルートのサブネットマスクは何ですか？",
+      "options": [
+        "255.255.254.0",
+        "0.0.0.0",
+        "255.255.255.0",
+        "255.255.255.255"
+      ],
+      "correctAnswerTexts": [
+        "255.255.254.0"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no413.png"
+      ],
+      "imageHashes": [
+        "9d4f0410d2efa90fe517b49029d2bc86e698e56e7b8e90e96efd8724100aa1a6"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "35a609cde198a63c8b14a511be7a39c221c41a6a2b2abb59081a2f663aa95a6e",
+      "sourceQuestionId": "part_⑥-80",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00478",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-81"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-81"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-81",
+      "displayId": 81,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR1とR3はデフォルト設定です。ルータR2の優先度は99に設定されています。\nR3 のどのコマンドが 10.0 4.0/24 ネットワークの DR として設定しますか?",
+      "options": [
+        "R3(config)#interface Gig0/1\nR3(config-if)#ip ospf priority 100",
+        "R3(config)#interface Gig0/0\nR3(config-if)#ip ospf priority 100",
+        "R3(config)#interface Gig0/0\nR3(config-if)#ip ospf priority 1",
+        "R3(config)#interface Gig0/1\nR3(config-if)#ip ospf priority 0"
+      ],
+      "correctAnswerTexts": [
+        "R3(config)#interface Gig0/1\nR3(config-if)#ip ospf priority 100"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no463.png"
+      ],
+      "imageHashes": [
+        "5cf0afd8321deeb57b176be9f336d23d550695020e74971a8c864ffd0e0b175f"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "758569240159a5dc3ce70c9983c26fe5a68f5e66d621c71dfd1f378c893d9878",
+      "sourceQuestionId": "part_⑥-81",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00479",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-82"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-82"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-82",
+      "displayId": 82,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。10.10.13.160 プレフィックスへのルートのサブネットマスクは何ですか？",
+      "options": [
+        "255.255.255.248",
+        "255.255.255.240",
+        "255.255.255.128",
+        "255.255.248.0"
+      ],
+      "correctAnswerTexts": [
+        "255.255.255.248"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no503.png"
+      ],
+      "imageHashes": [
+        "c212b42233e06ca8e763f8db435a24cc1fc5a3a0645ba420321f95a899dbd560"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "5f2f95faba1f238b70d6fdf38db8fab9f2d99c7f4ed96fd6057b6a902b58ca50",
+      "sourceQuestionId": "part_⑥-82",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00480",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-83"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-83"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-83",
+      "displayId": 83,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "展示を参照してください。WLANで802.11wを有効にするには、どのような設定が必要ですか？",
+      "options": [
+        "PMF を必須に設定します。",
+        "高速移行を有効に設定します。",
+        "WPA ポリシーを有効にします。",
+        "MAC フィルタリングを有効にします。"
+      ],
+      "correctAnswerTexts": [
+        "PMF を必須に設定します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no516.png"
+      ],
+      "imageHashes": [
+        "16b920e94fb00ea0c2f57bf323e42f884f3c5e0d3151a60983eba4ca1df12dcc"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "3d9c716db85b80f07f5e6218d416a9b42913433553c41ca47c6e88dbf8746e40",
+      "sourceQuestionId": "part_⑥-83",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00481",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-84"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-84"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-84",
+      "displayId": 84,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。プライマリリンクのバックアップとしてフローティングスタティックルートを設定するコマンドはどれですか？",
+      "options": [
+        "ip route 209.165.200.224 255.255.255.224 209.165.202.129 254",
+        "ip route 0.0.0.0 0.0.0.0 209.165.202.131",
+        "ip route 209.165.201.0 255.255.255.224 209.165.202.130",
+        "ip route 0.0.0.0 0.0.0.0 209.165.200.224"
+      ],
+      "correctAnswerTexts": [
+        "ip route 209.165.200.224 255.255.255.224 209.165.202.129 254"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no574.png"
+      ],
+      "imageHashes": [
+        "c2879262fc75a1265af8b7f2c504e5d3e75e437c2bc0b21d63df658d20920db0"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "769430348ac055e1e29489c097f2f97cf4a524daa209f4cdc081ff8fb33d9249",
+      "sourceQuestionId": "part_⑥-84",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00482",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-85"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-85"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-85",
+      "displayId": 85,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR1が安全なリモートアクセス接続を受け入れるようにする には、どの2つのコマンドを設定する必要がありますか？(2つ選択してください)",
+      "options": [
+        "crypto key generate RSA",
+        "username cisco password 0 Cisco",
+        "transport input Telnet",
+        "ip ssh pubkey-chain",
+        "login console"
+      ],
+      "correctAnswerTexts": [
+        "crypto key generate RSA",
+        "username cisco password 0 Cisco"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no583.png"
+      ],
+      "imageHashes": [
+        "f689fa07a4d8e7a9bdfcc273461fc027cfda2641d97cc01a67ae961942993a26"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "c9ef117c1e03f70c579365a7970ac65c546f36eaa7c97863091dc1b5afbfe1ae",
+      "sourceQuestionId": "part_⑥-85",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00483",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-86"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-86"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-86",
+      "displayId": 86,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。イメージサーバーとクライアントAは、両者間で非常に大量のデータを転送するアプリケーションを実行しています。エンジニアはR1とR2の間に専用回線を設定しています。エンジニアは、イメージサーバーとクライアントA間のトラフィックのみが新しい回線を使用するように、ルーターにどのコマンドセットを適用する必要がありますか？",
+      "options": [
+        "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.6\nR2(config)#ip route 192.168.0.100 255.255.255.255 10.10.10.5",
+        "R1(config)#ip route 10.10.13.10 255.255.255.128 10.10.10.6\nR2(config)#ip route 192.168.0.100 255.255.255.0 10.10.10.5",
+        "R1(config)#ip route 10.10.13.10 255.255.255.252 10.10.10.6\nR2(config)#ip route 192.168.0.100 255.255.255.252 10.10.10.5",
+        "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.2\nR2(config)#ip route 192.168.0.100 255.255.255.255 10.10.10.1"
+      ],
+      "correctAnswerTexts": [
+        "R1(config)#ip route 10.10.13.10 255.255.255.255 10.10.10.6\nR2(config)#ip route 192.168.0.100 255.255.255.255 10.10.10.5"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no585.png"
+      ],
+      "imageHashes": [
+        "dcc2ebd2143710ad0269252d47859dc7a9ce5c9b733ee86f67b746e9e8686417"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d91c3e73626df20f0974073653641f1fe34179105a0032a2bb56e66e50ee744c",
+      "sourceQuestionId": "part_⑥-86",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00484",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-87"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-87"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-87",
+      "displayId": 87,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。EIGRP経由で学習されたネットワークプレフィックスはどれですか ？",
+      "options": [
+        "192.168.2.0/24",
+        "172.16.0.0/16",
+        "207.165.200.0/24",
+        "192.168.1.0/24"
+      ],
+      "correctAnswerTexts": [
+        "192.168.2.0/24"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no588.png"
+      ],
+      "imageHashes": [
+        "545c17c141e9b7b119a0ac7e102cdbe00db9e4d0bea14b7fcbec50ea95dbe9cf"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "f3f83f606747c3353b0979dfd8d9497276982b811bada94d3e61c7794a4b0032",
+      "sourceQuestionId": "part_⑥-87",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00485",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-88"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-88"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-88",
+      "displayId": 88,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。エンジニアは、インターフェイスSe0/0/0をプライマリパスとして使用して、ニューヨークのルータがアトランタのルータのLo1インターフェイスに到達するように設定しています。\nニューヨークとアトランタ間のリンクがダウンしたときに、ワシントン経由でアトランタルータの Lo1 インターフェイスに到達できるようにするには、ニューヨーク ルータでどの2 つのコマンドを設定する必要がありますか。(2 つ選択してください)",
+      "options": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::1/1282023::3 5",
+        "ipv6 route 2000::1/128 2012::1 5",
+        "ipv6 route 2000::1/128 2012::2",
+        "ipv6 route 2000::1/1282023::2 5"
+      ],
+      "correctAnswerTexts": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::1/1282023::3 5"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no611.png"
+      ],
+      "imageHashes": [
+        "bb69ee2cf22b8411134ae2d65e9e28fb80c0bb6198f19c8d3ea17a63805f9627"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "2baf6267e333cd2f2cd7b296258587614902212cd3b2af45fbfa4d2a5103c3f5",
+      "sourceQuestionId": "part_⑥-88",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00486",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-89"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-89"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-89",
+      "displayId": 89,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR14は現在設定中です。PC 10へのホストルートを確立するには、どの設定を使用する必要がありますか？",
+      "options": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66",
+        "ip route 10.80.65.10 255.255.255.254 10.80.65.1",
+        "ip route 1073.65.65 255.0.0.0 10.80.65.10",
+        "ip route 10.73.65.66 0.0.0.255 10.80.65.10"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no681.png"
+      ],
+      "imageHashes": [
+        "24a1bbe883ec805fd0ebaed2412c56fd7e55b5f59fb1816e145b01663dee038e"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "0de2cf519f8e75a65f3901e9b8b9863351a657a9f7fc5b50f08709f0abc1ed89",
+      "sourceQuestionId": "part_⑥-89",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00487",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-90"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-90"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-90",
+      "displayId": 90,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。アトランタルータの loopback1 インターフェースは、ワシントンルータの lookback3 インターフェースに到達する必要があります。",
+      "options": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::3/128 2023::3",
+        "ipv6 route 2000::1/128 2012::2",
+        "ipv6 route 2000:3/123 s0/0/0",
+        "ipv6 ルート 2000::1/128 s0/0/1"
+      ],
+      "correctAnswerTexts": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::3/128 2023::3"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no754.png"
+      ],
+      "imageHashes": [
+        "d9c7fc814a737aa65720270a643d8a2a34de5862111ed1066c6e61a5b0e9ff60"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "90662b08f3443ea6b2011d26776880b19295b081e2fc89bffa9651ba4b24207e",
+      "sourceQuestionId": "part_⑥-90",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00488",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-91"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-91"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-91",
+      "displayId": 91,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。エンジニアは外部EIGRPネットワークにフローティングスタティッ クルートを設定する必要があります。宛先サブネットはR86のLANインターフェースの/29で す。R14で実行する必要があるコマンドはどれですか？",
+      "options": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171",
+        "ip route 10.80.65.0 255.255.248.0 10.73.65.66 1",
+        "ip route 10.80.65.0 255.255.255.240 fa0/1 89",
+        "ip route 10.73.65.66 0.0.0.224 10.80.65.0 255"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no775.png"
+      ],
+      "imageHashes": [
+        "756b7fb5ac1c1541f063289deefb49225d65b47e70ddb271790fef5afe23f83e"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "a9f20fba9de0eeb3c3e967175af44cf7d54ba72d6771cc24355c72ffffd7a316",
+      "sourceQuestionId": "part_⑥-91",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00489",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-92"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-92"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-92",
+      "displayId": 92,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。エンジニアが新しいスイッチを起動し、コンソールポート経由でこ の設定を適用しました。管理者がローカルユーザー名とパスワードを使用してTelnet経由で 直接認証し、特権モードを有効にするには、どのような追加設定を適用する必要があります か？",
+      "options": [
+        "R1(config)#username admin previlege 15 secret p@ss1234\nR1(config-if)#line vty 0 4\nR1(config-line)#login local",
+        "R1(config)#username admin\nR1(config-if)#line vty 0 4\nR1(config-line)#password p@ss1234\nR1(config-line)#transport input telnet",
+        "R1(config)#username admin secret p@ss1234\nR1(config-if)#line vty 0 4\nR1(config-line)#login local\nR1(config)#enable secret p@ss1234",
+        "R1(config)#username admin\nR1(config-if)#line vty 0 4\nR1(config-line)#password p@ss1234"
+      ],
+      "correctAnswerTexts": [
+        "R1(config)#username admin previlege 15 secret p@ss1234\nR1(config-if)#line vty 0 4\nR1(config-line)#login local"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no802.png"
+      ],
+      "imageHashes": [
+        "7989f4d354a7e95d0258d19f9f846ca7d5d89e2733a40346d90b8319bfd1b6f8"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "4421f87f1d922830c9f2d7aceead3e16aca3c6cf510ec3177f2e3a176b997b73",
+      "sourceQuestionId": "part_⑥-92",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00490",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-93"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-93"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-93",
+      "displayId": 93,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。すべてのインターフェースは同じVLANに属しています。すべての スイッチはデフォルトのSTP優先度で設定されています。STP選出時にルートブリッジにな るスイッチはどれですか？",
+      "options": [
+        "MDF-DC-3: 08:0E:18:1A:3C:9D",
+        "MDF-DC-1: 08:E0:43:42:70:13",
+        "MDF-DC-2: 08:0E:18:22:05:97",
+        "MDF-DC-4: 08:E0:19:A1:B3:19"
+      ],
+      "correctAnswerTexts": [
+        "MDF-DC-3: 08:0E:18:1A:3C:9D"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no852.png"
+      ],
+      "imageHashes": [
+        "9d86f225499bcf433cb7ffcc77cbcff8faecb05e1654912a5f1e83c6b94dfc4a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d77113cec572e5a7d513b8bb592afc904b1350948e98da48f04ce26ad3588186",
+      "sourceQuestionId": "part_⑥-93",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00491",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-94"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-94"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-94",
+      "displayId": 94,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。どのルータまたはルータ グループが NTP クライアントですか?",
+      "options": [
+        "R1、R2、およびR3",
+        "R1",
+        "R2とR3",
+        "R1、R3、およびR4"
+      ],
+      "correctAnswerTexts": [
+        "R1、R2、およびR3"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no874.png"
+      ],
+      "imageHashes": [
+        "e07d50eac58ff7b3c97c247d6c4838c6bdd6161c9a228d2443966007dc9963b9"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "45dd0dc4378214adca0e2c9aa14799694b128b61a1c52d67d4826fbd30cf0679",
+      "sourceQuestionId": "part_⑥-94",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00492",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-95"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-95"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-95",
+      "displayId": 95,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ネットワークエンジニアは、RADIUSサーバーに対してローカルワイヤレスクライアントを認証するようにCisco WLCを設定します。\nプロセスを完了するにはどのタスクを実行する必要がありますか?",
+      "options": [
+        "ネットワークユーザーの横にある[有効にする]を選択します。",
+        "サーバーのステータスを無効に変更します",
+        "管理の横にある有効を選択します",
+        "CoA のサポートを有効に変更します。"
+      ],
+      "correctAnswerTexts": [
+        "ネットワークユーザーの横にある[有効にする]を選択します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no959.png"
+      ],
+      "imageHashes": [
+        "d6da8ac6f9bf6fd8294d4449010e835c0e5b2c106a4d2f5ee28323b1b21817fa"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "04a729e875e94325a62c7a179c04089e305c9035ee23b41515f812fd61f7e988",
+      "sourceQuestionId": "part_⑥-95",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00493",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-96"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-96"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-96",
+      "displayId": 96,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。SW2がLACP EtherChannelを確立できるようにするには、どの構成が必要ですか？",
+      "options": [
+        "SW2(config)#interface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)#interface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active",
+        "SW2(config)#interface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode desirable\nSW2(config-if)#interface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode desirable",
+        "SW2(config)#interface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode on\nSW2(config-if)#interface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode on",
+        "SW2(config)#interface gigabitEthernet0/1\nSW2(config-if)#channel-group 2 mode auto\nSW2(config-if)#interface gigabitEthernet0/2\nSW2(config-if)#channel-group 2 mode auto"
+      ],
+      "correctAnswerTexts": [
+        "SW2(config)#interface gigabitEthernet0/1\nSW2(config-if)#channel-group 1 mode active\nSW2(config-if)#interface gigabitEthernet0/2\nSW2(config-if)#channel-group 1 mode active"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1008.png"
+      ],
+      "imageHashes": [
+        "8ad7613a9a8f2a6981d92bc442af48c6f1721b95d5dd3aec882a33b835ebffdf"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "b3d835acde3671d39d7daf0316c5cc2e01478974a43ee3604b26534e2d3b6a8b",
+      "sourceQuestionId": "part_⑥-96",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00494",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-97"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-97"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-97",
+      "displayId": 97,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。R14に静的ルートを設定して、トラフィックを転送する必要があります。\nR86 上にある 172.21.34.0/25 ネットワーク。\n要求を満たすにはどのコマンドを使用する必要がありますか?",
+      "options": [
+        "ip route 172.21.34.0 255.255.255.128 10.73.65.66",
+        "ip route 172.21.34.0 255.255.255.192 10.73.65.65",
+        "ip route 172.21.34.0 255.255.255.0 10.73.65.65",
+        "ip route 172.21.34.0 255.255.128.0 10.73.65.64"
+      ],
+      "correctAnswerTexts": [
+        "ip route 172.21.34.0 255.255.255.128 10.73.65.66"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1165.png"
+      ],
+      "imageHashes": [
+        "f5d4333d666b8d169fafbd0d1769131898b1b4d8fef3a3039f09dd11f603019c"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "e2f3df3d98bfe072f48babb7873f830963b2dd67861b47bcad1e523492897864",
+      "sourceQuestionId": "part_⑥-97",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00495",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-98"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-98"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-98",
+      "displayId": 98,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。エンジニアは、スイッチSW1の管理アクセス設定を更新し、安全で暗号化されたリモート設定を可能にします。エンジニアはスイッチに適用する必要がある2つのコマンドまたはコマンドシーケンスはどれですか？(2つ選択してください。)",
+      "options": [
+        "SW1(config)#username admin secret R3mote123",
+        "SW1(config)#line vty 0 15\nSW1(config-line)#transport input ssh",
+        "SW1(config)#enable secret ccnaTest123",
+        "SW1(config)# crypto key generate RSA",
+        "SW1(config)# interface f0/1\nSW1(confif-if)# switchport mode trunk"
+      ],
+      "correctAnswerTexts": [
+        "SW1(config)#username admin secret R3mote123",
+        "SW1(config)#line vty 0 15\nSW1(config-line)#transport input ssh"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1223.png"
+      ],
+      "imageHashes": [
+        "d0ab0c9334a7d79345c4c72435a2c4ee35b6c2e6be573be7d516e4c6a900107b"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d3e2bcbe3d32e794b60cb3cb7d7173a2fc5ea55b1ea3b1b2a550bb5118c28334",
+      "sourceQuestionId": "part_⑥-98",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00496",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-99"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-99"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-99",
+      "displayId": 99,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ニューヨークのルータには、アトランタとワシントンのサイトを指す静的ルートが設定されています。\nアトランタ ルータとワシントン ルータの Serial0/0/0インターフェイスが相互にアクセスできるようにするには、どの 2つのタスクを実行する必要がありますか? (2 つ選択してください。)",
+      "options": [
+        "アトランタルータでipv6 route 2023::/126 2012::2コマンドを設定します。",
+        "ワシントンのルータでipv6 route 2012::/126 2023::2コマンドを設定します。",
+        "ワシントンのルータでipv6 route 2012::/126 2023::1コマンドを設定します。",
+        "Atlanta ルータで ipv6 route 2023::/126 2012::1 コマンドを設定します。",
+        "アトランタルータで Ipv6 route 2012::/126 s0/0/0 コマンドを設定します。"
+      ],
+      "correctAnswerTexts": [
+        "アトランタルータでipv6 route 2023::/126 2012::2コマンドを設定します。",
+        "ワシントンのルータでipv6 route 2012::/126 2023::2コマンドを設定します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1253.png"
+      ],
+      "imageHashes": [
+        "4c24ae429d4c3f9caf52471834ac3b85ea12618aaf412e56dc4d91b4cdbd43ec"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "937950b3847220ad9531b4be9cfa665f1e6ad614713914317c9c22f4383c0456",
+      "sourceQuestionId": "part_⑥-99",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00497",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-100"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-100"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-100",
+      "displayId": 100,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "展示を参照してください。LDAPのドメイン資格情報を使用して最高レベルの暗号化と認証 を提供するために、エンジニアが実行する必要がある2つの手順は何ですか？",
+      "options": [
+        "レイヤー2セキュリティでWPA+WPA2を選択",
+        "認証キー管理から802.1Xを選択します。",
+        "認証キー管理でPSKを選択",
+        "レイヤー2セキュリティで静的WEP + 802.1Xを選択",
+        "TKIP暗号化を使用したWPAポリシーを選択"
+      ],
+      "correctAnswerTexts": [
+        "レイヤー2セキュリティでWPA+WPA2を選択",
+        "認証キー管理から802.1Xを選択します。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1257.png"
+      ],
+      "imageHashes": [
+        "86c26fe6d1160cb713e233eb78872cf2a4fb26ef7f80970734e995b1d815adcc"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "a444beb5d88eedbdfaa1cc51d1af4fd03d421be1d46e1e030ba4942b96a15e92",
+      "sourceQuestionId": "part_⑥-100",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00498",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-101"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-101"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-101",
+      "displayId": 101,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ネットワークエンジニアがWPA2PSKを使用し、特定のクライアントのみの参加を許可するようにWLANを設定しようとしています。このプロセスを完了するには、どの2つのアクションを実行する必要がありますか？(2つ選択してください。)",
+      "options": [
+        "WPA2 ポリシー オプションを有効にします。",
+        "MAC フィルタリング オプションを有効にします。",
+        "OSEN ポリシー オプションを有効にします。",
+        "認証キー管理の 802.1X オプションを有効にします。",
+        "認証キー管理の CCKM オプションを有効にします。"
+      ],
+      "correctAnswerTexts": [
+        "WPA2 ポリシー オプションを有効にします。",
+        "MAC フィルタリング オプションを有効にします。"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1321.png"
+      ],
+      "imageHashes": [
+        "b0b22124df1fb4f384954396ea8fdc1a53db93ba996e5f631bffe1b33917a6ba"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "32c1ae8b617264cbf4a7d82099332a4ffca051e8371d81e92ab38812d26148ed",
+      "sourceQuestionId": "part_⑥-101",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00499",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-102"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-102"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-102",
+      "displayId": 102,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ルータR1は、10.0.3.0/24ネットワークにアクセスできる必要があ ります。 10.0.1.0/24 セグメント。 ルートを設定するにはどのコマンドを使用する必要がありますか?",
+      "options": [
+        "ip route 10.0.3.0 255.255.255.0 10.0.4.3",
+        "ip route 10.0.3.0 0.255.255.255 10.0.4.2",
+        "ip route 10.0.3.0 マスク 255.255.255.0 10.0.4.3 を追加",
+        "ip route を 10.0.3.0 0.255.255.255 10.0.4.2"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.0.3.0 255.255.255.0 10.0.4.3"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1355.png"
+      ],
+      "imageHashes": [
+        "5c9bbfaafdff7804be25fa812c30568e6befbaf47a03b658344e8aeec8aecbce"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "62e56a4ce12e6cc19fa856a74e2bdbb8864f486a084a5efd803f7f0c275700b3",
+      "sourceQuestionId": "part_⑥-102",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00500",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-103"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-103"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-103",
+      "displayId": 103,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。loopback0インターフェースから送信されたトラフィックは、ssh経由で10.0.1.15のホストに接続しようとしています。\n宛先アドレスへの次のホップは何ですか?",
+      "options": [
+        "192.168.0.4",
+        "192.168.0.7",
+        "192.168.0.40",
+        "192.168.3.5"
+      ],
+      "correctAnswerTexts": [
+        "192.168.0.4"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1490.png"
+      ],
+      "imageHashes": [
+        "2607283fd3dc7eecc2d1a461f7d8ecce2197b00f90ea9025f30bb194c62d9808"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "6eaf000d4194b517f762dcc2259862800351e748501bf8e422cd4ebb91f30029",
+      "sourceQuestionId": "part_⑥-103",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00501",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-104"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-104"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-104",
+      "displayId": 104,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。ニューヨークのルータは、2000::1へのトラフィックが主にアトラ ンタサイト経由で送信され、セカンダリパスとして管理距離2のワシントンサイト経由とな るように設定する必要があります。ニューヨークのルータに設定する必要がある2つのコマ ンドはどれですか？(2つ選択してください。)",
+      "options": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::1/128 2023::3 2",
+        "ipv6 route 2000::1/128 2012::1 5",
+        "ipv6 route 2000::1/128 2012::2",
+        "ipv6 route 2000::1/128 2023::2 5"
+      ],
+      "correctAnswerTexts": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::1/128 2023::3 2"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1562.png"
+      ],
+      "imageHashes": [
+        "f8b29c8f4d57426f892f1a9f9ef6b7f7cfb74984ac2bec4bc2fe9f90d7cd27d6"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "83d95af85662434d82cad520292332f45265a8d3db095a3ffddee12c6b7acfd3",
+      "sourceQuestionId": "part_⑥-104",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00502",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-105"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-105"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-105",
+      "displayId": 105,
+      "type": "multiple",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。アトランタルータの loopback1インターフェイスは、ワシントンルータの loopback3インターフェイスに到達する必要があります。\nニューヨークのルータに設定する必要がある 2 つの静的ホスト ルートはどれですか (2つ選択してください)。",
+      "options": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::3/128 2023::3",
+        "ipv6 route 2000::3/128 s0/0/0",
+        "ipv6 route 2000::1/128 2012::22",
+        "ipv6 route 2000::1/128 s0/0/1"
+      ],
+      "correctAnswerTexts": [
+        "ipv6 route 2000::1/128 2012::1",
+        "ipv6 route 2000::3/128 2023::3"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1564.png"
+      ],
+      "imageHashes": [
+        "926a061ecaf3b4be497901302ee1a236ddd70b9b4c04708f434e697e04d45ef0"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "1f3e6729b4d98db6f46a8d04c8b862a2bd8a10625302b62f23550be416ae2fd0",
+      "sourceQuestionId": "part_⑥-105",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00503",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-106"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-106"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-106",
+      "displayId": 106,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。サイトAが新しいシングルモードファイバーパスを介してサイトB に接続された直後、サイトAのユーザーから、サイトBでホストされているアプリケーショ ンで断続的な接続の問題が報告されました。この断続的な接続の問題の原因は何ですか？",
+      "options": [
+        "インターフェースエラーが増加しています",
+        "サイトAで間違ったSFPメディアタイプが使用されました",
+        "使用率が高いため、レイテンシが高くなっています",
+        "サイトが間違ったケーブルタイプで接続されていました"
+      ],
+      "correctAnswerTexts": [
+        "インターフェースエラーが増加しています"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1643.png"
+      ],
+      "imageHashes": [
+        "1198c7bbee4b24082c7bff3aea3c2233f858b4e995a81812dd1608ea3e57328b"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "99fd323adca033cb08b70b24567199b7a305f49f2c6217e5f3690b205a6059e1",
+      "sourceQuestionId": "part_⑥-106",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00504",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_⑥-107"
+    ],
+    "referenceQuestionIds": [
+      "part_⑥-107"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑥",
+    "partConfidence": "high",
+    "reason": "同一ID・同一問題文・同一正解だが画像/解説等でハッシュが不一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑥-107",
+      "displayId": 107,
+      "type": "single",
+      "part": "part_⑥",
+      "category": "選択問題",
+      "question": "図を参照してください。どのIPルートコマンドが、宛先が 10.10.10.3 ですか?",
+      "options": [
+        "ip route 10.10.10.0 255.255.255.240 g0/0",
+        "ip route 10.10.0.0 255.255.252.0 g0/0",
+        "ip route 10.0.0.0 255.0.0.0 g0/0",
+        "ip route 10.10.10.1 255.255.255.255 g0/0"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.10.10.0 255.255.255.240 g0/0"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no1716.png"
+      ],
+      "imageHashes": [
+        "6933e7315b48534fe9669bd243862ffc755b303ed0af7101146b3288b6f3e2cc"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "e107501f4a81a0b444b66456ff26a9b27dba14e16d71413ade7f55a76fd714fd",
+      "sourceQuestionId": "part_⑥-107",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00535",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_①-39"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-19"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)・正解一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-19",
+      "displayId": 19,
+      "type": "multiple",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "エンジニアは、2.4 GHz および 5 GHz で動作するワイヤレス ネットワーク用に、WPA2 を使用して安全な事前共有キー ベースの SSID を作成しています。エンジニアがこのプロセスを完了するには、どの 2 つのタスクを実行する必要がありますか? (2 つ選択してください)",
+      "options": [
+        "WPA2 WPA3 暗号化に AES (CCMP128) オプションを選択します",
+        "認証キー管理に PSK オプションを選択します",
+        "認証キー管理に 802.1x オプションを選択します",
+        "認証キー管理に AES オプションを選択します",
+        "WPA ポリシー オプションを選択します"
+      ],
+      "correctAnswerTexts": [
+        "WPA2 WPA3 暗号化に AES (CCMP128) オプションを選択します",
+        "認証キー管理に PSK オプションを選択します"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-15-12.jpg"
+      ],
+      "imageHashes": [
+        "74e2fa6dbb93081657fe68832e4b099c30768dd4d84b47a1ce2eab5c4751c3cb"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d15bb64bbfcbd467fde0c2a9cab603849fe7f49f137d52e2c88d655884019faf",
+      "sourceQuestionId": "part_⑦-19",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00538",
+    "type": "choice",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "part_①-41"
+    ],
+    "referenceQuestionIds": [
+      "part_⑦-22"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "問題文一致(別ID)・正解一致",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-22",
+      "displayId": 22,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "AI はネットワーク トラフィック分析にどのように貢献しますか?",
+      "options": [
+        "異常検出のためにパターンを分析します",
+        "データ パケットの配信速度を向上させます",
+        "トラフィック ルート マッピングを簡素化します",
+        "ネットワークの脅威を排除します"
+      ],
+      "correctAnswerTexts": [
+        "異常検出のためにパターンを分析します"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "b2153eb4211cc0c14372777aa2136048e09e860351d9b8f10422ef3a65caffa7",
+      "sourceQuestionId": "part_⑦-22",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00739",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-10"
+    ],
+    "referenceQuestionIds": [
+      "dd-10"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-10",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "左側のサブネットマスクを、右側の対応するサブネットにドラッグ＆ドロップします。\nすべてのサブネットマスクが使用されるわけではありません.",
+      "instructions": "左側のサブネットマスクを、右側の対応するサブネットにドラッグ＆ドロップします。\nすべてのサブネットマスクが使用されるわけではありません.",
+      "options": [
+        "255.255.255.224",
+        "255.255.255.252",
+        "255.255.255.248",
+        "255.255.255.128",
+        "255.255.248.0",
+        "255.255.255.240"
+      ],
+      "targets": [
+        "10.10.13.0",
+        "10.10.13.128",
+        "10.10.13.160",
+        "10.10.13.252"
+      ],
+      "correctAnswerTexts": [
+        "10.10.13.0: 255.255.255.128",
+        "10.10.13.128: 255.255.255.240",
+        "10.10.13.160: 255.255.255.248",
+        "10.10.13.252: 255.255.255.252"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\Q10_20260305.png"
+      ],
+      "imageHashes": [
+        "cab5a899588498463d8c3fbc51eb4260ada56998c2ee46ae20abbfecabd59b87"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "8700b4e248c89b36b9fc5f485b32b8c9ea45257d8d8b2f89d3ce261bcf12b87d",
+      "sourceQuestionId": "dd-10",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00740",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-11"
+    ],
+    "referenceQuestionIds": [
+      "dd-11"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-11",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "学習したプレフィックスを左側から右側のサブネット マスクにドラッグ アンド ドロップします",
+      "instructions": "学習したプレフィックスを左側から右側のサブネット マスクにドラッグ アンド ドロップします",
+      "options": [
+        "172.16.3.192",
+        "172.16.2.128",
+        "172.16.4.0",
+        "172.16.3.64",
+        "172.16.3.128"
+      ],
+      "targets": [
+        "255.255.254.0",
+        "255.255.255.128",
+        "255.255.255.240",
+        "255.255.255.224",
+        "255.255.255.248"
+      ],
+      "correctAnswerTexts": [
+        "255.255.254.0: 172.16.4.0",
+        "255.255.255.128: 172.16.2.128",
+        "255.255.255.224: 172.16.3.64",
+        "255.255.255.240: 172.16.3.128",
+        "255.255.255.248: 172.16.3.192"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\Q11_20260305.png"
+      ],
+      "imageHashes": [
+        "8f2e4c0dd29eedcaabcc91d3bccb800de1526ac346df79cce78576c84dd366ea"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "90366c284149b554eefe8b9d5a451eda3fcde47a5d7cfb64abcfee497a39265a",
+      "sourceQuestionId": "dd-11",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00741",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-12"
+    ],
+    "referenceQuestionIds": [
+      "dd-12"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-12",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "学習されたプレフィックスを左側から、右側の学習元となった優先ルート方式にドラッグ アンド ドロップします。\nすべての選択肢を利用しません",
+      "instructions": "学習されたプレフィックスを左側から、右側の学習元となった優先ルート方式にドラッグ アンド ドロップします。\nすべての選択肢を利用しません",
+      "options": [
+        "192.168.1.0/24",
+        "207.165.200.244/30",
+        "172.16.2.0/24",
+        "207.165.200.248/30",
+        "192.168.2.0/24"
+      ],
+      "targets": [
+        "static",
+        "EIGRP",
+        "OSPF",
+        "RIP"
+      ],
+      "correctAnswerTexts": [
+        "EIGRP: 192.168.2.0/24",
+        "OSPF: 192.168.1.0/24",
+        "RIP: 172.16.2.0/24",
+        "static: 207.165.200.244/30"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\Q12_20260305.png"
+      ],
+      "imageHashes": [
+        "c68e50b0e9a2fb4f7cb6be9b96976f9518f34d3e47448b3b96b9223c30f235d4"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "f815627fc0c48e8a842fb5cba79de64d1cf51dc282544c820179c8b86d098621",
+      "sourceQuestionId": "dd-12",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00743",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-14"
+    ],
+    "referenceQuestionIds": [
+      "dd-14"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-14",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "パケットの宛先は192.168.20.108です。\n宛先ルートのパラメータを左側から右側のルーティングテーブルコンポーネントにドラッグ＆ドロップしてください。\nすべてのパラメータが使用されるわけではありません",
+      "instructions": "パケットの宛先は192.168.20.108です。\n宛先ルートのパラメータを左側から右側のルーティングテーブルコンポーネントにドラッグ＆ドロップしてください。\nすべてのパラメータが使用されるわけではありません",
+      "options": [
+        "/29",
+        "/28",
+        "40",
+        "90",
+        "25",
+        "/27",
+        "110"
+      ],
+      "targets": [
+        "サブネットプレフィックス",
+        "管理距離(Administrative Distance)",
+        "メトリック/コスト"
+      ],
+      "correctAnswerTexts": [
+        "サブネットプレフィックス: /29",
+        "メトリック/コスト: 40",
+        "管理距離(Administrative Distance): 90"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\Q14_20260305.png"
+      ],
+      "imageHashes": [
+        "94cef08d053e2bf7fcfcfa71dfaa001c1dc09445184e20e0e6b438b18d450f2a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "66759e58b03ed4f9fb4b0f378a5708fda8a5622032faeaffa6ceab4f52f481c6",
+      "sourceQuestionId": "dd-14",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00749",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-20"
+    ],
+    "referenceQuestionIds": [
+      "dd-20"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-20",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "instructions": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "options": [
+        "255.255.248.0",
+        "255.255.255.128",
+        "255.255.255.224",
+        "255.255.255.240",
+        "255.255.255.248",
+        "255.255.255.252"
+      ],
+      "targets": [
+        "10.10.13.0",
+        "10.10.13.128",
+        "10.10.13.160",
+        "10.10.13.252"
+      ],
+      "correctAnswerTexts": [
+        "10.10.13.0: 255.255.255.128",
+        "10.10.13.128: 255.255.255.240",
+        "10.10.13.160: 255.255.255.248",
+        "10.10.13.252: 255.255.255.252"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\Q20_20260413.png"
+      ],
+      "imageHashes": [
+        "56574c7e4c0e12a3d8e0ffd2276a88da9d7e428039da846dabb072004e96515f"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "ac3bcce028599bb5260f0f6598e57d1c43048b4cf430d4fa906af9c03f4f5870",
+      "sourceQuestionId": "dd-20",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00754",
+    "type": "dnd",
+    "status": "EQUIVALENT",
+    "mySiteQuestionIds": [
+      "dd-25"
+    ],
+    "referenceQuestionIds": [
+      "dd-25"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "同一ID・同一問題文・同一マッピング（画像等でハッシュ不一致）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-25",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "instructions": "図を参照してください。左側のサブネットマスクを右側の対応するサブネットにDDします。すべてのサブネットマスクが使用されるわけではありません。",
+      "options": [
+        "255.255.255.128",
+        "255.255.255.224",
+        "255.255.255.240",
+        "255.255.255.248",
+        "255.255.255.252"
+      ],
+      "targets": [
+        "10.10.13.0",
+        "10.10.13.144",
+        "10.10.13.160",
+        "209.165.202.128"
+      ],
+      "correctAnswerTexts": [
+        "10.10.13.0: 255.255.255.128",
+        "10.10.13.144: 255.255.255.240",
+        "10.10.13.160: 255.255.255.248",
+        "209.165.202.128: 255.255.255.224"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\20260415_no509.jpg"
+      ],
+      "imageHashes": [
+        "dfc84d93258d5af3cc92a874f4a31a71d8028281ecd21191111c93aff407c250"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "32d360b16582b7608e5f0b24f9ea926804bda5ec9ac9d8d9210818497352c66a",
+      "sourceQuestionId": "dd-25",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  }
+]

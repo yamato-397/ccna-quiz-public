@@ -126,6 +126,21 @@ const SimulationTest = (() => {
     $('sim-q-title').textContent = q.title;
     $('sim-q-desc').innerHTML    = escHtml(q.description).replace(/\n/g, '<br>');
 
+    // トポロジー画像（存在する問題のみ表示。既存の確認テスト埋め込み分にはimagePathが無いため非表示のまま）
+    const imgWrap = $('sim-q-image-wrap');
+    const imgEl   = $('sim-q-image');
+    if (imgWrap && imgEl) {
+      if (q.imagePath) {
+        imgEl.src = q.imagePath;
+        imgEl.alt = q.title || 'トポロジー図';
+        imgEl.onclick = () => window.openImageModal && window.openImageModal(imgEl.src, imgEl.alt);
+        imgWrap.classList.remove('hidden');
+      } else {
+        imgWrap.classList.add('hidden');
+        imgEl.src = '';
+      }
+    }
+
     const list = $('sim-device-list');
     list.innerHTML = '';
 

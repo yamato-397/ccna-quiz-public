@@ -1,0 +1,1086 @@
+[
+  {
+    "comparisonId": "choice-00520",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-4"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-4",
+      "displayId": 4,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "展示を参照してください\nルート172.16.4.0のサブネットマスクは？",
+      "options": [
+        "255.255.248.0",
+        "255.255.240.0",
+        "255.255.254.0",
+        "255.255.255.192"
+      ],
+      "correctAnswerTexts": [
+        "255.255.248.0"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-11-30-60.jpg"
+      ],
+      "imageHashes": [
+        "3875b7d80df62c00e5b60928a55c200715cd1cd842d48e45ea8905259242ba30"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "8b88e719636aeed1e9c5132f992571a39b04f193218e33f53a57387c9ed7b9da",
+      "sourceQuestionId": "part_⑦-4",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00521",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-5"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-5",
+      "displayId": 5,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "エンジニアは、外部 EIGRP ネットワークでフローティング スタティック ルートを設定する必要があります。宛先サブネットは、R86 の LAN インターフェイス上の /29 です。R14 で実行する必要があるコマンドはどれですか?",
+      "options": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171",
+        "ip route 10.80.65.0 255.255.248.0 10.73.65.66 1",
+        "ip route 10.80.65.0 255.255.255.240 fa0/1 89",
+        "ip route 10.73.65.66 0.0.0.224 10.80.65.0 255"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.80.65.0 255.255.255.248 10.73.65.66 171"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-12-29-2.jpg"
+      ],
+      "imageHashes": [
+        "134d9e10c058eebc77ffa03222947566417d7e8e829e5ddc412931bcd3ec14fd"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "1f6b065d2243bfcb23bb2dfb2dbbb6d2fa0ce59bc49d0018841107f6a001769c",
+      "sourceQuestionId": "part_⑦-5",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00522",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-6"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-6",
+      "displayId": 6,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "ルーター R14 は構成中です。PC 10 へのホスト ルートを確立するには、どの構成を使用する必要がありますか?",
+      "options": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66",
+        "ip route 10.80.65.10 255.255.255.254 10.80.65.1",
+        "ip route 10.73.65.66 0.0.0.255 10.80.65.10",
+        "ip route 10.73.65.65 255.0.0.0 10.80.65.10"
+      ],
+      "correctAnswerTexts": [
+        "ip route 10.80.65.10 255.255.255.255 10.73.65.66"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-12-29-12.jpg"
+      ],
+      "imageHashes": [
+        "f0344847494498338d9be2e0803580e67fc7804115b3fb51a4939d27f3599d12"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "ef48a44815221bbbdfc2bbb16b20dcd4ee1f71d92cb05d7cc50e11766beb3d56",
+      "sourceQuestionId": "part_⑦-6",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00524",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-8"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-8",
+      "displayId": 8,
+      "type": "multiple",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "エンジニアは、スイッチ SW1 の管理アクセス構成を更新して、安全で暗号化されたリモート構成を許可しています。エンジニアがスイッチに適用する必要がある 2 つのコマンドまたはコマンド シーケンスはどれですか? (2つ選んでください)",
+      "options": [
+        "SW1(config)#line vty 0 15\nSW1(config-line)#transport input ssh",
+        "SW1(config)# username NEW secret R3mote123",
+        "SW1(config)# crypto key generate rsa",
+        "SW1(config)# interface f0/1\nSW1(config-if)# switch port mode trunk",
+        "SW1(config)#enable secret ccnaTest123"
+      ],
+      "correctAnswerTexts": [
+        "SW1(config)#line vty 0 15\nSW1(config-line)#transport input ssh",
+        "SW1(config)# username NEW secret R3mote123"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-12-29-15.jpg"
+      ],
+      "imageHashes": [
+        "d66fb39aff926e0fbcce8c60ddee5faecd056eb5141fcb229543fa257026650a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "4393a7e1d3195e407418998cc681dfd26c84635ad4db0633b0eae41b118ae9cc",
+      "sourceQuestionId": "part_⑦-8",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00526",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-10"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-10",
+      "displayId": 10,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "ワイヤレス LAN コントローラで WPA2-PSK WLAN が設定されている場合、ASCII formar で必要な最小文字数は何ですか",
+      "options": [
+        "8",
+        "6",
+        "12",
+        "18"
+      ],
+      "correctAnswerTexts": [
+        "8"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "043f5375c800c22af2df5155d7fc8915ac557cae6cd5bf84a1d72f08c0d31200",
+      "sourceQuestionId": "part_⑦-10",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00531",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-15"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-15",
+      "displayId": 15,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "展示品を参照してください。EIGRPを介して学習されたネットワークプレフィックスはどれですか",
+      "options": [
+        "192.168.2.0/24",
+        "172.16.0.0/16",
+        "207.165.200.0/24",
+        "192.168.1.0/24"
+      ],
+      "correctAnswerTexts": [
+        "192.168.2.0/24"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no543.JPG"
+      ],
+      "imageHashes": [
+        "607fcc5d6bc149d48bc2af52e3f7844c963d14014d54dced6c98f10cf144d072"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "0486815578b69459e335dddcfefea5d008960efd4f68aef99fa7c808a6a7f36b",
+      "sourceQuestionId": "part_⑦-15",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00532",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-16"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-16",
+      "displayId": 16,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "展示品を参照してください。ルータR1は現在、インターネットへのプライマリルートとしてR3を使用するように設定されており、ルートはデフォルトの管理距離設定を使用します。ネットワークエンジニアは、R2をバックアップとして使用するようにR1を構成する必要がありますが、R3がダウンした場合に限ります。R3へのリンクの管理距離設定を変更せずにR2をバックアップルートとして正しく使用するために、エンジニアはR1でどのコマンドを設定する必要がありますか？",
+      "options": [
+        "ip route 0,0.0.0 0.0.0.0 g0 / 1 6",
+        "ip route 0.0.0.0 0.0.0.0 g0 / 1 1",
+        "ip route 0.0.0.0 0.0.0.0 209.165.201.5 10",
+        "ip route 0.0.0.0 0.0.0.0 209.165.200.226 1"
+      ],
+      "correctAnswerTexts": [
+        "ip route 0,0.0.0 0.0.0.0 g0 / 1 6"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no585.JPG"
+      ],
+      "imageHashes": [
+        "5053bd7ec8d832ec5729f9a1041fe575f7ee992bdd24ab1b1eb2fda28ebeea6a"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "3f40f57fb85ea42b4fb856eaa6856e28ebd64a7f9834190f1a7a9e65e304111b",
+      "sourceQuestionId": "part_⑦-16",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00534",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-18"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-18",
+      "displayId": 18,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "ネットワーク管理者は、2つのサイト間でDHCPサービスを有効にする必要があります。DHCPDISCOVERメッセージをサーバーに渡すには、ルーターに何を構成する必要がありますか？",
+      "options": [
+        "DHCPリレーエージェント",
+        "DHCPバインディング",
+        "DHCPスヌーピング",
+        "DHCPプール"
+      ],
+      "correctAnswerTexts": [
+        "DHCPリレーエージェント"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "1124ab9fc54c7e0e5021d608652a042d6cd31f73e40331ef36f454ca791d8982",
+      "sourceQuestionId": "part_⑦-18",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00541",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-25"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-25",
+      "displayId": 25,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "異なるキャンパスビル内にそれぞれ設置された 2 つの個別のネットワーク セグメントをワイヤレスで接続する AP モードはどれですか。",
+      "options": [
+        "ブリッジ",
+        "メッシュ",
+        "ポイントツーポイント",
+        "ローカル"
+      ],
+      "correctAnswerTexts": [
+        "ブリッジ"
+      ],
+      "explanation": "",
+      "imagePaths": [],
+      "imageHashes": [],
+      "missingImageFiles": [],
+      "contentHash": "9593afd1bb9e30cd7826b793cb73d8652ea910a166c7ce1a028a43fccf49d6b4",
+      "sourceQuestionId": "part_⑦-25",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00543",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-27"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-27",
+      "displayId": 27,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "どのルーターまたはルーターグループが NTP クライアントですか?",
+      "options": [
+        "R1、R2、および R3",
+        "R1",
+        "R2およびR3",
+        "R1、R3、および R4"
+      ],
+      "correctAnswerTexts": [
+        "R1、R2、および R3"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-11-8-72.jpg"
+      ],
+      "imageHashes": [
+        "d52caf3256eeeec8e9180f9f1d891f3c6c0e02a113341aaf578002d72b789e5d"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "804d2f02fbc252cec77f53ad2dc19e6afd312c3bfacd27e814fb0bd701293542",
+      "sourceQuestionId": "part_⑦-27",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00547",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-31"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-31",
+      "displayId": 31,
+      "type": "multiple",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "ネットワーク エンジニアは、新しいスイッチでポート セキュリティの構成を開始しました。次の要件を満たす必要があります。\n– MAC アドレスを動的に学習する必要があります。\n– 不要なトラフィックが見られる場合、インターフェイスを無効にせずにログ メッセージを生成する必要があります。\n\nこのタスクを完了するために構成する必要がある 2 つのコマンドはどれですか? (2つ選んでください)",
+      "options": [
+        "SW(config-if)#switchport port-security mac-address sticky",
+        "SW(config-if)#switchport port-security violation restrict",
+        "SW(config-if)#switchport port-security mac-address 0010.7B84.45E6",
+        "SW(config-if)#switchport port-security maximum 2",
+        "SW(config-if)#switchport port-security violation shutdown"
+      ],
+      "correctAnswerTexts": [
+        "SW(config-if)#switchport port-security mac-address sticky",
+        "SW(config-if)#switchport port-security violation restrict"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "q-10-26-2.jpg"
+      ],
+      "imageHashes": [
+        "95cb254e9c495c80055f4464b6dfe44301f88ce19f995a8e7d6bdd686e385d57"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "7774367d77299081dcf1878e11df0659450c8f6b7b8eaf1bb10fd7604fc1f86d",
+      "sourceQuestionId": "part_⑦-31",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00717",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-201"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-201",
+      "displayId": 201,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "options": [
+        "高スループット",
+        "ブロードキャストストーム",
+        "デュプレックス不一致",
+        "キューイング"
+      ],
+      "correctAnswerTexts": [
+        "高スループット"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no_16.png"
+      ],
+      "imageHashes": [
+        "79b6c2df85cb33b9c6f9e690760955a58ef88c0f3c698d694793245ab37843d5"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "7db67966eddb5aea3653ebb052c2b5da47f341e0cce950b4675edbf1238f3445",
+      "sourceQuestionId": "part_⑦-201",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00718",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-202"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-202",
+      "displayId": 202,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "options": [
+        "デュプレックス不一致",
+        "衝突",
+        "ブロードキャストストーム",
+        "キューイング"
+      ],
+      "correctAnswerTexts": [
+        "デュプレックス不一致"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no259.png"
+      ],
+      "imageHashes": [
+        "517662a7ac19d7cc4da69193b060fd232f03b497a338a0234afdeb6bbbe04a76"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "d1be4ed9377a6b60b97cf28e84bfdba1537d91853fa83c61210f9a90320bcef9",
+      "sourceQuestionId": "part_⑦-202",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00719",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-203"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-203",
+      "displayId": 203,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "options": [
+        "キューイング",
+        "不良NIC",
+        "ブロードキャストストーム",
+        "デュプレックス不一致"
+      ],
+      "correctAnswerTexts": [
+        "キューイング"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no_402.png"
+      ],
+      "imageHashes": [
+        "6c1a5ec5ed3dfa372fcbd19b2357bd1e53cccf403043caaacbd907eeabb358e7"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "8c3a778d07d7c3b4d13d4985a697910952c3c2c27b5ef3d10a0ef621019a7b5d",
+      "sourceQuestionId": "part_⑦-203",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00720",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-204"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-204",
+      "displayId": 204,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "この出力ではどのインターフェース状態が発生していますか?\n\n※実際の試験では赤いラインはありません",
+      "options": [
+        "ブロードキャストストーム",
+        "不良NIC",
+        "衝突",
+        "デュプレックス不一致"
+      ],
+      "correctAnswerTexts": [
+        "ブロードキャストストーム"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no527.png"
+      ],
+      "imageHashes": [
+        "84dbacdcc8d5248ce78e0839c0eccfc309397d284a4bd07198f82e33f3986976"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "b4afdfc8bc873c047d88f1960cde1d2e98f9a2d85efd4dbdb6108cb2d2df23f0",
+      "sourceQuestionId": "part_⑦-204",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "choice-00721",
+    "type": "choice",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "part_⑦-205"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": "part_⑦",
+    "partConfidence": "medium",
+    "reason": "マイサイトに対応する問題が見つからない",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "part_⑦-205",
+      "displayId": 205,
+      "type": "single",
+      "part": "part_⑦",
+      "category": "選択問題",
+      "question": "展示を参照してください。ルータR19のパフォーマンスが低下する原因は何ですか？\n\n※実際の試験では赤いラインはありません",
+      "options": [
+        "ポートのオーバーサブスクリプション",
+        "過剰なCRCエラー",
+        "速度とデュプレックス不一致",
+        "過度の衝突"
+      ],
+      "correctAnswerTexts": [
+        "ポートのオーバーサブスクリプション"
+      ],
+      "explanation": "",
+      "imagePaths": [
+        "no921.png"
+      ],
+      "imageHashes": [
+        "78f3c97d1d3b7a6caa1d24d901bb063d7a1e51cd8b31619134cfb738ab948ea6"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "8da0c7f1c3d65d3108bd929681766e9addacce87b299c64ac008c2632f1645ce",
+      "sourceQuestionId": "part_⑦-205",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbzIhnMUOAR5i-bYCyAhNVHT2rEOb2xXFHCReQfNx1hUFBuzfrpQ7IaWmKeH7SF2Lvo8/exec",
+      "scrapedAt": "2026-07-29T10:04:56.371Z"
+    }
+  },
+  {
+    "comparisonId": "dnd-00757",
+    "type": "dnd",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "dd-28"
+    ],
+    "questionSimilarity": 1.0,
+    "optionSimilarity": 1.0,
+    "answerMatches": true,
+    "imageMatches": true,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "マイサイトに対応するD&D問題が見つからない（新規追加分の可能性、id=dd-28）",
+    "manualReviewRequired": false,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "dd-28",
+      "type": "Matching",
+      "part": null,
+      "category": "D&D",
+      "question": "展示を参照してください。左側の設定コマンドを、設定内の位置に対応する文字にドラッグ＆ドロップします。",
+      "instructions": "展示を参照してください。左側の設定コマンドを、設定内の位置に対応する文字にドラッグ＆ドロップします。",
+      "options": [
+        "ip route 10.10.13.0 255.255.255.128 10.10.10.1",
+        "ip route 10.10.13.0 255.255.255.128 10.10.10.5",
+        "ip route 10.10.13.10 255.255.255.255 10.10.10.1",
+        "ip route 10.10.14.0 255.255.255.0 10.10.10.2",
+        "ip route 10.10.14.0 255.255.255.0 10.10.10.6",
+        "ip route 10.10.14.10 255.255.255.255 10.10.10.6"
+      ],
+      "targets": [
+        "R1",
+        "R2",
+        "R2",
+        "R3"
+      ],
+      "correctAnswerTexts": [
+        "R1: ip route 10.10.13.0 255.255.255.128 10.10.10.1",
+        "R2: ip route 10.10.14.0 255.255.255.0 10.10.10.2",
+        "R3: ip route 10.10.14.0 255.255.255.0 10.10.10.6"
+      ],
+      "allowMultiItemsPerTarget": false,
+      "groupLimits": "",
+      "imagePaths": [
+        "\\sh_pic\\no922.jpg"
+      ],
+      "imageHashes": [
+        "8a30089049a667c843fdb46bde31a0239d92af119de97056700621a6f0dbe11b"
+      ],
+      "missingImageFiles": [],
+      "contentHash": "6a71497c1a9c3a3b4e5e59969937c313f0e49c40dcf971cc71910eea6cfb74e0",
+      "sourceQuestionId": "dd-28",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbxVX70Z3UhvnzA0EFq9JsAjlwiierFAvVjyGbBW2ZpkBHPGudiNq8BXTAzE2xNJmtM/exec",
+      "scrapedAt": "2026-07-29T10:05:23.991Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00765",
+    "type": "simulation",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "ref-sim-prob8"
+    ],
+    "questionSimilarity": 0.086,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "マイサイトに対応するシミュレーション問題が見つからない（新規シナリオ）",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob8",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン DH、HQ、およびブランチ(DC)ルータに対し、インターネット接続のためのデフォルトルート(スタティックルーティング)を正しく設定し、設定を保存してください。\nDHからISPへのデフォルトルートを設定する / HQからDH経由でインターネット接続するデフォルトルートを設定する / ブランチ(DC)から最小ホップ数でインターネットへ接続するデフォルトルートを設定する",
+      "title": "Staticルート①",
+      "scenario": "ガイドライン DH、HQ、およびブランチ(DC)ルータに対し、インターネット接続のためのデフォルトルート(スタティックルーティング)を正しく設定し、設定を保存してください。",
+      "devices": [
+        {
+          "name": "DH",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "HQ",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "DC",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1"
+          ]
+        }
+      ],
+      "tasks": [
+        "DHからISPへのデフォルトルートを設定する",
+        "HQからDH経由でインターネット接続するデフォルトルートを設定する",
+        "ブランチ(DC)から最小ホップ数でインターネットへ接続するデフォルトルートを設定する"
+      ],
+      "options": [
+        "ip route 0.0.0.0 0.0.0.0 209.165.201.1",
+        "ip route 0.0.0.0 0.0.0.0 10.0.23.1",
+        "ip route 0.0.0.0 0.0.0.0 10.0.44.1"
+      ],
+      "correctAnswerTexts": [
+        "DC: runningConfig.startupConfig saved (任意)",
+        "DC: runningConfig.staticRoutes contains 0.0.0.0 0.0.0.0 10.0.44.1",
+        "DH: runningConfig.startupConfig saved (任意)",
+        "DH: runningConfig.staticRoutes contains 0.0.0.0 0.0.0.0 209.165.201.1",
+        "HQ: runningConfig.startupConfig saved (任意)",
+        "HQ: runningConfig.staticRoutes contains 0.0.0.0 0.0.0.0 10.0.23.1"
+      ],
+      "validations": [
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "DH: ISPへのデフォルトルート(0.0.0.0/0 via 209.165.201.1)が正しく設定されていません。",
+          "device": "DH",
+          "expected": "0.0.0.0 0.0.0.0 209.165.201.1"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "DH: 設定が保存されていません。",
+          "device": "DH",
+          "expected": "(任意)"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "HQ: DHへのデフォルトルート(0.0.0.0/0 via 10.0.23.1)が正しく設定されていません。",
+          "device": "HQ",
+          "expected": "0.0.0.0 0.0.0.0 10.0.23.1"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "HQ: 設定が保存されていません。",
+          "device": "HQ",
+          "expected": "(任意)"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "DC: DHへのデフォルトルート(0.0.0.0/0 via 10.0.44.1)が正しく設定されていません。",
+          "device": "DC",
+          "expected": "0.0.0.0 0.0.0.0 10.0.44.1"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "DC: 設定が保存されていません。",
+          "device": "DC",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob8.png"
+      ],
+      "imageHashes": [
+        "b092675fe7b0797559f5989a11a0178e86598c839b5a81ada51ff80ff17bbea6"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "29e916b2e32631fca63f38096c700dec6837833d40578f397b044ed865155dd0",
+      "sourceQuestionId": "ref-sim-prob8",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  },
+  {
+    "comparisonId": "sim-00766",
+    "type": "simulation",
+    "status": "REFERENCE_ONLY",
+    "mySiteQuestionIds": [],
+    "referenceQuestionIds": [
+      "ref-sim-prob9"
+    ],
+    "questionSimilarity": 0.086,
+    "optionSimilarity": 0,
+    "answerMatches": false,
+    "imageMatches": false,
+    "proposedPart": null,
+    "partConfidence": "n/a",
+    "reason": "マイサイトに対応するシミュレーション問題が見つからない（新規シナリオ）",
+    "manualReviewRequired": true,
+    "referenceRecord": {
+      "site": "reference-site",
+      "id": "ref-sim-prob9",
+      "type": "simulation",
+      "part": null,
+      "category": "シミュレーション",
+      "question": "ガイドライン SJC、SQL、およびOAKルータに対して、デフォルトルートおよびAD値を考慮したプライマリ/バックアップのホストルートを設定し、設定を保存してください。\nSJCからISPを経由するデフォルトルートを設定する / SQLからPCへのホストルート(プライマリ/浮動バックアップ)を設定する / OAKの設定を行う",
+      "title": "Staticルート②",
+      "scenario": "ガイドライン SJC、SQL、およびOAKルータに対して、デフォルトルートおよびAD値を考慮したプライマリ/バックアップのホストルートを設定し、設定を保存してください。",
+      "devices": [
+        {
+          "name": "SJC",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "SQL",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2"
+          ]
+        },
+        {
+          "name": "OAK",
+          "type": "router",
+          "physicalPorts": [
+            "e0/0",
+            "e0/1",
+            "e0/2",
+            "e0/3"
+          ]
+        }
+      ],
+      "tasks": [
+        "SJCからISPを経由するデフォルトルートを設定する",
+        "SQLからPCへのホストルート(プライマリ/浮動バックアップ)を設定する",
+        "OAKの設定を行う"
+      ],
+      "options": [
+        "ip route 0.0.0.0 0.0.0.0 209.165.201.2",
+        "ip route 10.10.44.2 255.255.255.255 10.10.54.1",
+        "ip route 10.10.44.2 255.255.255.255 10.10.10.1 10",
+        "ip route 10.10.54.2 255.255.255.255 10.10.54.2",
+        "ip route 10.10.54.2 255.255.255.255 10.10.10.2 10"
+      ],
+      "correctAnswerTexts": [
+        "OAK: runningConfig.startupConfig saved (任意)",
+        "OAK: runningConfig.staticRoutes contains {\"prefix\":\"10.10.54.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.10.2\",\"distance\":10}",
+        "OAK: runningConfig.staticRoutes contains {\"prefix\":\"10.10.54.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.54.2\"}",
+        "SJC: runningConfig.startupConfig saved (任意)",
+        "SJC: runningConfig.staticRoutes contains {\"prefix\":\"0.0.0.0\",\"mask\":\"0.0.0.0\",\"nextHop\":\"209.165.201.2\"}",
+        "SQL: runningConfig.startupConfig saved (任意)",
+        "SQL: runningConfig.staticRoutes contains {\"prefix\":\"10.10.44.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.10.1\",\"distance\":10}",
+        "SQL: runningConfig.staticRoutes contains {\"prefix\":\"10.10.44.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.54.1\"}"
+      ],
+      "validations": [
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "SJC: デフォルトルート(0.0.0.0/0 via 209.165.201.2)が正しく設定されていません。",
+          "device": "SJC",
+          "expected": "{\"prefix\":\"0.0.0.0\",\"mask\":\"0.0.0.0\",\"nextHop\":\"209.165.201.2\"}"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SJC: 設定が保存されていません。",
+          "device": "SJC",
+          "expected": "(任意)"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "SQL: PCへのプライマリホストルート(via 10.10.54.1)が正しく設定されていません。",
+          "device": "SQL",
+          "expected": "{\"prefix\":\"10.10.44.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.54.1\"}"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "SQL: PCへの代替ホストルート(via 10.10.10.1 AD 10)が正しく設定されていません。",
+          "device": "SQL",
+          "expected": "{\"prefix\":\"10.10.44.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.10.1\",\"distance\":10}"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "SQL: 設定が保存されていません。",
+          "device": "SQL",
+          "expected": "(任意)"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "OAK: プライマリホストルート(via 10.10.54.2)が正しく設定されていません。",
+          "device": "OAK",
+          "expected": "{\"prefix\":\"10.10.54.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.54.2\"}"
+        },
+        {
+          "match": "contains",
+          "path": "runningConfig.staticRoutes",
+          "message": "OAK: 代替ホストルート(via 10.10.10.2 AD 10)が正しく設定されていません。",
+          "device": "OAK",
+          "expected": "{\"prefix\":\"10.10.54.2\",\"mask\":\"255.255.255.255\",\"nextHop\":\"10.10.10.2\",\"distance\":10}"
+        },
+        {
+          "match": "saved",
+          "path": "runningConfig.startupConfig",
+          "message": "OAK: 設定が保存されていません。",
+          "device": "OAK",
+          "expected": "(任意)"
+        }
+      ],
+      "imagePaths": [
+        "audit/assets/simulation-images/prob9.png"
+      ],
+      "imageHashes": [
+        "129133a671a2379b1c1d44cfddb780ff2eb4b015478d99c23ba1fc5507945cab"
+      ],
+      "missingImageFiles": [],
+      "gradingStatus": "available",
+      "sourceSiteTrialWarning": true,
+      "sourceSiteTrialWarningDetail": "参考サイトの「実機問題」セクションは2026-07-27時点で「仮導入」とアナウンスされており、採点エンジンが不安定な可能性がある。",
+      "contentHash": "76d4e64a09ae764e50566838aadf530770db0695311dfd1d107c2a3efe7e8061",
+      "sourceQuestionId": "ref-sim-prob9",
+      "sourceUrl": "https://script.google.com/macros/s/AKfycbwPy2Rwe2u_VwSBdYmCa9Kg7f0MDBkmEt9CRQTpdNBGBjxniPh0_2fBXZ0Lpy2aMC-BXQ/exec",
+      "scrapedAt": "2026-07-29T10:05:41.517Z"
+    }
+  }
+]

@@ -47,9 +47,9 @@
         <div class="portal-card" id="card-quiz">
           <div class="card-icon">&#128196;</div>
           <h2 class="card-title">4択問題</h2>
-          <p class="card-desc">選択問題 516問<br>単一・複数回答対応</p>
+          <p class="card-desc">選択問題 532問<br>単一・複数回答対応</p>
           <div class="card-stats" id="quiz-portal-stats">
-            <span id="quiz-stat-answered">0</span> / 516 回答済み<br>
+            <span id="quiz-stat-answered">0</span> / 532 回答済み<br>
             <span class="mastered-stat-label">&#11088; 習得済み <span id="quiz-stat-mastered">0</span> 問</span>
           </div>
           <button class="btn btn-primary btn-full card-btn">スタート</button>
@@ -57,9 +57,18 @@
         <div class="portal-card" id="card-dnd">
           <div class="card-icon">&#128290;</div>
           <h2 class="card-title">D&amp;D問題</h2>
-          <p class="card-desc">ドラッグ&amp;ドロップ 27問<br>Grouping / Matching対応</p>
+          <p class="card-desc">ドラッグ&amp;ドロップ 28問<br>Grouping / Matching対応</p>
           <div class="card-stats" id="dnd-portal-stats">
-            <span id="dnd-stat-answered">0</span> / 27 回答済み
+            <span id="dnd-stat-answered">0</span> / 28 回答済み
+          </div>
+          <button class="btn btn-primary btn-full card-btn">スタート</button>
+        </div>
+        <div class="portal-card" id="card-simulation">
+          <div class="card-icon">&#128187;</div>
+          <h2 class="card-title">シミュレーション問題</h2>
+          <p class="card-desc">CLIコマンド入力形式 12問<br>デバイスへのコマンド投入・自動採点</p>
+          <div class="card-stats" id="sim-portal-stats">
+            <span id="sim-stat-answered">0</span> / 12 回答済み
           </div>
           <button class="btn btn-primary btn-full card-btn">スタート</button>
         </div>
@@ -413,6 +422,7 @@
           <option value="part_④">Part ④</option>
           <option value="part_⑤">Part ⑤</option>
           <option value="part_⑥">Part ⑥</option>
+          <option value="part_⑦">Part ⑦</option>
         </select>
       </div>
       <div class="filter-row filter-checks">
@@ -690,6 +700,9 @@
 
       <div class="question-card" id="sim-q-card">
         <div class="sim-q-title" id="sim-q-title"></div>
+        <div id="sim-q-image-wrap" class="question-image-wrap hidden">
+          <img id="sim-q-image" class="question-image" src="" alt="トポロジー図">
+        </div>
         <div class="sim-q-desc" id="sim-q-desc"></div>
         <div id="sim-device-list"></div>
       </div>
@@ -703,6 +716,33 @@
         <button class="btn btn-primary ct-finish-btn" id="sim-finish-btn">
           &#10003; 採点して結果を見る
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SIMULATION PRACTICE RESULT VIEW ===== -->
+  <div id="view-simulation-result" class="view hidden">
+    <header class="view-header">
+      <div class="view-header-title">シミュレーション問題 — 結果</div>
+      <button id="sim-result-logout" class="btn btn-ghost btn-sm">ログアウト</button>
+    </header>
+
+    <div class="ct-result-container">
+      <div class="ct-result-card">
+        <h2 class="ct-result-title">学習結果</h2>
+        <div class="ct-score-wrap">
+          <div class="ct-score-main">
+            <span class="ct-score-label">コマンド正解数</span>
+            <span class="ct-score-value" id="sim-result-score">0 / 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="sim-result-list"></div>
+
+      <div class="quiz-nav">
+        <button class="btn btn-outline" id="sim-result-retry-btn">もう一度学習する</button>
+        <button class="btn btn-primary" id="sim-result-home-btn">ポータルへ戻る</button>
       </div>
     </div>
   </div>
@@ -735,6 +775,7 @@
 <script src="js/quiz.js"></script>
 <script src="js/dnd.js"></script>
 <script src="js/simulationTest.js"></script>
+<script src="js/simulationPractice.js"></script>
 <script src="js/checkTest.js"></script>
 <script src="js/resultSubmitter.js"></script>
 <script src="js/app.js"></script>
