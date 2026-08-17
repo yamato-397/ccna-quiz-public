@@ -7,6 +7,8 @@ const CheckTest = (() => {
 
   // ---- Test configs ----
   const CONFIGS = {
+    'check-test-01': { id: 'check-test-01', title: '確認テスト1回目',  historyKey: 'ccna_check_test_01_history', hasDnd: true,  hasSimulation: false },
+    'check-test-02': { id: 'check-test-02', title: '確認テスト2回目',  historyKey: 'ccna_check_test_02_history', hasDnd: true,  hasSimulation: false },
     'check-test-03': { id: 'check-test-03', title: '確認テスト3回目',  historyKey: 'ccna_check_test_03_history', hasDnd: false, hasSimulation: false },
     'check-test-04': { id: 'check-test-04', title: '確認テスト4回目',  historyKey: 'ccna_check_test_04_history', hasDnd: false, hasSimulation: false },
     'check-test-05': { id: 'check-test-05', title: '確認テスト5回目',  historyKey: 'ccna_check_test_05_history', hasDnd: true,  hasSimulation: false },

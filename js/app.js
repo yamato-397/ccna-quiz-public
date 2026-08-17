@@ -4,6 +4,8 @@
 const App = (() => {
   let questionsData    = null;
   let simulationQuestionsData = null;
+  let checkTestData01  = null;
+  let checkTestData02  = null;
   let checkTestData03  = null;
   let checkTestData04  = null;
   let checkTestData05  = null;
@@ -69,6 +71,8 @@ const App = (() => {
 
   async function loadCheckTestData(n) {
     const map = {
+      1:         { cache: () => checkTestData01, set: d => { checkTestData01 = d; }, file: 'check-test-01.json' },
+      2:         { cache: () => checkTestData02, set: d => { checkTestData02 = d; }, file: 'check-test-02.json' },
       3:         { cache: () => checkTestData03, set: d => { checkTestData03 = d; }, file: 'check-test-03.json' },
       4:         { cache: () => checkTestData04, set: d => { checkTestData04 = d; }, file: 'check-test-04.json' },
       5:         { cache: () => checkTestData05, set: d => { checkTestData05 = d; }, file: 'check-test-05.json' },
@@ -169,6 +173,10 @@ const App = (() => {
       if (simEl) simEl.textContent = SimulationPractice.getAnsweredCount();
     }
 
+    const ct01El = document.getElementById('ct01-stat-history');
+    if (ct01El) ct01El.textContent = `実施回数: ${CheckTest.getHistory('check-test-01').length}回`;
+    const ct02El = document.getElementById('ct02-stat-history');
+    if (ct02El) ct02El.textContent = `実施回数: ${CheckTest.getHistory('check-test-02').length}回`;
     const ct03El = document.getElementById('ct03-stat-history');
     if (ct03El) ct03El.textContent = `実施回数: ${CheckTest.getHistory('check-test-03').length}回`;
     const ct04El = document.getElementById('ct04-stat-history');
@@ -271,6 +279,8 @@ const App = (() => {
     document.getElementById('card-dnd').addEventListener('click', goDnd);
     const simCard = document.getElementById('card-simulation');
     if (simCard) simCard.addEventListener('click', goSimulationPractice);
+    document.getElementById('card-check-test-01').addEventListener('click', () => goCheckTest(1));
+    document.getElementById('card-check-test-02').addEventListener('click', () => goCheckTest(2));
     document.getElementById('card-check-test-03').addEventListener('click', () => goCheckTest(3));
     document.getElementById('card-check-test-04').addEventListener('click', () => goCheckTest(4));
     document.getElementById('card-check-test-05').addEventListener('click', () => goCheckTest(5));
