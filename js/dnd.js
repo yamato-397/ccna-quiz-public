@@ -86,13 +86,16 @@ const DndQuiz = (() => {
       const answerEntries = q.answer.split('|');
       const placeholders = Array.isArray(q.placeholders) ? q.placeholders : [];
 
-      normalized.groups = placeholders.map(name => {
+      normalized.groups = placeholders.map((name, i) => {
         const entry = answerEntries.find(e => e.startsWith(name + ':'));
         const correctChoices = entry
           ? entry.slice(name.length + 1).split(',').map(s => s.trim()).filter(Boolean)
           : [];
         return {
           name,
+          // Unique internal id — placeholders can repeat the same display name
+          // (e.g. "R1|R2|R2|R3"), so `name` alone cannot key state/DOM lookups.
+          key: `${name}__${i}`,
           limit: limitsMap[name] || correctChoices.length || 1,
           correctChoices
         };
@@ -112,6 +115,9 @@ const DndQuiz = (() => {
 
       normalized.groups = placeholders.map((name, i) => ({
         name,
+        // Unique internal id — placeholders can repeat the same display name
+        // (e.g. "R1|R2|R2|R3"), so `name` alone cannot key state/DOM lookups.
+        key: `${name}__${i}`,
         limit: 1,
         correctChoices: [answers[i] || '']
       }));
@@ -245,7 +251,7 @@ const DndQuiz = (() => {
     // Shuffle the choice pool display order each time (judgment is text-based, so safe)
     pool = shuffle([...currentQ.choices]);
     placements = {};
-    currentQ.groups.forEach(g => { placements[g.name] = []; });
+    currentQ.groups.forEach(g => { placements[g.key] = []; });
   }
 
   function resetCurrentQuestion() {
@@ -284,7 +290,7 @@ const DndQuiz = (() => {
 
     const grid = document.createElement('div');
     grid.className = 'dnd-grouping-layout';
-    currentQ.groups.forEach(g => grid.appendChild(buildZone(g.name)));
+    currentQ.groups.forEach(g => grid.appendChild(buildZone(g)));
     wrap.appendChild(grid);
 
     return wrap;
@@ -313,7 +319,7 @@ const DndQuiz = (() => {
       label.textContent = g.name;
 
       row.appendChild(label);
-      row.appendChild(buildMatchZone(g.name));
+      row.appendChild(buildMatchZone(g));
       rows.appendChild(row);
     });
     wrap.appendChild(rows);
@@ -347,39 +353,41 @@ const DndQuiz = (() => {
   }
 
   // ---- Zone builders ----
-  function buildZone(name) {
+  function buildZone(g) {
     const zoneWrap = document.createElement('div');
     zoneWrap.className = 'dnd-zone';
 
-    const grpInfo = currentQ.groups.find(g => g.name === name);
-    const placed  = (placements[name] || []).length;
-    const lim     = grpInfo ? grpInfo.limit : 0;
+    const key    = g.key;
+    const placed = (placements[key] || []).length;
+    const lim    = g.limit;
 
     const zoneLabel = document.createElement('div');
     zoneLabel.className = 'dnd-zone-label';
-    zoneLabel.textContent = `${name} (${placed}/${lim})`;
+    zoneLabel.textContent = `${g.name} (${placed}/${lim})`;
     zoneWrap.appendChild(zoneLabel);
 
     const items = document.createElement('div');
     items.className = 'dnd-zone-items';
-    items.dataset.zone = name;
-    setupDropTarget(items, name);
+    items.dataset.zone = key;
+    setupDropTarget(items, key);
 
-    (placements[name] || []).forEach(choice => items.appendChild(buildChip(choice, name)));
+    (placements[key] || []).forEach(choice => items.appendChild(buildChip(choice, key)));
     zoneWrap.appendChild(items);
     return zoneWrap;
   }
 
-  function buildMatchZone(name) {
+  function buildMatchZone(g) {
     const zone = document.createElement('div');
     zone.className = 'dnd-match-zone';
 
+    const key = g.key;
+
     const items = document.createElement('div');
     items.className = 'dnd-match-zone-items';
-    items.dataset.zone = name;
-    setupDropTarget(items, name);
+    items.dataset.zone = key;
+    setupDropTarget(items, key);
 
-    (placements[name] || []).forEach(choice => items.appendChild(buildChip(choice, name)));
+    (placements[key] || []).forEach(choice => items.appendChild(buildChip(choice, key)));
     zone.appendChild(items);
     return zone;
   }
@@ -457,7 +465,7 @@ const DndQuiz = (() => {
     if (fromZone === toZone) return;
 
     if (toZone !== '__pool__') {
-      const group = currentQ.groups.find(g => g.name === toZone);
+      const group = currentQ.groups.find(g => g.key === toZone);
       if (group && (placements[toZone] || []).length >= group.limit) {
         if (group.limit === 1 && placements[toZone].length === 1) {
           // Swap for Matching (limit=1)
@@ -589,7 +597,7 @@ const DndQuiz = (() => {
     if (answered || !currentQ) return;
 
     // Require all groups to be at capacity; pool may still have distractors
-    const notFilled = currentQ.groups.filter(g => (placements[g.name] || []).length < g.limit);
+    const notFilled = currentQ.groups.filter(g => (placements[g.key] || []).length < g.limit);
     if (notFilled.length > 0) {
       alert(`次のグループがまだ埋まっていません: ${notFilled.map(g => g.name).join('、')}`);
       return;
@@ -600,11 +608,11 @@ const DndQuiz = (() => {
     // Judge: text-based comparison, shuffle-independent
     let allCorrect = true;
     const results = currentQ.groups.map(g => {
-      const placed    = placements[g.name] || [];
+      const placed    = placements[g.key] || [];
       const correct   = g.correctChoices;
       const isCorrect = arraysEqualUnordered(placed, correct);
       if (!isCorrect) allCorrect = false;
-      return { name: g.name, placed, correct, isCorrect };
+      return { name: g.name, key: g.key, placed, correct, isCorrect };
     });
 
     recordAnswer(currentQ.id, allCorrect);
@@ -612,7 +620,7 @@ const DndQuiz = (() => {
     // Visual feedback
     if (currentQ.type === 'Grouping') {
       results.forEach(r => {
-        const itemsEl = document.querySelector(`.dnd-zone-items[data-zone="${CSS.escape(r.name)}"]`);
+        const itemsEl = document.querySelector(`.dnd-zone-items[data-zone="${CSS.escape(r.key)}"]`);
         if (!itemsEl) return;
         const zone = itemsEl.closest('.dnd-zone');
         if (zone) zone.classList.add(r.isCorrect ? 'zone-correct' : 'zone-wrong');
@@ -621,7 +629,7 @@ const DndQuiz = (() => {
       });
     } else {
       results.forEach(r => {
-        const itemsEl = document.querySelector(`.dnd-match-zone-items[data-zone="${CSS.escape(r.name)}"]`);
+        const itemsEl = document.querySelector(`.dnd-match-zone-items[data-zone="${CSS.escape(r.key)}"]`);
         if (!itemsEl) return;
         const zone = itemsEl.closest('.dnd-match-zone');
         if (zone) zone.classList.add(r.isCorrect ? 'zone-correct' : 'zone-wrong');
