@@ -7,6 +7,7 @@ const CheckTest = (() => {
 
   // ---- Test configs ----
   const CONFIGS = {
+    'check-test-takenaka': { id: 'check-test-takenaka', title: '竹中くん用確認テスト', historyKey: 'ccna_check_test_takenaka_history', hasDnd: true, hasSimulation: true, passRequiresDndPerfect: true, passRequiresSimPerfect: true },
     'check-test-01': { id: 'check-test-01', title: '確認テスト1回目',  historyKey: 'ccna_check_test_01_history', hasDnd: true,  hasSimulation: false },
     'check-test-02': { id: 'check-test-02', title: '確認テスト2回目',  historyKey: 'ccna_check_test_02_history', hasDnd: true,  hasSimulation: false },
     'check-test-03': { id: 'check-test-03', title: '確認テスト3回目',  historyKey: 'ccna_check_test_03_history', hasDnd: false, hasSimulation: false },
@@ -343,7 +344,6 @@ const CheckTest = (() => {
     const selCorrect   = Object.values(results).filter(r => r.isCorrect).length;
     const selIncorrect = allQuestions.length - selCorrect;
     const selRate      = Math.round((selCorrect / allQuestions.length) * 100);
-    const passed       = selRate >= PASSING_RATE;
     const durationSec  = Math.round((Date.now() - startTime) / 1000);
     const cfg          = activeConfig;
 
@@ -358,6 +358,13 @@ const CheckTest = (() => {
     const simCorrect = hasSim ? simResult.totalCorrect : 0;
     const simTotal   = hasSim ? simResult.totalReq    : 0;
     const simRate    = simTotal > 0 ? Math.round((simCorrect / simTotal) * 100) : 0;
+
+    // ---- 合否判定（4択基準。cfg.passRequiresDndPerfect / passRequiresSimPerfect が
+    //      立っているテストのみ、D&D／シミュレーションの完答も合格条件に追加する） ----
+    const selPassed = selRate >= PASSING_RATE;
+    const dndPassed = !cfg.passRequiresDndPerfect || (hasDnd && dndTotal > 0 && dndCorrect === dndTotal);
+    const simPassed = !cfg.passRequiresSimPerfect || (hasSim && simTotal > 0 && simCorrect === simTotal);
+    const passed    = selPassed && dndPassed && simPassed;
 
     const wrongIds = allQuestions.filter(q => results[q.id] && !results[q.id].isCorrect).map(q => q.id);
 
@@ -413,13 +420,21 @@ const CheckTest = (() => {
       }
     }
 
-    // ---- 合否バナー（4択基準） ----
+    // ---- 合否バナー（4択基準。テストによってはD&D／シミュレーション完答も必須） ----
     const verdictEl = $('ct-result-verdict');
     if (passed) {
       verdictEl.textContent = '合格　本番受験OKライン達成！';
       verdictEl.className   = 'ct-verdict ct-verdict-pass';
     } else {
-      verdictEl.textContent = '復習推奨。間違えた問題を再演習してください';
+      let failMsg = '復習推奨。間違えた問題を再演習してください';
+      if (cfg.passRequiresDndPerfect || cfg.passRequiresSimPerfect) {
+        const reasons = [];
+        if (!selPassed) reasons.push('4択が95%未満');
+        if (!dndPassed) reasons.push('D&Dに誤りあり（完答が必要）');
+        if (!simPassed) reasons.push('シミュレーションに誤りあり（完答が必要）');
+        if (reasons.length) failMsg += `（${reasons.join('・')}）`;
+      }
+      verdictEl.textContent = failMsg;
       verdictEl.className   = 'ct-verdict ct-verdict-fail';
     }
 
