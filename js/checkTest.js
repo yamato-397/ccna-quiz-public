@@ -7,6 +7,7 @@ const CheckTest = (() => {
 
   // ---- Test configs ----
   const CONFIGS = {
+    'check-test-takenaka-final': { id: 'check-test-takenaka-final', title: '竹中くん用確認テスト（本番直前）', historyKey: 'ccna_check_test_takenaka_final_history', hasDnd: false, hasSimulation: false },
     'check-test-takenaka': { id: 'check-test-takenaka', title: '竹中くん用確認テスト', historyKey: 'ccna_check_test_takenaka_history', hasDnd: true, hasSimulation: true, passRequiresDndPerfect: true, passRequiresSimPerfect: true },
     'check-test-01': { id: 'check-test-01', title: '確認テスト1回目',  historyKey: 'ccna_check_test_01_history', hasDnd: true,  hasSimulation: false },
     'check-test-02': { id: 'check-test-02', title: '確認テスト2回目',  historyKey: 'ccna_check_test_02_history', hasDnd: true,  hasSimulation: false },

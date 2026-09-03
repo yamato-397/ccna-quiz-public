@@ -181,6 +181,8 @@ const App = (() => {
       if (simEl) simEl.textContent = SimulationPractice.getAnsweredCount();
     }
 
+    const ctTakenakaFinalEl = document.getElementById('ct-takenaka-final-stat-history');
+    if (ctTakenakaFinalEl) ctTakenakaFinalEl.textContent = `実施回数: ${CheckTest.getHistory('check-test-takenaka-final').length}回`;
     const ctTakenakaEl = document.getElementById('ct-takenaka-stat-history');
     if (ctTakenakaEl) ctTakenakaEl.textContent = `実施回数: ${CheckTest.getHistory('check-test-takenaka').length}回`;
     const ct01El = document.getElementById('ct01-stat-history');
@@ -295,6 +297,7 @@ const App = (() => {
     document.getElementById('card-dnd').addEventListener('click', goDnd);
     const simCard = document.getElementById('card-simulation');
     if (simCard) simCard.addEventListener('click', goSimulationPractice);
+    document.getElementById('card-check-test-takenaka-final').addEventListener('click', goCheckTestTakenakaFinal);
     document.getElementById('card-check-test-takenaka').addEventListener('click', () => goCheckTest('takenaka'));
     document.getElementById('card-check-test-01').addEventListener('click', () => goCheckTest(1));
     document.getElementById('card-check-test-02').addEventListener('click', () => goCheckTest(2));
@@ -534,6 +537,19 @@ const App = (() => {
       CheckTest.start(data.questions, data.id, data.dd_questions, data.simulation_questions);
     } catch(e) {
       console.error('CheckTest init error:', e);
+    }
+  }
+
+  // 竹中くん用・本番直前テスト: 固定JSONを使わず、開くたびにPart⑥・⑦のプールから
+  // 100問を新規にランダム抽出する（選択順=出題順もそのままランダム化される）
+  async function goCheckTestTakenakaFinal() {
+    try {
+      const data = await loadData();
+      const pool = data.selection_questions.filter(q => q.part === 'part_⑥' || q.part === 'part_⑦');
+      const sampled = pickRandomItems(pool, 100);
+      CheckTest.start(sampled, 'check-test-takenaka-final', [], []);
+    } catch(e) {
+      console.error('CheckTest(takenaka-final) init error:', e);
     }
   }
 
