@@ -75,6 +75,7 @@ const App = (() => {
   let checkTestData67  = null;
   let checkTestData68  = null;
   let checkTestData69  = null;
+  let checkTestData70  = null;
 
   // ---- Random utilities ----
   function shuffleArr(arr) {
@@ -179,6 +180,7 @@ const App = (() => {
       67:        { cache: () => checkTestData67, set: d => { checkTestData67 = d; }, file: 'check-test-67.json' },
       68:        { cache: () => checkTestData68, set: d => { checkTestData68 = d; }, file: 'check-test-68.json' },
       69:        { cache: () => checkTestData69, set: d => { checkTestData69 = d; }, file: 'check-test-69.json' },
+      70:        { cache: () => checkTestData70, set: d => { checkTestData70 = d; }, file: 'check-test-70.json' },
     };
     const entry = map[n] || map[3];
     if (entry.cache()) return entry.cache();
@@ -391,6 +393,8 @@ const App = (() => {
     if (ct68El) ct68El.textContent = `実施回数: ${CheckTest.getHistory('check-test-68').length}回`;
     const ct69El = document.getElementById('ct69-stat-history');
     if (ct69El) ct69El.textContent = `実施回数: ${CheckTest.getHistory('check-test-69').length}回`;
+    const ct70El = document.getElementById('ct70-stat-history');
+    if (ct70El) ct70El.textContent = `実施回数: ${CheckTest.getHistory('check-test-70').length}回`;
   }
 
   // ---- Logout handler ----
@@ -501,6 +505,7 @@ const App = (() => {
     document.getElementById('card-check-test-67').addEventListener('click', () => goCheckTest(67));
     document.getElementById('card-check-test-68').addEventListener('click', () => goCheckTest(68));
     document.getElementById('card-check-test-69').addEventListener('click', () => goCheckTest(69));
+    document.getElementById('card-check-test-70').addEventListener('click', () => goCheckTest(70));
 
     // Back buttons
     document.getElementById('quiz-parts-back').addEventListener('click', goPortal);
