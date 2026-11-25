@@ -90,6 +90,7 @@ const CheckTest = (() => {
     'check-test-78': { id: 'check-test-78', title: '確認テスト78回目', historyKey: 'ccna_check_test_78_history', hasDnd: true,  hasSimulation: true },
     'check-test-79': { id: 'check-test-79', title: '確認テスト79回目', historyKey: 'ccna_check_test_79_history', hasDnd: true,  hasSimulation: true },
     'check-test-80': { id: 'check-test-80', title: '確認テスト80回目', historyKey: 'ccna_check_test_80_history', hasDnd: true,  hasSimulation: true },
+    'check-test-81': { id: 'check-test-81', title: '確認テスト81回目', historyKey: 'ccna_check_test_81_history', hasDnd: true,  hasSimulation: true },
   };
 
   // ---- History ----
